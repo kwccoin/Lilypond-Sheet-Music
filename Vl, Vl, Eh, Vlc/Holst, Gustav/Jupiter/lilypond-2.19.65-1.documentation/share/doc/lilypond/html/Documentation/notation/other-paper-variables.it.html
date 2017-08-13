@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 4.1.6 Altre variabili di \paper</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 4.1.6 Altre variabili di \paper">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 4.1.6 Altre variabili di \paper">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="page-layout.it.html#page-layout" rel="up" title="4.1 Formattazione della pagina">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="horizontal-spacing-paper-variables.it.html#horizontal-spacing-paper-variables" rel="previous" title="4.1.5 Variabili \paper della spaziatura orizzontale">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Altre-variabili-di-paper"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="horizontal-spacing-paper-variables.it.html#paper-variables-for-shifts-and-indents" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili paper per spostamenti e indentazioni&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="page-layout.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Formattazione della pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#paper-variables-for-line-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Variabili di paper per l'interruzione di linea &gt; </a>]</td></tr></table>
+<a name="other-paper-variables"></a>
+<h3 class="subsection">4.1.6 Altre variabili di <code>\paper</code></h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#paper-variables-for-line-breaking" accesskey="1">Variabili di <code>\paper</code> per l&rsquo;interruzione di linea</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#paper-variables-for-page-breaking" accesskey="2">Variabili di <code>\paper</code> per l&rsquo;interruzione di pagina</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#paper-variables-for-page-numbering" accesskey="3">Variabili di <code>\paper</code> per la numerazione delle pagine</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#miscellaneous-paper-variables" accesskey="4">Svariate variabili di <code>\paper</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Variabili-di-paper-per-l_0027interruzione-di-linea"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#other-paper-variables" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#other-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#paper-variables-for-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Variabili di paper per l'interruzione di pagina &gt; </a>]</td></tr></table>
+<a name="paper-variables-for-line-breaking"></a>
+<h4 class="unnumberedsubsubsec">Variabili di <code>\paper</code> per l&rsquo;interruzione di linea</h4>
+
+<dl compact="compact">
+<dt> <code>max-systems-per-page</code></dt>
+<dd><a name="index-max_002dsystems_002dper_002dpage"></a>
+<a name="index-max_002dsystems_002dper_002dpage-1"></a>
+
+<p>Il numero massimo di sistemi che saranno disposti in una pagina.  Attualmente
+ciò è supportanto soltanto dall&rsquo;algoritmo <code>ly:optimal-breaking</code>.
+Valore predefinito: non impostato.
+</p>
+</dd>
+<dt> <code>min-systems-per-page</code></dt>
+<dd><a name="index-min_002dsystems_002dper_002dpage"></a>
+<a name="index-min_002dsystems_002dper_002dpage-1"></a>
+
+<p>Il numero minimo di sistemi che saranno disposti in una pagina.  Ciò
+potrebbe riempire troppo le pagine, se il numero è troppo grande.  Attualmente
+ciò è supportanto soltanto dall&rsquo;algoritmo <code>ly:optimal-breaking</code>.
+Valore predefinito: non impostato.
+</p>
+</dd>
+<dt> <code>systems-per-page</code></dt>
+<dd><a name="index-systems_002dper_002dpage"></a>
+<a name="index-systems_002dper_002dpage-1"></a>
+
+<p>Il numero di sistemi da disporre in una pagina.  Attualmente
+ciò è supportanto soltanto dall&rsquo;algoritmo <code>ly:optimal-breaking</code>.
+Valore predefinito: non impostato.
+</p>
+</dd>
+<dt> <code>system-count</code></dt>
+<dd><a name="index-system_002dcount"></a>
+<a name="index-system_002dcount-1"></a>
+
+<p>Il numero di sistemi da usare per un brano.  Valore predefinito: non impostato.
+Questa variabile può essere impostata anche in un blocco <code>\layout</code>.
+</p>
+</dd>
+</dl>
+
+<a name="Vedi-anche-227"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="line-breaking.it.html">Interruzioni di linea</a>.
+</p>
+
+<hr size="6">
+<a name="Variabili-di-paper-per-l_0027interruzione-di-pagina"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#paper-variables-for-line-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili di paper per l'interruzione di linea&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#other-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#paper-variables-for-page-numbering" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Variabili di paper per la numerazione delle pagine &gt; </a>]</td></tr></table>
+<a name="paper-variables-for-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Variabili di <code>\paper</code> per l&rsquo;interruzione di pagina</h4>
+
+<p>I valori predefiniti non elencati qui sono visibili in
+&lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;
+</p>
+<dl compact="compact">
+<dt> <code>page-breaking</code></dt>
+<dd><a name="index-page_002dbreaking"></a>
+<a name="index-page_002dbreaking-1"></a>
+
+<p>L&rsquo;algoritmo di interruzione di pagina da usare.  Le opzioni sono
+<code>ly:minimal-breaking</code>, <code>ly:page-turn-breaking</code>,
+<code>ly:one-page-breaking</code>, <code>ly:one-line-breaking</code>,
+<code>ly:one-line-auto-height-breaking</code> e
+<code>ly:optimal-breaking</code> (predefinito).
+</p>
+</dd>
+<dt> <code>page-breaking-system-system-spacing</code></dt>
+<dd><a name="index-page_002dbreaking_002dsystem_002dsystem_002dspacing"></a>
+<a name="index-page_002dbreaking_002dsystem_002dsystem_002dspacing-1"></a>
+
+<p>Induce il sistema di interruzione di pagina a credere che
+<code>system-system-spacing</code> sia impostato in modo diverso dal
+modo in cui è impostato realmente.  Per esempio, se
+<code>page-breaking-system-system-spacing #'padding</code> è impostato su un
+valore molto più grande di <code>system-system-spacing #'padding</code>, il
+sistema di interruzione di pagina disporrà meno sistemi su ciascuna
+pagina.  Valore predefinito: non impostato.
+</p>
+</dd>
+<dt> <code>page-count</code></dt>
+<dd><a name="index-page_002dcount"></a>
+<a name="index-page_002dcount-1"></a>
+
+<p>Il numero di pagine da usare per un brano, non impostato.
+</p>
+</dd>
+</dl>
+
+<p>Le variabili seguenti sono attive soltanto quando <code>page-breaking</code>
+è impostato su <code>ly:page-turn-breaking</code>.  Le interruzioni di pagina
+vengono quindi scelte per minimizzare il numero di voltate di pagina.
+Dato che le voltate di pagina si rendono necessarie quando si passa da
+una pagina con numero dispari a una con numero pari, verrà solitamente
+favorita una formattazione in cui l&rsquo;ultima pagina abbia un numero dispari.
+I punti preferiti per le voltate di pagina possono essere indicati
+manualmente col comando <code>\allowPageTurn</code> o automaticamente
+includendo l&rsquo;incisore <code>Page_turn_engraver</code> (vedi <a href="page-breaking.it.html#optimal-page-turning">Voltata di pagina ottimale</a>).
+</p>
+<p>Se le scelte disponibili per avere voltate di pagina adeguate sono
+insufficienti, LilyPond potrebbe inserire una pagina vuota all&rsquo;interno
+di un brano o tra i brani (se ce ne sono almeno due), oppure potrebbe
+terminare un brano su una pagina pari.  Aumentando i valori delle
+seguenti tre variabili diminuisce la probabilità che queste entrino
+in azione.
+</p>
+<p>I valori sono penalità: maggiore il valore, minore la probabilità
+che si verifichi l&rsquo;azione associata rispetto alle altre scelte.
+</p>
+<dl compact="compact">
+<dt> <code>blank-page-penalty</code></dt>
+<dd><a name="index-blank_002dpage_002dpenalty"></a>
+<a name="index-blank_002dpage_002dpenalty-1"></a>
+
+<p>La penalità per avere una pagina vuota nel mezzo di un brano.  Se il
+valore di <code>blank-page-penalty</code> è grande ed è selezionato
+<code>ly:page-turn-breaking</code>, sarà meno probabile che LilyPond
+insersica una pagina nel mezzo del brano.  Aggiungerà invece
+maggior spazio tra i sistemi per occupare la pagina vuota e
+quella successiva.  Valore predefinito: 5.
+</p>
+</dd>
+<dt> <code>blank-last-page-penalty</code></dt>
+<dd><a name="index-blank_002dlast_002dpage_002dpenalty"></a>
+<a name="index-blank_002dlast_002dpage_002dpenalty-1"></a>
+
+<p>La penalità per terminare il brano su una pagina pari.  Se il
+valore di <code>blank-last-page-penalty</code> è grande ed è selezionato
+<code>ly:page-turn-breaking</code>, sarà meno probabile che LilyPond
+produca una partitura in cui l&rsquo;ultima pagina sia pari.  Regolerà
+invece la spaziatura in modo da usare una pagina in più o in meno.
+Valore predefinito: 0.
+</p>
+</dd>
+<dt> <code>blank-after-score-page-penalty</code></dt>
+<dd><a name="index-blank_002dafter_002dscore_002dpage_002dpenalty"></a>
+<a name="index-blank_002dafter_002dscore_002dpage_002dpenalty-1"></a>
+
+<p>La penalità per avere una pagina vuota dopo la fine di un brano e
+prima di quello successivo.  Il valore predefinito è inferiore a
+<code>blank-page-penalty</code>, in modo che siano inserite preferibilmente
+pagine vuote al termine di un brano piuttosto che nel mezzo di un brano.
+Valore predefinito: 2.
+</p>
+</dd>
+</dl>
+
+
+<a name="Vedi-anche-37"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="page-breaking.it.html">Interruzioni di pagina</a>,
+<a href="page-breaking.it.html#optimal-page-breaking">Interruzione di pagina ottimale</a>,
+<a href="page-breaking.it.html#optimal-page-turning">Voltata di pagina ottimale</a>,
+<a href="page-breaking.it.html#minimal-page-breaking">Interruzione di pagina minimale</a>,
+<a href="page-breaking.it.html#one_002dpage-page-breaking">Interruzione di pagina di una pagina</a>,
+<a href="page-breaking.it.html#one_002dline-page-breaking">Interruzione di pagina su una linea</a>,
+<a href="page-breaking.it.html#one_002dline_002dauto_002dheight-page-breaking">Interruzione di pagina su una linea con altezza automatica</a>.
+</p>
+<p>File installati:
+&lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;.
+</p>
+
+<hr size="6">
+<a name="Variabili-di-paper-per-la-numerazione-delle-pagine"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#paper-variables-for-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili di paper per l'interruzione di pagina&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#other-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#miscellaneous-paper-variables" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Svariate variabili di paper &gt; </a>]</td></tr></table>
+<a name="paper-variables-for-page-numbering"></a>
+<h4 class="unnumberedsubsubsec">Variabili di <code>\paper</code> per la numerazione delle pagine</h4>
+
+<p>I valori predefiniti non elencati qui sono visibili in
+&lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;
+</p>
+<dl compact="compact">
+<dd>
+<a name="index-numeri-di-pagina_002c-numerazione-automatica"></a>
+</dd>
+<dt> <code>auto-first-page-number</code></dt>
+<dd><a name="index-auto_002dfirst_002dpage_002dnumber"></a>
+<a name="index-auto_002dfirst_002dpage_002dnumber-1"></a>
+
+<p>L&rsquo;algoritmo di interruzione di pagina si comporta diversamente a seconda
+che il numero della prima pagina sia dispari o pari.  Se questa variabile
+è impostata su vero, l&rsquo;algoritmo di interruzione di pagina
+deciderà se iniziare con un numero dispari o un numero pari.  Quindi il
+numero della prima pagina resterà lo stesso o aumenterà di uno.
+Valore predefinito: <code>#f</code> (falso).
+</p>
+<a name="index-numeri-di-pagina_002c-indicare-il-primo"></a>
+</dd>
+<dt> <code>first-page-number</code></dt>
+<dd><a name="index-first_002dpage_002dnumber"></a>
+<a name="index-first_002dpage_002dnumber-1"></a>
+
+<p>Il valore del numero di pagina della prima pagina.
+</p>
+</dd>
+<dt> <code>print-first-page-number</code></dt>
+<dd><a name="index-print_002dfirst_002dpage_002dnumber"></a>
+<a name="index-print_002dfirst_002dpage_002dnumber-1"></a>
+
+<p>Se impostato su vero, appare il numero di pagina sulla prima pagina.
+</p>
+<a name="index-numeri-di-pagina_002c-sopprimere"></a>
+</dd>
+<dt> <code>print-page-number</code></dt>
+<dd><a name="index-print_002dpage_002dnumber"></a>
+<a name="index-print_002dpage_002dnumber-1"></a>
+
+<p>Se impostato su falso, non apparirano i numeri di pagina.
+</p>
+<a name="index-numeri-di-pagina-in-numeri-romani"></a>
+</dd>
+<dt> <code>page-number-type</code></dt>
+<dd><a name="index-page_002dnumber_002dtype"></a>
+<a name="index-page_002dnumber_002dtype-1"></a>
+
+<p>Il tipo di numero usato per numerare le pagine.  Le opzioni possibili
+sono <code>roman-lower</code>, <code>roman-upper</code> e <code>arabic</code>.
+Valore predefinito: <code>'arabic</code>.
+</p>
+</dd>
+</dl>
+
+<a name="Vedi-anche-135"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>File installati:
+&lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;.
+</p>
+<a name="Problemi-noti-e-avvertimenti-37"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>I numeri di pagina dispari sono sempre sulla destra.  Se la musica
+deve iniziare a pagina 1, ci deve essere una pagina vuota sulla
+seconda di copertina in modo che pagina 1 sia sul lato destro.
+</p>
+
+<hr size="6">
+<a name="Svariate-variabili-di-paper"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#paper-variables-for-page-numbering" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili di paper per la numerazione delle pagine&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#other-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="score-layout.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Formattazione della partitura &gt; </a>]</td></tr></table>
+<a name="miscellaneous-paper-variables"></a>
+<h4 class="unnumberedsubsubsec">Svariate variabili di <code>\paper</code></h4>
+
+<dl compact="compact">
+<dt> <code>page-spacing-weight</code></dt>
+<dd><a name="index-page_002dspacing_002dweight"></a>
+<a name="index-page_002dspacing_002dweight-1"></a>
+
+<p>L&rsquo;importanza della spaziatura (verticale) e della linea (orizzontale)
+della pagina.  Valori più grandi renderanno la spaziatura della pagina
+più importante.  Valore predefinito: <code>10</code>.
+</p>
+</dd>
+<dt> <code>print-all-headers</code></dt>
+<dd><a name="index-print_002dall_002dheaders"></a>
+<a name="index-print_002dall_002dheaders-1"></a>
+
+<p>Se impostato su vero, appariranno nell&rsquo;output tutte le intestazioni di
+ciascun blocco <code>\score</code>.  Di norma appaiono soltanto le variabili
+<code>piece</code> e <code>opus</code>.  Valore predefinito: <code>#f</code>.
+</p>
+</dd>
+<dt> <code>system-separator-markup</code></dt>
+<dd><a name="index-system_002dseparator_002dmarkup"></a>
+<a name="index-system_002dseparator_002dmarkup-1"></a>
+
+<p>Un oggetto markup inserito tra i sistemi, spesso usato per le
+partiture orchestrali.  Valore predefinito: non impostato.  È
+disponibile il comando markup <code>\slashSeparator</code>, definito
+in &lsquo;<tt>ly/titling-init.ly</tt>&rsquo;, che fornisce un ragionevole valore
+predefinito, per esempio:
+</p>
+<blockquote><pre class="verbatim">#(set-default-paper-size &quot;a8&quot;)
+
+\book {
+  \paper {
+    system-separator-markup = \slashSeparator
+  }
+  \header {
+    tagline = ##f
+  }
+  \score {
+    \relative { c''1 \break c1 \break c1 }
+  }
+}
+</pre><p>
+ <a href="../bc/lily-1ce64a74.ly">
+  <img align="middle"
+       border="0"
+       src="../bc/lily-1ce64a74.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+</dl>
+
+<a name="Vedi-anche-7"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>File installati:
+&lsquo;<tt>ly/titling-init.ly</tt>&rsquo;.
+</p>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-68"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>L&rsquo;intestazione di pagina predefinita pone sulla stessa linea il numero di
+pagina e il campo <code>instrument</code> del blocco <code>\header</code>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#paper-variables-for-page-numbering" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili di paper per la numerazione delle pagine&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#other-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altre variabili di paper&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="score-layout.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Formattazione della partitura &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="other-paper-variables.html">English</a>, <a href="other-paper-variables.ca.html">català</a>, <a href="other-paper-variables.de.html">deutsch</a>, <a href="other-paper-variables.es.html">español</a>, <a href="other-paper-variables.fr.html">français</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Il-blocco-_005cpaper" href="the-paper-block.it.html">4.1.1 Il blocco <code>\paper</code></a>      </li>
+      <li class=""><a name="toc-Formato-carta-e-ridimensionamento-automatico-1" href="paper-size-and-automatic-scaling.it.html">4.1.2 Formato carta e ridimensionamento automatico</a>      </li>
+      <li class=""><a name="toc-Variabili-_005cpaper-della-spaziatura-verticale-fissa" href="fixed-vertical-spacing-paper-variables.it.html">4.1.3 Variabili <code>\paper</code> della spaziatura verticale fissa</a>      </li>
+      <li class=""><a name="toc-Variabili-_005cpaper-della-spaziatura-verticale-flessibile" href="flexible-vertical-spacing-paper-variables.it.html">4.1.4 Variabili <code>\paper</code> della spaziatura verticale flessibile</a>      </li>
+      <li class=""><a name="toc-Variabili-_005cpaper-della-spaziatura-orizzontale" href="horizontal-spacing-paper-variables.it.html">4.1.5 Variabili <code>\paper</code> della spaziatura orizzontale</a>      </li>
+      <li class=" toc_current"><a name="toc-Altre-variabili-di-_005cpaper" href="other-paper-variables.it.html">4.1.6 Altre variabili di <code>\paper</code></a>
+      <ul class="toc">
+        <li class=""><a name="toc-Variabili-di-_005cpaper-per-l_0027interruzione-di-linea" href="other-paper-variables.it.html#paper-variables-for-line-breaking">Variabili di <code>\paper</code> per l&rsquo;interruzione di linea</a>        </li>
+        <li class=""><a name="toc-Variabili-di-_005cpaper-per-l_0027interruzione-di-pagina" href="other-paper-variables.it.html#paper-variables-for-page-breaking">Variabili di <code>\paper</code> per l&rsquo;interruzione di pagina</a>        </li>
+        <li class=""><a name="toc-Variabili-di-_005cpaper-per-la-numerazione-delle-pagine" href="other-paper-variables.it.html#paper-variables-for-page-numbering">Variabili di <code>\paper</code> per la numerazione delle pagine</a>        </li>
+        <li class=""><a name="toc-Svariate-variabili-di-_005cpaper" href="other-paper-variables.it.html#miscellaneous-paper-variables">Svariate variabili di <code>\paper</code></a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

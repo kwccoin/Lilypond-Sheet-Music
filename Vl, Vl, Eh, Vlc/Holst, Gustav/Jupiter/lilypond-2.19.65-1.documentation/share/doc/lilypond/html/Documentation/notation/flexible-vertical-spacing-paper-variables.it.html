@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 4.1.4 Variabili \paper della spaziatura verticale flessibile</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 4.1.4 Variabili \paper della spaziatura verticale flessibile">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 4.1.4 Variabili \paper della spaziatura verticale flessibile">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="page-layout.it.html#page-layout" rel="up" title="4.1 Formattazione della pagina">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="fixed-vertical-spacing-paper-variables.it.html#fixed-vertical-spacing-paper-variables" rel="previous" title="4.1.3 Variabili \paper della spaziatura verticale fissa">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Variabili-paper-della-spaziatura-verticale-flessibile"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="fixed-vertical-spacing-paper-variables.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili paper della spaziatura verticale fissa&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="page-layout.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Formattazione della pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#structure-of-flexible-vertical-spacing-alists" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Struttura delle liste associative flessibili della spaziatura verticale &gt; </a>]</td></tr></table>
+<a name="flexible-vertical-spacing-paper-variables"></a>
+<h3 class="subsection">4.1.4 Variabili <code>\paper</code> della spaziatura verticale flessibile</h3>
+
+<p>Nella maggior parte dei casi è preferibile che le distanze verticali
+tra certi elementi (come margini, titoli, sistemi e partiture
+separate) siano flessibili, così che siano ben compresse o allungate
+a seconda della situazione.  Sono disponibili diverse variabili
+<code>\paper</code> (elencate sotto) per regolare il comportamento di
+allungamento di queste dimensioni.
+</p>
+<p>Nota bene che le variabili <code>\paper</code> trattate in questa sezione
+non regolano la spaziatura dei righi dei singoli sistemi.
+La spaziatura interna ai sistemi è controllata dalle proprietà
+del grob, solitamente inserite in un blocco <code>\score</code> o
+<code>\layout</code> e non in un blocco <code>\paper</code>.  Vedi
+<a href="flexible-vertical-spacing-within-systems.it.html">Spaziatura verticale flessibile all&rsquo;interno dei sistemi</a>.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#structure-of-flexible-vertical-spacing-alists" accesskey="1">Struttura delle liste associative flessibili della spaziatura verticale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#list-of-flexible-vertical-spacing-paper-variables" accesskey="2">Elenco delle variabili <code>\paper</code> flessibili della spaziatura verticale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Struttura-delle-liste-associative-flessibili-della-spaziatura-verticale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#flexible-vertical-spacing-paper-variables" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Variabili paper della spaziatura verticale flessibile&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#flexible-vertical-spacing-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Variabili paper della spaziatura verticale flessibile&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#list-of-flexible-vertical-spacing-paper-variables" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Elenco delle variabili paper flessibili della spaziatura verticale &gt; </a>]</td></tr></table>
+<a name="structure-of-flexible-vertical-spacing-alists"></a>
+<h4 class="unnumberedsubsubsec">Struttura delle liste associative flessibili della spaziatura verticale</h4>
+
+<p>Ognuna delle variabili <code>\paper</code> flessibili della spaziatura verticale
+è una lista associativa (alist) composta da quattro <em>elementi</em>:
+</p>
+<ul>
+<li>
+<code>basic-distance</code> &ndash; la distanza verticale, misurata in
+spazi rigo, tra i <em>punti di riferimento</em> dei due
+elementi, quando non si verificano collisioni e non sono
+attivi allungamenti o compressioni.  Il punto di riferimento
+di un markup (un titolo o un markup di un livello superiore)
+è il suo punto più alto, mentre quello di un sistema è il
+centro verticale del più vicino <code>StaffSymbol</code>, anche se
+una linea diversa da un rigo (come un contesto <code>Lyrics</code>) si
+trova nel mezzo.  Valori di <code>basic-distance</code> inferiori a quelli
+di <code>padding</code> o <code>minimum-distance</code> non hanno senso, dato che
+la distanza risultante non sarà mai inferiore a quella definita per
+<code>padding</code> o <code>minimum-distance</code>.
+
+</li><li>
+<code>minimum-distance</code> &ndash; la minima distanza verticale consentita,
+misurata in spazi rigo, tra i punti di riferimento dei due
+elementi, quando la compressione è attiva.  Valori di
+<code>minimum-distance</code> inferiori a quelli di <code>padding</code> non
+hanno senso, perché la distanza risultante non sarà mai inferiore
+a quella definita per <code>padding.</code>
+
+
+</li><li>
+<code>padding</code> &ndash; la quantità minima di spazio verticale libero
+tra i profili (<em>skyline</em>) dei due elementi, misurata in
+spazi rigo.
+
+</li><li>
+<code>stretchability</code> &ndash; una misura, priva di unità di misura,
+della relativa propensione della dimensione a allungarsi.  Se
+pari a zero, la distanza non si allungherà (a meno che non ci
+siano delle collisioni).  Se positiva, il significato del valore
+di <code>stretchability</code> di una certa dimensione sta nella sua
+relazione con i valori di <code>stretchability</code> delle altre
+dimensioni.  Per esempio, se una dimensione ha un valore di
+<code>stretchability</code> doppio rispetto a un&rsquo;altra, si allungherà
+il doppio.
+I valori devono essere non negativi e finiti.  Il valore <code>+inf.0</code> causa un
+errore di programmazione e viene ingorato, ma si può usare <code>1.0e7</code> per
+ottenere un&rsquo;elasticità allungabile quasi all&rsquo;infinito. Se non impostata, il
+valore predefinito equivale a quello di <code>basic-distance</code>.  Nota che la
+propensione della dimensione a <em>comprimersi</em> non può essere impostata
+direttamente dall&rsquo;utente ed è uguale a
+(<code>basic-distance</code>&nbsp;-&nbsp;<code>minimum-distance</code>).
+
+</li></ul>
+
+<p>Se in una pagina lo spazio verticale non è giustificato (ovvero con
+<code>ragged-bottom</code> impostato su vero) la distanza risultante è
+data dal valore più grande assegnato a una di queste tre proprietà:
+</p>
+<ul>
+<li>
+<code>basic-distance</code>,
+
+</li><li>
+<code>minimum-distance</code> e
+
+</li><li>
+<code>padding</code> con l&rsquo;aggiunta della più piccola distanza necessaria a
+eliminare collisioni.
+
+</li></ul>
+
+<p>In caso di partiture con molte pagine in cui l&rsquo;ultima pagina non è
+giustificata (ovvero con <code>ragged-last-bottom</code> impostato su vero),
+l&rsquo;ultima pagina usa la stessa spaziatura della pagina precedente,
+purché ci sia abbastanza spazio.
+</p>
+<p>I metodi specifici per modificare le liste associative (alist) sono
+trattati in <a href="modifying-alists.it.html">Modifica delle liste associative</a>.  L&rsquo;esempio seguente illustra i
+due modi in cui queste possono essere modificate.  La prima dichiarazione
+aggiorna un elemento-valore individualmente, mentre la seconda ridefinisce
+completamente la variabile:
+</p>
+<blockquote><pre class="example">\paper {
+  system-system-spacing.basic-distance = #8
+  score-system-spacing =
+    #'((basic-distance . 12)
+       (minimum-distance . 6)
+       (padding . 1)
+       (stretchability . 12))
+}
+</pre></blockquote>
+
+
+<hr size="6">
+<a name="Elenco-delle-variabili-paper-flessibili-della-spaziatura-verticale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#structure-of-flexible-vertical-spacing-alists" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Struttura delle liste associative flessibili della spaziatura verticale&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#flexible-vertical-spacing-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Variabili paper della spaziatura verticale flessibile&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="horizontal-spacing-paper-variables.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Variabili paper della spaziatura orizzontale &gt; </a>]</td></tr></table>
+<a name="list-of-flexible-vertical-spacing-paper-variables"></a>
+<h4 class="unnumberedsubsubsec">Elenco delle variabili <code>\paper</code> flessibili della spaziatura verticale</h4>
+
+<p>I nomi di queste variabili hanno il formato
+<code><var>superiore</var>-<var>inferiore</var>-spacing</code>, dove <code><var>superiore</var></code>
+e <code><var>inferiore</var></code> indicano gli elementi di cui stabilire la
+distanza.  Ogni distanza viene misurata tra i punti di riferimento
+dei due elementi (vedi la descrizione precedente della struttura della
+lista associativa). Nei nomi di queste variabili il termine &lsquo;<code>markup</code>&rsquo;
+si riferisce sia ai <em>titoli</em> (<code>bookTitleMarkup</code> o
+<code>scoreTitleMarkup</code>) sia ai <em>markup di livello superiore</em> (vedi
+<a href="file-structure.it.html">Struttura del file</a>).  Tutte le distanze sono misurate in spazi rigo.
+</p>
+<p>Le impostazioni predefinite sono definite in &lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;.
+</p>
+
+<dl compact="compact">
+<dt> <code>markup-system-spacing</code></dt>
+<dd><a name="index-markup_002dsystem_002dspacing"></a>
+<a name="index-markup_002dsystem_002dspacing-1"></a>
+
+<p>la distanza tra il testo (titolo o markup di livello superiore) e il sistema
+che lo segue.
+</p>
+</dd>
+<dt> <code>score-markup-spacing</code></dt>
+<dd><a name="index-score_002dmarkup_002dspacing"></a>
+<a name="index-score_002dmarkup_002dspacing-1"></a>
+
+<p>la distanza tra l&rsquo;ultimo sistema di un brano e il testo (titolo o
+markup di livello superiore) che lo segue.
+</p>
+</dd>
+<dt> <code>score-system-spacing</code></dt>
+<dd><a name="index-score_002dsystem_002dspacing"></a>
+<a name="index-score_002dsystem_002dspacing-1"></a>
+
+<p>la distanza tra l&rsquo;ultimo sistema di un brano e il primo sistema
+del brano successivo, quando non c&rsquo;è alcun testo (titolo o
+markup di livello superiore) tra di loro.
+</p>
+</dd>
+<dt> <code>system-system-spacing</code></dt>
+<dd><a name="index-system_002dsystem_002dspacing"></a>
+<a name="index-system_002dsystem_002dspacing-1"></a>
+
+<p>la distanza tra due sistemi di uno stesso brano.
+</p>
+</dd>
+<dt> <code>markup-markup-spacing</code></dt>
+<dd><a name="index-markup_002dmarkup_002dspacing"></a>
+<a name="index-markup_002dmarkup_002dspacing-1"></a>
+
+<p>la distanza tra due testi (titoli o markup di livello superiore).
+</p>
+</dd>
+<dt> <code>last-bottom-spacing</code></dt>
+<dd><a name="index-last_002dbottom_002dspacing"></a>
+<a name="index-last_002dbottom_002dspacing-1"></a>
+
+<p>la distanza tra l&rsquo;ultimo sistema o l&rsquo;ultimo markup di livello superiore di
+una pagina e la fine dello spazio stampabile (ovvero la parte superiore
+del margine inferiore).
+</p>
+</dd>
+<dt> <code>top-system-spacing</code></dt>
+<dd><a name="index-top_002dsystem_002dspacing"></a>
+<a name="index-top_002dsystem_002dspacing-1"></a>
+
+<p>la distanza tra l&rsquo;inizio dello spazio stampabile (ovvero la parte
+inferiore del margine superiore) e il primo sistema di una pagina, quando
+non c&rsquo;è alcun testo (titolo o markup di livello superiore) tra di loro.
+</p>
+</dd>
+<dt> <code>top-markup-spacing</code></dt>
+<dd><a name="index-top_002dmarkup_002dspacing"></a>
+<a name="index-top_002dmarkup_002dspacing-1"></a>
+
+<p>la distanza tra l&rsquo;inizio dello spazio stampabile (ovvero la parte
+inferiore del margine superiore) e il primo testo (titolo o markup di
+livello superiore) di una pagina, quando non c&rsquo;è alcun sistema tra i due.
+</p></dd>
+</dl>
+
+<a name="Vedi-anche-10"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="flexible-vertical-spacing-within-systems.it.html">Spaziatura verticale flessibile all&rsquo;interno dei sistemi</a>.
+</p>
+<p>File installati:
+&lsquo;<tt>ly/paper-defaults-init.ly</tt>&rsquo;.
+</p>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#structure-of-flexible-vertical-spacing-alists" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Struttura delle liste associative flessibili della spaziatura verticale&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#flexible-vertical-spacing-paper-variables" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Variabili paper della spaziatura verticale flessibile&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="horizontal-spacing-paper-variables.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Variabili paper della spaziatura orizzontale &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="flexible-vertical-spacing-paper-variables.html">English</a>, <a href="flexible-vertical-spacing-paper-variables.ca.html">català</a>, <a href="flexible-vertical-spacing-paper-variables.de.html">deutsch</a>, <a href="flexible-vertical-spacing-paper-variables.es.html">español</a>, <a href="flexible-vertical-spacing-paper-variables.fr.html">français</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Il-blocco-_005cpaper" href="the-paper-block.it.html">4.1.1 Il blocco <code>\paper</code></a>      </li>
+      <li class=""><a name="toc-Formato-carta-e-ridimensionamento-automatico-1" href="paper-size-and-automatic-scaling.it.html">4.1.2 Formato carta e ridimensionamento automatico</a>      </li>
+      <li class=""><a name="toc-Variabili-_005cpaper-della-spaziatura-verticale-fissa" href="fixed-vertical-spacing-paper-variables.it.html">4.1.3 Variabili <code>\paper</code> della spaziatura verticale fissa</a>      </li>
+      <li class=" toc_current"><a name="toc-Variabili-_005cpaper-della-spaziatura-verticale-flessibile" href="flexible-vertical-spacing-paper-variables.it.html">4.1.4 Variabili <code>\paper</code> della spaziatura verticale flessibile</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Struttura-delle-liste-associative-flessibili-della-spaziatura-verticale-1" href="flexible-vertical-spacing-paper-variables.it.html#structure-of-flexible-vertical-spacing-alists">Struttura delle liste associative flessibili della spaziatura verticale</a>        </li>
+        <li class=""><a name="toc-Elenco-delle-variabili-_005cpaper-flessibili-della-spaziatura-verticale" href="flexible-vertical-spacing-paper-variables.it.html#list-of-flexible-vertical-spacing-paper-variables">Elenco delle variabili <code>\paper</code> flessibili della spaziatura verticale</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Variabili-_005cpaper-della-spaziatura-orizzontale" href="horizontal-spacing-paper-variables.it.html">4.1.5 Variabili <code>\paper</code> della spaziatura orizzontale</a>      </li>
+      <li class=""><a name="toc-Altre-variabili-di-_005cpaper" href="other-paper-variables.it.html">4.1.6 Altre variabili di <code>\paper</code></a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

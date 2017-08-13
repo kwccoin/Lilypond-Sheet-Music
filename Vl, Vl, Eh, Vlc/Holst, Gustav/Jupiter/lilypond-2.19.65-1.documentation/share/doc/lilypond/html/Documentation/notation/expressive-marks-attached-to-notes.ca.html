@@ -1,0 +1,1464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.3.1 Expressions annexades a les notes</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.3.1 Expressions annexades a les notes">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.3.1 Expressions annexades a les notes">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="expressive-marks.ca.html#expressive-marks" rel="up" title="1.3 Expressions">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="expressive-marks.ca.html#expressive-marks" rel="previous" title="1.3 Expressions">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Expressions-annexades-a-les-notes"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="expressive-marks.ca.html" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Expressions&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="expressive-marks.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#articulations-and-ornamentations" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Articulacions i ornaments &gt; </a>]</td></tr></table>
+<a name="expressive-marks-attached-to-notes"></a>
+<h3 class="subsection">1.3.1 Expressions annexades a les notes</h3>
+
+<p>Aquesta secció explica com crear marques expressives que estan
+aplicades a notes: articulacions, ornaments i matisos. També es
+tracten els mètodes per crear les marques dinàmiques.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#articulations-and-ornamentations" accesskey="1">Articulacions i ornaments</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#dynamics" accesskey="2">Matisos dinàmics</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#new-dynamic-marks" accesskey="3">Indicacions dinàmiques contemporànies</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Articulacions-i-ornaments"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#expressive-marks-attached-to-notes" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Expressions annexades a les notes&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-attached-to-notes" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions annexades a les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#dynamics" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Matisos dinàmics &gt; </a>]</td></tr></table>
+<a name="articulations-and-ornamentations"></a>
+<h4 class="unnumberedsubsubsec">Articulacions i ornaments</h4>
+
+<a name="index-articulacions"></a>
+<a name="index-ornamentacio"></a>
+<a name="index-guions"></a>
+<a name="index-ornaments-1"></a>
+<a name="index-espressiu"></a>
+<a name="index-caldero-1"></a>
+<a name="index-arc-a-dalt"></a>
+<a name="index-arc-a-sota"></a>
+<a name="index-indicacions-de-pedal"></a>
+<a name="index-indicacions-de-pedaler-d_0027orgue"></a>
+<a name="index-pedal-d_0027orgue"></a>
+<a name="index-grupet"></a>
+<a name="index-mordent-circular"></a>
+<a name="index-nota-oberta"></a>
+<a name="index-nota-tapada"></a>
+<a name="index-flageolet"></a>
+<a name="index-mordent-circular_002c-invers"></a>
+<a name="index-refilet"></a>
+<a name="index-semirefilet"></a>
+<a name="index-mordent"></a>
+<a name="index-prallprall"></a>
+<a name="index-prallmordent"></a>
+<a name="index-semirefilet-ascendent"></a>
+<a name="index-semirefilet-descendent"></a>
+<a name="index-mordent-ascendent"></a>
+<a name="index-mordente-descendent"></a>
+<a name="index-indicacio-de-polze"></a>
+<a name="index-segno-2"></a>
+<a name="index-coda-1"></a>
+<a name="index-varcoda"></a>
+
+<a name="index-_005caccent"></a>
+<a name="index-_005caccent-1"></a>
+<a name="index-_005cmarcato"></a>
+<a name="index-_005cmarcato-1"></a>
+<a name="index-_005cstaccatissimo"></a>
+<a name="index-_005cstaccatissimo-1"></a>
+<a name="index-_005cespressivo"></a>
+<a name="index-_005cespressivo-1"></a>
+<a name="index-_005cstaccato"></a>
+<a name="index-_005cstaccato-1"></a>
+<a name="index-_005ctenuto"></a>
+<a name="index-_005ctenuto-1"></a>
+<a name="index-_005cportato"></a>
+<a name="index-_005cportato-1"></a>
+<a name="index-_005cupbow"></a>
+<a name="index-_005cupbow-1"></a>
+<a name="index-_005cdownbow"></a>
+<a name="index-_005cdownbow-1"></a>
+<a name="index-_005cflageolet"></a>
+<a name="index-_005cflageolet-1"></a>
+<a name="index-_005cthumb"></a>
+<a name="index-_005cthumb-1"></a>
+<a name="index-_005clheel"></a>
+<a name="index-_005clheel-1"></a>
+<a name="index-_005crheel"></a>
+<a name="index-_005crheel-1"></a>
+<a name="index-_005cltoe"></a>
+<a name="index-_005cltoe-1"></a>
+<a name="index-_005crtoe"></a>
+<a name="index-_005crtoe-1"></a>
+<a name="index-_005copen"></a>
+<a name="index-_005copen-1"></a>
+<a name="index-_005chalfopen"></a>
+<a name="index-_005chalfopen-1"></a>
+<a name="index-_005cstopped"></a>
+<a name="index-_005cstopped-1"></a>
+<a name="index-_005csnappizzicato"></a>
+<a name="index-_005csnappizzicato-1"></a>
+<a name="index-_005cturn"></a>
+<a name="index-_005cturn-1"></a>
+<a name="index-_005creverseturn"></a>
+<a name="index-_005creverseturn-1"></a>
+<a name="index-_005ctrill"></a>
+<a name="index-_005ctrill-1"></a>
+<a name="index-_005cprall"></a>
+<a name="index-_005cprall-1"></a>
+<a name="index-_005cmordent"></a>
+<a name="index-_005cmordent-1"></a>
+<a name="index-_005cprallprall"></a>
+<a name="index-_005cprallprall-1"></a>
+<a name="index-_005cprallmordent"></a>
+<a name="index-_005cprallmordent-1"></a>
+<a name="index-_005cupprall"></a>
+<a name="index-_005cupprall-1"></a>
+<a name="index-_005cdownprall"></a>
+<a name="index-_005cdownprall-1"></a>
+<a name="index-_005cupmordent"></a>
+<a name="index-_005cupmordent-1"></a>
+<a name="index-_005cdownmordent"></a>
+<a name="index-_005cdownmordent-1"></a>
+<a name="index-_005cpralldown"></a>
+<a name="index-_005cpralldown-1"></a>
+<a name="index-_005cprallup"></a>
+<a name="index-_005cprallup-1"></a>
+<a name="index-_005clineprall"></a>
+<a name="index-_005clineprall-1"></a>
+<a name="index-_005csignumcongruentiae"></a>
+<a name="index-_005csignumcongruentiae-1"></a>
+<a name="index-_005cshortfermata"></a>
+<a name="index-_005cshortfermata-1"></a>
+<a name="index-_005cfermata"></a>
+<a name="index-_005cfermata-1"></a>
+<a name="index-_005clongfermata"></a>
+<a name="index-_005clongfermata-1"></a>
+<a name="index-_005cverylongfermata"></a>
+<a name="index-_005cverylongfermata-1"></a>
+<a name="index-_005cfermataMarkup-4"></a>
+<a name="index-_005cfermataMarkup-5"></a>
+<a name="index-_005csegno"></a>
+<a name="index-_005csegno-1"></a>
+<a name="index-_005ccoda"></a>
+<a name="index-_005ccoda-1"></a>
+<a name="index-_005cvarcoda"></a>
+<a name="index-_005cvarcoda-1"></a>
+
+
+<a name="index-_002d"></a>
+<a name="index-_002d-1"></a>
+
+<p>Es poden annexar a les notes un ample ventall de símbols per
+denotar articulacions, adorns i altres indicacions d&rsquo;execució,
+utilitzant la sintaxi següent:
+</p>
+<blockquote><pre class="example"><var>nota</var>\<var>nom</var>
+</pre></blockquote>
+
+<p>La llista de possibles valors de <code><var>nom</var></code> està a
+<a name="index-List-of-articulations"></a>
+<a href="../notation/list-of-articulations.ca.html">Llista d&rsquo;articulacions</a>.  Per exemple
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4\staccato c\mordent b2\turn
+  c1\fermata
+}
+</pre><p>
+ <a href="../f7/lily-00e22f3b.ly">
+  <img align="middle"
+       border="0"
+       src="../f7/lily-00e22f3b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-marcato"></a>
+<a name="index-tenuto"></a>
+<a name="index-staccatissimo"></a>
+<a name="index-acent"></a>
+<a name="index-picat"></a>
+<a name="index-staccato"></a>
+<a name="index-portato"></a>
+
+<p>Algunes d&rsquo;aquestes articulacions tenen abreviatures que faciliten
+la seva escriptura.  Les abreviatures s&rsquo;escriuen a darrere del nom
+de la nota, i la seva sintaxi consisteix en un guió <code>-</code>
+seguit d&rsquo;un símbol que especifica l&rsquo;articulació.  Existeixen
+abreviatures prededefinides per al <var>marcato</var>,
+<var>stopped</var> (nota apagada), <var>tenuto</var>, <var>staccatissimo</var>,
+<var>accent</var> (acent), <var>staccato</var> (picat), i
+<var>portato</var>.  La sortida corresponent a aquestes
+articulacions apareix de la manera següent:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4-^ c-+ c-- c-!
+  c4-&gt; c-. c2-_
+}
+</pre><p>
+ <a href="../f3/lily-49c47224.ly">
+  <img align="middle"
+       border="0"
+       src="../f3/lily-49c47224.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Les regles per a la col·locació predeterminada de les
+articulacions es troben definides al fitxer &lsquo;<tt>scm/script.scm</tt>&rsquo;.
+Les articulacions i ornaments es poden col·locar manualment per
+sobre o per sota del pentagrama; vegeu
+<a name="index-Direction-and-placement-3"></a>
+<a href="../notation/direction-and-placement.ca.html">Direcció i posició</a>.
+</p>
+<p>Les articulacions són objectes <code>Script</code>.  Les seves
+propietats es descriuen de forma més completa a <a name="index-Script"></a>
+<a href="../internals/script.ca.html">Script</a>.
+</p>
+<p>Les articulacions es poden adjuntar als silencis així com a les
+notes, pero no es poden ajuntar a silencis multicompàs. Hi ha
+disponible una ordre predefinida especial, <code>\fermataMarkup</code>,
+per annexar un calderó a un silenci multicompàs (i sols a un
+silenci multicompàs).  L&rsquo;ordre crea un objecte <code>MultiMeasureRestText</code>.
+</p>
+<blockquote><pre class="verbatim">\override Script.color = #red
+\override MultiMeasureRestText.color = #blue
+a'2\fermata r\fermata
+R1\fermataMarkup
+</pre><p>
+ <a href="../22/lily-3bcfa500.ly">
+  <img align="middle"
+       border="0"
+       src="../22/lily-3bcfa500.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A més d&rsquo;articulacions, es poden adjuntar textos i elements de
+marcatge de les notes. Vegeu <a name="index-Text-scripts-1"></a>
+<a href="../notation/writing-text.ca.html#text-scripts">Scripts de text</a>.
+</p>
+<p>Per veure més informació quant a l&rsquo;ordenació dels elements Script
+i TextScript que s&rsquo;annexen a les notes, consulteu
+<a name="index-Col_00b7locacio-dels-objectes"></a>
+<a href="../learning/placement-of-objects.ca.html">Col·locació dels objectes</a>.
+</p>
+<a name="Fragments-de-codi-seleccionats-12"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Modifying default values for articulation shorthand notation</em>
+</p>
+
+<p>The shorthands are defined in &lsquo;<samp>ly/script-init.ly</samp>&rsquo;, where the
+variables <code>dashHat</code>, <code>dashPlus</code>, <code>dashDash</code>,
+<code>dashBar</code>, <code>dashLarger</code>, <code>dashDot</code>, and
+<code>dashUnderscore</code> are assigned default values.  The default values
+for the shorthands can be modified. For example, to associate the
+<code>-+</code> (<code>dashPlus</code>) shorthand with the trill symbol instead of
+the default + symbol, assign the value <code>trill</code> to the variable
+<code>dashPlus</code>:
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' { c1-+ }
+
+dashPlus = &quot;trill&quot;
+
+\relative c'' { c1-+ }
+</pre><p>
+ <a href="../90/lily-0f0b3594.ly">
+  <img align="middle"
+       border="0"
+       src="../90/lily-0f0b3594.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Controlling the vertical ordering of scripts</em>
+</p>
+
+<p>The vertical ordering of scripts is controlled with the
+<code>'script-priority</code> property. The lower this number, the closer it
+will be put to the note. In this example, the <code>TextScript</code> (the
+sharp symbol) first has the lowest priority, so it is put lowest in the
+first example. In the second, the prall trill (the <code>Script</code>) has
+the lowest, so it is on the inside. When two objects have the same
+priority, the order in which they are entered determines which one
+comes first.
+</p>
+
+<blockquote><pre class="verbatim">\relative c''' {
+  \once \override TextScript.script-priority = #-100
+  a2^\prall^\markup { \sharp }
+
+  \once \override Script.script-priority = #-100
+  a2^\prall^\markup { \sharp }
+}
+</pre><p>
+ <a href="../fb/lily-1d39c1b7.ly">
+  <img align="middle"
+       border="0"
+       src="../fb/lily-1d39c1b7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Creating a delayed turn</em>
+</p>
+
+<p>Creating a delayed turn, where the lower note of the turn uses the
+accidental, requires several overrides.  The
+<code>outside-staff-priority</code> property must be set to <code>#f</code>, as
+otherwise this would take precedence over the <code>avoid-slur
+property</code>.  Changing the fractions <code>2/3</code> and <code>1/3</code> adjusts
+the horizontal position.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  c2*2/3 ( s2*1/3\turn d4) r
+  &lt;&lt;
+    { c4.( d8) }
+    { s4 s\turn }
+  &gt;&gt;
+  \transpose c d \relative c'' &lt;&lt;
+    { c4.( d8) }
+    {
+      s4
+      \once \set suggestAccidentals = ##t
+      \once \override AccidentalSuggestion.outside-staff-priority = ##f
+      \once \override AccidentalSuggestion.avoid-slur = #'inside
+      \once \override AccidentalSuggestion.font-size = -3
+      \once \override AccidentalSuggestion.script-priority = -1
+      \single \hideNotes
+      b8-\turn \noBeam
+      s8
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../7d/lily-8f7d75e1.ly">
+  <img align="middle"
+       border="0"
+       src="../7d/lily-8f7d75e1.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-106"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-tenuto-1"></a>
+<a href="../music-glossary/tenuto.ca.html">tenuto</a>,
+<a name="index-accent"></a>
+<a href="../music-glossary/accent.ca.html">accent</a>,
+<a name="index-staccato-1"></a>
+<a href="../music-glossary/staccato.ca.html">staccato</a>,
+<a name="index-portato-1"></a>
+<a href="../music-glossary/portato.ca.html">portato</a>.
+</p>
+<p>Manual d&rsquo;aprenentatge:
+<a name="index-Col_00b7locacio-dels-objectes-1"></a>
+<a href="../learning/placement-of-objects.ca.html">Col·locació dels objectes</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Text-scripts-2"></a>
+<a href="../notation/writing-text.ca.html#text-scripts">Scripts de text</a>,
+<a name="index-Direction-and-placement-4"></a>
+<a href="../notation/direction-and-placement.ca.html">Direcció i posició</a>,
+<a name="index-List-of-articulations-1"></a>
+<a href="../notation/list-of-articulations.ca.html">Llista d&rsquo;articulacions</a>,
+<a href="expressive-marks-as-lines.ca.html#trills">Refilets</a>.
+</p>
+<p>Fitxers instal·lats:
+&lsquo;<tt>scm/script.scm</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-Script-1"></a>
+<a href="../internals/script.ca.html">Script</a>,
+<a name="index-TextScript"></a>
+<a href="../internals/textscript.ca.html">TextScript</a>.
+</p>
+
+<hr size="6">
+<a name="Matisos-din_00e0mics"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#articulations-and-ornamentations" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Articulacions i ornaments&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-attached-to-notes" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions annexades a les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#new-dynamic-marks" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Indicacions dinàmiques contemporànies &gt; </a>]</td></tr></table>
+<a name="dynamics"></a>
+<h4 class="unnumberedsubsubsec">Matisos dinàmics</h4>
+
+<a name="index-dinamica"></a>
+<a name="index-matisos-absoluts"></a>
+<a name="index-matisos"></a>
+<a name="index-absoluts_002c-matisos"></a>
+<a name="index-_005cpppp"></a>
+<a name="index-_005cpppp-1"></a>
+<a name="index-_005cppp"></a>
+<a name="index-_005cppp-1"></a>
+<a name="index-_005cpp"></a>
+<a name="index-_005cpp-1"></a>
+<a name="index-_005cp"></a>
+<a name="index-_005cp-1"></a>
+<a name="index-_005cmp"></a>
+<a name="index-_005cmp-1"></a>
+<a name="index-_005cmf"></a>
+<a name="index-_005cmf-1"></a>
+<a name="index-_005cf"></a>
+<a name="index-_005cf-1"></a>
+<a name="index-_005cff"></a>
+<a name="index-_005cff-1"></a>
+<a name="index-_005cfff"></a>
+<a name="index-_005cfff-1"></a>
+<a name="index-_005cffff"></a>
+<a name="index-_005cffff-1"></a>
+<a name="index-_005cfffff"></a>
+<a name="index-_005cfffff-1"></a>
+<a name="index-_005cfp"></a>
+<a name="index-_005cfp-1"></a>
+<a name="index-_005csf"></a>
+<a name="index-_005csf-1"></a>
+<a name="index-_005csff"></a>
+<a name="index-_005csff-1"></a>
+<a name="index-_005csp"></a>
+<a name="index-_005csp-1"></a>
+<a name="index-_005cspp"></a>
+<a name="index-_005cspp-1"></a>
+<a name="index-_005csfz"></a>
+<a name="index-_005csfz-1"></a>
+<a name="index-_005crfz"></a>
+<a name="index-_005crfz-1"></a>
+
+<p>Les marques dinàmiques de matís absolut s&rsquo;especifiquen usant una
+ordre després d&rsquo;una nota: <code>c4\ff</code>.  Les marques dinàmiques
+disponibles són <code>\ppppp</code>, <code>\pppp</code>,
+<code>\ppp</code>, <code>\pp</code>, <code>\p</code>, <code>\mp</code>, <code>\mf</code>,
+<code>\f</code>, <code>\ff</code>, <code>\fff</code>, <code>\ffff</code>, <code>\fffff</code>,
+<code>\fp</code>, <code>\sf</code>, <code>\sff</code>, <code>\sp</code>, <code>\spp</code>,
+<code>\sfz</code> i <code>\rfz</code>.  Les indicaciones dinàmiques es poden
+col·locar manulament per sobre o per sota del pentagrama; per veure
+més detalls, consulteu
+<a name="index-Direction-and-placement-5"></a>
+<a href="../notation/direction-and-placement.ca.html">Direcció i posició</a>.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c2\ppp c\mp
+  c2\rfz c^\mf
+  c2_\spp c^\ff
+}
+</pre><p>
+ <a href="../1b/lily-44be4594.ly">
+  <img align="middle"
+       border="0"
+       src="../1b/lily-44be4594.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-regulador"></a>
+<a name="index-crescendo"></a>
+<a name="index-decrescendo"></a>
+<a name="index-diminuendo"></a>
+
+<a name="index-_005c_003c"></a>
+<a name="index-_005c_003c-1"></a>
+<a name="index-_005c_003e"></a>
+<a name="index-_005c_003e-1"></a>
+<a name="index-_005c_0021"></a>
+<a name="index-_005c_0021-1"></a>
+<a name="index-_005ccr"></a>
+<a name="index-_005ccr-1"></a>
+<a name="index-_005cdecr"></a>
+<a name="index-_005cdecr-1"></a>
+
+<p>Una indicació de <var>crescendo</var> s&rsquo;inicia amb <code>\&lt;</code> i
+s&rsquo;acaba amb <code>\!</code>, amb un matís absolut o amb una altra
+indicació de crescendo o de descrescendo.  Una indicació de
+<var>decrescendo</var> comença amb <code>\&gt;</code> i acaba també amb
+<code>\!</code>, amb un matís dinàmic absolut o amb una altra indicació
+de crescendo o de decrescendo.  Es poden usar <code>\cr</code> i
+<code>\decr</code> en lloc de <code>\&lt;</code> i <code>\&gt;</code>.  De forma
+predeterminada, es graven reguladors en angle quan es fa servir
+aquesta notació.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c2\&lt; c\!
+  d2\&lt; d\f
+  e2\&lt; e\&gt;
+  f2\&gt; f\!
+  e2\&gt; e\mp
+  d2\&gt; d\&gt;
+  c1\!
+}
+</pre><p>
+ <a href="../3f/lily-0a4e212a.ly">
+  <img align="middle"
+       border="0"
+       src="../3f/lily-0a4e212a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un regulador acabat mitjançant <code>\!</code> finalitza a la vora dreta
+de la nota que porta el <code>\!</code> annexat.  En el cas en el qual
+estigui acabat amb el començament d&rsquo;una altra indicació
+<var>crescendo</var> o <var>decrescendo</var>, acabarà al centre
+de la nota que té annexada la següent indicació
+<code>\&lt;</code> o <code>\&gt;</code>.  El regulador següent començarà aleshores a
+la vora dreta de la mateixa nota en comptes de la vora esquerra,
+com seria normal si hagués acabaat amb <code>\!</code> prèviament.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1\&lt; | c4 a c\&lt; a | c4 a c\! a\&lt; | c4 a c a\!
+}
+</pre><p>
+ <a href="../5e/lily-3b758734.ly">
+  <img align="middle"
+       border="0"
+       src="../5e/lily-3b758734.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Els reguladors que acaben amb indicacions dinàmiques absolutes en
+lloc d&rsquo;amb <code>\!</code> també es graven de manera semblant.
+Tanmateix, la longitud de la pròpia indicació dinàmica pot alterar
+el punt en el qual finalitza el regulador anterior.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1\&lt; | c4 a c\mf a | c1\&lt; | c4 a c\ffff a
+}
+</pre><p>
+ <a href="../ec/lily-ad4b1694.ly">
+  <img align="middle"
+       border="0"
+       src="../ec/lily-ad4b1694.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-diversos-matisos-sobre-una-nota"></a>
+<a name="index-matisos_002c-diversos-sobre-una-nota"></a>
+<a name="index-dinamica_002c-diverses-indicacions-sobre-una-nota"></a>
+
+<p>Es requereixen silencis espaiadors per tipografiar diverses
+indicacions dinàmiques sobre una sola nota.  Això és útil
+especialment per afegir un <var>crescendo</var> i un
+<var>decrescendo</var> a la mateixa nota:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4\&lt; c\! d\&gt; e\!
+  &lt;&lt; f1 { s4 s4\&lt; s4\&gt; s4\! } &gt;&gt;
+}
+</pre><p>
+ <a href="../7f/lily-cf8af050.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-cf8af050.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-espressivo_002c-articulacio"></a>
+
+<a name="index-_005cespressivo-2"></a>
+<a name="index-_005cespressivo-3"></a>
+
+<p>Es pot fer servir l&rsquo;ordre <code>\espressivo</code> per indicar un
+crescendo o un decrescendo sobra la mateixa nota.  Tanmateix,
+noteu que aquesta indicació està implementada com una articulació,
+no com una expressió dinàmica.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''2 b4 a
+  g1\espressivo
+}
+</pre><p>
+ <a href="../0f/lily-ce609220.ly">
+  <img align="middle"
+       border="0"
+       src="../0f/lily-ce609220.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005ccresc"></a>
+<a name="index-_005ccresc-1"></a>
+<a name="index-_005cdecresc"></a>
+<a name="index-_005cdecresc-1"></a>
+<a name="index-_005cdim"></a>
+<a name="index-_005cdim-1"></a>
+
+<p>Les indicacions de crescendo textuals s&rsquo;inicien amb
+<code>\cresc</code>.  Els decrescendos textuals s&rsquo;inicien amb
+<code>\decresc</code> o amb <code>\dim</code>.  Es tracen líniies extensores
+quan cal.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  g'8\cresc a b c b c d e\mf |
+  f8\decresc e d c e\&gt; d c b |
+  a1\dim ~ |
+  a2. r4\! |
+}
+</pre><p>
+ <a href="../73/lily-7d5bdd7c.ly">
+  <img align="middle"
+       border="0"
+       src="../73/lily-7d5bdd7c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005ccrescTextCresc"></a>
+<a name="index-_005ccrescTextCresc-1"></a>
+<a name="index-_005cdimTextDecresc"></a>
+<a name="index-_005cdimTextDecresc-1"></a>
+<a name="index-_005cdimTextDecr"></a>
+<a name="index-_005cdimTextDecr-1"></a>
+<a name="index-_005cdimTextDim"></a>
+<a name="index-_005cdimTextDim-1"></a>
+<a name="index-_005ccrescHairpin"></a>
+<a name="index-_005ccrescHairpin-1"></a>
+<a name="index-_005cdimHairpin"></a>
+<a name="index-_005cdimHairpin-1"></a>
+
+<p>També poden substituir-se els reguladors gràfics per canvis de
+dinàmica textuals:
+</p><blockquote><pre class="verbatim">\relative c'' {
+  \crescTextCresc
+  c4\&lt; d e f\! |
+  \dimTextDecresc
+  g4\&gt; e d c\! |
+  \dimTextDecr
+  e4\&gt; d c b\! |
+  \dimTextDim
+  d4\&gt; c b a\! |
+  \crescHairpin
+  \dimHairpin
+  c4\&lt; d\! e\&gt; d\! |
+}
+</pre><p>
+ <a href="../af/lily-dded0574.ly">
+  <img align="middle"
+       border="0"
+       src="../af/lily-dded0574.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>Per crear noves indicacions de matís absolut o de text que s&rsquo;han
+d&rsquo;alinear amb els matisos; vegeu
+<a href="#new-dynamic-marks">Indicacions dinàmiques contemporànies</a>.
+</p>
+<a name="index-matisos_002c-posicio-vertical"></a>
+<a name="index-dinamica_002c-posicio-vertical"></a>
+<a name="index-vertical_002c-posicio_002c-de-les-indicacions-dinamiques"></a>
+<a name="index-DynamicLineSpanner"></a>
+<a name="index-DynamicLineSpanner-1"></a>
+
+<p>La col·locació vertical de les indicacions de dinàmica es gestiona
+per part de <a name="index-DynamicLineSpanner-2"></a>
+<a href="../internals/dynamiclinespanner.ca.html">DynamicLineSpanner</a>.
+</p>
+<a name="index-_005cdynamicUp"></a>
+<a name="index-_005cdynamicUp-1"></a>
+<a name="index-_005cdynamicDown"></a>
+<a name="index-_005cdynamicDown-1"></a>
+<a name="index-_005cdynamicNeutral"></a>
+<a name="index-_005cdynamicNeutral-1"></a>
+
+<p>Hi ha disponible un context <code>Dynamics</code> per gravar les
+indicacions de matís dinàmic en la seva pròpia línia
+horitzontal.  Useu silencis de separació per indicar els temps
+(les notes que estan dins d&rsquo;un context <code>Dynamics</code> també
+ocupen temps musical, però no s&rsquo;imprimeixen).  El context
+<code>Dynamics</code> pot contenir altres elements com inscripcions
+textuals, objectes extensors de text i indicacions de pedal de
+piano.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative {
+    c'2 d4 e |
+    c4 e e,2 |
+    g'4 a g a |
+    c1 |
+  }
+  \new Dynamics {
+    s1\&lt; |
+    s1\f |
+    s2\dim s2-&quot;rit.&quot; |
+    s1\p |
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../da/lily-b495a4ad.ly">
+  <img align="middle"
+       border="0"
+       src="../da/lily-b495a4ad.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides-16"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\dynamicUp</code>,
+<code>\dynamicDown</code>,
+<code>\dynamicNeutral</code>,
+<code>\crescTextCresc</code>,
+<code>\dimTextDim</code>,
+<code>\dimTextDecr</code>,
+<code>\dimTextDecresc</code>,
+<code>\crescHairpin</code>,
+<code>\dimHairpin</code>.
+</p>
+
+<a name="Fragments-de-codi-seleccionats-32"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Setting hairpin behavior at bar lines</em>
+</p>
+
+<p>If the note which ends a hairpin falls on a downbeat, the hairpin stops
+at the bar line immediately preceding.  This behavior can be controlled
+by overriding the <code>'to-barline</code> property.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  e4\&lt; e2.
+  e1\!
+  \override Hairpin.to-barline = ##f
+  e4\&lt; e2.
+  e1\!
+}
+</pre><p>
+ <a href="../62/lily-a4444103.ly">
+  <img align="middle"
+       border="0"
+       src="../62/lily-a4444103.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Setting the minimum length of hairpins</em>
+</p>
+
+<p>If hairpins are too short, they can be lengthened by modifying the
+<code>minimum-length</code> property of the <code>Hairpin</code> object.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  c4\&lt; c\! d\&gt; e\!
+  &lt;&lt; f1 { s4 s\&lt; s\&gt; s\! } &gt;&gt;
+  \override Hairpin.minimum-length = #5
+  &lt;&lt; f1 { s4 s\&lt; s\&gt; s\! } &gt;&gt;
+}
+</pre><p>
+ <a href="../ca/lily-b661e979.ly">
+  <img align="middle"
+       border="0"
+       src="../ca/lily-b661e979.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-al-niente"></a>
+<a name="index-niente_002c-al"></a>
+
+
+<p><em> Printing hairpins using al niente notation</em>
+</p>
+
+<p>Hairpin dynamics may be printed with a circled tip (&ldquo;al niente&rdquo;
+notation) by setting the <code>circled-tip</code> property of the
+<code>Hairpin</code> object to <code>#t</code>.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \override Hairpin.circled-tip = ##t
+  c2\&lt; c\!
+  c4\&gt; c\&lt; c2\!
+}
+</pre><p>
+ <a href="../80/lily-8880df0b.ly">
+  <img align="middle"
+       border="0"
+       src="../80/lily-8880df0b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-Ferneyhough_002c-reguladors-de"></a>
+<a name="index-reguladors-de-Ferneyhough"></a>
+<a name="index-reguladors-acampanats"></a>
+<a name="index-acampanats_002c-reguladors"></a>
+<a name="index-reguladors-de-tipus-constant"></a>
+<a name="index-constant_002c-reguladors-de-tipus"></a>
+
+
+<p><em> Printing hairpins in various styles</em>
+</p>
+
+<p>Hairpin dynamics may be created in a variety of styles.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \override Hairpin.stencil = #flared-hairpin
+  a4\&lt; a a a\f
+  a4\p\&lt; a a a\ff
+  a4\sfz\&lt; a a a\!
+  \override Hairpin.stencil = #constante-hairpin
+  a4\&lt; a a a\f
+  a4\p\&lt; a a a\ff
+  a4\sfz\&lt; a a a\!
+  \override Hairpin.stencil = #flared-hairpin
+  a4\&gt; a a a\f
+  a4\p\&gt; a a a\ff
+  a4\sfz\&gt; a a a\!
+  \override Hairpin.stencil = #constante-hairpin
+  a4\&gt; a a a\f
+  a4\p\&gt; a a a\ff
+  a4\sfz\&gt; a a a\!
+}
+</pre><p>
+ <a href="../6f/lily-ee5afe9e.ly">
+  <img align="middle"
+       border="0"
+       src="../6f/lily-ee5afe9e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Vertically aligned dynamics and textscripts</em>
+</p>
+
+<p>All <code>DynamicLineSpanner</code> objects (hairpins and dynamic texts) are
+placed with their reference line at least <code>'staff-padding</code> from
+the staff, unless other notation forces them to be farther. Setting
+<code>'staff-padding</code> to a sufficiently large value aligns the dynamics.
+</p>
+<p>The same idea, together with <code>\textLengthOn</code>, is used to align
+the text scripts along their baseline.
+</p>
+
+<blockquote><pre class="verbatim">music = \relative c' {
+  a'2\p b\f
+  e4\p f\f\&gt; g, b\p
+  c2^\markup { \huge gorgeous } c^\markup { \huge fantastic }
+}
+
+{
+  \music
+  \break
+  \override DynamicLineSpanner.staff-padding = #3
+  \textLengthOn
+  \override TextScript.staff-padding = #1
+  \music
+}
+</pre><p>
+ <a href="../ae/lily-881e6114.ly">
+  <img align="middle"
+       border="0"
+       src="../ae/lily-881e6114.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Hiding the extender line for text dynamics</em>
+</p>
+
+<p>Text style dynamic changes (such as cresc. and dim.) are printed with a
+dashed line showing their extent.  This line can be suppressed in the
+following way:
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \override DynamicTextSpanner.style = #'none
+  \crescTextCresc
+  c1\&lt; | d | b | c\!
+}
+</pre><p>
+ <a href="../57/lily-3ced2ed6.ly">
+  <img align="middle"
+       border="0"
+       src="../57/lily-3ced2ed6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Changing text and spanner styles for text dynamics</em>
+</p>
+
+<p>The text used for crescendos and decrescendos can be changed by
+modifying the context properties <code>crescendoText</code> and
+<code>decrescendoText</code>.
+</p>
+<p>The style of the spanner line can be changed by modifying the
+<code>'style</code> property of <code>DynamicTextSpanner</code>.  The default value
+is <code>'dashed-line</code>, and other possible values include <code>'line</code>,
+<code>'dotted-line</code> and <code>'none</code>.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \set crescendoText = \markup { \italic { cresc. poco } }
+  \set crescendoSpanner = #'text
+  \override DynamicTextSpanner.style = #'dotted-line
+  a2\&lt; a
+  a2 a
+  a2 a
+  a2 a\mf
+}
+</pre><p>
+ <a href="../34/lily-4785ebca.ly">
+  <img align="middle"
+       border="0"
+       src="../34/lily-4785ebca.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-278"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-al-niente-1"></a>
+<a href="../music-glossary/al-niente.ca.html">al niente</a>,
+<a name="index-crescendo-1"></a>
+<a href="../music-glossary/crescendo.ca.html">crescendo</a>,
+<a name="index-decrescendo-1"></a>
+<a href="../music-glossary/decrescendo.ca.html">decrescendo</a>,
+<a name="index-hairpin"></a>
+<a href="../music-glossary/hairpin.ca.html">hairpin</a>.
+</p>
+<p>Manual d&rsquo;aprenentatge:
+<a name="index-Articulacions-i-matisos-dinamics"></a>
+<a href="../learning/articulation-and-dynamics.ca.html">Articulacions i matisos dinàmics</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Direction-and-placement-6"></a>
+<a href="../notation/direction-and-placement.ca.html">Direcció i posició</a>,
+<a href="#new-dynamic-marks">Indicacions dinàmiques contemporànies</a>,
+<a name="index-Enhancing-MIDI-output"></a>
+<a href="../notation/enhancing-midi-output.ca.html">Enriquiment de la sortida MIDI</a>,
+<a name="index-Controlling-MIDI-dynamics"></a>
+<a href="../notation/controlling-midi-dynamics.ca.html">Control de las dinàmiques del MIDI</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-DynamicText"></a>
+<a href="../internals/dynamictext.ca.html">DynamicText</a>,
+<a name="index-Hairpin"></a>
+<a href="../internals/hairpin.ca.html">Hairpin</a>,
+<a name="index-DynamicLineSpanner-3"></a>
+<a href="../internals/dynamiclinespanner.ca.html">DynamicLineSpanner</a>,
+<a name="index-Dynamics"></a>
+<a href="../internals/matisos-dinamics.ca.html#matisos-din_00e0mics">Dynamics</a>.
+</p>
+
+<hr size="6">
+<a name="Indicacions-din_00e0miques-contempor_00e0nies"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#dynamics" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Matisos dinàmics&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-attached-to-notes" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions annexades a les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="expressive-marks-as-curves.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Marques expressives en forma corba &gt; </a>]</td></tr></table>
+<a name="new-dynamic-marks"></a>
+<h4 class="unnumberedsubsubsec">Indicacions dinàmiques contemporànies</h4>
+
+<a name="index-indicacions-dinamiques-noves"></a>
+<a name="index-dinamiques_002c-indicacions_002c-noves"></a>
+
+<p>La menara més fàcil de crear indicacions dinàmiques és usar
+objectes de marcatge (<code>\markup</code>).
+</p>
+<blockquote><pre class="verbatim">moltoF = \markup { molto \dynamic f }
+
+\relative {
+  &lt;d' e&gt;16_\moltoF &lt;d e&gt;
+  &lt;d e&gt;2..
+}
+</pre><p>
+ <a href="../62/lily-91def107.ly">
+  <img align="middle"
+       border="0"
+       src="../62/lily-91def107.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-dinamiques-indicacions-editorials"></a>
+<a name="index-dinamiques_002c-indicacions-entre-parentesis"></a>
+<a name="index-editorials_002c-indicacions-dinamiques"></a>
+<a name="index-_005cbracket"></a>
+<a name="index-_005cbracket-1"></a>
+<a name="index-_005cdynamic"></a>
+<a name="index-_005cdynamic-1"></a>
+
+<p>En el mode de marcatge es poden crear indicacions dinàmiques
+editorials (entre parèntesis o claus).  La sintaxi del mode
+de marcatge es descriu a
+<a name="index-Formatting-text-5"></a>
+<a href="../notation/formatting-text.ca.html">Format del text</a>.
+</p>
+<blockquote><pre class="verbatim">roundF = \markup {
+    \center-align \concat { \bold { \italic ( }
+           \dynamic f \bold { \italic ) } } }
+boxF = \markup { \bracket { \dynamic f } }
+\relative {
+  c'1_\roundF
+  c1_\boxF
+}
+</pre><p>
+ <a href="../16/lily-62c6be66.ly">
+  <img align="middle"
+       border="0"
+       src="../16/lily-62c6be66.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-make_002ddynamic_002dscript"></a>
+<a name="index-make_002ddynamic_002dscript-1"></a>
+<a name="index-make_002ddynamic_002dscript-2"></a>
+
+<p>Les indicacions dinàmiques senzilles i centrades es creen
+fàcilment amb la funció <code>make-dynamic-script</code>.
+</p>
+<blockquote><pre class="verbatim">sfzp = #(make-dynamic-script &quot;sfzp&quot;)
+\relative {
+  c'4 c c\sfzp c
+}
+</pre><p>
+ <a href="../92/lily-a8fb6d43.ly">
+  <img align="middle"
+       border="0"
+       src="../92/lily-a8fb6d43.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>En general <code>make-dynamic-script</code> agafa qualsevol objecte de
+marcatge com a argument.  El tipus de lletra de matisos sols conté
+els caràcters <code>f, m, p, r, s</code> y <code>z</code>, per la qual cosa si
+desitgeu obtenir una indicació dinàmica que inclogui text normal o
+signes de puntuació, cal fer servir ordres de marcatge que
+retornin els ajustaments de la família de tipus de lletra i la
+seva codificació a las del text normal, per exemple
+<code>\normal-text</code>.  L&rsquo;interès de la utilització de
+<code>make-dynamic-script</code> en lloc d&rsquo;un element de marcatge
+corrent radica en assegurar l&rsquo;alineació vertical dels objectes de
+marcatge i reguladors que s&rsquo;apliquen al mateix cap de nota.
+</p>
+<blockquote><pre class="verbatim">roundF = \markup { \center-align \concat {
+           \normal-text { \bold { \italic ( } }
+           \dynamic f
+           \normal-text { \bold { \italic ) } } } }
+boxF = \markup { \bracket { \dynamic f } }
+mfEspress = \markup { \center-align \line {
+              \hspace #3.7 mf \normal-text \italic espress. } }
+roundFdynamic = #(make-dynamic-script roundF)
+boxFdynamic = #(make-dynamic-script boxF)
+mfEspressDynamic = #(make-dynamic-script mfEspress)
+\relative {
+  c'4_\roundFdynamic\&lt; d e f
+  g,1~_\boxFdynamic\&gt;
+  g1
+  g'1~\mfEspressDynamic
+  g1
+}
+</pre><p>
+ <a href="../b2/lily-b81795aa.ly">
+  <img align="middle"
+       border="0"
+       src="../b2/lily-b81795aa.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es pot utilitzar en el seu lloc la forma Scheme del mode de
+marcatge.  La seva sintaxi s&rsquo;explica a
+</p>
+<p>Se puede utilizar en su lugar la forma Scheme del modo de marcado.
+Su sintaxis se explica en
+<a name="index-Markup-construction-in-Scheme"></a>
+<a href="../extending/markup-construction-in-scheme.ca.html">Construcció de marcatge en Scheme</a>.
+</p>
+<blockquote><pre class="verbatim">moltoF = #(make-dynamic-script
+            (markup #:normal-text &quot;molto&quot;
+                    #:dynamic &quot;f&quot;))
+\relative {
+  &lt;d' e&gt;16 &lt;d e&gt;
+  &lt;d e&gt;2..\moltoF
+}
+</pre><p>
+ <a href="../18/lily-46a00a53.ly">
+  <img align="middle"
+       border="0"
+       src="../18/lily-46a00a53.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per alinear el text del matís dinàmic a l&rsquo;esquerra en lloc de
+centrar-lo sobre una nota, utilitzeu un <code>\tweak</code>:
+</p>
+<blockquote><pre class="verbatim">moltoF = \tweak DynamicText.self-alignment-X #LEFT
+         #(make-dynamic-script
+            (markup #:normal-text &quot;molto&quot;
+                    #:dynamic &quot;f&quot;))
+\relative {
+  &lt;d' e&gt;16 &lt;d e&gt;
+  &lt;d e&gt;2..\moltoF &lt;d e&gt;1
+}
+</pre><p>
+ <a href="../5f/lily-cf1cdfa5.ly">
+  <img align="middle"
+       border="0"
+       src="../5f/lily-cf1cdfa5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Els ajustos per als tipus de lletra en mode de marcatge es
+descriuen a
+<a name="index-Selecting-font-and-font-size"></a>
+<a href="../notation/formatting-text.ca.html#selecting-font-and-font-size">Selecció del tipus de lletra i la seva mida</a>.
+</p>
+<a name="Vegeu-tambe-85"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-Formatting-text-6"></a>
+<a href="../notation/formatting-text.ca.html">Format del text</a>,
+<a name="index-Selecting-font-and-font-size-1"></a>
+<a href="../notation/formatting-text.ca.html#selecting-font-and-font-size">Selecció del tipus de lletra i la seva mida</a>,
+<a name="index-Enhancing-MIDI-output-1"></a>
+<a href="../notation/enhancing-midi-output.ca.html">Enriquiment de la sortida MIDI</a>,
+<a name="index-Controlling-MIDI-dynamics-1"></a>
+<a href="../notation/controlling-midi-dynamics.ca.html">Control de las dinàmiques del MIDI</a>.
+</p>
+<p>Extensió del LilyPond:
+<a name="index-Markup-construction-in-Scheme-1"></a>
+<a href="../extending/markup-construction-in-scheme.ca.html">Construcció de marcatge en Scheme</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#dynamics" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Matisos dinàmics&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-attached-to-notes" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions annexades a les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="expressive-marks-as-curves.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Marques expressives en forma corba &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="expressive-marks-attached-to-notes.html">English</a>, <a href="expressive-marks-attached-to-notes.de.html">deutsch</a>, <a href="expressive-marks-attached-to-notes.es.html">español</a>, <a href="expressive-marks-attached-to-notes.fr.html">français</a>, <a href="expressive-marks-attached-to-notes.it.html">italiano</a>, <a href="expressive-marks-attached-to-notes.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=" toc_current"><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-Expressions-annexades-a-les-notes-1" href="expressive-marks-attached-to-notes.ca.html">1.3.1 Expressions annexades a les notes</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Articulacions-i-ornaments-1" href="expressive-marks-attached-to-notes.ca.html#articulations-and-ornamentations">Articulacions i ornaments</a>        </li>
+        <li class=""><a name="toc-Matisos-dinamics" href="expressive-marks-attached-to-notes.ca.html#dynamics">Matisos dinàmics</a>        </li>
+        <li class=""><a name="toc-Indicacions-dinamiques-contemporanies" href="expressive-marks-attached-to-notes.ca.html#new-dynamic-marks">Indicacions dinàmiques contemporànies</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Marques-expressives-en-forma-corba-1" href="expressive-marks-as-curves.ca.html">1.3.2 Marques expressives en forma corba</a>      </li>
+      <li class=""><a name="toc-Marques-expressives-en-forma-de-linies" href="expressive-marks-as-lines.ca.html">1.3.3 Marques expressives en forma de línies</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

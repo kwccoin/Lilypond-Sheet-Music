@@ -1,0 +1,679 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 3.3.2 Edizioni diverse da un unico sorgente</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 3.3.2 Edizioni diverse da un unico sorgente">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 3.3.2 Edizioni diverse da un unico sorgente">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="working-with-input-files.it.html#working-with-input-files" rel="up" title="3.3 Lavorare coi file di input">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="including-lilypond-files.it.html#including-lilypond-files" rel="previous" title="3.3.1 Inclusione di file LilyPond">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Edizioni-diverse-da-un-unico-sorgente"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="including-lilypond-files.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Inclusione di file LilyPond&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="working-with-input-files.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Lavorare coi file di input&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-variables" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Uso delle variabili &gt; </a>]</td></tr></table>
+<a name="different-editions-from-one-source"></a>
+<h3 class="subsection">3.3.2 Edizioni diverse da un unico sorgente</h3>
+
+<p>Esistono vari metodi per generare versioni diverse di una partitura
+dalla stessa sorgente di musica. Le variabili sono forse le più
+utili per combinare lunghe sezioni musicali e/o note. Le etichette
+(<em>tag</em>) sono più utili per selezionare una sezione da varie
+sezioni brevi alternative e possono essere usate anche per unire
+insieme dei brani in punti diversi.
+</p>
+<p>Qualsiasi metodo venga usato, la separazione delle note dalla struttura
+della partitura permetterà di cambiare la struttura lasciando le note
+intatte.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#using-variables" accesskey="1">Uso delle variabili</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#using-tags" accesskey="2">Uso delle etichette</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#using-global-settings" accesskey="3">Impostazioni globali</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Uso-delle-variabili"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#different-editions-from-one-source" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Edizioni diverse da un unico sorgente&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#different-editions-from-one-source" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Edizioni diverse da un unico sorgente&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-tags" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Uso delle etichette &gt; </a>]</td></tr></table>
+<a name="using-variables"></a>
+<h4 class="unnumberedsubsubsec">Uso delle variabili</h4>
+
+<a name="index-variabili_002c-uso-delle"></a>
+
+<p>Se le sezioni musicali sono definite in variabili, possono essere
+riutilizzate in varie parti della partitura, come è stato spiegato
+in <a name="index-Organizzare-i-brani-con-le-variabili-2"></a>
+<a href="../learning/organizing-pieces-with-variables.it.html">Organizzare i brani con le variabili</a>.  Per esempio, una
+partitura vocale <var>a cappella</var> spesso comprende, ai fini delle
+prove, una riduzione per pianoforte delle parti, identiche alla musica
+vocale, dunque la musica deve essere inserita una volta sola. La musica
+definita in due variabili può essere combinata in un rigo, come è
+spiegato in <a href="multiple-voices.it.html#automatic-part-combining">Combinazione automatica delle parti</a>. Ecco un esempio:
+</p>
+<blockquote><pre class="verbatim">sopranoMusic = \relative { a'4 b c b8( a) }
+altoMusic = \relative { e'4 e e f }
+tenorMusic = \relative { c'4 b e d8( c) }
+bassMusic = \relative { a4 gis a d, }
+allLyrics = \lyricmode { King of glo -- ry }
+&lt;&lt;
+  \new Staff = &quot;Soprano&quot; \sopranoMusic
+  \new Lyrics \allLyrics
+  \new Staff = &quot;Alto&quot; \altoMusic
+  \new Lyrics \allLyrics
+  \new Staff = &quot;Tenore&quot; {
+    \clef &quot;treble_8&quot;
+    \tenorMusic
+  }
+  \new Lyrics \allLyrics
+  \new Staff = &quot;Basso&quot; {
+    \clef &quot;bass&quot;
+    \bassMusic
+  }
+  \new Lyrics \allLyrics
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;Destra&quot; {
+      \partcombine
+      \sopranoMusic
+      \altoMusic
+    }
+    \new Staff = &quot;Sinistra&quot; {
+      \clef &quot;bass&quot;
+      \partcombine
+      \tenorMusic
+      \bassMusic
+    }
+  &gt;&gt;
+&gt;&gt;
+</pre><p>
+ <a href="../a1/lily-92eab515.ly">
+  <img align="middle"
+       border="0"
+       src="../a1/lily-92eab515.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Partiture separate che mostrino soltanto le parti vocali o soltanto
+quelle per pianoforte possono essere prodotte semplicemente cambiando
+le dichiarazioni della struttura, lasciando la notazione musicale
+intatta.
+</p>
+<p>Nel caso di partiture lunghe, conviene mettere le definizioni delle
+variabili in file separati da includere, vedi
+<a href="including-lilypond-files.it.html">Inclusione di file LilyPond</a>.
+</p>
+<hr size="6">
+<a name="Uso-delle-etichette"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-variables" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso delle variabili&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#different-editions-from-one-source" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Edizioni diverse da un unico sorgente&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-global-settings" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Impostazioni globali &gt; </a>]</td></tr></table>
+<a name="using-tags"></a>
+<h4 class="unnumberedsubsubsec">Uso delle etichette</h4>
+
+<a name="index-_005ctag"></a>
+<a name="index-_005ctag-1"></a>
+<a name="index-_005ckeepWithTag"></a>
+<a name="index-_005ckeepWithTag-1"></a>
+<a name="index-_005cremoveWithTag"></a>
+<a name="index-_005cremoveWithTag-1"></a>
+<a name="index-tag"></a>
+<a name="index-etichetta"></a>
+<a name="index-tenere-la-musica-etichettata"></a>
+<a name="index-togliere-la-musica-etichettata"></a>
+
+<p>Il comando <code>\tag #'<var>parteA</var></code> contrassegna un&rsquo;espressione
+musicale col nome <var>parteA</var>.
+Le espressioni contrassegnate in questo modo possono essere incluse o
+rimosse in base al loro nome successivamente, usando
+<code>\keepWithTag #'<var>nome</var></code> oppure
+<code>\removeWithTag #'<var>nome</var></code>.  Il risultato dell&rsquo;applicazione di
+questi filtri alla musica etichettata è il seguente:
+</p><table>
+<thead><tr><th width="50%">Filtro</th><th width="50%">Risultato</th></tr></thead>
+<tr><td width="50%">Musica etichettata preceduta da <code>\keepWithTag #'<var>nome</var></code> o
+       <code>\keepWithTag #'(<var>nome1</var> <var>nome2</var>&hellip;)</code></td><td width="50%">Viene inclusa la musica non etichettata e quella etichettata con
+     uno dei nomi specificati; la musica etichettata con un nome
+     etichetta diverso viene esclusa.</td></tr>
+<tr><td width="50%">Musica etichettata preceduta da <code>\removeWithTag #'<var>nome</var></code> o
+       <code>\removeWithTag #'(<var>nome1</var> <var>nome2</var>&hellip;)</code></td><td width="50%">Viene inclusa la musica non etichettata e quella non etichettata con
+     uno dei nomi specificati; la musica etichettata con uno dei nomi
+     specificati viene esclusa.</td></tr>
+<tr><td width="50%">Musica etichettata non preceduta da <code>\keepWithTag</code> o
+<code>\removeWithTag</code></td><td width="50%">Viene inclusa tutta la musica etichettata e non etichettata.</td></tr>
+</table>
+
+<p>Gli argomenti dei comandi <code>\tag</code>, <code>\keepWithTag</code> e
+<code>\removeWithTag</code> devono essere un simbolo o una lista di
+simboli (come <code>#'score</code> o <code>#'(violinoI violinoII</code>),
+seguiti da un&rsquo;espressione musicale.  Se <em>e solo se</em> i simboli
+sono identificatori LilyPond validi (solo caratteri alfabetici, nessun
+numero, trattino o trattino basso) che non possono essere confusi con
+le note, si può omettere il <code>#'</code> e, come scorciatoia, una lista di
+simboli può usare il punto come separatore: quindi
+<code>\tag #'(violinoI violinoII)</code> può essere riscritto come
+<code>\tag violinoI.violinoII</code>.  Lo stesso vale per
+<code>\keepWithTag</code> e <code>\removeWithTag</code>.
+</p>
+<p>Nell&rsquo;esempio seguente, vediamo due versioni di un brano musicale,
+una che mostra i trilli con la notazione abituale e l&rsquo;altra con i
+i trilli espansi esplicitamente:
+</p>
+<blockquote><pre class="verbatim">musica = \relative {
+  g'8. c32 d
+  \tag #'trilli { d8.\trill }
+  \tag #'espandi { \repeat unfold 3 { e32 d } }
+  c32 d
+ }
+
+\score {
+  \keepWithTag #'trilli \musica
+}
+\score {
+  \keepWithTag #'espandi \musica
+}
+</pre><p>
+ <a href="../0f/lily-bb8ec182.ly">
+  <img align="middle"
+       border="0"
+       src="../0f/lily-bb8ec182.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Altrimenti, talvolta è più facile escludere sezioni musicali:
+</p>
+<blockquote><pre class="verbatim">musica = \relative {
+  g'8. c32 d
+  \tag #'trilli { d8.\trill }
+  \tag #'espandi {\repeat unfold 3 { e32 d } }
+  c32 d
+ }
+
+\score {
+  \removeWithTag #'espandi
+  \musica
+}
+\score {
+  \removeWithTag #'trilli
+  \musica
+}
+</pre><p>
+ <a href="../a3/lily-e88ba071.ly">
+  <img align="middle"
+       border="0"
+       src="../a3/lily-e88ba071.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Il filtro delle etichette può essere applicato a articolazioni, testo, etc.
+scrivendo
+</p>
+<blockquote><pre class="example">-\tag #'<var>tua-etichetta</var>
+</pre></blockquote>
+
+<p>prima di un&rsquo;articolazione.  L&rsquo;esempio seguente definisce una nota
+con un&rsquo;indicazione di diteggiatura condizionale e una nota con un
+commento condizionale:
+</p>
+<blockquote><pre class="example">c1-\tag #'dito ^4
+c1-\tag #'attenzione ^&quot;Fai attenzione!&quot;
+</pre></blockquote>
+
+<p>Varie etichette possono essere associate a delle espressioni tramite molteplici
+<code>\tag</code>, o unendo molteplici etichette in una lista di simboli:
+</p>
+<blockquote><pre class="verbatim">musica = \relative c'' {
+  \tag #'a \tag #'entrambi { a4 a a a }
+  \tag #'(b entrambi) { b4 b b b }
+}
+&lt;&lt;
+\keepWithTag #'a \musica
+\keepWithTag #'b \musica
+\keepWithTag #'entrambi \musica
+&gt;&gt;
+</pre><p>
+ <a href="../be/lily-fee1e837.ly">
+  <img align="middle"
+       border="0"
+       src="../be/lily-fee1e837.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si possono applicare molteplici filtri <code>\removeWithTag</code> a una singola
+espressione musicale per togliere varie sezioni etichettate con nomi
+diversi. Altrimenti si può usare un solo <code>\removeWithTag</code> seguito da
+una lista di etichette.
+</p>
+<blockquote><pre class="verbatim">musica = \relative c'' {
+  \tag #'A { a4 a a a }
+  \tag #'B { b4 b b b }
+  \tag #'C { c4 c c c }
+  \tag #'D { d4 d d d }
+}
+\new Voice {
+  \removeWithTag #'B
+  \removeWithTag #'C
+  \musica
+  \removeWithTag #'(B C)
+  \musica
+}
+</pre><p>
+ <a href="../b3/lily-103f5e19.ly">
+  <img align="middle"
+       border="0"
+       src="../b3/lily-103f5e19.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Applicando due o più filtri <code>\keepWithTag</code> su una singola espressione
+musicale toglieranno <em>tutte</em> le sezioni etichettate.  Il primo filtro
+toglie tutto tranne la sezione menzionata e qualsiasi filtro successivo toglie
+il resto.  Usando un singolo comando <code>\keepWithTag</code> con una lista di
+varie etichette vengono rimosse soltanto le sezioni etichettate non specificate
+in quella lista.
+</p>
+<blockquote><pre class="verbatim">music = \relative c'' {
+  \tag #'violinoI { a4 a a a }
+  \tag #'violinoII { b4 b b b }
+  \tag #'viola { c4 c c c }
+  \tag #'cello { d4 d d d }
+}
+
+\new Staff {
+  \keepWithTag #'(violinI violinII)
+  \music
+}
+</pre><p>
+ <a href="../f4/lily-a8cddb90.ly">
+  <img align="middle"
+       border="0"
+       src="../f4/lily-a8cddb90.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>farà apparire le etichette <var>violinoI</var> e <var>violinoII</var> ma non
+<var>viola</var> o <var>cello</var>.
+</p>
+<a name="index-etichette_002c-gruppi-di"></a>
+<a name="index-_005ctagGroup"></a>
+<a name="index-_005ctagGroup-1"></a>
+<p>Mentre <code>\keepWithTag</code> è comodo con <em>un</em> gruppo di alternative, la
+rimozione di musica contrassegnata con etichette <em>indipendenti</em> è
+problematico se si usano le etichette con diverse finalità.  In questo
+caso, è possibile dichiarare &lsquo;gruppi&rsquo; di etichette:
+</p>
+<blockquote><pre class="example">\tagGroup #'(violinoI violinoII viola cello)
+</pre></blockquote>
+
+<p>dichiara che queste etichette appartengono a un gruppo.
+</p>
+<blockquote><pre class="example">\keepWithTag #'violinoI &hellip;
+</pre></blockquote>
+
+<p>ora mostrerà soltanto la musica contrassegnata con le etichette presenti nel
+gruppo cui appartiene <code>violinoI</code> e verrà tolta la musica contrassegnata
+con una delle <em>altre</em> etichette.
+</p>
+<blockquote><pre class="verbatim">music = \relative {
+  \tagGroup #'(violinoI violinoII viola cello)
+  \tag #'violinoI { c''4^&quot;violinI&quot; c c c }
+  \tag #'violinoII { a2 a }
+  \tag #'viola { e8 e e2. }
+  \tag #'cello { d'2 d4 d }
+  R1^&quot;non contrassegnato&quot;
+}
+
+\new Voice {
+  \keepWithTag #'violinoI
+  \music
+}
+</pre><p>
+ <a href="../d5/lily-6b9a5436.ly">
+  <img align="middle"
+       border="0"
+       src="../d5/lily-6b9a5436.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Quando si usa il comando <code>\keepWithTag</code>, sono visibili solo le etichette
+provenienti dai gruppi cui appartengono le etichette specificate dopo il comando.
+</p>
+
+<a name="index-_005cpushToTag"></a>
+<a name="index-_005cpushToTag-1"></a>
+<a name="index-_005cappendToTag"></a>
+<a name="index-_005cappendToTag-1"></a>
+<a name="index-combinare-musica-contrassegnata-con-etichette"></a>
+
+<p>Talvolta si ha necessità di combinare insieme della musica in un punto preciso
+di un&rsquo;espressione musicale esistente. <code>\pushToTag</code> e <code>\appendToTag</code>
+permettono di aggiungere materiale prima o dopo gli elementi di un costrutto
+musicale esistente.  Non tutti i costrutti musicali hanno elementi, ma nel caso
+di musica sequenziale e simultanea si può esserne sicuri:
+</p>
+<blockquote><pre class="verbatim">music = { \tag #'qui { \tag #'qui &lt;&lt;c''&gt;&gt; } }
+
+{
+  \pushToTag #'qui c'
+  \pushToTag #'qui e'
+  \pushToTag #'qui g' \music
+  \appendToTag #'qui c'
+  \appendToTag #'qui e'
+  \appendToTag #'qui g' \music
+}
+</pre><p>
+ <a href="../e1/lily-f36284cd.ly">
+  <img align="middle"
+       border="0"
+       src="../e1/lily-f36284cd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Entrambi i comandi prendono tre argomenti: un&rsquo;etichetta, il materiale da
+combinare ad ogni occorenza dell&rsquo;etichetta e l&rsquo;espressione contrassegnata.
+</p>
+<a name="Vedi-anche-92"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Organizzare-i-brani-con-le-variabili-3"></a>
+<a href="../learning/organizing-pieces-with-variables.it.html">Organizzare i brani con le variabili</a>.
+</p>
+<p>Guida alla notazione:
+<a href="multiple-voices.it.html#automatic-part-combining">Combinazione automatica delle parti</a>,
+<a href="including-lilypond-files.it.html">Inclusione di file LilyPond</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-30"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>Se si usa <code>\relative</code> prima di un&rsquo;espressione musicale ottenuta
+filtrando la musica con <code>\keepWithTag</code> o <code>\removeWithTag</code>,
+i rapporti di ottava potrebbero cambiare, perché verranno considerate
+solo le altezze rimaste nell&rsquo;espressione filtrata. Per evitare questo
+rischio, usare <code>\relative</code> prima di <code>\keepWithTag</code> o
+<code>\removeWithTag</code>, in modo che <code>\relative</code> agisca su tutte
+le altezze prima del filtro.
+</p>
+
+<hr size="6">
+<a name="Impostazioni-globali"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-tags" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso delle etichette&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#different-editions-from-one-source" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Edizioni diverse da un unico sorgente&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="special-characters.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Caratteri speciali &gt; </a>]</td></tr></table>
+<a name="using-global-settings"></a>
+<h4 class="unnumberedsubsubsec">Impostazioni globali</h4>
+
+<a name="index-include_002dsettings"></a>
+
+<p>È possibile includere impostazioni globali da un altro file:
+</p>
+<blockquote><pre class="example">lilypond -dinclude-settings=MIE_IMPOSTAZIONI.ly MIA_PARTITURA.ly
+</pre></blockquote>
+
+<p>Gruppi di impostazioni come dimensioni del foglio e tipo di carattere
+possono essere salvati in file separati. Ciò permette di ottenere diverse
+edizioni dalla stessa partitura o di applicare delle impostazioni
+tipiche a molte partiture, semplicemente indicando il relativo file
+delle impostazioni.
+</p>
+<p>Questa tecnica è la stessa usata per i fogli di stile, trattati
+in <a name="index-Fogli-di-stile"></a>
+<a href="../learning/style-sheets.it.html">Fogli di stile</a>.
+</p>
+<a name="Vedi-anche-98"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Organizzare-i-brani-con-le-variabili-4"></a>
+<a href="../learning/organizing-pieces-with-variables.it.html">Organizzare i brani con le variabili</a>,
+<a name="index-Fogli-di-stile-1"></a>
+<a href="../learning/style-sheets.it.html">Fogli di stile</a>.
+</p>
+<p>Guida alla notazione:
+<a href="including-lilypond-files.it.html">Inclusione di file LilyPond</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-tags" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso delle etichette&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#different-editions-from-one-source" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Edizioni diverse da un unico sorgente&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="special-characters.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Caratteri speciali &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="different-editions-from-one-source.html">English</a>, <a href="different-editions-from-one-source.ca.html">català</a>, <a href="different-editions-from-one-source.de.html">deutsch</a>, <a href="different-editions-from-one-source.es.html">español</a>, <a href="different-editions-from-one-source.fr.html">français</a>, <a href="different-editions-from-one-source.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=" toc_current"><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Inclusione-di-file-LilyPond-1" href="including-lilypond-files.it.html">3.3.1 Inclusione di file LilyPond</a>      </li>
+      <li class=" toc_current"><a name="toc-Edizioni-diverse-da-un-unico-sorgente-1" href="different-editions-from-one-source.it.html">3.3.2 Edizioni diverse da un unico sorgente</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Uso-delle-variabili-1" href="different-editions-from-one-source.it.html#using-variables">Uso delle variabili</a>        </li>
+        <li class=""><a name="toc-Uso-delle-etichette-1" href="different-editions-from-one-source.it.html#using-tags">Uso delle etichette</a>        </li>
+        <li class=""><a name="toc-Impostazioni-globali-1" href="different-editions-from-one-source.it.html#using-global-settings">Impostazioni globali</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Caratteri-speciali-1" href="special-characters.it.html">3.3.3 Caratteri speciali</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: A.16 Glossario tecnico</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: A.16 Glossario tecnico">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: A.16 Glossario tecnico">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="notation-manual-tables.it.html#notation-manual-tables" rel="up" title="A. Tabelle del manuale della notazione">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="percussion-notes.it.html#percussion-notes" rel="previous" title="A.15 Note percussive">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Glossario-tecnico"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="percussion-notes.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Note percussive&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="notation-manual-tables.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#alist" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;alist &gt; </a>]</td></tr></table>
+<a name="technical-glossary"></a>
+<h2 class="appendixsec">A.16 Glossario tecnico</h2>
+
+<p>Un glossario dei termini tecnici e dei concetti usati internamente in
+LilyPond.  Questi termini appaiono nei manuali, nelle mailing list e
+nel codice sorgente.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#alist" accesskey="1">alist</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#callback" accesskey="2">callback</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#closure" accesskey="3">closure</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#glyph" accesskey="4">glyph</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#grob" accesskey="5">grob</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#immutable" accesskey="6">immutable</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#interface" accesskey="7">interface</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#lexer" accesskey="8">lexer</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#mutable" accesskey="9">mutable</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#output_002ddef">output-def</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#parser">parser</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#parser-variable">parser variable</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#prob">prob</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#smob">smob</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#stencil">stencil</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="alist"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#technical-glossary" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#callback" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;callback &gt; </a>]</td></tr></table>
+<a name="alist"></a>
+<h3 class="unnumberedsubsec">alist</h3>
+
+<a name="index-alist"></a>
+<a name="index-lista-di-associazioni"></a>
+
+<p>Una lista di associazioni &ndash; <strong>alist</strong> per <em>association list</em> &ndash;,
+è una coppia Scheme che associa un valore a una parola chiave:
+<code>(chiave . valore)</code>.  Per esempio, in &lsquo;<tt>scm/lily.scm</tt>&rsquo;,
+la lista di associazioni &ldquo;type-p-name-alist&rdquo; associa alcuni
+tipi di predicato (come &nbsp;<code>ly:music?</code>) ai nomi
+(come &nbsp;&ldquo;music&rdquo;) in modo che gli errori relativi al controllo
+del tipo possano essere segnalati con un messaggio che includa il
+nome del tipo di predicato atteso.
+</p>
+<hr size="6">
+<a name="callback"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#alist" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; alist&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#closure" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;closure &gt; </a>]</td></tr></table>
+<a name="callback"></a>
+<h3 class="unnumberedsubsec">callback</h3>
+
+<a name="index-callback"></a>
+
+<p><strong>callback</strong> indica una routine, funzione o metodo il cui
+riferimento sia passato come argomento quando si richiama un&rsquo;altra
+routine, permettendo così alla routine richiamata di invocarla.
+La tecnica fa sì che a un livello più basso del software si possa
+richiamare una funzione definita a un livello più alto.
+I &ldquo;callback&rdquo; sono molto utilizzati in LilyPond per far sì
+che il codice Scheme a livello utente possa definire quante azioni
+di basso livello sono eseguite.
+</p>
+
+<hr size="6">
+<a name="closure"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#callback" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; callback&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#glyph" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;glyph &gt; </a>]</td></tr></table>
+<a name="closure"></a>
+<h3 class="unnumberedsubsec">closure</h3>
+
+<a name="index-closure"></a>
+
+<p>In Scheme, si parla di <strong>closure</strong> (chiusura) quando una funzione,
+di solito un&rsquo;espressione lambda, viene passata come variabile.  La
+chiusura contiene il codice della funzione più i riferimenti ai
+collegamenti lessicali delle variabili libere della funzione (ovvero
+quelle variabili usate nell&rsquo;espressione ma definite al di fuori di
+essa). Quando questa funzione viene applicata a diversi argomenti
+successivamente, i collegamenti delle variabili libere che sono
+stati catturati nella chiusura vengono usati per ottenere i valori
+delle variabili libere da usare nel calcolo. Una caratteristica
+utile delle chiusure è la conservazione dei valori delle variabili
+interne tra un&rsquo;invocazione e l&rsquo;altra, facendo sì che uno stato possa
+essere mantenuto.
+</p>
+
+<hr size="6">
+<a name="glyph"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#closure" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; closure&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#grob" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;grob &gt; </a>]</td></tr></table>
+<a name="glyph"></a>
+<h3 class="unnumberedsubsec">glyph</h3>
+
+<a name="index-glyph"></a>
+<a name="index-glifo"></a>
+<a name="index-tipo-di-carattere"></a>
+<a name="index-font-1"></a>
+<a name="index-carattere-tipografico_002c-famiglia-di"></a>
+
+<p>Un <strong>glifo</strong> è una particolare rappresentazione grafica di un
+carattere tipografico o una combinazione di due caratteri che formano
+una legatura.
+Un insieme di glifi con un solo stile e forma costituiscono un tipo
+di carattere (font), e un insieme di tipi di carattere con vari stili e
+dimensioni costituiscono una famiglia di caratteri tipografici.
+</p>
+<a name="Vedi-anche-107"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="fonts.it.html">Tipi di carattere</a>,
+<a href="special-characters.it.html">Caratteri speciali</a>.
+</p>
+
+<hr size="6">
+<a name="grob"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#glyph" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; glyph&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#immutable" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;immutable &gt; </a>]</td></tr></table>
+<a name="grob"></a>
+<h3 class="unnumberedsubsec">grob</h3>
+
+<a name="index-grob-1"></a>
+<a name="index-formattazione_002c-oggetti"></a>
+<a name="index-oggetti-grafici"></a>
+
+<p>Gli oggetti di LilyPond che rappresentano elementi della notazione
+nell&rsquo;output &ndash; come teste di nota, gambi, legature di portamento e
+di valore, diteggiature, chiavi, etc. &ndash; sono chiamati,
+in inglese, &lsquo;Layout objects&rsquo; (&lsquo;Oggetti della formattazione&rsquo;)
+o anche &lsquo;GRaphical OBjects&rsquo; o <strong>grobs</strong> in forma breve.  Sono
+rappresentati da istanze della classe <code>Grob</code>.
+</p>
+<a name="Vedi-anche-77"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Oggetti-e-interfacce-1"></a>
+<a href="../learning/objects-and-interfaces.it.html">Oggetti e interfacce</a>,
+<a name="index-Convenzioni-per-i-nomi-di-oggetti-e-proprieta"></a>
+<a href="../learning/naming-conventions-of-objects-and-properties.it.html">Convenzioni per i nomi di oggetti e proprietà</a>,
+<a name="index-Proprieta-degli-oggetti-di-formattazione"></a>
+<a href="../learning/properties-of-layout-objects.it.html">Proprietà degli oggetti di formattazione</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-grob_002dinterface-2"></a>
+<a href="../internals/grob_002dinterface.it.html">grob-interface</a>,
+<a name="index-All-layout-objects-5"></a>
+<a href="../internals/all-layout-objects.it.html">All layout objects</a>.
+</p>
+
+<hr size="6">
+<a name="immutable"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#grob" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; grob&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#interface" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;interface &gt; </a>]</td></tr></table>
+<a name="immutable"></a>
+<h3 class="unnumberedsubsec">immutable</h3>
+
+<a name="index-immutable"></a>
+<a name="index-oggetti-immutabili"></a>
+<a name="index-proprieta-immutabili"></a>
+<a name="index-proprieta-condivise"></a>
+<a name="index-immutabili_002c-oggetti"></a>
+
+<p>Un oggetto si dice <strong>immutabile</strong> &ndash; in inglese <em>immutable</em> &ndash;
+se il suo stato non può essere modificato dopo la sua creazione,
+in contrasto con un oggetto variabile, che può essere modificato
+dopo la sua creazione.
+</p>
+<p>In LilyPond, le proprietà immutabili o condivise definiscono lo stile e
+il comportamento predefinito dei grob.  Sono condivise tra molti
+oggetti. In apparente contraddizione col loro nome, possono essere
+modificate con <code>\override</code> e <code>\revert</code>.
+</p>
+<a name="Vedi-anche-52"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="#mutable">mutable</a>.
+</p>
+
+<hr size="6">
+<a name="interface"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#immutable" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; immutable&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#lexer" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;lexer &gt; </a>]</td></tr></table>
+<a name="interface"></a>
+<h3 class="unnumberedsubsec">interface</h3>
+
+<a name="index-interfaccia"></a>
+<a name="index-grob_002dinterface-3"></a>
+<a name="index-interfacce-dei-grob"></a>
+
+<p>Le azioni e le proprietà comuni a un insieme di grob sono raggruppate
+in un oggetto chiamato <code>grob-interface</code> o semplicemente
+&lsquo;interface&rsquo;.
+</p>
+<a name="Vedi-anche"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Oggetti-e-interfacce-2"></a>
+<a href="../learning/objects-and-interfaces.it.html">Oggetti e interfacce</a>,
+<a name="index-Convenzioni-per-i-nomi-di-oggetti-e-proprieta-1"></a>
+<a href="../learning/naming-conventions-of-objects-and-properties.it.html">Convenzioni per i nomi di oggetti e proprietà</a>,
+<a name="index-Proprieta-presenti-nelle-interfacce"></a>
+<a href="../learning/properties-found-in-interfaces.it.html">Proprietà presenti nelle interfacce</a>.
+</p>
+<p>Guida alla notazione:
+<a href="layout-interfaces.it.html">Interfacce di formattazione</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-Graphical-Object-Interfaces"></a>
+<a href="../internals/graphical-object-interfaces.it.html">Graphical Object Interfaces</a>.
+</p>
+
+<hr size="6">
+<a name="lexer"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#interface" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; interface&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#mutable" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;mutable &gt; </a>]</td></tr></table>
+<a name="lexer"></a>
+<h3 class="unnumberedsubsec">lexer</h3>
+
+<a name="index-lexer"></a>
+<a name="index-Flex"></a>
+
+<p>A <strong>lexer</strong> is a program which converts a sequence of
+characters into a sequence of tokens, a process called lexical
+analysis.  The LilyPond lexer converts the stream obtained from an
+input &lsquo;<tt>.ly</tt>&rsquo; file into a tokenized stream more suited to the
+next stage of processing - parsing, for which see <a href="#parser">parser</a>.
+The LilyPond lexer is built with Flex from the lexer file
+&lsquo;<tt>lily/lexer.ll</tt>&rsquo; which contains the lexical rules.  This file
+is part of the source code and is not included in the LilyPond
+binary installation.
+</p>
+
+<hr size="6">
+<a name="mutable"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#lexer" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; lexer&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#output_002ddef" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;output-def &gt; </a>]</td></tr></table>
+<a name="mutable"></a>
+<h3 class="unnumberedsubsec">mutable</h3>
+
+<a name="index-mutable"></a>
+<a name="index-oggetti-variabili"></a>
+<a name="index-proprieta-variabili"></a>
+<a name="index-variabili_002c-oggetti-e-proprieta"></a>
+
+<p>Si dice che un oggetto è <strong>variabile</strong> &ndash; <em>mutable</em> in
+inglese &ndash; se il suo stato può essere modificato dopo la sua
+creazione, in contrasto con un oggetto immutevole, il cui stato
+viene fissato al momento della sua creazione.
+</p>
+<p>In LilyPond, le proprietà variabili contengono valori specifici
+di un grob.  Di solito, le liste di altri oggetti o i risultati di
+calcoli sono salvati in proprietà variabili.
+</p>
+<a name="Vedi-anche-4"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="#immutable">immutable</a>.
+</p>
+
+<hr size="6">
+<a name="output_002ddef"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#mutable" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; mutable&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#parser" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;parser &gt; </a>]</td></tr></table>
+<a name="output_002ddef"></a>
+<h3 class="unnumberedsubsec">output-def</h3>
+
+<a name="index-output_002ddef"></a>
+
+<p>Un&rsquo;istanza della classe <code>Output-def</code> contiene i metodi e le
+strutture dei dati associate con un blocco di output. Tali istanze
+vengono create per i blocchi midi, layout e paper.
+</p>
+
+<hr size="6">
+<a name="parser"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#output_002ddef" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; output-def&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#parser-variable" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;parser variable &gt; </a>]</td></tr></table>
+<a name="parser"></a>
+<h3 class="unnumberedsubsec">parser</h3>
+
+<a name="index-parser"></a>
+<a name="index-analizzatore-sintattico"></a>
+<a name="index-Bison"></a>
+<a name="index-grammatica-di-LilyPond"></a>
+<a name="index-sintassi-di-LilyPond"></a>
+<a name="index-BNF"></a>
+
+<p>Un <strong>analizzatore sintattico</strong> &ndash; in inglese <em>parser</em> &ndash; analizza la
+sequenza di <em>token</em> prodotti da un <em>lexer</em> per determinare la sua
+struttura grammaticale, raggruppando i token progressivamente in gruppi più ampi
+in base a certe regole grammaticali. Se la sequenza di token è valida, il
+risultato finale è l&rsquo;insieme dei token ordinati a albero, la cui radice è il
+simbolo iniziale della grammatica. Se ciò non può essere ottenuto, il file non è
+valido e viene generato un appropriato messaggio di errore. I gruppi sintattici
+e le regole che li definiscono nella sintassi di LilyPond sono definiti in
+&lsquo;<tt>lily/parser.yy</tt>&rsquo; e mostrati in Backus Normal Form (BNF) in
+<a name="index-LilyPond-grammar"></a>
+<a href="../contributor/lilypond-grammar.html">LilyPond grammar</a>.  Questo file viene usato dal generatore di parser
+Bison per generare il parser durante la compilazione del programma.  Fa parte
+del codice sorgente e non è incluso nell&rsquo;installazione binaria di LilyPond.
+</p>
+
+<hr size="6">
+<a name="parser-variable"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#parser" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; parser&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#prob" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;prob &gt; </a>]</td></tr></table>
+<a name="parser-variable"></a>
+<h3 class="unnumberedsubsec">parser variable</h3>
+
+<a name="index-parser-variable"></a>
+<a name="index-variabile-dell_0027analizzatore-sintattico"></a>
+<a name="index-variabile-Scheme"></a>
+<a name="index-variabile-globale"></a>
+<a name="index-afterGraceFraction"></a>
+<a name="index-musicQuotes"></a>
+<a name="index-mode"></a>
+<a name="index-output_002dcount"></a>
+<a name="index-output_002dsuffix"></a>
+<a name="index-partCombineListener"></a>
+<a name="index-pitchnames"></a>
+<a name="index-toplevel_002dbookparts"></a>
+<a name="index-toplevel_002dscores"></a>
+<a name="index-showLastLength-2"></a>
+<a name="index-showFirstLength-2"></a>
+
+<p>Si tratta di variabili definite direttamente in Scheme.  Il loro uso da
+parte degli utente è fortemente scoraggiato, perché la semantica del
+loro raggio d&rsquo;azione può creare confusione.
+</p>
+<p>Se il valore di una simile variabile viene cambiato in un file &lsquo;<tt>.ly</tt>&rsquo;,
+la modifica è globale e, se non viene ripristinato esplicitamente, il
+nuovo valore viene mantenuto fino alla fine del file, agendo su blocchi
+<code>\score</code> successivi così come su file esterni aggiunti col comando
+<code>\include</code>.  Ciò può portare a conseguenze non volute e in progetti
+complessi gli errori conseguenti possono essere difficili da individuare.
+</p>
+<p>LilyPond usa le seguenti variabili dell&rsquo;analizzatore sintattico:
+</p>
+<ul>
+<li> afterGraceFraction
+</li><li> musicQuotes
+</li><li> mode
+</li><li> output-count
+</li><li> output-suffix
+</li><li> partCombineListener
+</li><li> pitchnames
+</li><li> toplevel-bookparts
+</li><li> toplevel-scores
+</li><li> showLastLength
+</li><li> showFirstLength
+</li></ul>
+
+
+<hr size="6">
+<a name="prob"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#parser-variable" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; parser variable&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#smob" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;smob &gt; </a>]</td></tr></table>
+<a name="prob"></a>
+<h3 class="unnumberedsubsec">prob</h3>
+
+<a name="index-prob"></a>
+<a name="index-proprieta-dell_0027oggetto"></a>
+
+<p>Le proprietà dell&rsquo;oggetto &ndash; <strong>prob</strong> per PRoperty OBjects &ndash;
+sono istanze della classe <code>Prob</code>, una semplice classe per oggetti
+che hanno liste associative di proprietà variabili e invariabili e
+metodi per manipolarle. Le classi <code>Music</code> e <code>Stream_event</code>
+derivano da <code>Prob</code>.  Vengono create istanze della classe <code>Prob</code>
+anche per conservare il contenuto formattato dei grob di un sistema e
+i blocchi dei titoli durante la formattazione della pagina.
+</p>
+
+<hr size="6">
+<a name="smob"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#prob" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; prob&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#stencil" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;stencil &gt; </a>]</td></tr></table>
+<a name="smob"></a>
+<h3 class="unnumberedsubsec">smob</h3>
+
+<a name="index-smob"></a>
+<a name="index-Scheme_002c-oggetto"></a>
+<a name="index-oggetto-Scheme"></a>
+
+<p>Gli oggetti Scheme &ndash; <strong>Smobs</strong> per ScheMe OBjects &ndash; fanno parte
+del meccanismo con cui Guile esporta gli oggetti C e C++ in codice Scheme.
+In LilyPond, gli smob vengono creati dagli oggetti C++ attraverso delle
+macro.  Esistono due tipi di oggetti smob: smob semplici, intesi per
+oggetti invariabili semplici come i numeri; e smob complessi, usati per
+oggetti aventi delle identità. Maggiori informazioni si trovano nei
+sorgenti di LilyPond e precisamente nel file &lsquo;<tt>lily/includes/smob.hh</tt>&rsquo;.
+</p>
+<hr size="6">
+<a name="stencil"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#smob" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; smob&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="all-context-properties.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Tutte le proprietà di contesto &gt; </a>]</td></tr></table>
+<a name="stencil"></a>
+<h3 class="unnumberedsubsec">stencil</h3>
+
+<a name="index-stencil"></a>
+<a name="index-stampo"></a>
+
+<p>Un&rsquo;istanza della classe <strong>stencil</strong> contiene l&rsquo;informazione
+necessaria per stampare un oggetto tipografico. È un semplice smob
+che contiene un riquadro che definisce l&rsquo;estensione verticale e
+orizzontale dell&rsquo;oggetto, e un&rsquo;espressione Scheme che stamperà
+l&rsquo;oggetto quando esaminata. Gli stencil possono essere combinati
+per formare stencil più complessi, definiti da una gerarchia di
+espressioni Scheme degli stencil che li compongono.
+</p>
+<p>La proprietà <code>stencil</code>, che connette un grob al suo stencil,
+è definita nell&rsquo;interfaccia <code>grob-interface</code>.
+</p>
+<a name="Vedi-anche-236"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida al funzionamento interno:
+<a name="index-grob_002dinterface-4"></a>
+<a href="../internals/grob_002dinterface.it.html">grob-interface</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#smob" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; smob&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#technical-glossary" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Glossario tecnico&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="all-context-properties.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Tutte le proprietà di contesto &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="technical-glossary.html">English</a>, <a href="technical-glossary.ca.html">català</a>, <a href="technical-glossary.de.html">deutsch</a>, <a href="technical-glossary.es.html">español</a>, <a href="technical-glossary.fr.html">français</a>, <a href="technical-glossary.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=" toc_current"><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>
+    <ul class="toc">
+      <li class=""><a name="toc-alist-1" href="technical-glossary.it.html#alist">alist</a>      </li>
+      <li class=""><a name="toc-callback-1" href="technical-glossary.it.html#callback">callback</a>      </li>
+      <li class=""><a name="toc-closure-1" href="technical-glossary.it.html#closure">closure</a>      </li>
+      <li class=""><a name="toc-glyph-1" href="technical-glossary.it.html#glyph">glyph</a>      </li>
+      <li class=""><a name="toc-grob-1" href="technical-glossary.it.html#grob">grob</a>      </li>
+      <li class=""><a name="toc-immutable-1" href="technical-glossary.it.html#immutable">immutable</a>      </li>
+      <li class=""><a name="toc-interface-1" href="technical-glossary.it.html#interface">interface</a>      </li>
+      <li class=""><a name="toc-lexer-1" href="technical-glossary.it.html#lexer">lexer</a>      </li>
+      <li class=""><a name="toc-mutable-1" href="technical-glossary.it.html#mutable">mutable</a>      </li>
+      <li class=""><a name="toc-output_002ddef-1" href="technical-glossary.it.html#output_002ddef">output-def</a>      </li>
+      <li class=""><a name="toc-parser-1" href="technical-glossary.it.html#parser">parser</a>      </li>
+      <li class=""><a name="toc-parser-variable-1" href="technical-glossary.it.html#parser-variable">parser variable</a>      </li>
+      <li class=""><a name="toc-prob-1" href="technical-glossary.it.html#prob">prob</a>      </li>
+      <li class=""><a name="toc-smob-1" href="technical-glossary.it.html#smob">smob</a>      </li>
+      <li class=""><a name="toc-stencil-1" href="technical-glossary.it.html#stencil">stencil</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

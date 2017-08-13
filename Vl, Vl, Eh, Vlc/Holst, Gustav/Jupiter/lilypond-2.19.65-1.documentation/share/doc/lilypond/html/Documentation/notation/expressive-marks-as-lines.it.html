@@ -1,0 +1,1019 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 1.3.3 Indicazioni espressive lineari</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 1.3.3 Indicazioni espressive lineari">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 1.3.3 Indicazioni espressive lineari">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="expressive-marks.it.html#expressive-marks" rel="up" title="1.3 Segni di espressione">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="expressive-marks-as-curves.it.html#expressive-marks-as-curves" rel="previous" title="1.3.2 Indicazioni espressive curvilinee">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Indicazioni-espressive-lineari"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="expressive-marks-as-curves.it.html#falls-and-doits" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Portamenti indeterminati discendenti (cadute) e ascendenti&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="expressive-marks.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Segni di espressione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#glissando" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Glissando &gt; </a>]</td></tr></table>
+<a name="expressive-marks-as-lines"></a>
+<h3 class="subsection">1.3.3 Indicazioni espressive lineari</h3>
+
+<p>Questa sezione spiega come creare varie indicazioni espressive che seguono
+una traiettoria lineare: glissandi, arpeggi e trilli.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#glissando" accesskey="1">Glissando</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#arpeggio" accesskey="2">Arpeggio</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#trills" accesskey="3">Trilli</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Glissando"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#expressive-marks-as-lines" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Indicazioni espressive lineari&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Indicazioni espressive lineari&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#arpeggio" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Arpeggio &gt; </a>]</td></tr></table>
+<a name="glissando"></a>
+<h4 class="unnumberedsubsubsec">Glissando</h4>
+
+<a name="index-glissando"></a>
+<a name="index-_005cglissando"></a>
+<a name="index-_005cglissando-1"></a>
+
+<p>Un <var>glissando</var> si crea attaccando <code>\glissando</code>
+a una nota:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  g'2\glissando g'
+  c2\glissando c,
+  \afterGrace f,1\glissando f'16
+}
+</pre><p>
+ <a href="../78/lily-c5974954.ly">
+  <img align="middle"
+       border="0"
+       src="../78/lily-c5974954.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un glissando può collegare note appartenenti a righi diversi:
+</p>
+<blockquote><pre class="verbatim">\new PianoStaff &lt;&lt;
+  \new Staff = &quot;right&quot; {
+    e'''2\glissando
+    \change Staff = &quot;left&quot;
+    a,,4\glissando
+    \change Staff = &quot;right&quot;
+    b''8 r |
+  }
+  \new Staff = &quot;left&quot; {
+    \clef bass
+    s1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../7b/lily-99d20d72.ly">
+  <img align="middle"
+       border="0"
+       src="../7b/lily-99d20d72.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un glissando può collegare le note negli accordi.  Se è necessario qualcosa
+di diverso dal normale abbinamento uno a uno delle note, si possono definire
+le connessioni tra le note attraverso <code>\glissandoMap</code>, dove le note
+di un accordo sono numerate a partire da zero nell&rsquo;ordine in cui appaiono
+nel file di input &lsquo;<tt>.ly</tt>&rsquo;.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e&gt;1\glissando g' |
+  &lt;c, e&gt;1\glissando |
+  &lt;g' b&gt; |
+  \break
+  \set glissandoMap = #'((0 . 1) (1 . 0))
+  &lt;c, g'&gt;1\glissando |
+  &lt;d a'&gt; |
+  \set glissandoMap = #'((0 . 0) (0 . 1) (0 . 2))
+  c1\glissando |
+  &lt;d f a&gt; |
+  \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
+  &lt;f d a'&gt;1\glissando |
+  &lt;c c'&gt; |
+}
+</pre><p>
+ <a href="../eb/lily-b9c95740.ly">
+  <img align="middle"
+       border="0"
+       src="../eb/lily-b9c95740.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si possono adottare diversi stili di glissando.  Maggiori dettagli in <a href="line-styles.it.html">Stili della linea</a>.
+</p>
+
+<a name="Frammenti-di-codice-selezionati-53"></a>
+<h4 class="subsubheading">Frammenti di codice selezionati</h4>
+
+<p><em> Glissando contemporaneo</em>
+</p>
+
+<p>Un glissando contemporaneo senza una nota finale può essere creato usando
+una nota nascosta e un tempo di cadenza.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \time 3/4
+  \override Glissando.style = #'zigzag
+  c4 c
+  \cadenzaOn
+  c4\glissando
+  \hideNotes
+  c,,4
+  \unHideNotes
+  \cadenzaOff
+  \bar &quot;|&quot;
+}
+</pre><p>
+ <a href="../c0/lily-a743b6ae.ly">
+  <img align="middle"
+       border="0"
+       src="../c0/lily-a743b6ae.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Aggiungere i segni di tempo per i glissandi lunghi</em>
+</p>
+
+<p>I battiti saltati nei glissandi molto lunghi vengono talvolta segnalati
+con delle indicazioni di tempo, che consistono solitamente in dei gambi
+privi di teste di nota.  Questi gambi possono essere usati anche per
+contenere segni di espressione intermedi.
+</p>
+<p>Se i gambi non si allineano bene al glissando, può essere necessario
+riposizionarli leggermente.
+</p>
+
+<blockquote><pre class="verbatim">glissandoSkipOn = {
+  \override NoteColumn.glissando-skip = ##t
+  \hide NoteHead
+  \override NoteHead.no-ledgers = ##t
+}
+
+glissandoSkipOff = {
+  \revert NoteColumn.glissando-skip
+  \undo \hide NoteHead
+  \revert NoteHead.no-ledgers
+}
+
+\relative c'' {
+  r8 f8\glissando
+  \glissandoSkipOn
+  f4 g a a8\noBeam
+  \glissandoSkipOff
+  a8
+
+  r8 f8\glissando
+  \glissandoSkipOn
+  g4 a8
+  \glissandoSkipOff
+  a8 |
+
+  r4 f\glissando \&lt;
+  \glissandoSkipOn
+  a4\f \&gt;
+  \glissandoSkipOff
+  b8\! r |
+}
+</pre><p>
+ <a href="../92/lily-38b77180.ly">
+  <img align="middle"
+       border="0"
+       src="../92/lily-38b77180.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Lasciare che i glissandi vadano a capo</em>
+</p>
+
+<p>Per permettere a un glissando di andare a capo se capita su un&rsquo;interruzione di
+riga, si impostano le proprietà <code>breakable</code> e <code>after-line-breaking</code>
+su <code>#t</code>:
+</p>
+
+<blockquote><pre class="verbatim">glissandoSkipOn = {
+  \override NoteColumn.glissando-skip = ##t
+  \hide NoteHead
+  \override NoteHead.no-ledgers = ##t
+}
+
+\relative c'' {
+  \override Glissando.breakable = ##t
+  \override Glissando.after-line-breaking = ##t
+  f1\glissando |
+  \break
+  a4 r2. |
+  f1\glissando
+  \once \glissandoSkipOn
+  \break
+  a2 a4 r4 |
+}
+</pre><p>
+ <a href="../11/lily-0535f3cc.ly">
+  <img align="middle"
+       border="0"
+       src="../11/lily-0535f3cc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Estendere i glissandi sulle volte delle ripetizioni</em>
+</p>
+
+<p>Un glissando che si estende in vari blocchi <code>\alternative</code> può
+essere simulato aggiungendo all&rsquo;inizio di ogni blocco <code>\alternative</code>
+una nota di abbellimento nascosta da cui inizia un glissando.  La nota di
+abbellimento deve avere la stessa altezza della nota da cui parte il
+glissando iniziale.  In questo frammento si usa una funzione musicale
+che prende come argomento l&rsquo;altezza  della nota di abbellimento.
+</p>
+<p>Attenzione: nella musica polifonica la nota di abbellimento deve avere una nota
+di abbellimento corrispondente in tutte le altre voci.
+</p>
+
+<blockquote><pre class="verbatim">repeatGliss = #(define-music-function (grace)
+  (ly:pitch?)
+  #{
+    % the next two lines ensure the glissando is long enough
+    % to be visible
+    \once \override Glissando.springs-and-rods
+      = #ly:spanner::set-spacing-rods
+    \once \override Glissando.minimum-length = #3.5
+    \once \hideNotes
+    \grace $grace \glissando
+  #})
+
+\score {
+  \relative c'' {
+    \repeat volta 3 { c4 d e f\glissando }
+    \alternative {
+      { g2 d }
+      { \repeatGliss f g2 e }
+      { \repeatGliss f e2 d }
+    }
+  }
+}
+
+music =  \relative c' {
+  \voiceOne
+  \repeat volta 2 {
+    g a b c\glissando
+  }
+  \alternative {
+    { d1 }
+    { \repeatGliss c \once \omit StringNumber e1\2 }
+  }
+}
+
+\score {
+  \new StaffGroup &lt;&lt;
+    \new Staff &lt;&lt;
+      \context Voice { \clef &quot;G_8&quot; \music }
+    &gt;&gt;
+    \new TabStaff  &lt;&lt;
+      \context TabVoice { \clef &quot;moderntab&quot; \music }
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../87/lily-4f5b86fc.ly">
+  <img align="middle"
+       border="0"
+       src="../87/lily-4f5b86fc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche-252"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Glossario Musicale:
+<a name="index-glissando-1"></a>
+<a href="../music-glossary/glissando.it.html">glissando</a>.
+</p>
+<p>Guida alla notazione:
+<a href="line-styles.it.html">Stili della linea</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/segni-di-espressione.it.html">Expressive marks</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-Glissando"></a>
+<a href="../internals/glissando.it.html">Glissando</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-10"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>Non è supportato il testo lungo la linea del glissando (ad esempio <var>gliss.</var>).
+</p>
+
+<hr size="6">
+<a name="Arpeggio"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#glissando" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Glissando&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Indicazioni espressive lineari&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#trills" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Trilli &gt; </a>]</td></tr></table>
+<a name="arpeggio"></a>
+<h4 class="unnumberedsubsubsec">Arpeggio</h4>
+
+<a name="index-arpeggio"></a>
+<a name="index-arpeggio-spezzato"></a>
+<a name="index-spezzato_002c-arpeggio"></a>
+
+<a name="index-_005carpeggio"></a>
+<a name="index-_005carpeggio-1"></a>
+<a name="index-_005carpeggioArrowUp"></a>
+<a name="index-_005carpeggioArrowUp-1"></a>
+<a name="index-_005carpeggioArrowDown"></a>
+<a name="index-_005carpeggioArrowDown-1"></a>
+<a name="index-_005carpeggioNormal"></a>
+<a name="index-_005carpeggioNormal-1"></a>
+
+<p>Un <var>arpeggio</var> su un accordo (detto anche accordo spezzato)
+si ottiene aggiungendo <code>\arpeggio</code> all&rsquo;accordo:
+</p>
+<blockquote><pre class="verbatim">\relative { &lt;c' e g c&gt;1\arpeggio }
+</pre><p>
+ <a href="../24/lily-1b984e1e.ly">
+  <img align="middle"
+       border="0"
+       src="../24/lily-1b984e1e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si possono scrivere vari tipi di arpeggio.
+<code>\arpeggioNormal</code> ripristina l&rsquo;arpeggio normale:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g c&gt;2\arpeggio
+
+  \arpeggioArrowUp
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioArrowDown
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioNormal
+  &lt;c e g c&gt;2\arpeggio
+}
+</pre><p>
+ <a href="../46/lily-77db28ac.ly">
+  <img align="middle"
+       border="0"
+       src="../46/lily-77db28ac.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-arpeggio_002c-simboli-speciali"></a>
+<a name="index-simboli-speciali-di-arpeggio"></a>
+
+<a name="index-_005carpeggioBracket"></a>
+<a name="index-_005carpeggioBracket-1"></a>
+<a name="index-_005carpeggioParenthesis"></a>
+<a name="index-_005carpeggioParenthesis-1"></a>
+<a name="index-_005carpeggioParenthesisDashed"></a>
+<a name="index-_005carpeggioParenthesisDashed-1"></a>
+
+<p>Si possono creare simboli di arpeggio speciali <em>in forma di parentesi</em>:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g c&gt;2
+
+  \arpeggioBracket
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioParenthesis
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioParenthesisDashed
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioNormal
+  &lt;c e g c&gt;2\arpeggio
+}
+</pre><p>
+ <a href="../98/lily-47dff4fc.ly">
+  <img align="middle"
+       border="0"
+       src="../98/lily-47dff4fc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Le proprietà del tratteggio della parentesi dell&rsquo;arpeggio sono regolate
+dalla proprietà <code>'dash-definition</code>, descritta in <a href="expressive-marks-as-curves.it.html#slurs">Legature di portamento</a>.
+</p>
+<p>Gli arpeggi possono essere scritti in modo esplicito con le legature di
+valore.  Per maggiori dettagli si veda <a href="writing-rhythms.it.html#ties">Legature di valore</a>.
+</p>
+
+<a name="Comandi-predefiniti-37"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\arpeggio</code>,
+<code>\arpeggioArrowUp</code>,
+<code>\arpeggioArrowDown</code>,
+<code>\arpeggioNormal</code>,
+<code>\arpeggioBracket</code>,
+<code>\arpeggioParenthesis</code>,
+<code>\arpeggioParenthesisDashed</code>.
+</p>
+
+<a name="Frammenti-di-codice-selezionati-33"></a>
+<h4 class="subsubheading">Frammenti di codice selezionati</h4>
+
+
+<p><em> Creare degli arpeggi che attraversano il rigo del pianoforte</em>
+</p>
+
+<p>In un rigo per pianoforte (<code>PianoStaff</code>), è possibile far sì che un
+arpeggio attraversi i righi impostando la proprietà <code>PianoStaff.connectArpeggios</code>.
+</p>
+
+<blockquote><pre class="verbatim">\new PianoStaff \relative c'' &lt;&lt;
+  \set PianoStaff.connectArpeggios = ##t
+  \new Staff {
+    &lt;c e g c&gt;4\arpeggio
+    &lt;g c e g&gt;4\arpeggio
+    &lt;e g c e&gt;4\arpeggio
+    &lt;c e g c&gt;4\arpeggio
+  }
+  \new Staff {
+    \clef bass
+    \repeat unfold 4 {
+      &lt;c,, e g c&gt;4\arpeggio
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../bf/lily-edab7884.ly">
+  <img align="middle"
+       border="0"
+       src="../bf/lily-edab7884.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Creare degli arpeggi che attraversano i righi in altri contesti</em>
+</p>
+
+<p>Si possono creare arpeggi che attraversano i righi in contesti diversi da
+<code>GrandStaff</code>, <code>PianoStaff</code> e <code>StaffGroup</code> se l&rsquo;incisore
+<code>Span_arpeggio_engraver</code> è incluso nel contesto <code>Score</code>.
+</p>
+
+<blockquote><pre class="verbatim">\score {
+  \new ChoirStaff {
+    \set Score.connectArpeggios = ##t
+    &lt;&lt;
+      \new Voice \relative c' {
+        &lt;c e&gt;2\arpeggio
+        &lt;d f&gt;2\arpeggio
+        &lt;c e&gt;1\arpeggio
+      }
+      \new Voice \relative c {
+        \clef bass
+        &lt;c g'&gt;2\arpeggio
+        &lt;b g'&gt;2\arpeggio
+        &lt;c g'&gt;1\arpeggio
+      }
+    &gt;&gt;
+  }
+  \layout {
+    \context {
+      \Score
+      \consists &quot;Span_arpeggio_engraver&quot;
+    }
+  }
+}
+</pre><p>
+ <a href="../f6/lily-eabd37c2.ly">
+  <img align="middle"
+       border="0"
+       src="../f6/lily-eabd37c2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Creare degli arpeggi che attraversano note appartenenti a voci diverse</em>
+</p>
+
+<p>Si può disegnare un arpeggio che attraversa delle note in voci diverse dello
+stesso rigo se si aggiunge l&rsquo;incisore <code>Span_arpeggio_engraver</code> nel
+contesto <code>Staff</code>:
+</p>
+
+<blockquote><pre class="verbatim">\new Staff \with {
+  \consists &quot;Span_arpeggio_engraver&quot;
+}
+\relative c' {
+  \set Staff.connectArpeggios = ##t
+  &lt;&lt;
+    { &lt;e' g&gt;4\arpeggio &lt;d f&gt; &lt;d f&gt;2 }
+    \\
+    { &lt;d, f&gt;2\arpeggio &lt;g b&gt;2 }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../ab/lily-2a345d7d.ly">
+  <img align="middle"
+       border="0"
+       src="../ab/lily-2a345d7d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche-1"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Glossario Musicale:
+<a name="index-arpeggio-1"></a>
+<a href="../music-glossary/arpeggio.it.html">arpeggio</a>.
+</p>
+<p>Guida alla notazione:
+<a href="expressive-marks-as-curves.it.html#slurs">Legature di portamento</a>,
+<a href="writing-rhythms.it.html#ties">Legature di valore</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/segni-di-espressione.it.html">Expressive marks</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-Arpeggio"></a>
+<a href="../internals/arpeggio.it.html">Arpeggio</a>,
+<a name="index-Slur-1"></a>
+<a href="../internals/slur.it.html">Slur</a>,
+<a name="index-PianoStaff-1"></a>
+<a href="../internals/pianostaff.it.html">PianoStaff</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-44"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<a name="index-arpeggio-attraverso-il-rigo_002c-stile-della-parentesi"></a>
+<a name="index-parentesi_002c-stile-nell_0027arpeggio-attraverso-il-rigo"></a>
+
+<p>Non è possibile mostrare simultaneamente arpeggi connessi e non connessi in un
+<code>PianoStaff</code>.
+</p>
+<p>L&rsquo;arpeggio in forma di parentesi non può essere impostato con facilità negli
+arpeggi che attraversano i righi; occorre ricorrere a metodi più complessi
+descritti in <a href="common-notation-for-keyboards.it.html#cross_002dstaff-stems">Cross-staff stems</a>.
+</p>
+
+<hr size="6">
+<a name="Trilli"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#arpeggio" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Arpeggio&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Indicazioni espressive lineari&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="repeats.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Ripetizioni &gt; </a>]</td></tr></table>
+<a name="trills"></a>
+<h4 class="unnumberedsubsubsec">Trilli</h4>
+
+<a name="index-trilli"></a>
+
+<a name="index-_005ctrill-2"></a>
+<a name="index-_005ctrill-3"></a>
+<a name="index-_005cstartTrillSpan"></a>
+<a name="index-_005cstartTrillSpan-1"></a>
+<a name="index-_005cstopTrillSpan"></a>
+<a name="index-_005cstopTrillSpan-1"></a>
+
+<p>I trilli senza linea di estensione si ottengono col comando
+<code>\trill</code>; si veda <a href="expressive-marks-attached-to-notes.it.html#articulations-and-ornamentations">Articolazioni e abbellimenti</a>.
+</p>
+<p>I trilli con linea di estensione si ottengono con
+<code>\startTrillSpan</code> e <code>\stopTrillSpan</code>:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  d1
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../fe/lily-1ba0d527.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-1ba0d527.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un estensore del trillo che va a capo ricomincerà esattamente sopra la
+prima nota della nuova riga.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  \break
+  d1
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../3c/lily-985e601d.ly">
+  <img align="middle"
+       border="0"
+       src="../3c/lily-985e601d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>È possibile tracciare trilli consecutivi senza dover esplicitare i comandi
+<code>\stopTrillSpan</code>, perché il trillo successivo diventerà
+automaticamente il limite destro di quello precedente.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  d1
+  b1\startTrillSpan
+  d2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../cb/lily-542878af.ly">
+  <img align="middle"
+       border="0"
+       src="../cb/lily-542878af.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>I trilli possono essere anche combinati con le note di abbellimento.  La sintassi
+di questo costrutto e il metodo per posizionare in modo preciso gli abbellimenti
+sono descritti in <a href="special-rhythmic-concerns.it.html#grace-notes">Abbellimenti</a>.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1~\afterGrace
+  d1\startTrillSpan { c32[ d]\stopTrillSpan }
+  c2 r2
+}
+</pre><p>
+ <a href="../05/lily-89b5d43a.ly">
+  <img align="middle"
+       border="0"
+       src="../05/lily-89b5d43a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-trilli-con-altezza"></a>
+<a name="index-trilli-con-notina"></a>
+<a name="index-_005cpitchedTrill"></a>
+<a name="index-_005cpitchedTrill-1"></a>
+
+<p>I trilli che richiedono una nota ausiliaria dall&rsquo;altezza esplicita si
+ottengono col comando <code>\pitchedTrill</code>.  Il primo argomento è la  nota
+principale e il secondo è la nota <em>trillata</em>, che appare come una testa
+di nota senza gambo e racchiusa tra parentesi.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \pitchedTrill
+  d''2\startTrillSpan fis
+  d2
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../a6/lily-77ec2b79.ly">
+  <img align="middle"
+       border="0"
+       src="../a6/lily-77ec2b79.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-trilli-con-notina-e-alterazione"></a>
+<a name="index-trilli-con-alterazione"></a>
+
+<p>Alterazioni successive della stessa nota nella stessa misura devono essere
+aggiunte manualmente.  Apparirà solo l&rsquo;alterazione del primo trillo con
+notina in una misura.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \pitchedTrill
+  eis''4\startTrillSpan fis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan cis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan fis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan fis!
+  eis4\stopTrillSpan
+}
+</pre><p>
+ <a href="../d3/lily-cb78ac18.ly">
+  <img align="middle"
+       border="0"
+       src="../d3/lily-cb78ac18.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Comandi-predefiniti-3"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\startTrillSpan</code>,
+<code>\stopTrillSpan</code>.
+</p>
+<a name="Vedi-anche-129"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Glossario Musicale:
+<a name="index-trill"></a>
+<a href="../music-glossary/trill.it.html">trillo</a>.
+</p>
+<p>Guida alla notazione:
+<a href="expressive-marks-attached-to-notes.it.html#articulations-and-ornamentations">Articolazioni e abbellimenti</a>,
+<a href="special-rhythmic-concerns.it.html#grace-notes">Abbellimenti</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/segni-di-espressione.it.html">Expressive marks</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-TrillSpanner"></a>
+<a href="../internals/trillspanner.it.html">TrillSpanner</a>.
+</p>
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#arpeggio" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Arpeggio&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Indicazioni espressive lineari&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="repeats.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Ripetizioni &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="expressive-marks-as-lines.html">English</a>, <a href="expressive-marks-as-lines.ca.html">català</a>, <a href="expressive-marks-as-lines.de.html">deutsch</a>, <a href="expressive-marks-as-lines.es.html">español</a>, <a href="expressive-marks-as-lines.fr.html">français</a>, <a href="expressive-marks-as-lines.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=" toc_current"><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Segni-di-espressione-collegati-alle-note-1" href="expressive-marks-attached-to-notes.it.html">1.3.1 Segni di espressione collegati alle note</a>      </li>
+      <li class=""><a name="toc-Indicazioni-espressive-curvilinee-1" href="expressive-marks-as-curves.it.html">1.3.2 Indicazioni espressive curvilinee</a>      </li>
+      <li class=" toc_current"><a name="toc-Indicazioni-espressive-lineari-1" href="expressive-marks-as-lines.it.html">1.3.3 Indicazioni espressive lineari</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Glissando-1" href="expressive-marks-as-lines.it.html#glissando">Glissando</a>        </li>
+        <li class=""><a name="toc-Arpeggio-1" href="expressive-marks-as-lines.it.html#arpeggio">Arpeggio</a>        </li>
+        <li class=""><a name="toc-Trilli-1" href="expressive-marks-as-lines.it.html#trills">Trilli</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

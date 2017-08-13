@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 por los autores.
+
+La traducción de la siguiente nota de copyright se ofrece como
+cortesía para las personas de habla no inglesa, pero únicamente la
+nota en inglés tiene validez legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+Se otorga permiso para copiar, distribuir y/o modificar este documento
+bajo los términos de la Licencia de Documentación Libre de GNU, versión 1.1
+o cualquier versión posterior publicada por la Free Software Foundation;
+sin ninguna de las secciones invariantes.
+Se incluye una copia de esta licencia dentro de la sección titulada "Licencia
+de Documentación Libre de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on el 6 agosto 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referencia de la notación de GNU LilyPond: 3.5.7 Asignación de canales MIDI</title>
+
+<meta name="description" content="Referencia de la notación de GNU LilyPond: 3.5.7 Asignación de canales MIDI">
+<meta name="keywords" content="Referencia de la notación de GNU LilyPond: 3.5.7 Asignación de canales MIDI">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.es.html#index" rel="start" title="LilyPond &mdash; Referencia de la notación">
+<link href="lilypond-command-index.es.html#lilypond-command-index" rel="index" title="D. Índice de instrucciones de LilyPond">
+<link href="index_toc.es.html#SEC_Contents" rel="contents" title="&Iacute;ndice General">
+<link href="index_abt.es.html#SEC_About" rel="help" title="Acerca de este documento">
+<link href="creating-midi-output.es.html#creating-midi-output" rel="up" title="3.5 Creación de salida MIDI">
+<link href="lilypond-index.es.html#lilypond-index" rel="next" title="E. Índice de LilyPond">
+<link href="using-repeats-with-midi.es.html#using-repeats-with-midi" rel="previous" title="3.5.6 Uso de las repeticiones con el MIDI">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="es" class="notation devStatus">
+
+
+<div id="main">
+<a name="Asignaci_00f3n-de-canales-MIDI"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="using-repeats-with-midi.es.html" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Uso de las repeticiones con el MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="creating-midi-output.es.html" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Creación de salida MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="context-properties-for-midi-effects.es.html" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Propiedades de contexto para efectos MIDI &gt; </a>]</td></tr></table>
+<a name="midi-channel-mapping"></a>
+<h3 class="subsection">3.5.7 Asignación de canales MIDI</h3>
+
+<a name="index-MIDI_002c-canales"></a>
+<a name="index-MIDI_002c-pistas"></a>
+<a name="index-midiChannelMapping"></a>
+<a name="index-midiChannelMapping-1"></a>
+
+<p>Cuando se está generando un archivo MIDI de una partitura,
+LilyPond asigna cada nota de la partitura automáticamente a un
+canal MIDI, aquel en que se tocaría cuando se envía hacia un
+dispositivo MIDI.  Un canal MIDI tiene una cierta cantidad de
+controles disponibles para seleccionar, por ejemplo, el
+instrumento que usar para reproducir las notas en ese canal, u
+ordenar al dispositivo MIDI que aplique diversos efectos al
+sonido producido sobre el canal.  En todo momento, cada control
+de un canal MIDI solo puede tener asignado un valor único (que
+sin embargo se puede modificar, por ejemplo, para cambiar a otro
+instrumento en mitad de una partitura).
+</p>
+<p>El estándar MIDI contempla solamente 16 canales por dispositivo
+MIDI.  Este límite en el número de canales limita también el
+número de instrumentos diferentes que pueden estar tocando al
+mismo tiempo.
+</p>
+<p>LilyPond crea pistas MIDI separadas para cada pentagrama (o
+instrumento o voz, según el valor de
+<code>Score.midiChannelMapping</code>), y también para cada contexto de
+letra.  No hay un límite para el número de pistas.
+</p>
+<p>Para solventar el número limitado de canales MIDI, LilyPond
+contempla algunos modos diferentes para la asignación de canales
+MIDI, que se seleccionan usando la propiedad de contexto
+<code>Score.midiChannelMapping</code>.  En cada caso, si se necesitan
+más canales MIDI que el límite, los números de canal asignados
+vuelven a contar desde cero, causando posiblemente una asignación
+incorrecta de instrumento a algunas notas.  Esta propiedad de
+contexto se puede fijar a uno de los siguientes valores:
+</p>
+<dl compact="compact">
+<dt> <var><code>'staff</code></var></dt>
+<dd>
+<p>Reservar un canal MIDI distinto para cada uno de los pentagramas
+de la partitura (es el ajuste predeterminado).  Todas las notas
+de todas las voces comparten el canal MIDI del pentagrama que las
+encierra, y todas se codifican dentro de la misma pista MIDI.
+</p>
+<p>El límite de 16 canales se aplica al número total de contextos de
+pentagrama y de letra, incluso aunque las letras del MIDI no
+consumen un canal MIDI.
+</p>
+</dd>
+<dt> <var><code>'instrument</code></var></dt>
+<dd>
+<p>Reservar un canal MIDI distinto a cada uno de los instrumentos
+diferentes especificados en la partitura.  Esto significa que
+todas las notas reproducidas con el mismo instrumento MIDI
+comparten el mismo canal MIDI (y la misma pista), incluso aunque
+las notas provengan de diferentes voces o pentagramas.
+</p>
+<p>En este caso los contextos de letra no cuentan para el límite de
+16 canales MIDI (ya que no se asignan a un instrumento MIDI), de
+forma que este ajuste puede permitir una mejor distribución de
+los canales MIDI cuando el número de contextos de pentagrama y de
+letra en la partitura excede la cantidad de 16.
+</p>
+</dd>
+<dt> <var><code>'voice</code></var></dt>
+<dd>
+<p>Reservar un canal MIDI distinto a cada voz de la partitura que
+tenga un nombre único entre las voces de su pentagrama
+circundante.  Las voces de los distintos pentagramas siempre se
+asignan a distintos canales MIDI pero dos voces cualesquiera
+contenidas dentro del mismo pentagrama comparten el mismo canal
+MIDI sin tienen el mismo nombre.  A causa de que
+<code>midiInstrument</code> y los diversos controles MIDI para los
+efectos son propiedades del contexto de pentagrama, no se pueden
+fijar independientemente para cada voz. La primera voz se
+reproduce con el instrumento y los efectos especificados para el
+pentagrama, y las voces con un nombre distinto de la primera
+recibirán el instrumento y los efectos predeterminados.
+</p>
+<p>Nota: se pueden asignar distintos instrumentos y/o efectos a
+varias voces dentro del mismo pentagrama moviendo el
+<code>Staff_performer</code> del contexto <code>Staff</code> al contexto
+<code>Voice</code>, y dejando que <code>midiChannelMapping</code> conserve su
+valor predeterminado de <code>'staff</code> o se fije al valor
+<code>'instrument</code>; véase el fragmento de código siguiente.
+</p>
+</dd>
+</dl>
+
+<p>Por ejemplo, la asignación predeterminada de canal MIDI de una
+partitura puede cambiarse al ajuste <code>'instrument</code> como se
+muestra a continuación:
+</p>
+<blockquote><pre class="example">\score {
+  ...music...
+  \midi {
+    \context {
+      \Score
+      midiChannelMapping = #'instrument
+    }
+  }
+}
+</pre></blockquote>
+
+<a name="Fragmentos-de-codigo-seleccionados-23"></a>
+<h4 class="subsubheading">Fragmentos de código seleccionados</h4>
+
+<p><em> Modificar la salida MIDI para que tenga un canal por cada voz</em>
+</p>
+
+<p>Al producir una salida MIDI, el comportamiento predeterminado es que
+cada pentagrama representa un canal MIDI, con todas las voces de dicho
+pentagrama mezcladas.  Esto reduce al mínimo el riesgo de que se agote
+el número de canales MIDI disponibles, pues existe un máximo de 16
+canales por cada puerto MIDI, y la mayoría de los dispositivos sólo
+tiene un puerto.
+</p>
+<p>Sin embargo, cuando se traslada el interpretador
+<code>Staff_performer</code> al contexto <code>Voice</code>, cada voz de un
+pentagrama puede tener su propio canal MIDI, como se muestra en el
+siguiente ejemplo: a pesar de estar sobre el mismo pentagrama, se
+crean dos canales MIDI, cada uno con un <code>midiInstrument</code>
+distinto.
+</p>
+
+<blockquote><pre class="verbatim">\score {
+  \new Staff &lt;&lt;
+    \new Voice \relative c''' {
+      \set midiInstrument = #&quot;flute&quot;
+      \voiceOne
+      \key g \major
+      \time 2/2
+      r2 g-&quot;Flute&quot; ~
+      g fis ~
+      fis4 g8 fis e2 ~
+      e4 d8 cis d2
+    }
+    \new Voice \relative c'' {
+      \set midiInstrument = #&quot;clarinet&quot;
+      \voiceTwo
+      b1-&quot;Clarinet&quot;
+      a2. b8 a
+      g2. fis8 e
+      fis2 r
+    }
+  &gt;&gt;
+  \layout { }
+  \midi {
+    \context {
+      \Staff
+      \remove &quot;Staff_performer&quot;
+    }
+    \context {
+      \Voice
+      \consists &quot;Staff_performer&quot;
+    }
+    \tempo 2 = 72
+  }
+}
+</pre><p>
+ <a href="../d9/lily-e5a98773.ly">
+  <img align="middle"
+       border="0"
+       src="../d9/lily-e5a98773.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="using-repeats-with-midi.es.html" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Uso de las repeticiones con el MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="creating-midi-output.es.html" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Creación de salida MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="context-properties-for-midi-effects.es.html" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Propiedades de contexto para efectos MIDI &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Esta página corresponde a LilyPond-2.19.65 (rama de desarrollo).
+</p>
+<p class="footer_report">
+Se agradecen las <a href="http://lilypond.org/help-us.html">sugerencias para la documentación</a>. Informe de los fallos a través de la lista en español <a href="http://lists.gnu.org/mailman/listinfo/lilypond-es">lilypond-es</a>, o en inglés a través de <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">la lista oficial de fallos</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Otros idiomas: <a href="midi-channel-mapping.html">English</a>, <a href="midi-channel-mapping.ca.html">català</a>, <a href="midi-channel-mapping.fr.html">français</a>, <a href="midi-channel-mapping.it.html">italiano</a>.
+ <br>
+ Acerca de la <a href="http://www.lilypond.org/website/misc/browser-language">selección automática del idioma</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.es.html"
+         title="Documentation Index">&lt;&lt; Volver al índice de la documentación</a></p>
+<h4 class="toc_header"> <a href="index.es.html" title="Start of the manual">LilyPond &mdash; Referencia de la notación  v2.19.65 (rama de desarrollo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notacion-musical" href="musical-notation.es.html">1. Notación musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Alturas-1" href="pitches.es.html">1.1 Alturas</a>    </li>
+    <li class=""><a name="toc-Duraciones-1" href="rhythms.es.html">1.2 Duraciones</a>    </li>
+    <li class=""><a name="toc-Expresiones-1" href="expressive-marks.es.html">1.3 Expresiones</a>    </li>
+    <li class=""><a name="toc-Repeticiones-1" href="repeats.es.html">1.4 Repeticiones</a>    </li>
+    <li class=""><a name="toc-Notas-simultaneas" href="simultaneous-notes.es.html">1.5 Notas simultáneas</a>    </li>
+    <li class=""><a name="toc-Notacion-de-los-pentagramas" href="staff-notation.es.html">1.6 Notación de los pentagramas</a>    </li>
+    <li class=""><a name="toc-Anotaciones-editoriales-1" href="editorial-annotations.es.html">1.7 Anotaciones editoriales</a>    </li>
+    <li class=""><a name="toc-Texto-1" href="text.es.html">1.8 Texto</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notacion-especializada" href="specialist-notation.es.html">2. Notación especializada</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocal" href="vocal-music.es.html">2.1 Música vocal</a>    </li>
+    <li class=""><a name="toc-Teclados-y-otros-instrumentos-de-varios-pentagramas-1" href="keyboard-and-other-multi_002dstaff-instruments.es.html">2.2 Teclados y otros instrumentos de varios pentagramas</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-cuerda-sin-trastes-1" href="unfretted-string-instruments.es.html">2.3 Instrumentos de cuerda sin trastes</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-cuerda-con-trastes-1" href="fretted-string-instruments.es.html">2.4 Instrumentos de cuerda con trastes</a>    </li>
+    <li class=""><a name="toc-Percusion" href="percussion.es.html">2.5 Percusión</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-viento-1" href="wind-instruments.es.html">2.6 Instrumentos de viento</a>    </li>
+    <li class=""><a name="toc-Notacion-de-acordes" href="chord-notation.es.html">2.7 Notación de acordes</a>    </li>
+    <li class=""><a name="toc-Musica-contemporanea" href="contemporary-music.es.html">2.8 Música contemporánea</a>    </li>
+    <li class=""><a name="toc-Notacion-antigua" href="ancient-notation.es.html">2.9 Notación antigua</a>    </li>
+    <li class=""><a name="toc-Musicas-del-mundo" href="world-music.es.html">2.10 Músicas del mundo</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Entrada-y-salida-generales-1" href="general-input-and-output.es.html">3. Entrada y salida generales</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Estructura-del-codigo-de-entrada" href="input-structure.es.html">3.1 Estructura del código de entrada</a>    </li>
+    <li class=""><a name="toc-Titulos-y-encabezamientos" href="titles-and-headers.es.html">3.2 Títulos y encabezamientos</a>    </li>
+    <li class=""><a name="toc-Trabajar-sobre-los-archivos-de-entrada-1" href="working-with-input-files.es.html">3.3 Trabajar sobre los archivos de entrada</a>    </li>
+    <li class=""><a name="toc-Controlar-la-salida-1" href="controlling-output.es.html">3.4 Controlar la salida</a>    </li>
+    <li class=" toc_current"><a name="toc-Creacion-de-salida-MIDI" href="creating-midi-output.es.html">3.5 Creación de salida MIDI</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Notacion-contemplada-por-el-MIDI" href="supported-notation-for-midi.es.html">3.5.1 Notación contemplada por el MIDI</a>      </li>
+      <li class=""><a name="toc-Notacion-no-contemplada-en-el-MIDI" href="unsupported-notation-for-midi.es.html">3.5.2 Notación no contemplada en el MIDI</a>      </li>
+      <li class=""><a name="toc-El-bloque-MIDI-1" href="the-midi-block.es.html">3.5.3 El bloque MIDI</a>      </li>
+      <li class=""><a name="toc-Control-de-las-dinamicas-del-MIDI" href="controlling-midi-dynamics.es.html">3.5.4 Control de las dinámicas del MIDI</a>      </li>
+      <li class=""><a name="toc-Uso-de-los-instrumentos-MIDI-1" href="using-midi-instruments.es.html">3.5.5 Uso de los instrumentos MIDI</a>      </li>
+      <li class=""><a name="toc-Uso-de-las-repeticiones-con-el-MIDI-1" href="using-repeats-with-midi.es.html">3.5.6 Uso de las repeticiones con el MIDI</a>      </li>
+      <li class=" toc_current"><a name="toc-Asignacion-de-canales-MIDI" href="midi-channel-mapping.es.html">3.5.7 Asignación de canales MIDI</a>      </li>
+      <li class=""><a name="toc-Propiedades-de-contexto-para-efectos-MIDI-1" href="context-properties-for-midi-effects.es.html">3.5.8 Propiedades de contexto para efectos MIDI</a>      </li>
+      <li class=""><a name="toc-Enriquecimiento-de-la-salida-MIDI-1" href="enhancing-midi-output.es.html">3.5.9 Enriquecimiento de la salida MIDI</a>      </li>
+      <li class=""><a name="toc-El-script-Articulate-1" href="the-articulate-script.es.html">3.5.10 El script Articulate</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Extraer-informacion-musical" href="extracting-musical-information.es.html">3.6 Extraer información musical</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Problemas-de-espaciado-1" href="spacing-issues.es.html">4. Problemas de espaciado</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Disposicion-de-la-pagina" href="page-layout.es.html">4.1 Disposición de la página</a>    </li>
+    <li class=""><a name="toc-Disposicion-de-la-partitura" href="score-layout.es.html">4.2 Disposición de la partitura</a>    </li>
+    <li class=""><a name="toc-Saltos-1" href="breaks.es.html">4.3 Saltos</a>    </li>
+    <li class=""><a name="toc-Espaciado-vertical-1" href="vertical-spacing.es.html">4.4 Espaciado vertical</a>    </li>
+    <li class=""><a name="toc-Espaciado-horizontal-1" href="horizontal-spacing.es.html">4.5 Espaciado horizontal</a>    </li>
+    <li class=""><a name="toc-Encajar-la-musica-en-menos-paginas" href="fitting-music-onto-fewer-pages.es.html">4.6 Encajar la música en menos páginas</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cambiar-los-valores-por-omision" href="changing-defaults.es.html">5. Cambiar los valores por omisión</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contextos-de-interpretacion" href="interpretation-contexts.es.html">5.1 Contextos de interpretación</a>    </li>
+    <li class=""><a name="toc-Explicacion-del-Manual-de-referencia-de-funcionamiento-interno" href="explaining-the-internals-reference.es.html">5.2 Explicación del Manual de referencia de funcionamiento interno</a>    </li>
+    <li class=""><a name="toc-Modificar-las-propiedades-1" href="modifying-properties.es.html">5.3 Modificar las propiedades</a>    </li>
+    <li class=""><a name="toc-Conceptos-y-propiedades-utiles" href="useful-concepts-and-properties.es.html">5.4 Conceptos y propiedades útiles</a>    </li>
+    <li class=""><a name="toc-Trucos-avanzados-1" href="advanced-tweaks.es.html">5.5 Trucos avanzados</a>    </li>
+    <li class=""><a name="toc-Uso-de-las-funciones-musicales-1" href="using-music-functions.es.html">5.6 Uso de las funciones musicales</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tablas-del-manual-sobre-notacion" href="notation-manual-tables.es.html">A. Tablas del manual sobre notación</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Cuadro-de-nombres-de-acordes-1" href="chord-name-chart.es.html">A.1 Cuadro de nombres de acordes</a>    </li>
+    <li class=""><a name="toc-Modificadores-de-acorde-mas-usuales" href="common-chord-modifiers.es.html">A.2 Modificadores de acorde más usuales</a>    </li>
+    <li class=""><a name="toc-Afinaciones-de-cuerdas-predefinidas-1" href="predefined-string-tunings.es.html">A.3 Afinaciones de cuerdas predefinidas</a>    </li>
+    <li class=""><a name="toc-Diagramas-predefinidos-de-posiciones-1" href="predefined-fretboard-diagrams.es.html">A.4 Diagramas predefinidos de posiciones</a>    </li>
+    <li class=""><a name="toc-Tamanos-de-pagina-predefinidos" href="predefined-paper-sizes.es.html">A.5 Tamaños de página predefinidos</a>    </li>
+    <li class=""><a name="toc-Instrumentos-MIDI-1" href="midi-instruments.es.html">A.6 Instrumentos MIDI</a>    </li>
+    <li class=""><a name="toc-Lista-de-colores-1" href="list-of-colors.es.html">A.7 Lista de colores</a>    </li>
+    <li class=""><a name="toc-La-tipografia-Emmentaler" href="the-emmentaler-font.es.html">A.8 La tipografía Emmentaler</a>    </li>
+    <li class=""><a name="toc-Estilos-de-cabezas-de-nota-1" href="note-head-styles.es.html">A.9 Estilos de cabezas de nota</a>    </li>
+    <li class=""><a name="toc-Estilos-de-clave-1" href="clef-styles.es.html">A.10 Estilos de clave</a>    </li>
+    <li class=""><a name="toc-Instrucciones-de-marcado-de-texto-1" href="text-markup-commands.es.html">A.11 Instrucciones de marcado de texto</a>    </li>
+    <li class=""><a name="toc-Instrucciones-de-listas-de-marcado-de-texto-1" href="text-markup-list-commands.es.html">A.12 Instrucciones de listas de marcado de texto</a>    </li>
+    <li class=""><a name="toc-Lista-de-caracteres-especiales-1" href="list-of-special-characters.es.html">A.13 Lista de caracteres especiales</a>    </li>
+    <li class=""><a name="toc-Lista-de-articulaciones-1" href="list-of-articulations.es.html">A.14 Lista de articulaciones</a>    </li>
+    <li class=""><a name="toc-Notas-de-percusion" href="percussion-notes.es.html">A.15 Notas de percusión</a>    </li>
+    <li class=""><a name="toc-Glosario-tecnico" href="technical-glossary.es.html">A.16 Glosario técnico</a>    </li>
+    <li class=""><a name="toc-Todas-las-propiedades-de-contexto-1" href="all-context-properties.es.html">A.17 Todas las propiedades de contexto</a>    </li>
+    <li class=""><a name="toc-Propiedades-de-disposicion" href="layout-properties.es.html">A.18 Propiedades de disposición</a>    </li>
+    <li class=""><a name="toc-Funciones-musicales-disponibles-1" href="available-music-functions.es.html">A.19 Funciones musicales disponibles</a>    </li>
+    <li class=""><a name="toc-Identificadores-de-modificacion-de-contextos" href="context-modification-identifiers.es.html">A.20 Identificadores de modificación de contextos</a>    </li>
+    <li class=""><a name="toc-Predicados-de-tipo-predefinidos-1" href="predefined-type-predicates.es.html">A.21 Predicados de tipo predefinidos</a>    </li>
+    <li class=""><a name="toc-Funciones-de-Scheme-1" href="scheme-functions.es.html">A.22 Funciones de Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Hoja-de-referencia-rapida" href="cheat-sheet.es.html">B. Hoja de referencia rápida</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.es.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-de-instrucciones-de-LilyPond" href="lilypond-command-index.es.html">D. Índice de instrucciones de LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-de-LilyPond" href="lilypond-index.es.html">E. Índice de LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Búsqueda de Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

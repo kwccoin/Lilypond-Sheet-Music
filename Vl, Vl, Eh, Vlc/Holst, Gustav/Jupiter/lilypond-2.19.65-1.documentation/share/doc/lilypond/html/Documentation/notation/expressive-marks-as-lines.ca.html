@@ -1,0 +1,1036 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.3.3 Marques expressives en forma de línies</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.3.3 Marques expressives en forma de línies">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.3.3 Marques expressives en forma de línies">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="expressive-marks.ca.html#expressive-marks" rel="up" title="1.3 Expressions">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="expressive-marks-as-curves.ca.html#expressive-marks-as-curves" rel="previous" title="1.3.2 Marques expressives en forma corba">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Marques-expressives-en-forma-de-l_00ednies"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="expressive-marks-as-curves.ca.html#falls-and-doits" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Caigudes i elevacions&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="expressive-marks.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Expressions&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#glissando" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Glissando &gt; </a>]</td></tr></table>
+<a name="expressive-marks-as-lines"></a>
+<h3 class="subsection">1.3.3 Marques expressives en forma de línies</h3>
+
+<p>Aquesta secció explica com crear diverses marques d&rsquo;expressió  que
+segueixen un camí lineal: glissandi, arpegis i refilets.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#glissando" accesskey="1">Glissando</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#arpeggio" accesskey="2">Arpegi</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#trills" accesskey="3">Refilets</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Glissando"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#expressive-marks-as-lines" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Marques expressives en forma de línies&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Marques expressives en forma de línies&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#arpeggio" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Arpegi &gt; </a>]</td></tr></table>
+<a name="glissando"></a>
+<h4 class="unnumberedsubsubsec">Glissando</h4>
+
+<a name="index-glissando"></a>
+<a name="index-_005cglissando"></a>
+<a name="index-_005cglissando-1"></a>
+
+<p>Es crea un <var>glissando</var> afegint <code>\glissando</code>
+després de la nota:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  g'2\glissando g'
+  c2\glissando c,
+  \afterGrace f,1\glissando f'16
+}
+</pre><p>
+ <a href="../78/lily-c5974954.ly">
+  <img align="middle"
+       border="0"
+       src="../78/lily-c5974954.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un glissando pot connectar notes d&rsquo;un pentagrama a un altre:
+</p>
+<blockquote><pre class="verbatim">\new PianoStaff &lt;&lt;
+  \new Staff = &quot;right&quot; {
+    e'''2\glissando
+    \change Staff = &quot;left&quot;
+    a,,4\glissando
+    \change Staff = &quot;right&quot;
+    b''8 r |
+  }
+  \new Staff = &quot;left&quot; {
+    \clef bass
+    s1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../7b/lily-99d20d72.ly">
+  <img align="middle"
+       border="0"
+       src="../7b/lily-99d20d72.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un glissando pot connectar les notes dins d&rsquo;un acord.  Si cal fer
+quelcom que no sigui una connexió d&rsquo;una nota amb una altra entre
+els dos acords, les connexions entre les notes venen definides per
+mitjà de <code>\glissandoMap</code>, on les notes d&rsquo;un acord se suposen
+numerades, començant de zero, en l&rsquo;ordre en el qual apareixen en
+el codi d&rsquo;entrada del fitxer &lsquo;<tt>.ly</tt>&rsquo;.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e&gt;1\glissando g' |
+  &lt;c, e&gt;1\glissando |
+  &lt;g' b&gt; |
+  \break
+  \set glissandoMap = #'((0 . 1) (1 . 0))
+  &lt;c, g'&gt;1\glissando |
+  &lt;d a'&gt; |
+  \set glissandoMap = #'((0 . 0) (0 . 1) (0 . 2))
+  c1\glissando |
+  &lt;d f a&gt; |
+  \set glissandoMap = #'((2 . 0) (1 . 0) (0 . 1))
+  &lt;f d a'&gt;1\glissando |
+  &lt;c c'&gt; |
+}
+</pre><p>
+ <a href="../eb/lily-b9c95740.ly">
+  <img align="middle"
+       border="0"
+       src="../eb/lily-b9c95740.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden crear diversos tipus de glissando.  Per veure més
+detalls, consulteu <a name="index-Line-styles"></a>
+<a href="../notation/line-styles.ca.html">Estils de línia</a>.
+</p>
+<a name="Fragments-de-codi-seleccionats-53"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Contemporary glissando</em>
+</p>
+
+<p>A contemporary glissando without a final note can be typeset using a
+hidden note and cadenza timing.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \time 3/4
+  \override Glissando.style = #'zigzag
+  c4 c
+  \cadenzaOn
+  c4\glissando
+  \hideNotes
+  c,,4
+  \unHideNotes
+  \cadenzaOff
+  \bar &quot;|&quot;
+}
+</pre><p>
+ <a href="../c0/lily-a743b6ae.ly">
+  <img align="middle"
+       border="0"
+       src="../c0/lily-a743b6ae.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Adding timing marks to long glissandi</em>
+</p>
+
+<p>Skipped beats in very long glissandi are sometimes indicated by timing
+marks, often consisting of stems without noteheads.  Such stems can
+also be used to carry intermediate expression markings.
+</p>
+<p>If the stems do not align well with the glissando, they may need to be
+repositioned slightly.
+</p>
+
+<blockquote><pre class="verbatim">glissandoSkipOn = {
+  \override NoteColumn.glissando-skip = ##t
+  \hide NoteHead
+  \override NoteHead.no-ledgers = ##t
+}
+
+glissandoSkipOff = {
+  \revert NoteColumn.glissando-skip
+  \undo \hide NoteHead
+  \revert NoteHead.no-ledgers
+}
+
+\relative c'' {
+  r8 f8\glissando
+  \glissandoSkipOn
+  f4 g a a8\noBeam
+  \glissandoSkipOff
+  a8
+
+  r8 f8\glissando
+  \glissandoSkipOn
+  g4 a8
+  \glissandoSkipOff
+  a8 |
+
+  r4 f\glissando \&lt;
+  \glissandoSkipOn
+  a4\f \&gt;
+  \glissandoSkipOff
+  b8\! r |
+}
+</pre><p>
+ <a href="../92/lily-38b77180.ly">
+  <img align="middle"
+       border="0"
+       src="../92/lily-38b77180.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Making glissandi breakable</em>
+</p>
+
+<p>Setting the <code>breakable</code> property to <code>#t</code> in combination with
+<code>after-line-breaking</code> allows a glissando to break if it occurs at
+a line break:
+</p>
+
+<blockquote><pre class="verbatim">glissandoSkipOn = {
+  \override NoteColumn.glissando-skip = ##t
+  \hide NoteHead
+  \override NoteHead.no-ledgers = ##t
+}
+
+\relative c'' {
+  \override Glissando.breakable = ##t
+  \override Glissando.after-line-breaking = ##t
+  f1\glissando |
+  \break
+  a4 r2. |
+  f1\glissando
+  \once \glissandoSkipOn
+  \break
+  a2 a4 r4 |
+}
+</pre><p>
+ <a href="../11/lily-0535f3cc.ly">
+  <img align="middle"
+       border="0"
+       src="../11/lily-0535f3cc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Extending glissandi across repeats</em>
+</p>
+
+<p>A glissando which extends into several <code>\alternative</code> blocks can
+be simulated by adding a hidden grace note with a glissando at the
+start of each <code>\alternative</code> block.  The grace note should be at
+the same pitch as the note which starts the initial glissando.  This is
+implemented here with a music function which takes the pitch of the
+grace note as its argument.
+</p>
+<p>Note that in polyphonic music the grace note must be matched with
+corresponding grace notes in all other voices.
+</p>
+
+<blockquote><pre class="verbatim">repeatGliss = #(define-music-function (grace)
+  (ly:pitch?)
+  #{
+    % the next two lines ensure the glissando is long enough
+    % to be visible
+    \once \override Glissando.springs-and-rods
+      = #ly:spanner::set-spacing-rods
+    \once \override Glissando.minimum-length = #3.5
+    \once \hideNotes
+    \grace $grace \glissando
+  #})
+
+\score {
+  \relative c'' {
+    \repeat volta 3 { c4 d e f\glissando }
+    \alternative {
+      { g2 d }
+      { \repeatGliss f g2 e }
+      { \repeatGliss f e2 d }
+    }
+  }
+}
+
+music =  \relative c' {
+  \voiceOne
+  \repeat volta 2 {
+    g a b c\glissando
+  }
+  \alternative {
+    { d1 }
+    { \repeatGliss c \once \omit StringNumber e1\2 }
+  }
+}
+
+\score {
+  \new StaffGroup &lt;&lt;
+    \new Staff &lt;&lt;
+      \context Voice { \clef &quot;G_8&quot; \music }
+    &gt;&gt;
+    \new TabStaff  &lt;&lt;
+      \context TabVoice { \clef &quot;moderntab&quot; \music }
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../87/lily-4f5b86fc.ly">
+  <img align="middle"
+       border="0"
+       src="../87/lily-4f5b86fc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-252"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-glissando-1"></a>
+<a href="../music-glossary/glissando.ca.html">glissando</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Line-styles-1"></a>
+<a href="../notation/line-styles.ca.html">Estils de línia</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-Glissando"></a>
+<a href="../internals/glissando.ca.html">Glissando</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-10"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>La impressió de text sobre la línia (com a <var>gliss.</var>), no
+està contemplada.
+</p>
+<hr size="6">
+<a name="Arpegi"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#glissando" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Glissando&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Marques expressives en forma de línies&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#trills" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Refilets &gt; </a>]</td></tr></table>
+<a name="arpeggio"></a>
+<h4 class="unnumberedsubsubsec">Arpegi</h4>
+
+<a name="index-arpegi"></a>
+<a name="index-acord-trencat"></a>
+<a name="index-acord-arpegiat"></a>
+<a name="index-trencat_002c-acord"></a>
+<a name="index-_005carpeggio"></a>
+<a name="index-_005carpeggio-1"></a>
+<a name="index-_005carpeggioArrowUp"></a>
+<a name="index-_005carpeggioArrowUp-1"></a>
+<a name="index-_005carpeggioArrowDown"></a>
+<a name="index-_005carpeggioArrowDown-1"></a>
+<a name="index-_005carpeggioNormal"></a>
+<a name="index-_005carpeggioNormal-1"></a>
+
+<p>Un signe de <var>acord arpegiat</var> (conegut també com acord
+trencat) sobre un acord, es denota annexant <code>\arpeggio</code> a
+l&rsquo;acord:
+</p>
+<blockquote><pre class="verbatim">\relative { &lt;c' e g c&gt;1\arpeggio }
+</pre><p>
+ <a href="../24/lily-1b984e1e.ly">
+  <img align="middle"
+       border="0"
+       src="../24/lily-1b984e1e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden escriure diversos tipus d&rsquo;acords arpegiats.
+<code>\arpeggioNormal</code> produeix la volta a l&rsquo;arpegi normal:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g c&gt;2\arpeggio
+
+  \arpeggioArrowUp
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioArrowDown
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioNormal
+  &lt;c e g c&gt;2\arpeggio
+}
+</pre><p>
+ <a href="../46/lily-77db28ac.ly">
+  <img align="middle"
+       border="0"
+       src="../46/lily-77db28ac.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-arpegiat_002c-acord_002c-simbols-especials"></a>
+<a name="index-especial_002c-simbols-d_0027arpegi"></a>
+
+<a name="index-_005carpeggioBracket"></a>
+<a name="index-_005carpeggioBracket-1"></a>
+<a name="index-_005carpeggioParenthesis"></a>
+<a name="index-_005carpeggioParenthesis-1"></a>
+<a name="index-_005carpeggioParenthesisDashed"></a>
+<a name="index-_005carpeggioParenthesisDashed-1"></a>
+
+<p>Es poden crear símbols especials d&rsquo;arpegi <em>amb parèntesis</em>:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g c&gt;2
+
+  \arpeggioBracket
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioParenthesis
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioParenthesisDashed
+  &lt;c e g c&gt;2\arpeggio
+
+  \arpeggioNormal
+  &lt;c e g c&gt;2\arpeggio
+}
+</pre><p>
+ <a href="../98/lily-47dff4fc.ly">
+  <img align="middle"
+       border="0"
+       src="../98/lily-47dff4fc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Les propietats de discontinuïtat del parèntesi de l&rsquo;arpegi es
+controlen mitjançant la propietat <code>'dash-definition</code>, que es
+descriu a <a href="expressive-marks-as-curves.ca.html#slurs">Lligadures d&rsquo;expressió</a>.
+</p>
+<p>Els acords arpegiats es poden desenvolupar explícitament
+utilitzant <var>lligadures d&rsquo;unió</var>.  Vegeu
+<a href="writing-rhythms.ca.html#ties">Lligadures d&rsquo;unió</a>.
+</p>
+<a name="Instruccions-predefinides-37"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\arpeggio</code>,
+<code>\arpeggioArrowUp</code>,
+<code>\arpeggioArrowDown</code>,
+<code>\arpeggioNormal</code>,
+<code>\arpeggioBracket</code>,
+<code>\arpeggioParenthesis</code>
+<code>\arpeggioParenthesisDashed</code>.
+</p>
+
+<a name="Fragments-de-codi-seleccionats-33"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Creating cross-staff arpeggios in a piano staff</em>
+</p>
+
+<p>In a <code>PianoStaff</code>, it is possible to let an arpeggio cross between
+the staves by setting the property <code>PianoStaff.connectArpeggios</code>.
+</p>
+
+
+<blockquote><pre class="verbatim">\new PianoStaff \relative c'' &lt;&lt;
+  \set PianoStaff.connectArpeggios = ##t
+  \new Staff {
+    &lt;c e g c&gt;4\arpeggio
+    &lt;g c e g&gt;4\arpeggio
+    &lt;e g c e&gt;4\arpeggio
+    &lt;c e g c&gt;4\arpeggio
+  }
+  \new Staff {
+    \clef bass
+    \repeat unfold 4 {
+      &lt;c,, e g c&gt;4\arpeggio
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../bf/lily-edab7884.ly">
+  <img align="middle"
+       border="0"
+       src="../bf/lily-edab7884.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Creating cross-staff arpeggios in other contexts</em>
+</p>
+
+<p>Cross-staff arpeggios can be created in contexts other than
+<code>GrandStaff</code>, <code>PianoStaff</code> and <code>StaffGroup</code> if the
+<code>Span_arpeggio_engraver</code> is included in the <code>Score</code> context.
+</p>
+
+<blockquote><pre class="verbatim">\score {
+  \new ChoirStaff {
+    \set Score.connectArpeggios = ##t
+    &lt;&lt;
+      \new Voice \relative c' {
+        &lt;c e&gt;2\arpeggio
+        &lt;d f&gt;2\arpeggio
+        &lt;c e&gt;1\arpeggio
+      }
+      \new Voice \relative c {
+        \clef bass
+        &lt;c g'&gt;2\arpeggio
+        &lt;b g'&gt;2\arpeggio
+        &lt;c g'&gt;1\arpeggio
+      }
+    &gt;&gt;
+  }
+  \layout {
+    \context {
+      \Score
+      \consists &quot;Span_arpeggio_engraver&quot;
+    }
+  }
+}
+</pre><p>
+ <a href="../f6/lily-eabd37c2.ly">
+  <img align="middle"
+       border="0"
+       src="../f6/lily-eabd37c2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Creating arpeggios across notes in different voices</em>
+</p>
+
+<p>An arpeggio can be drawn across notes in different voices on the same
+staff if the <code>Span_arpeggio_engraver</code> is added to the <code>Staff</code>
+context:
+</p>
+
+<blockquote><pre class="verbatim">\new Staff \with {
+  \consists &quot;Span_arpeggio_engraver&quot;
+}
+\relative c' {
+  \set Staff.connectArpeggios = ##t
+  &lt;&lt;
+    { &lt;e' g&gt;4\arpeggio &lt;d f&gt; &lt;d f&gt;2 }
+    \\
+    { &lt;d, f&gt;2\arpeggio &lt;g b&gt;2 }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../ab/lily-2a345d7d.ly">
+  <img align="middle"
+       border="0"
+       src="../ab/lily-2a345d7d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-1"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-arpeggio"></a>
+<a href="../music-glossary/arpeggio.ca.html">arpeggio</a>.
+</p>
+<p>Referència de la notació:
+<a href="expressive-marks-as-curves.ca.html#slurs">Lligadures d&rsquo;expressió</a>,
+<a href="writing-rhythms.ca.html#ties">Lligadures d&rsquo;unió</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-Arpeggio"></a>
+<a href="../internals/arpegi.ca.html">Arpeggio</a>,
+<a name="index-Slur-1"></a>
+<a href="../internals/slur.ca.html">Slur</a>,
+<a name="index-PianoStaff-1"></a>
+<a href="../internals/pianostaff.ca.html">PianoStaff</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-44"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<a name="index-pentagrama-creuat_002c-arpegis-amb-parentesis"></a>
+<a name="index-arpegi-de-pentagrama-creuat-amb-parentesis"></a>
+<a name="index-arpegi-con-parentesis-de-pentagrama-creuat"></a>
+
+<p>No és possible barrejat arpegis connectats i no connectat a un
+<code>PianoStaff</code> al mateix moment de temps.
+</p>
+<p>La forma senzilla d&rsquo;especificar el parèntesis als arpegis de
+parèntesis no funciona per als arpegis de pentagrama creuat;
+vegeu <a name="index-Cross_002dstaff-stems"></a>
+<a href="../notation/common-notation-for-keyboards.ca.html#cross_002dstaff-stems">Pliques de pentagrama creuat</a>.
+</p>
+
+<hr size="6">
+<a name="Refilets"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#arpeggio" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Arpegi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Marques expressives en forma de línies&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="repeats.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions &gt; </a>]</td></tr></table>
+<a name="trills"></a>
+<h4 class="unnumberedsubsubsec">Refilets</h4>
+
+<a name="index-refilets"></a>
+<a name="index-_005ctrill-2"></a>
+<a name="index-_005ctrill-3"></a>
+<a name="index-_005cstartTrillSpan"></a>
+<a name="index-_005cstartTrillSpan-1"></a>
+<a name="index-_005cstopTrillSpan"></a>
+<a name="index-_005cstopTrillSpan-1"></a>
+
+<p>Els refilets curts sense línia extensora es graven amb
+<code>\trill</code>; vegeu <a href="expressive-marks-attached-to-notes.ca.html#articulations-and-ornamentations">Articulacions i ornaments</a>.
+</p>
+<p>Els <var>refilets</var> llargs mantinguts, amb línia d&rsquo;extensió,
+es fan amb <code>\startTrillSpan</code> i <code>\stopTrillSpan</code>:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  d1
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../fe/lily-1ba0d527.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-1ba0d527.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Un refilet estès que travessa un salt de línia recomença
+exactament a sobre de la primera nota de la línia nova.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  \break
+  d1
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../3c/lily-985e601d.ly">
+  <img align="middle"
+       border="0"
+       src="../3c/lily-985e601d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Els refilets estesos consecutius funcionen sense necessitat
+d&rsquo;ordres <code>\stopTrillSpan</code> explícites, perquè cada refilet es
+convertirà automàticament a la vora dreta del refilet anterior.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1\startTrillSpan
+  d1
+  b1\startTrillSpan
+  d2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../cb/lily-542878af.ly">
+  <img align="middle"
+       border="0"
+       src="../cb/lily-542878af.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>També es poden combinar els refilets amb notes d&rsquo;adorn. La sintaxi
+d&rsquo;aquesta construcció i el mètode per col·locar les notes d&rsquo;adorn
+amb precisió es descriuien a
+<a href="special-rhythmic-concerns.ca.html#grace-notes">Notes d&rsquo;adorn</a>.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  d''1~\afterGrace
+  d1\startTrillSpan { c32[ d]\stopTrillSpan }
+  c2 r2
+}
+</pre><p>
+ <a href="../05/lily-89b5d43a.ly">
+  <img align="middle"
+       border="0"
+       src="../05/lily-89b5d43a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-refilets-de-nota-explicita"></a>
+<a name="index-explicita_002c-refilets-de-nota"></a>
+<a name="index-_005cpitchedTrill"></a>
+<a name="index-_005cpitchedTrill-1"></a>
+
+<p>Els refilets que s&rsquo;han d&rsquo;executar sobre notes auxiliars explícites
+es poden gravar amb l&rsquo;ordre <code>pitchedTrill</code>.  El primer
+argument és la nota principal, i el segon és la nota
+<em>refilada</em>, que es grava com un cap de nota, sense plica i
+entre parèntesis.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \pitchedTrill
+  d''2\startTrillSpan fis
+  d2
+  c2\stopTrillSpan
+  r2
+}
+</pre><p>
+ <a href="../a6/lily-77ec2b79.ly">
+  <img align="middle"
+       border="0"
+       src="../a6/lily-77ec2b79.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-refilet-amb-nota-i-alteracio"></a>
+<a name="index-alteracio_002c-refilet-amb"></a>
+
+<p>Cal afegir manualment les alteracions subsegüents de la mateixa
+nota dins del mateix compàs.  Sols s&rsquo;imprimeix l&rsquo;alteració del
+primer refilet amb nota, dins d&rsquo;un compàs.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \pitchedTrill
+  eis''4\startTrillSpan fis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan cis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan fis
+  eis4\stopTrillSpan
+  \pitchedTrill
+  eis4\startTrillSpan fis!
+  eis4\stopTrillSpan
+}
+</pre><p>
+ <a href="../d3/lily-cb78ac18.ly">
+  <img align="middle"
+       border="0"
+       src="../d3/lily-cb78ac18.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Instruccions-predefinides-3"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\startTrillSpan</code>,
+<code>\stopTrillSpan</code>.
+</p>
+<a name="Vegeu-tambe-129"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-trill"></a>
+<a href="../music-glossary/trill.ca.html">trill</a>.
+</p>
+<p>Referècia de la notació:
+<a href="expressive-marks-attached-to-notes.ca.html#articulations-and-ornamentations">Articulacions i ornaments</a>,
+<a href="special-rhythmic-concerns.ca.html#grace-notes">Notes d&rsquo;adorn</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/expressions.ca.html">Expressive marks</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-TrillSpanner"></a>
+<a href="../internals/trillspanner.ca.html">TrillSpanner</a>.
+</p>
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#arpeggio" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Arpegi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#expressive-marks-as-lines" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Marques expressives en forma de línies&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="repeats.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="expressive-marks-as-lines.html">English</a>, <a href="expressive-marks-as-lines.de.html">deutsch</a>, <a href="expressive-marks-as-lines.es.html">español</a>, <a href="expressive-marks-as-lines.fr.html">français</a>, <a href="expressive-marks-as-lines.it.html">italiano</a>, <a href="expressive-marks-as-lines.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=" toc_current"><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Expressions-annexades-a-les-notes-1" href="expressive-marks-attached-to-notes.ca.html">1.3.1 Expressions annexades a les notes</a>      </li>
+      <li class=""><a name="toc-Marques-expressives-en-forma-corba-1" href="expressive-marks-as-curves.ca.html">1.3.2 Marques expressives en forma corba</a>      </li>
+      <li class=" toc_current"><a name="toc-Marques-expressives-en-forma-de-linies" href="expressive-marks-as-lines.ca.html">1.3.3 Marques expressives en forma de línies</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Glissando-1" href="expressive-marks-as-lines.ca.html#glissando">Glissando</a>        </li>
+        <li class=""><a name="toc-Arpegi-1" href="expressive-marks-as-lines.ca.html#arpeggio">Arpegi</a>        </li>
+        <li class=""><a name="toc-Refilets-1" href="expressive-marks-as-lines.ca.html#trills">Refilets</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

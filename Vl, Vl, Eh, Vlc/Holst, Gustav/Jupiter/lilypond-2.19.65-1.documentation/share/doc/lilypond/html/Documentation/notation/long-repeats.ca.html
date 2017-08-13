@@ -1,0 +1,1241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.4.1 Repeticions llargues</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.4.1 Repeticions llargues">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.4.1 Repeticions llargues">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="repeats.ca.html#repeats" rel="up" title="1.4 Repeticions">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="repeats.ca.html#repeats" rel="previous" title="1.4 Repeticions">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Repeticions-llargues"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="repeats.ca.html" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Repeticions&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="repeats.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Repeticions&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#normal-repeats" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions normals &gt; </a>]</td></tr></table>
+<a name="long-repeats"></a>
+<h3 class="subsection">1.4.1 Repeticions llargues</h3>
+
+<p>Aquesta secció tracta sobre la forma d&rsquo;introduir repeticions
+llargues, normalment de diversos compassos.  Les repeticions
+adopten dues formes: repeticions envoltades entre signes de
+repetició, o repeticions explícites, que s&rsquo;usen per escriure
+música repetitiva.  També es poden controlar manualment els signes
+de repetició.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#normal-repeats" accesskey="1">Repeticions normals</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#manual-repeat-marks" accesskey="2">Marques de repetició manual</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#written_002dout-repeats" accesskey="3">Repeticions explícites</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<a name="index-repeticions-normals"></a>
+<a name="index-repeticio-amb-finals-alternatius"></a>
+<a name="index-finals-alternatius"></a>
+<a name="index-volta"></a>
+<a name="index-prima-volta"></a>
+<a name="index-primera-i-segona-vegada"></a>
+<a name="index-seconda-volta"></a>
+<a name="index-volta_002c-prima"></a>
+<a name="index-volta_002c-seconda"></a>
+<a name="index-_005crepeat"></a>
+<a name="index-_005crepeat-1"></a>
+<a name="index-_005calternative"></a>
+<a name="index-_005calternative-1"></a>
+<a name="index-_005cpartial-2"></a>
+<a name="index-_005cpartial-3"></a>
+
+<hr size="6">
+<a name="Repeticions-normals"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#long-repeats" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Repeticions llargues&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#long-repeats" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Repeticions llargues&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#manual-repeat-marks" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Marques de repetició manual &gt; </a>]</td></tr></table>
+<a name="normal-repeats"></a>
+<h4 class="unnumberedsubsubsec">Repeticions normals</h4>
+
+<p>La sintaxi d&rsquo;una repetició normal és
+</p>
+<blockquote><pre class="example">\repeat volta <var>nombre_de_repeticions</var> <var>expressió_musical</var>
+</pre></blockquote>
+
+<p>on <code><var>expressió_musical</var></code> és una expressió musical.
+</p>
+<p>Una repetició simple sense finals alternatius:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat volta 2 { c''4 d e f }
+  c2 d
+  \repeat volta 2 { d4 e f g }
+}
+</pre><p>
+ <a href="../eb/lily-02e6bb52.ly">
+  <img align="middle"
+       border="0"
+       src="../eb/lily-02e6bb52.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>De forma predeterminada no s&rsquo;imprimeixen les dobles barres
+d&rsquo;obertura de repetició al primer compàs complet.  Malgrat això és
+possible imprimir-les usant <code>\bar &quot;.|:&quot;</code> abans de la primera nota.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat volta 2 { \bar &quot;.|:&quot; c''4 d e f }
+  c2 d
+  \repeat volta 2 { d4 e f g }
+}
+</pre><p>
+ <a href="../92/lily-487e1482.ly">
+  <img align="middle"
+       border="0"
+       src="../92/lily-487e1482.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Els finals alternatius (celes de primera i segona vegada) es
+poden generar utilitzant <code>\alternative</code>.  Cada grup
+d&rsquo;alternatives ha d&rsquo;estar envoltat pel seu compte entre claus.
+</p>
+<blockquote><pre class="example">\repeat volta <var>nombre_de_repeticions</var> <var>expressió_musical</var>
+\alternative {
+  { <var>expressió_musical</var> }
+}
+</pre></blockquote>
+
+<p>on <code><var>expressió_musical</var></code> és una expressió musical.
+</p>
+<p>Si hi ha més repeticions que finals alternatius, s&rsquo;assigna el
+primer final alternatiu a les repeticions més antigues.
+</p>
+<p>Repetició única amb primera i segona vegada:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat volta 2 { c''4 d e f | }
+  \alternative {
+    { c2 e | }
+    { f2 g | }
+  }
+  c1
+}
+</pre><p>
+ <a href="../a3/lily-c98308d9.ly">
+  <img align="middle"
+       border="0"
+       src="../a3/lily-c98308d9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Diverses repeticions amb primera i segona vegada:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat volta 4 { c''4 d e f | }
+  \alternative {
+    { c2 e | }
+    { f2 g | }
+  }
+  c1
+}
+</pre><p>
+ <a href="../bf/lily-5efa3020.ly">
+  <img align="middle"
+       border="0"
+       src="../bf/lily-5efa3020.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Més d&rsquo;una repetició amb més d&rsquo;un final alternatiu:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat volta 3 { c''4 d e f | }
+  \alternative {
+    { c2 e | }
+    { f2 g | }
+    { a2 g | }
+  }
+  c1
+}
+</pre><p>
+ <a href="../0d/lily-b6cbdfaa.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-b6cbdfaa.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<div class="warning"><p><strong>Nota:</strong> Si hi ha dos o més alternatives, no ha d&rsquo;aparèixer res
+entre la clau de tancament d&rsquo;una i la d&rsquo;obertura de l&rsquo;altra
+dins d&rsquo;un bloc <code>\alternative</code>, atès que en cas contrari
+no obtindrem el nombre de finals esperat.
+</p>
+</div>
+<div class="warning"><p><strong>Nota:</strong> Si incloem <code>\relative</code> dins d&rsquo;un
+<code>\repeat</code> sense instancia el context <code>Voice</code>
+explícitament, apareixeran pentagrames addicionals no desitjats.
+Vegeu <a name="index-Apareix-un-pentagrama-de-mes"></a>
+<a href="../usage/an-extra-staff-appears.ca.html">Apareix un pentagrama de més</a>.
+</p>
+</div>
+<a name="index-repeticio-con-anacrusa"></a>
+<a name="index-anacrusa-en-repeticions"></a>
+<a name="index-_005cpartial-4"></a>
+<a name="index-_005cpartial-5"></a>
+<a name="index-comprovacio-de-compas-amb-repeticions"></a>
+<a name="index-repeticio-amb-comprovacions-de-compas"></a>
+
+<p>Si una repetició sense celes de primera i segona vegada comença
+en mig d&rsquo;un compàs, normalment acaba en el lloc corresponent a
+meitat d&rsquo;un altre compàs posterior (de tal forma que els dos sumen
+un compàs complet).  En aquest cas, els símbols de repetició no
+són &lsquo;veritables&rsquo; línies divisòries, per la qual cosa no s&rsquo;han
+d&rsquo;escriure en aquest lloc comprovacions de compàs ni ordres
+<code>\partial</code>:
+</p>
+<blockquote><pre class="verbatim">c'4 e g
+\repeat volta 4 {
+  e4 |
+  c2 e |
+  g4 g g
+}
+  g4 |
+  a2 a |
+  g1 |
+</pre><p>
+ <a href="../85/lily-2482946d.ly">
+  <img align="middle"
+       border="0"
+       src="../85/lily-2482946d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si una repetició que no té celes de primera i segona vegada
+comença amb un compàs parcial, aleshores s&rsquo;aplica el mateix
+principi, excepte que es requereix una ordre <code>\partial</code>
+al començament del compàs:
+</p>
+<blockquote><pre class="verbatim">\partial 4
+\repeat volta 4 {
+  e'4 |
+  c2 e |
+  g4 g g
+}
+  g4 |
+  a2 a |
+  g1 |
+</pre><p>
+ <a href="../4c/lily-42dd6a75.ly">
+  <img align="middle"
+       border="0"
+       src="../4c/lily-42dd6a75.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-repeticions_002c-amb-lligadures"></a>
+<a name="index-primera-i-segona-vegada_002c-amb-lligadures"></a>
+<a name="index-lligadures_002c-a-repeticions"></a>
+<a name="index-lligadures_002c-a-primera-i-segona-vegada"></a>
+<a name="index-_005crepeatTie-2"></a>
+<a name="index-_005crepeatTie-3"></a>
+
+<p>Es poden afegir lligadures d&rsquo;unió al segon final:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1
+  \repeat volta 2 { c4 d e f~ }
+  \alternative {
+    { f2 d }
+    { f2\repeatTie f, }
+  }
+}
+</pre><p>
+ <a href="../17/lily-40ad132f.ly">
+  <img align="middle"
+       border="0"
+       src="../17/lily-40ad132f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005cinStaffSegno"></a>
+<a name="index-_005cinStaffSegno-1"></a>
+<a name="index-repeticions_002c-amb-segno"></a>
+<a name="index-segno_002c-amb-repeticions"></a>
+
+<p>L&rsquo;ordre <code>\inStaffSegno</code> es pot utilitzar per generar una
+barra de compàs combinada que incorpora el símbol del segno junt
+amb la barra de repetició, quan s&rsquo;usa amb la instrucció
+<code>\repeat volta</code>.  Se selecciona automàticament el tipus
+correcte de línia divisòria de repetició, ja sigui de començament
+o fi de repetició, o de doble repetició.  Observeu que la
+indicació &ldquo;D.S.&rdquo; corresponent s&rsquo;ha d&rsquo;afegir manualment.
+</p>
+<p>Sortida d&rsquo;una repetició:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  e'1
+  \inStaffSegno
+  f2 g a b
+  c1_&quot;D.S.&quot; \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../c6/lily-d0f39a62.ly">
+  <img align="middle"
+       border="0"
+       src="../c6/lily-d0f39a62.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Al començament d&rsquo;una repetició:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  e'1
+  \repeat volta 2 {
+    \inStaffSegno  % inicia repetició
+    f2 g a b
+  }
+  c1_&quot;D.S.&quot; \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../19/lily-e240a94f.ly">
+  <img align="middle"
+       border="0"
+       src="../19/lily-e240a94f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Al final de una repetición:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  e'1
+  \repeat volta 2 {
+    f2 g a b
+    \inStaffSegno  % finalitza repetició
+  }
+  f2 g a b
+  c1_&quot;D.S.&quot; \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../b6/lily-63ac173c.ly">
+  <img align="middle"
+       border="0"
+       src="../b6/lily-63ac173c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Entre dues repeticions:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  e'1
+  \repeat volta 2 {
+    f2 g a b
+  }
+  \inStaffSegno  % doble repetició
+  \repeat volta 2 {
+    f2 g a b
+  }
+  c1_&quot;D.S.&quot; \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../63/lily-c09a7c00.ly">
+  <img align="middle"
+       border="0"
+       src="../63/lily-c09a7c00.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden obtenir símbols de línia divisòria alternatius mitjançant
+l&rsquo;establiment (en el context Score) de les propietats
+<code>segnoType</code>, <code>startRepeatSegnoType</code>,
+<code>endRepeatSegnoType</code> o <code>doubleRepeatSegnoType</code> al tipus
+de línia requerit.  Els tipus de línia divisòria alternatius s&rsquo;han
+de seleccionar a partir dels tipus predefinits o de tipus definits
+anteriorment amb la instrucció <code>\defineBarLine</code>
+(vegeu <a href="bars.ca.html#bar-lines">Barres de compàs</a>).
+</p>
+<blockquote><pre class="verbatim">\defineBarLine &quot;:|.S[&quot; #'(&quot;:|.&quot; &quot;S[&quot; &quot;&quot;)
+\defineBarLine &quot;]&quot; #'(&quot;]&quot; &quot;&quot; &quot;&quot;)
+\relative {
+  e'1
+  \repeat volta 2 {
+    f2 g a b
+    \once \set Score.endRepeatSegnoType = &quot;:|.S[&quot;
+    \inStaffSegno
+  }
+  f2 g \bar &quot;]&quot; a b
+  c1_&quot;D.S.&quot; \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../f1/lily-caf39b98.ly">
+  <img align="middle"
+       border="0"
+       src="../f1/lily-caf39b98.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-44"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Shortening volta brackets</em>
+</p>
+
+<p>By default, the volta brackets will be drawn over all of the
+alternative music, but it is possible to shorten them by setting
+<code>voltaSpannerDuration</code>.  In the next example, the bracket only
+lasts one measure, which is a duration of 3/4.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \time 3/4
+  c4 c c
+  \set Score.voltaSpannerDuration = #(ly:make-moment 3/4)
+  \repeat volta 5 { d4 d d }
+  \alternative {
+    {
+      e4 e e
+      f4 f f
+    }
+    { g4 g g }
+  }
+}
+</pre><p>
+ <a href="../bd/lily-56d9f3ab.ly">
+  <img align="middle"
+       border="0"
+       src="../bd/lily-56d9f3ab.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Adding volta brackets to additional staves</em>
+</p>
+
+<p>The <code>Volta_engraver</code> by default resides in the <code>Score</code>
+context, and brackets for the repeat are thus normally only printed
+over the topmost staff. This can be adjusted by adding the
+<code>Volta_engraver</code> to the <code>Staff</code> context where the brackets
+should appear; see also the &ldquo;Volta multi staff&rdquo; snippet.
+</p>
+
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff { \repeat volta 2 { c'1 } \alternative { c' } }
+  \new Staff { \repeat volta 2 { c'1 } \alternative { c' } }
+  \new Staff \with { \consists &quot;Volta_engraver&quot; } { c'2 g' e' a' }
+  \new Staff { \repeat volta 2 { c'1 } \alternative { c' } }
+&gt;&gt;
+</pre><p>
+ <a href="../26/lily-338ea067.ly">
+  <img align="middle"
+       border="0"
+       src="../26/lily-338ea067.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Setting the double repeat default for volte</em>
+</p>
+
+<p>There are three different styles of double repeats for volte, that can
+be set using <code>doubleRepeatType</code>.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \repeat volta 1 { c1 }
+  \set Score.doubleRepeatType = #&quot;:..:&quot;
+  \repeat volta 1 { c1 }
+  \set Score.doubleRepeatType = #&quot;:|.|:&quot;
+  \repeat volta 1 { c1 }
+  \set Score.doubleRepeatType = #&quot;:|.:&quot;
+  \repeat volta 1 { c1 }
+}
+</pre><p>
+ <a href="../07/lily-6e87e18b.ly">
+  <img align="middle"
+       border="0"
+       src="../07/lily-6e87e18b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-repeticions_002c-lletres-i-numeros-de-compas"></a>
+<a name="index-repeticions_002c-numeros-de-compas-de-primer-i-segona-vegada"></a>
+
+
+<p><em> Alternative bar numbering</em>
+</p>
+
+<p>Two alternative methods for bar numbering can be set, especially for
+when using repeated music.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'{
+  \set Score.alternativeNumberingStyle = #'numbers
+  \repeat volta 3 { c4 d e f | }
+    \alternative {
+      { c4 d e f | c2 d \break }
+      { f4 g a b | f4 g a b | f2 a | \break }
+      { c4 d e f | c2 d }
+    }
+  c1 \break
+  \set Score.alternativeNumberingStyle = #'numbers-with-letters
+  \repeat volta 3 { c,4 d e f | }
+    \alternative {
+      { c4 d e f | c2 d \break }
+      { f4 g a b | f4 g a b | f2 a | \break }
+      { c4 d e f | c2 d }
+    }
+  c1
+}
+</pre><p>
+ <a href="../22/lily-6e4a2455.ly">
+  <img align="middle"
+       border="0"
+       src="../22/lily-6e4a2455.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-210"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-repeat"></a>
+<a href="../music-glossary/repeat.ca.html">repeat</a>,
+<a name="index-volta-1"></a>
+<a href="../music-glossary/volta.ca.html">volta</a>.
+</p>
+<p>Referència de la notació:
+<a href="bars.ca.html#bar-lines">Barres de compàs</a>,
+<a name="index-Modifying-context-plug_002dins"></a>
+<a href="../notation/modifying-context-plug_002dins.ca.html">Modificació dels complements (plug-ins) de context</a>,
+<a name="index-Modifying-ties-and-slurs"></a>
+<a href="../notation/modifying-shapes.ca.html#modifying-ties-and-slurs">Modificació de lligadures d&rsquo;unió i d&rsquo;expressió</a>,
+<a href="special-rhythmic-concerns.ca.html#time-administration">Gestió del temps</a>.
+</p>
+<p>Fitxers instal·lats:
+&lsquo;<tt>ly/engraver-init.ly</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/repeticions.ca.html">Repeats</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-VoltaBracket"></a>
+<a href="../internals/voltabracket.ca.html">VoltaBracket</a>,
+<a name="index-RepeatedMusic"></a>
+<a href="../internals/repeatedmusic.ca.html">RepeatedMusic</a>,
+<a name="index-VoltaRepeatedMusic"></a>
+<a href="../internals/voltarepeatedmusic.ca.html">VoltaRepeatedMusic</a>,
+<a name="index-UnfoldedRepeatedMusic"></a>
+<a href="../internals/unfoldedrepeatedmusic.ca.html">UnfoldedRepeatedMusic</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-85"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<a name="index-repeticio-ambigua"></a>
+<a name="index-niuada_002c-repeticio"></a>
+<a name="index-repeticio-niuada"></a>
+<a name="index-repeticio_002c-comptador-de-temps-de-la"></a>
+<a name="index-repeticio-i-numeros-de-compas"></a>
+<a name="index-numeros-de-compas-i-repeticions"></a>
+<a name="index-temps_002c-repeticions-i-comptador-de"></a>
+<a name="index-compas_002c-repeticions-i-numeros-de"></a>
+<a name="index-repeticions-i-lligadura-d_0027expressio"></a>
+<a name="index-lligadures-d_0027expressio-i-repeticions"></a>
+<a name="index-glissandi-i-repeticions"></a>
+<a name="index-repeticions-i-glissandi"></a>
+
+<p>Les lligadures d&rsquo;expressió que abasten des d&rsquo;un bloc
+<code>\repeat</code> fins un bloc <code>\alternative</code> sols funcionen
+per a la cela de primera vegada.  L&rsquo;aparença visual d&rsquo;una
+lligadura d&rsquo;expressió que es continua introduint a d&rsquo;altres
+celes de repetició pot simular-se amb <code>\repeatTie</code> si la
+lligadura s&rsquo;estén fins una sola nota dins de la cela de
+repetició, tot i que aquest mètode no funciona a <code>TabStaff</code>.
+D&rsquo;altres mètodes que poden servir per indicar lligadures que es
+continuen per sobre de diverses notes a les celes de repetició,
+i que també funcionen en contextos de tabulatura <code>TabStaff</code>,
+s&rsquo;expliquen a
+<a name="index-Modifying-ties-and-slurs-1"></a>
+<a href="../notation/modifying-shapes.ca.html#modifying-ties-and-slurs">Modificació de lligadures d&rsquo;unió i d&rsquo;expressió</a>.
+</p>
+<p>Així mateix, no és possible fer que les lligadures d&rsquo;expressió es
+repleguin des del final d&rsquo;una alternativa fins el començament de
+la repetició.
+</p>
+<p>Els glissandos que s&rsquo;estenen des d&rsquo;un bloc <code>\repeat</code> fins un bloc
+<code>\alternative</code> sols funcionen per a la cela de primera
+vegada.  Es pot indicar l&rsquo;aparença visual d&rsquo;un glissando que es
+continua fin l&rsquo;interior d&rsquo;altres celes de repetició mitjançant
+la codificació d&rsquo;un glissando que comença a una nota d&rsquo;adorn
+oculta.  Per veure un exemple, consulteu
+&ldquo;Extensió dels glissandos sobre les repeticions&rdquo; sota l&rsquo;epígraf
+Fragments de codi seleccionats, a <a href="expressive-marks-as-lines.ca.html#glissando">Glissando</a>.
+</p>
+<p>Si una repetició que comença amb un compàs incomplet té un bloc
+<code>\alternative</code> que conté modificacions a la propietat
+<code>measureLength</code>, la utilització de <code>\unfoldRepeats</code>
+donarà lloc a línies divisòries erròniament col·locades i
+advertiments de comprovació de compàs.
+</p>
+<p>Una repetició niuada com
+</p>
+<blockquote><pre class="example">\repeat &hellip;
+\repeat &hellip;
+\alternative
+</pre></blockquote>
+
+<p>és ambigua perquè no està clar a quin <code>\repeat</code> pertany la
+<code>\alternative</code>.  Aquesta ambigüitat es resol fent que la
+<code>\alternative</code> pertanyi sempre a la <code>\repeat</code> més
+interna.  Per més claredat, es recomana usar claus en aquestes
+situacions.
+</p>
+<hr size="6">
+<a name="Marques-de-repetici_00f3-manual"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#normal-repeats" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Repeticions normals&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#long-repeats" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Repeticions llargues&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#written_002dout-repeats" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions explícites &gt; </a>]</td></tr></table>
+<a name="manual-repeat-marks"></a>
+<h4 class="unnumberedsubsubsec">Marques de repetició manual</h4>
+
+
+<a name="index-manual_002c-marca-de-repeticio"></a>
+<a name="index-repeticio-manual"></a>
+<a name="index-comencament-de-repeticio"></a>
+<a name="index-repeticio_002c-comencament-de"></a>
+<a name="index-final-de-repeticio"></a>
+<a name="index-repeticio_002c-final-de"></a>
+<a name="index-repeticio_002c-canviar-numero-de"></a>
+<a name="index-repeticio_002c-canviar-finals-alternatius"></a>
+<a name="index-clau-de-primera-i-segona-vegada"></a>
+<a name="index-repeatCommands"></a>
+<a name="index-repeatCommands-1"></a>
+<a name="index-start_002drepeat"></a>
+<a name="index-start_002drepeat-1"></a>
+
+<div class="warning"><p><strong>Nota:</strong> Aquests mètodes sols s&rsquo;utilitzen per realitzar
+construccions de repetició poc usuals.  A gairebé totes les
+situacions s&rsquo;han de crear les repeticions utilitzant l&rsquo;ordre
+estàndard <code>\repeat</code> o imprimint les barres de compàs
+corresponents.  Per veure més informació, consulteu
+<a href="bars.ca.html#bar-lines">Barres de compàs</a>.
+</p>
+</div>
+<p>Es pot usar la propietat <code>repeatCommands</code> per controlar la
+disposició de les repeticions.  El seu valor és una llista de
+l&rsquo;Scheme d&rsquo;ordres de repetició.
+</p>
+<dl compact="compact">
+<dt> <code>start-repeat</code></dt>
+<dd><p>Impressió d&rsquo;una barra de compàs <code>.|:</code>
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1
+  \set Score.repeatCommands = #'(start-repeat)
+  d4 e f g
+  c1
+}
+</pre><p>
+ <a href="../a1/lily-67275801.ly">
+  <img align="middle"
+       border="0"
+       src="../a1/lily-67275801.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A la pràctica habitual del gravat no s&rsquo;imprimeixen signes de
+repetició al principi de la peça.
+</p>
+</dd>
+<dt> <code><code>end-repeat</code></code></dt>
+<dd><p>Impressió d&rsquo;una barra de compàs <code>:|.</code>
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1
+  d4 e f g
+  \set Score.repeatCommands = #'(end-repeat)
+  c1
+}
+</pre><p>
+ <a href="../a7/lily-1481c892.ly">
+  <img align="middle"
+       border="0"
+       src="../a7/lily-1481c892.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>(volta <var>number</var>) &hellip; (volta #f)</code></dt>
+<dd><p>Creació d&rsquo;una nova cela de repetició amb el número que
+s&rsquo;especifica.  El parèntesi de vegada s&rsquo;ha de finalitzar de forma
+explícita, en cas contrari no s&rsquo;imprimeix.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f''4 g a b
+  \set Score.repeatCommands = #'((volta &quot;2&quot;))
+  g4 a g a
+  \set Score.repeatCommands = #'((volta #f))
+  c1
+}
+</pre><p>
+ <a href="../58/lily-81b21a60.ly">
+  <img align="middle"
+       border="0"
+       src="../58/lily-81b21a60.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+</dl>
+
+<p>Es poden produir diverses ordres de repetició amb el mateix punt:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f''4 g a b
+  \set Score.repeatCommands = #'((volta &quot;2, 5&quot;) end-repeat)
+  g4 a g a
+  c1
+  \set Score.repeatCommands = #'((volta #f) (volta &quot;95&quot;) end-repeat)
+  b1
+  \set Score.repeatCommands = #'((volta #f))
+}
+</pre><p>
+ <a href="../c6/lily-6eaf0ac7.ly">
+  <img align="middle"
+       border="0"
+       src="../c6/lily-6eaf0ac7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-parentesi-de-cela-de-repeticio-de-text"></a>
+<a name="index-text-a-cela-de-repeticio"></a>
+
+<p>Es pot incloure text dins de la cela de primera i segona vegada.
+El text pot ser un número o números, o un element de marcatge,
+vegeu <a name="index-Formatting-text-7"></a>
+<a href="../notation/formatting-text.ca.html">Format del text</a>.  La forma
+més fàcil d&rsquo;usar text de marcatge és definir el marcatge
+prèviament, i després incloure&rsquo;l dins d&rsquo;una llista de l&rsquo;Scheme.
+</p>
+<blockquote><pre class="verbatim">voltaAdLib = \markup { 1. 2. 3... \text \italic { ad lib. } }
+\relative {
+  c''1
+  \set Score.repeatCommands =
+    #(list(list 'volta voltaAdLib) 'start-repeat)
+  c4 b d e
+  \set Score.repeatCommands = #'((volta #f) (volta &quot;4.&quot;) end-repeat)
+  f1
+  \set Score.repeatCommands = #'((volta #f))
+}
+</pre><p>
+ <a href="../7f/lily-9e579894.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-9e579894.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Vegeu-tambe-266"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="bars.ca.html#bar-lines">Barres de compàs</a>,
+<a name="index-Formatting-text-8"></a>
+<a href="../notation/formatting-text.ca.html">Format del text</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/repeticions.ca.html">Repeats</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-VoltaBracket-1"></a>
+<a href="../internals/voltabracket.ca.html">VoltaBracket</a>,
+<a name="index-RepeatedMusic-1"></a>
+<a href="../internals/repeatedmusic.ca.html">RepeatedMusic</a>,
+<a name="index-VoltaRepeatedMusic-1"></a>
+<a href="../internals/voltarepeatedmusic.ca.html">VoltaRepeatedMusic</a>.
+</p>
+
+<hr size="6">
+<a name="Repeticions-expl_00edcites"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#manual-repeat-marks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Marques de repetició manual&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#long-repeats" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Repeticions llargues&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="short-repeats.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions curtes &gt; </a>]</td></tr></table>
+<a name="written_002dout-repeats"></a>
+<h4 class="unnumberedsubsubsec">Repeticions explícites</h4>
+
+<a name="index-explicites_002c-repeticions"></a>
+<a name="index-repeticions-explicites"></a>
+<a name="index-repeticions-desplegades"></a>
+<a name="index-repeticions-alternatives"></a>
+<a name="index-primera-i-segona-vegada_002c-repeticions"></a>
+<a name="index-repeticions-amb-primera-i-segona-vegada"></a>
+<a name="index-desplegar-repeticio"></a>
+<a name="index-repeticions-desplegades-amb-finals-alternatius"></a>
+<a name="index-musica-desplegada-amb-finals-alternatius"></a>
+<a name="index-alternatius_002c-finals_002c-a-repeticions-explicites"></a>
+<a name="index-unfold"></a>
+<a name="index-unfold-1"></a>
+
+<p>Mitjançant la utilització de l&rsquo;ordre <code>unfold</code> es poden usar
+les repeticions per simplificar l&rsquo;escriptura desplegada de música
+repetitiva.  La sintaxi és:
+</p>
+<blockquote><pre class="example">\repeat unfold <var>número_de_repeticions</var> <var>expressió_musical</var>
+</pre></blockquote>
+
+<p>donde <code><var>expressió_musical</var></code> és una musical i
+<code><var>nombre_de_repeticions</var></code> és el nombre de vegades que
+<code><var>expressió_musical</var></code> es repeteix.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat unfold 2 { c''4 d e f }
+  c1
+}
+</pre><p>
+ <a href="../58/lily-f99ccf5b.ly">
+  <img align="middle"
+       border="0"
+       src="../58/lily-f99ccf5b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>En certs casos, especialment dins d&rsquo;un context
+<code>\relative</code>, la funció <code>\repeat unfold</code> no és
+exactament igual que escriure l&rsquo;expressió musical diverses
+vegades.  Per exemple:
+</p>
+<blockquote><pre class="example">\repeat unfold 2 { a'4 b c }
+</pre></blockquote>
+
+<p>no equival a
+</p>
+<blockquote><pre class="example">a'4 b c | a'4 b c
+</pre></blockquote>
+
+<p>Es poden fer repeticions desplegades amb finals alternatius.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat unfold 2 { c''4 d e f }
+  \alternative {
+    { c2 g' }
+    { c,2 b }
+  }
+  c1
+}
+</pre><p>
+ <a href="../a5/lily-f55978b3.ly">
+  <img align="middle"
+       border="0"
+       src="../a5/lily-f55978b3.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si hi ha repeticions amb finals alternatius, el primer final
+alternatiu s&rsquo;aplica les vegades que calguin fins que les
+alternatives restants completen el nombre total de repeticions.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat unfold 4 { c''4 d e f }
+  \alternative {
+    { c2 g' }
+    { c,2 b }
+    { e2 d }
+   }
+  c1
+}
+</pre><p>
+ <a href="../c2/lily-be0eb12f.ly">
+  <img align="middle"
+       border="0"
+       src="../c2/lily-be0eb12f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si hi ha més finals alternatius que repeticions, s&rsquo;apliquen sols
+els primers finals alternatius.  Les alternatives restants
+s&rsquo;ignoren i no s&rsquo;imprimeixen.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat unfold 2 { c''4 d e f }
+  \alternative {
+    { c2 g' }
+    { c,2 b }
+    { e2 d }
+  }
+  c1
+}
+</pre><p>
+ <a href="../e9/lily-0b438504.ly">
+  <img align="middle"
+       border="0"
+       src="../e9/lily-0b438504.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>És possible també niuar diverses funcions <code>unfold</code> (amb
+finals alternatius o sense ells).
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \repeat unfold 2 {
+    \repeat unfold 2 { c''4 d e f }
+    \alternative {
+      { c2 g' }
+      { c,2 b }
+    }
+  }
+  c1
+}
+</pre><p>
+ <a href="../01/lily-b4d253cb.ly">
+  <img align="middle"
+       border="0"
+       src="../01/lily-b4d253cb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Les construccions d&rsquo;acord es poden repetir mitjançant el símbol de
+repetició d&rsquo;acords <code>q</code>.  Vegeu
+<a href="single-voice.ca.html#chord-repetition">Repetició d&rsquo;acords</a>.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Si poseu <code>\relative</code> dins d&rsquo;un bloc
+<code>\repeat</code> sense instanciar explícitament el context
+<code>Voice</code>, apareixeran pentagrames no desitjats.  Vegeu
+<a name="index-Apareix-un-pentagrama-de-mes-1"></a>
+<a href="../usage/an-extra-staff-appears.ca.html">Apareix un pentagrama de més</a>.
+</p>
+</div>
+<a name="Vegeu-tambe-23"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="single-voice.ca.html#chord-repetition">Repetició d&rsquo;acords</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/repeticions.ca.html">Repeats</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-RepeatedMusic-2"></a>
+<a href="../internals/repeatedmusic.ca.html">RepeatedMusic</a>,
+<a name="index-UnfoldedRepeatedMusic-1"></a>
+<a href="../internals/unfoldedrepeatedmusic.ca.html">UnfoldedRepeatedMusic</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#manual-repeat-marks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Marques de repetició manual&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#long-repeats" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Repeticions llargues&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="short-repeats.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Repeticions curtes &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="long-repeats.html">English</a>, <a href="long-repeats.de.html">deutsch</a>, <a href="long-repeats.es.html">español</a>, <a href="long-repeats.fr.html">français</a>, <a href="long-repeats.it.html">italiano</a>, <a href="long-repeats.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=" toc_current"><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-Repeticions-llargues-1" href="long-repeats.ca.html">1.4.1 Repeticions llargues</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Repeticions-normals-1" href="long-repeats.ca.html#normal-repeats">Repeticions normals</a>        </li>
+        <li class=""><a name="toc-Marques-de-repeticio-manual" href="long-repeats.ca.html#manual-repeat-marks">Marques de repetició manual</a>        </li>
+        <li class=""><a name="toc-Repeticions-explicites" href="long-repeats.ca.html#written_002dout-repeats">Repeticions explícites</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Repeticions-curtes-1" href="short-repeats.ca.html">1.4.2 Repeticions curtes</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

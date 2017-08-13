@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 5.3.6 Il comando \offset</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 5.3.6 Il comando \offset">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 5.3.6 Il comando \offset">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="modifying-properties.it.html#modifying-properties" rel="up" title="5.3 Modifica delle proprietà">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="set-versus-override.it.html#set-versus-override" rel="previous" title="5.3.5 \set vs. \override">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Il-comando-offset"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="set-versus-override.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; set vs override&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="modifying-properties.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Modifica delle proprietà&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="modifying-alists.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Modifica delle liste associative &gt; </a>]</td></tr></table>
+<a name="the-offset-command"></a>
+<h3 class="subsection">5.3.6 Il comando <code>\offset</code></h3>
+
+<a name="index-_005coffset"></a>
+<a name="index-_005coffset-1"></a>
+<a name="index-offset"></a>
+<a name="index-predefinito_002c-offset"></a>
+<a name="index-spostamento-relativo-_0028offset_0029"></a>
+
+<p>Sebbene sia possibile impostare le proprietà dei grob su nuovi valori coi
+comandi <code>\override</code>, <code>\tweak</code> e <code>\overrideProperty</code>, è spesso
+più opportuno modificare tali proprietà in modo relativo a un valore
+predefinito.  A questo fine è stato creato il comando <code>\offset</code>.
+</p>
+<p>La sintassi di <code>\offset</code> è
+</p>
+<blockquote><pre class="example">[-]\offset <var>proprietà</var> <var>offset</var> <var>elemento</var>
+</pre></blockquote>
+
+<p>Il comando funziona aggiungendo i contenuti di <var>offset</var> all&rsquo;impostazione
+predefinita della proprietà <var>proprietà</var> del grob indicato da
+<var>elemento</var>.
+</p>
+<p>A seconda di come è formulato il comando, <code>\offset</code> può comportarsi
+come un <code>\tweak</code> o come un <code>\override</code>.  Le variazioni d&rsquo;uso
+sono trattate dopo aver considerato le proprietà del grob che possono
+essere usate con <code>\offset</code>.
+</p>
+<a name="Proprieta-che-possono-essere-spostate-con-offset"></a>
+<h4 class="subsubheading"><i>Proprietà che possono essere spostate con offset</i></h4>
+
+<p>Molte, ma non tutte, le proprietà dei grob possono essere spostate con
+offset.  Se la <var>proprietà</var> non può essere spostata con offset, l&rsquo;oggetto
+resterà invariato e apparirà un avviso.  In questi casi bisogna usare
+<code>\override</code> o <code>\tweak</code> per modificare l&rsquo;oggetto.
+</p>
+<p>Si potrebbe procedere per prova e errore e basarsi sugli avvisi per capire
+cosa può essere spostato con offset e cosa no.  Tuttavia si può usare un
+approccio più sistematico.
+</p>
+<p>I seguenti criteri determinano se una proprietà possa essere modificata con
+<code>\offset</code>:
+</p>
+<ul>
+<li>
+La proprietà ha un&rsquo;&lsquo;impostazione predefinita&rsquo; nella descrizione del grob.
+Queste proprietà sono elencate, per ogni grob, in <a name="index-All-layout-objects-2"></a>
+<a href="../internals/all-layout-objects.it.html">All layout objects</a>
+(si trovano anche in &lsquo;<tt>scm/define-grobs.scm</tt>&rsquo;).
+
+</li><li>
+La proprietà accetta un valore numerico.  I valori numerici comprendono
+<code>number</code>, una lista di <code>number</code>, <code>number-pair</code> e
+<code>number-pair-list</code>.  Le pagine in <a name="index-All-layout-objects-3"></a>
+<a href="../internals/all-layout-objects.it.html">All layout objects</a>
+elencano il tipo di dati tipici di ciascuna proprietà.  È irrilevante
+che l&rsquo;impostazione predefinita sia una funzione.
+
+</li><li>
+La proprietà non può essere una &lsquo;sottoproprietà&rsquo;, ovvero una proprietà che
+risiede all&rsquo;interno di un&rsquo;altra proprietà.
+
+</li><li>
+Le proprietà impostate su valori infiniti non possono essere spostate con
+offset, perché non esiste un modo sensato per spostare un infinito positivo
+o negativo.
+</li></ul>
+
+<p>Gli esempi seguenti prendono in considerazione varie proprietà grob in relazione
+ai criteri appena delineati.
+</p>
+<ul>
+<li> Proprietà che possono essere spostate con offset
+
+<dl compact="compact">
+<dt> <code>Hairpin.height</code></dt>
+<dd>
+<p>Questa proprietà non è una sottoproprietà e è elencata in
+<a name="index-Hairpin-1"></a>
+<a href="../internals/hairpin.it.html">Hairpin</a>.  Come valore prende &lsquo;dimensione, in spazi
+rigo&rsquo; impostata su <code>0.6666</code>, ovviamente non un numero infinito.
+</p>
+</dd>
+<dt> <code>Arpeggio.positions</code></dt>
+<dd>
+<p>La pagina <a name="index-Arpeggio-1"></a>
+<a href="../internals/arpeggio.it.html">Arpeggio</a> elenca una proprietà <code>positions</code> che
+accetta una &lsquo;coppia di numeri&rsquo;.  Il suo valore predefinito è
+<code>ly:arpeggio::positions</code>, una funzione di callback che verrà elaborata
+durante la fase di formattazione tipografica per emettere una coppia di numeri
+per ogni oggetto <code>Arpeggio</code>.
+</p>
+</dd>
+</dl>
+
+</li><li> Proprietà che non possono essere spostate con offset
+
+<dl compact="compact">
+<dt> <code>Hairpin.color</code></dt>
+<dd>
+<p><code>color</code> non è presente in <a name="index-Hairpin-2"></a>
+<a href="../internals/hairpin.it.html">Hairpin</a>.
+</p>
+</dd>
+<dt> <code>Hairpin.circled-tip</code></dt>
+<dd>
+<p>L&rsquo;elenco per <code>Hairpin.circled-tip</code> in <a name="index-Hairpin-3"></a>
+<a href="../internals/hairpin.it.html">Hairpin</a> mostra
+che prende un valore <code>booleano</code>.  I booleani sono non numerici.
+</p>
+</dd>
+<dt> <code>Stem.details.lengths</code></dt>
+<dd>
+<p>Benché sia elencato in <a name="index-Stem-4"></a>
+<a href="../internals/stem.it.html">Stem</a> e il suo valore predefinito sia
+un elenco di <code>number</code>, si tratta di una &lsquo;sottoproprietà&rsquo;.  Attualmente
+non sono supportate le &lsquo;proprietà annidate&rsquo;.
+</p>
+</dd>
+</dl>
+
+</li></ul>
+
+<a name="g_t_005coffset-come-override"></a>
+<h4 class="subsubheading"><i>\offset come override</i></h4>
+
+<p>Se <var>elemento</var> è un nome di grob come <code>Arpeggio</code> o
+<code>Staff.OttavaBracket</code>, il risultato è un <code>\override</code> del tipo
+di grob specificato.
+</p>
+<blockquote><pre class="example">\offset <var>proprietà</var> <var>offset</var> [<var>contesto</var>.]<var>NomeGrob</var>
+</pre></blockquote>
+
+<p>Notare che il trattino iniziale non è <em>mai</em> usato nella forma &lsquo;override&rsquo;,
+proprio come non è mai usato col comando <code>\override</code> stesso.
+</p>
+<p>L&rsquo;esempio seguente usa la forma &lsquo;override&rsquo; per allungare gli arpeggi
+predefiniti mostrati nella prima misura in modo che coprano del tutto
+l&rsquo;esensione degli accordi.  Gli arpeggi sono allungati di mezzo spazio
+rigo verso l&rsquo;alto e verso il basso.  Viene mostrata anche la stessa
+operazione fatta sul primo accordo con un normale override della proprietà
+<code>positions</code>.  Questo metodo non rispecchia affatto il compito di
+&lsquo;allungare di mezzo spazio rigo&rsquo;, perché le estremità devono essere
+specificate con coordinate assolute invece che relative.  Inoltre, sarebbero
+necessari override individuali per ciascuno degli altri accordi, dato che
+variano in dimensione e posizione.
+</p>
+<blockquote><pre class="verbatim">arpeggioMusic = {
+  &lt;c' e' g'&gt;\arpeggio &lt;a' c'' e''&gt;\arpeggio
+  &lt;d' f' a' c''&gt;\arpeggio &lt;c' e' g' b' d'' f'' a''&gt;\arpeggio
+}
+
+{
+  \arpeggioMusic
+  \bar &quot;||&quot;
+  \offset positions #'(-0.5 . 0.5) Arpeggio
+  \arpeggioMusic
+  \bar &quot;||&quot;
+  \once \override Arpeggio.positions = #'(-3.5 . -0.5)
+  &lt;c' e' g'&gt;1\arpeggio
+  \bar &quot;||&quot;
+}
+</pre><p>
+ <a href="../d1/lily-6c1f7d7f.ly">
+  <img align="middle"
+       border="0"
+       src="../d1/lily-6c1f7d7f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Nel suo uso come &lsquo;override&rsquo;, <code>\offset</code> può essere preceduto da
+<code>\once</code> o <code>\temporary</code> e annullato con <code>\revert</code> e la
+<var>proprietà</var>.  Ciò deriva dal fatto che <code>\offset</code> in realtà crea
+un <code>\override</code> della <var>proprietà</var>.
+</p>
+<blockquote><pre class="verbatim">music = { c'8\&lt; d' e' f'\! }
+
+{
+  \music
+  \offset height 1 Hairpin
+  \music
+  \music
+  \revert Hairpin.height
+  \music
+  \bar &quot;||&quot;
+  \once \offset height 1 Hairpin
+  \music \music
+  \bar &quot;||&quot;
+  \override Hairpin.height = 0.2
+  \music
+  \temporary \offset height 2 Hairpin
+  \music
+  \music
+  \revert Hairpin.height
+  \music
+  \bar &quot;||&quot;
+}
+</pre><p>
+ <a href="../58/lily-cb00981a.ly">
+  <img align="middle"
+       border="0"
+       src="../58/lily-cb00981a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Proprio come <code>\override</code>, la forma &lsquo;override&rsquo; di <code>\offset</code> può
+essere usata con <code>\undo</code> e <code>\single</code>.
+</p>
+<blockquote><pre class="verbatim">longStem = \offset length 6 Stem
+
+{
+ \longStem c'4 c''' c' c''
+ \bar &quot;||&quot;
+ \undo \longStem c'4 c''' c' c''
+ \bar &quot;||&quot;
+ \single \longStem c'4 c''' c' c''
+ \bar &quot;||&quot;
+}
+</pre><p>
+ <a href="../31/lily-507a5042.ly">
+  <img align="middle"
+       border="0"
+       src="../31/lily-507a5042.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="g_t_005coffset-come-tweak"></a>
+<h4 class="subsubheading"><i>\offset come tweak</i></h4>
+
+<p>Se <var>elemento</var> è un&rsquo;espressione musicale come <code>(</code> o
+<code>\arpeggio</code>, il risultato è la stessa espressione musicale
+con una modifica di tipo tweak applicata.
+</p>
+<blockquote><pre class="example">[-]\offset [<var>NomeGrob</var>.]<var>proprietà</var> <var>offset</var> <var>espressione-musicale</var>
+</pre></blockquote>
+
+<p>La sintassi di <code>\offset</code> nella sua forma &lsquo;tweak&rsquo; è analoga a quella
+dello stesso comando <code>\tweak</code>, sia nell&rsquo;ordine sia in presenza o assenza
+del trattino iniziale.
+</p>
+<p>L&rsquo;esempio seguente usa la forma &lsquo;tweak&rsquo; per regolare la posizione verticale
+dell&rsquo;oggetto <code>BreathingSign</code>.  Si confronti questo col normale comando
+<code>\tweak</code> che lo segue.  La sintassi è equivalente, ma l&rsquo;output di
+<code>\tweak</code> è meno intuitivo, perché <code>BreathingSign.Y-offset</code> è
+calcolato dalla linea centrale del pentagramma.  Al contratio, non è necessatio
+conoscere come è calcolato <code>Y-offset</code> quando si usa <code>\offset</code>.
+</p>
+<blockquote><pre class="verbatim">{
+  c''4
+  \breathe
+  c''4
+  \offset Y-offset 2 \breathe
+  c''2
+  \tweak Y-offset 3 \breathe
+}
+</pre><p>
+ <a href="../50/lily-7a0692e5.ly">
+  <img align="middle"
+       border="0"
+       src="../50/lily-7a0692e5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Nell&rsquo;esempio precedente, gli oggetti modificati sono stati creati direttamente
+dall&rsquo;input dell&rsquo;utente: il comando <code>\breathe</code> è un&rsquo;istruzione esplicita
+che restituisce un oggetto <code>BreathingSign</code>.  Dato che l&rsquo;ambito del comando
+era non ambiguo, non è stato necessario specificare il nome dell&rsquo;oggetto.
+Ma quando un oggetto viene creato <em>indirettamente</em>, bisogna includere il
+nome del grob.  Ciò è valido anche per il comando <code>\tweak</code>.
+</p>
+<p>Nell&rsquo;esempio seguente, l&rsquo;oggetto <code>Beam</code> viene abbassato di due spazi
+rigo applicando <code>\offset</code> alla proprietà <code>positions</code>.
+</p>
+<p>Il primo impiego di <code>\offset</code> richiede la presenza del nome del grob,
+perché nessun elemento dell&rsquo;input crea esplicitamente la travatura.  Nel
+secondo impiego la travatura viene creata manualmente con l&rsquo;espressione
+musicale <code>[</code>; dunque il nome del grob non è necessario.  L&rsquo;esempio
+mostra anche una scorciatoia: un singolo <code>numero</code> viene applicato
+a entrambi i membri di una coppia di numeri.)
+</p>
+<blockquote><pre class="verbatim">{
+  c''8 g'' e'' d''
+  \offset Beam.positions #'(-2 . -2)
+  c''8 g'' e'' d''
+  c''8 g'' e'' d''
+  c''8-\offset positions #-2 [ g'' e'' d'']
+}
+</pre><p>
+ <a href="../f8/lily-f2fa9c0b.ly">
+  <img align="middle"
+       border="0"
+       src="../f8/lily-f2fa9c0b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="g_t_005coffset-con-estensori-spezzati"></a>
+<h4 class="subsubheading"><i>\offset con estensori spezzati</i></h4>
+
+<p>È anche possibile modificare in modo indipendente i segmenti di un estensore
+che va oltre una o più interruzioni di linea.  In questo caso, <var>offset</var>
+prende una lista di valori del tipo di dati richiesto dalla proprietà.
+</p>
+<p>Il comando <code>\offset</code> usato in questo modo è simile al comando
+<code>\alterBroken</code>, vedi <a href="modifying-broken-spanners.it.html">Modifica degli estensori spezzati</a>.
+Tuttavia, diversamente da <code>\alterBroken</code>, i valori assegnati a
+<code>\offset</code> non sono assoluti, ma relativi.
+</p>
+<p>L&rsquo;esempio seguente sposta l&rsquo;oggetto &lsquo;spezzato&rsquo; <code>OttavaBracket</code>
+attraverso la sua proprietà <code>staff-padding</code>.  Dato che la proprietà
+prende un <code>numero</code>, a <var>offset</var> viene fornita una lista di
+<code>numeri</code> per rendere conto dei due segmenti creati dall&rsquo;interruzione
+di linea.
+Il pezzo di parentesi dell&rsquo;ottava sulla prima linea non viene modificato
+perché viene aggiunto <code>0</code> al suo valore predefinito.  Il segmento sulla
+seconda linea viene alzato di tre spazi rigo dalla sua altezza predefinita.
+L&rsquo;altezza predefinita è <code>2</code>, anche se non è necessario saperlo.
+</p>
+<blockquote><pre class="verbatim">{
+  \offset staff-padding #'(0 3) Staff.OttavaBracket
+  \ottava #1
+  c'''2 c'''
+  \break
+  c'''2 c'''
+}
+</pre><p>
+ <a href="../e5/lily-79c05ea9.ly">
+  <img align="middle"
+       border="0"
+       src="../e5/lily-79c05ea9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;esempio seguente imita l&rsquo;effetto del comando <code>\shape</code> spostando la
+proprietà <code>control-points</code> dell&rsquo;oggetto <code>Slur</code>.
+Qui <var>offset</var> è una lista di <code>number-pair-list</code>, una per ciascun
+segmento della legatura di portamento.  Questo esempio realizza un risultato
+identico a quello corrispondente in <a href="modifying-shapes.it.html">Modifica delle forme</a>.
+</p>
+<blockquote><pre class="verbatim">{
+  c'4-\offset control-points #'(
+               ((0 . 0) (0 . 0) (0 . 0) (0 . 1))
+               ((0.5 . 1.5) (1 . 0) (0 . 0) (0 . -1.5))
+              ) ( f'4 g' c''
+  \break
+  d'4 c'' f' c')
+}
+</pre><p>
+ <a href="../6a/lily-1757554c.ly">
+  <img align="middle"
+       border="0"
+       src="../6a/lily-1757554c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="set-versus-override.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; set vs override&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="modifying-properties.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Modifica delle proprietà&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="modifying-alists.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Modifica delle liste associative &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="the-offset-command.html">English</a>, <a href="the-offset-command.ca.html">català</a>, <a href="the-offset-command.es.html">español</a>, <a href="the-offset-command.fr.html">français</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=" toc_current"><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Panoramica-sulla-modifica-delle-proprieta" href="overview-of-modifying-properties.it.html">5.3.1 Panoramica sulla modifica delle proprietà</a>      </li>
+      <li class=""><a name="toc-Il-comando-_005cset" href="the-set-command.it.html">5.3.2 Il comando <code>\set</code></a>      </li>
+      <li class=""><a name="toc-Il-comando-_005coverride" href="the-override-command.it.html">5.3.3 Il comando <code>\override</code></a>      </li>
+      <li class=""><a name="toc-Il-comando-_005ctweak" href="the-tweak-command.it.html">5.3.4 Il comando <code>\tweak</code></a>      </li>
+      <li class=""><a name="toc-_005cset-vs_002e-_005coverride" href="set-versus-override.it.html">5.3.5 <code>\set</code> vs. <code>\override</code></a>      </li>
+      <li class=" toc_current"><a name="toc-Il-comando-_005coffset" href="the-offset-command.it.html">5.3.6 Il comando <code>\offset</code></a>      </li>
+      <li class=""><a name="toc-Modifica-delle-liste-associative-1" href="modifying-alists.it.html">5.3.7 Modifica delle liste associative</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

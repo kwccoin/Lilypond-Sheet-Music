@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Manual d'aprenentatge del GNU LilyPond: 4.1.4 Mètodes d'ajustament</title>
+
+<meta name="description" content="Manual d'aprenentatge del GNU LilyPond: 4.1.4 Mètodes d'ajustament">
+<meta name="keywords" content="Manual d'aprenentatge del GNU LilyPond: 4.1.4 Mètodes d'ajustament">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Manual d'aprenentatge">
+<link href="lilypond-index.ca.html#lilypond-index" rel="index" title="C. Índex del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="tweaking-basics.ca.html#tweaking-basics" rel="up" title="4.1 Elements d'ajustament">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="C. Índex del LilyPond">
+<link href="naming-conventions-of-objects-and-properties.ca.html#naming-conventions-of-objects-and-properties" rel="previous" title="4.1.3 Convencions de noms d'objectes i propietats">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="learning devStatus">
+
+
+<div id="main">
+<a name="M_00e8todes-d_0027ajustament"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="naming-conventions-of-objects-and-properties.ca.html" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Convencions de noms d'objectes i propietats&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="tweaking-basics.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Elements d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-override-command" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;L'ordre override &gt; </a>]</td></tr></table>
+<a name="tweaking-methods"></a>
+<h3 class="subsection">4.1.4 Mètodes d&rsquo;ajustament</h3>
+
+<a name="index-ajustament_002c-metodes-de"></a>
+
+<p><strong>L&rsquo;ordre \override</strong>
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#the-override-command" accesskey="1">L&rsquo;ordre <code>\override</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#the-revert-command" accesskey="2">L&rsquo;ordre <code>\revert</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#the-once-prefix" accesskey="3">El prefix <code>\once</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#the-overrideproperty-command" accesskey="4">L&rsquo;ordre <code>\overrideProperty</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#the-tweak-command" accesskey="5">L&rsquo;ordre <code>\tweak</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#the-single-prefix" accesskey="6">El prefix <code>\single</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="L_0027ordre-override"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#tweaking-methods" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-revert-command" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;L'ordre revert &gt; </a>]</td></tr></table>
+<a name="the-override-command"></a>
+<h4 class="unnumberedsubsubsec">L&rsquo;ordre <code>\override</code></h4>
+
+<a name="index-override_002c-instruccio"></a>
+<a name="index-override-_0028sobreescriptura_0029_002c-sintaxi-de"></a>
+
+<a name="index-_005coverride"></a>
+<a name="index-_005coverride-1"></a>
+
+<p>Ja hem vist les ordres <code>\set</code> i <code>\with</code>, que s&rsquo;usen per
+canviar les propietats dels <strong>contextos</strong> i per treure i
+posar <strong>gravadors</strong>, a <a href="modifying-context-properties.ca.html">Modificar les propietats dels contextos</a> i <a href="adding-and-removing-engravers.ca.html">Afegir i eliminar gravadors</a>.  Ara hem
+d&rsquo;examinar algunes altres ordres importants.
+</p>
+<p>L&rsquo;ordre que canvia les propietats dels <strong>objectes
+de presentació</strong> és <code>\override</code>.  Atès que aquesta ordre ha de
+modificar propietats internes que es troben a un lloc profund dins
+del LilyPond, la seva sintaxi no és tan simple com la de la resta
+de les ordres que hem fet servir fins ara.  Heu de saber
+exactament quina propietat de quin objecte i a quin context s&rsquo;ha
+de modificar, i quin ha de ser el seu nou valor.  Anem a veure com
+es fa.
+</p>
+<p>La sintaxi genèrica d&rsquo;aquesta ordre és:
+</p>
+<blockquote><pre class="example">\override <var>Context</var>.<var>ObjecteDePresentació</var>.<var>propietat-de-presentació</var> =
+#<var>valor</var>
+</pre></blockquote>
+
+<p>Això establirà la propietat de nom
+<var>propietat-de-presentació</var> de l&rsquo;objecte de presentació amb el
+nom <var>ObjecteDePresentació</var>, que es membre del context
+<var>Context</var>, al valor <var>valor</var>.
+</p>
+<p>El <var>Context</var> es pot ometre (i normalment és així) quan el
+context requerit es troba implicat sense ambigüitat i és un dels
+contextos del nivell més baix, és a dir: <code>Voice</code>,
+<code>ChordNames</code> o <code>Lyrics</code>, i l&rsquo;ometrem en molts dels
+exemples següents.  Més endavant veurem quan cal especificar-lo
+</p>
+<p>Les últimes seccions tracten de forma exhaustiva les propietats i
+els seus valors, vegeu <a href="types-of-properties.ca.html">Tipus de propietats</a>.  Però en aquesta
+secció usarem sols unes quantes propietats i valors senzills que
+siguin fàcils d&rsquo;entendre, per il·lustrar el format i la
+utilització d&rsquo;aquestes instruccions.
+</p>
+<p>Les expressions principals del LilyPond són elements musicals com
+notes, duracions, i elements marcatge. Les expressions més
+bàsiques com ara números, cadenes de caràcters i llistes, es
+processen al &lsquo;mode de l&rsquo;Scheme&rsquo;, que s&rsquo;invoca mitjançant del
+prefix &lsquo;<samp>#</samp>&rsquo; escrit abans del valor.  Tot i que els valors
+poden tenir a vegades una representació vàlida al mode de música
+del LilyPond, aquest manual utilitza sempre &lsquo;<samp>#</samp>&rsquo; per a
+l&rsquo;escriptura, per coherència.  Per obtenir més informació sobre el
+mode de l&rsquo;Scheme, consulteu
+<a name="index-LilyPond-Scheme-syntax"></a>
+<a href="../extending/lilypond-scheme-syntax.ca.html">Sintaxi de l&rsquo;Scheme del LilyPond</a>.
+</p>
+<p><code>\override</code> és l&rsquo;ordre d&rsquo;ús més comú dins de l&rsquo;ajustament, i
+durant la major part de la resta d&rsquo;aquest capítol presentarem
+exemples sobre el seu ús.  A continuació hi ha un exemple senzill
+per canviar el color d&rsquo;un cap:
+</p>
+<a name="index-color_002c-propietat_002c-exemple"></a>
+<a name="index-NoteHead_002c-exemple-de-sobreescriptura"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  c'4 d
+  \override NoteHead.color = #red
+  e4 f |
+  \override NoteHead.color = #green
+  g4 a b c |
+}
+</pre><p>
+ <a href="../ea/lily-4140a13e.ly">
+  <img align="middle"
+       border="0"
+       src="../ea/lily-4140a13e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="L_0027ordre-revert"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-override-command" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; L'ordre override&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-once-prefix" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;El prefix once &gt; </a>]</td></tr></table>
+<a name="the-revert-command"></a>
+<h4 class="unnumberedsubsubsec">L&rsquo;ordre <code>\revert</code></h4>
+
+<a name="index-revert_002c-instruccion"></a>
+
+<a name="index-_005crevert"></a>
+<a name="index-_005crevert-1"></a>
+
+<p>Un cop sobreescrita, la propietat reté el seu nou valor fins que
+se sobreescriu de o es troba una ordre <code>\revert</code>.  L&rsquo;ordre té
+la sintaxi següent i causa que el valor de la propietat torni al
+seu valor predeterminat original; observeu que no és al seu valor
+previ si s&rsquo;han fet servir diverses ordres <code>\override</code>.
+</p>
+<blockquote><pre class="example">\revert <var>Context</var>.<var>ObjecteDePresentació</var>.<var>propietat-de-presentació</var>
+</pre></blockquote>
+
+<p>Un cop més, igual que <var>Context</var> dins de l&rsquo;ordre
+<code>\override</code>, freqüentment no és necessari especificar el
+<var>Context</var>. S&rsquo;ometrà en molts dels exemples següents.  Aquí
+retornem el color del cap al valor predeterminat per a les últimes
+dues notes:
+</p>
+<a name="index-color_002c-propietat_002c-exemple-1"></a>
+<a name="index-NoteHead_002c-exemple-de-sobreescriptura-1"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  c'4 d
+  \override NoteHead.color = #red
+  e4 f |
+  \override NoteHead.color = #green
+  g4 a
+  \revert NoteHead.color
+  b4 c |
+}
+</pre><p>
+ <a href="../72/lily-c0a251ac.ly">
+  <img align="middle"
+       border="0"
+       src="../72/lily-c0a251ac.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="El-prefix-once"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-revert-command" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; L'ordre revert&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-overrideproperty-command" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;L'ordre overrideProperty &gt; </a>]</td></tr></table>
+<a name="the-once-prefix"></a>
+<h4 class="unnumberedsubsubsec">El prefix <code>\once</code></h4>
+
+<a name="index-_005conce"></a>
+<a name="index-_005conce-1"></a>
+
+<p><code>\override</code>, <code>\revert</code>, <code>\set</code> i <code>\unset</code> es
+poden fer precedir per <code>\once</code>.  Això fa que l&rsquo;ordre sigui
+efectiva sols durant el temps musical en curs i abans que la
+propietat torni a tenir un altre cop el seu valor anterior (que
+pot ser diferent al seu valor predeterminat i encara s&rsquo;està
+aplicant una altra ordre <code>\override</code> de
+sobreescriptura). Utilitzant el mateix exemple, podem canviar el
+color d&rsquo;una sola nota de la manera següent:
+</p>
+<a name="index-color_002c-propietat_002c-exemple-2"></a>
+<a name="index-NoteHead_002c-exemple-de-sobreescriptura-2"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  c'4 d
+  \override NoteHead.color = #red
+  e4 f |
+  \once \override NoteHead.color = #green
+  g4 a
+  \once \revert NoteHead.color
+  b c |
+  \revert NoteHead.color
+  f2 c |
+}
+</pre><p>
+ <a href="../f1/lily-c2078184.ly">
+  <img align="middle"
+       border="0"
+       src="../f1/lily-c2078184.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El prefix <code>\once</code> també es pot usar davant de moltes ordres
+predefinides per limitar el seu efecte a un sol moment musical:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c'4( d)
+  \once \slurDashed
+  e4( f) |
+  g4( a)
+  \once \hideNotes
+  b( c) |
+}
+</pre><p>
+ <a href="../b8/lily-b269ed6f.ly">
+  <img align="middle"
+       border="0"
+       src="../b8/lily-b269ed6f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<hr size="6">
+<a name="L_0027ordre-overrideProperty"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-once-prefix" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; El prefix once&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-tweak-command" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;L'ordre tweak &gt; </a>]</td></tr></table>
+<a name="the-overrideproperty-command"></a>
+<h4 class="unnumberedsubsubsec">L&rsquo;ordre <code>\overrideProperty</code></h4>
+
+<a name="index-overrideProperty_002c-ordre"></a>
+
+<a name="index-_005coverrideProperty"></a>
+<a name="index-_005coverrideProperty-1"></a>
+
+<p>Hi ha una altra forma per a l&rsquo;ordre de sobreescriptura,
+<code>\overrideProperty</code>, que ocasionalment és necessària.  La
+mencionem aquí amb un propòsit d&rsquo;exhaustivitat, però per veure més
+detalls consulteu <a name="index-Difficult-tweaks"></a>
+<a href="../extending/difficult-tweaks.ca.html">Ajustaments difícils</a>.
+</p>
+
+<hr size="6">
+<a name="L_0027ordre-tweak"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-overrideproperty-command" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; L'ordre overrideProperty&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#the-single-prefix" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;El prefix single &gt; </a>]</td></tr></table>
+<a name="the-tweak-command"></a>
+<h4 class="unnumberedsubsubsec">L&rsquo;ordre <code>\tweak</code></h4>
+
+<a name="index-tweak_002c-ordre"></a>
+
+<a name="index-_005ctweak"></a>
+<a name="index-_005ctweak-1"></a>
+
+<p>L&rsquo;última ordre d&rsquo;ajustament que està disponible és <code>\tweak</code>.
+S&rsquo;ha de fer servir quan diversos objectes s&rsquo;usen en el mateix
+moment musical, però sols volem canviar les propietats d&rsquo;alguns
+d&rsquo;ells, per exemple una sola nota dins d&rsquo;un acord.  L&rsquo;ús de
+<code>\override</code> per a la sobreescriptura afectaria a totes les
+notes de l&rsquo;acord, mentre que <code>\tweak</code> sols afecta a l&rsquo;element
+següent del flux d&rsquo;entrada.
+</p>
+<p>Vet aquí un exemple.  Suposeu que volem canviar la mida del cap de
+la nota intermèdia (el Mi) a un acord de Do major.  En primer
+lloc, vejam el fa faria <code>\once \override</code>:
+</p>
+<a name="index-font_002dsize_002c-propietat_002c-exemple"></a>
+<a name="index-NoteHead_002c-exemple-de-sobreescriptura-3"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g&gt;4
+  \once \override NoteHead.font-size = #-3
+  &lt;c e g&gt;4
+  &lt;c e g&gt;4
+}
+</pre><p>
+ <a href="../72/lily-560524c7.ly">
+  <img align="middle"
+       border="0"
+       src="../72/lily-560524c7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Veiem que la sobreescriptura amb override afecta a <em>totes</em>
+els caps de les notes de l&rsquo;acord.  Això és així perquè totes les
+notes d&rsquo;un acord tenen lloc en el mateix <em>moment musical</em>, i
+l&rsquo;acció de <code>\once</code> és aplicar la sobreescriptura a tots els
+objectes de presentació del tipus especificat que tenen lloc en el
+mateix moment musical que la pròpia ordre de sobreescriptura <code>\override</code>.
+</p>
+<p>L&rsquo;ordre <code>\tweak</code> pera de una manera diferent.  Actua sobre
+l&rsquo;element immediatament següent dins del flux d&rsquo;entrada.  En la
+seva forma més senzilla és efectiu sols sobre objectes que es
+creen directament a partir de l&rsquo;element següent, en essència els
+caps i les articulacions.
+</p>
+<p>Així doncs, tornant al nostre exemple, la mida de la nota
+intermèdia es canviaria de la forma següent:
+</p>
+<a name="index-font_002dsize_002c-propietat_002c-exemple-1"></a>
+<a name="index-_005ctweak_002c-exemple"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  &lt;c' e g&gt;4
+  &lt;c \tweak font-size #-3 e g&gt;4
+}
+</pre><p>
+ <a href="../e1/lily-8c8b0e94.ly">
+  <img align="middle"
+       border="0"
+       src="../e1/lily-8c8b0e94.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Observeu que la sintaxi de <code>\tweak</code> no és igual que la de
+<code>\override</code>. El context no s&rsquo;ha d&rsquo;especificar; de fet,
+generaria un error fer-lo.  Tant el context com l&rsquo;objecte de
+presentació estan implícits per l&rsquo;element següent del flux
+d&rsquo;entrada.  Observeu també que no ha d&rsquo;haver un signe d&rsquo;igual.
+Així que la sintaxi de l&rsquo;ordre <code>\tweak</code> en la seva forma
+senzilla és:
+</p>
+<blockquote><pre class="example">\tweak <var>propietat-de-presentació</var> #<var>valor</var>
+</pre></blockquote>
+
+<p>Una ordre <code>\tweak</code> també es pot usar per modificar sols una
+d&rsquo;una sèrie d&rsquo;articulacions, com es mostra aquí:
+</p>
+<a name="index-color_002c-propietat_002c-exemple-3"></a>
+<a name="index-_005ctweak_002c-exemple-1"></a>
+
+<blockquote><pre class="verbatim">a'4^&quot;Black&quot;
+  -\tweak color #red ^&quot;Red&quot;
+  -\tweak color #green _&quot;Green&quot;
+</pre><p>
+ <a href="../61/lily-75fd589f.ly">
+  <img align="middle"
+       border="0"
+       src="../61/lily-75fd589f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Observeu que l&rsquo;ordre <code>\tweak</code> ha de venir precedida d&rsquo;una
+marca d&rsquo;articulació perquè la pròpia expressió ajustada ha
+d&rsquo;aplicar-se com una articulació.  En el cas de més d&rsquo;una
+sobreescriptura de direcció (<code>^</code> o <code>_</code>), guanya la
+sobreescriptura situada més a l&rsquo;esquerra perquè s&rsquo;aplica a l&rsquo;últim
+lloc.
+</p>
+<a name="index-_005ctweak_002c-Accidental"></a>
+<a name="index-_005ctweak_002c-specific-layout-object"></a>
+
+<p>Els objectes com ara pliques i alteracions accidentals es creen
+més tard, i no directament a partir de l&rsquo;esdeveniment que ve a
+continuació.  Encara és possible utilitzar <code>\tweak</code> sobre
+aquests objectes creats indirectament mitjançant el nomenat
+explícit de l&rsquo;objecte de presentació, sempre i quan el LilyPond
+pugui rastrejar el seu origen fins l&rsquo;esdeveniment original:
+</p>
+<blockquote><pre class="verbatim">&lt;\tweak Accidental.color #red   cis''4
+ \tweak Accidental.color #green es''
+ g''&gt;
+</pre><p>
+ <a href="../e2/lily-9377b62a.ly">
+  <img align="middle"
+       border="0"
+       src="../e2/lily-9377b62a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Aquesta forma extensa de l&rsquo;ordre <code>\tweak</code> es pot descriure com
+</p><blockquote><pre class="example">\tweak <var>LayoutObject</var>.<var>layout-property</var> #<var>value</var>
+&quot;ABANS&quot; \tweak <var>objecte-de-presentació</var>.<var>propietat-de-presentació</var> <var>valor</var>
+</pre></blockquote>
+
+<a name="index-grups-especials-niuats"></a>
+<a name="index-tresets-niuats"></a>
+<a name="index-clau-de-grup-especial"></a>
+<a name="index-clau-de-treset"></a>
+<a name="index-grup-especial_002c-claur-de"></a>
+<a name="index-treset_002c-claur-de"></a>
+
+<a name="index-TupletBracket"></a>
+<a name="index-TupletBracket-1"></a>
+
+<p>L&rsquo;ordre <code>\tweak</code> també s&rsquo;ha d&rsquo;usar per canviar l&rsquo;aparença
+d&rsquo;un sol d&rsquo;un conjunt de grups especials niuats que comencin al
+mateix instant musical.  A l&rsquo;exemple següent, la clau de
+treset llarg i el primer de les tres claus curtes comencen al
+mateix moment musical, i per això qualsevol ordre <code>\override</code>
+s&rsquo;aplicaria als dos.  A l&rsquo;exemple s&rsquo;usa <code>\tweak</code> per
+distingir entre ells.  La primera ordre <code>\tweak</code> especifica
+que la clau del treset llarg s&rsquo;ha de col·locar per sobre de
+les notes i el segon especifica que el nombre del treset s&rsquo;ha
+d&rsquo;imprimir en vermell sobre la clau del primer treset curt.
+</p>
+<a name="index-_005ctweak_002c-exemple-2"></a>
+<a name="index-direction_002c-propietat_002c-exemple"></a>
+<a name="index-color_002c-propietat_002c-exemple-4"></a>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \tweak direction #up
+  \tuplet 3/4 {
+    \tweak color #red
+    \tuplet 3/2 { c8[ c c] }
+    \tuplet 3/2 { c8[ c c] }
+    \tuplet 3/2 { c8[ c c] }
+  }
+}
+</pre><p>
+ <a href="../49/lily-9016a4d6.ly">
+  <img align="middle"
+       border="0"
+       src="../49/lily-9016a4d6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si els grups niuats no comencen al mateix moment, la seva aparença
+es pot modificar de la forma usual mitjançant ordres <code>\override</code>:
+</p>
+<a name="index-text_002c-propietat_002c-exemple"></a>
+<a name="index-tuplet_002dnumber_002c-funcio_002c-exemple"></a>
+<a name="index-transparent_002c-propietat_002c-exemple"></a>
+<a name="index-TupletNumber_002c-exemple-de-sobreescriptura"></a>
+
+<blockquote><pre class="verbatim">\relative {
+  \tuplet 3/2 { c'8[ c c] }
+  \once \override TupletNumber.text = #tuplet-number::calc-fraction-text
+  \tuplet 3/2 {
+    c8[ c]
+    c8[ c]
+    \once \override TupletNumber.transparent = ##t
+    \tuplet 3/2 { c8[ c c] }
+    \tuplet 3/2 { c8[ c c] }
+  }
+}
+</pre><p>
+ <a href="../c8/lily-8193d8bf.ly">
+  <img align="middle"
+       border="0"
+       src="../c8/lily-8193d8bf.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Vegeu-tambe-29"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-The-tweak-command"></a>
+<a href="../notation/l_0027ordre-tweak.ca.html">L&rsquo;ordre tweak</a>.
+</p>
+<hr size="6">
+<a name="El-prefix-single"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-tweak-command" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; L'ordre tweak&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="the-internals-reference-manual.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Manual de referència de funcionament intern &gt; </a>]</td></tr></table>
+<a name="the-single-prefix"></a>
+<h4 class="unnumberedsubsubsec">El prefix <code>\single</code></h4>
+
+<a name="index-_005csingle"></a>
+<a name="index-_005csingle-1"></a>
+<a name="index-ajustament_002c-generat-a-partir-d_0027una-sobreescriptura"></a>
+
+<p>Suposem que volem emfatitzar el cap d&rsquo;algunes notes dibuixant-les
+amb color i incrementant la seva mida, i suposem també que hem
+programat una funció per fer la tasca més còmoda:
+</p>
+<blockquote><pre class="verbatim">emphNoteHead = {
+  \override NoteHead.color = #red
+  \override NoteHead.font-size = 2
+}
+\relative {
+  c''4 a \once \emphNoteHead f d |
+}
+</pre><p>
+ <a href="../9c/lily-fc696b93.ly">
+  <img align="middle"
+       border="0"
+       src="../9c/lily-fc696b93.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El <code>\once</code> previ funciona perfectament per emfatitzar notes
+úniques o acords complets, però no es pot usar per emfatitzar una
+sola nota <em>dins</em> d&rsquo;un acord.  Anteriorment vam veure com es
+pot usar l&rsquo;ordre <code>\tweak</code> per fer-lo, vegeu
+<a href="#the-tweak-command">L&rsquo;ordre <code>\tweak</code></a>.  Però
+<code>\tweak</code> no es pot fer servir amb una funció; aquí és on
+entra l&rsquo;ordre <code>\single</code>:
+</p>
+<blockquote><pre class="verbatim">emphNoteHead = {
+  \override NoteHead.color = #red
+  \override NoteHead.font-size = 2
+}
+\relative {
+   &lt;c'' a \single \emphNoteHead f d&gt;4
+}
+</pre><p>
+ <a href="../a6/lily-39694921.ly">
+  <img align="middle"
+       border="0"
+       src="../a6/lily-39694921.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>En resum, <code>\single</code> converteix les característiques fetes amb
+<code>\override</code> en ajustaments fets amb <code>\tweak</code> de tal
+manera que quan hi ha diversos objectes al mateix instant de temps
+musical (com ara les notes d&rsquo;un acord), <code>\single</code> afecta a
+una única nota, la que es genera per l&rsquo;expressió que afecta a una
+única nota, la que es genera per l&rsquo;expressió que segueix
+immediatament, a diferencia de <code>\once</code> que afecta a tots
+aquests objectes.
+</p>
+<p>L&rsquo;ús de <code>\single</code> d&rsquo;aquesta forma amb una funció qualsevol
+que contingui sols sobreescriptures, pot aplicar-se a les notes
+individuals d&rsquo;un acord. Malgrat això, <code>\single</code> no converteix
+<code>\revert</code>, <code>\set</code> ni <code>\unset</code> en ajustaments de <code>\tweak</code>.
+</p>
+<a name="Vegeu-tambe-20"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Manual de aprenentatge:
+<a href="#the-tweak-command">L&rsquo;ordre <code>\tweak</code></a>,
+<a href="using-variables-for-layout-adjustments.ca.html">Ús de variables per als ajustaments de disposició</a>.
+</p>
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#the-tweak-command" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; L'ordre tweak&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#tweaking-methods" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Mètodes d'ajustament&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="the-internals-reference-manual.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Manual de referència de funcionament intern &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="tweaking-methods.html">English</a>, <a href="tweaking-methods.cs.html">česky</a>, <a href="tweaking-methods.de.html">deutsch</a>, <a href="tweaking-methods.es.html">español</a>, <a href="tweaking-methods.fr.html">français</a>, <a href="tweaking-methods.it.html">italiano</a>, <a href="tweaking-methods.ja.html">日本語</a>, <a href="tweaking-methods.nl.html">nederlands</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Manual d&rsquo;aprenentatge  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Tutorial-1" href="tutorial.ca.html">1. Tutorial</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Compilacio-d_0027un-fitxer" href="compiling-a-file.ca.html">1.1 Compilació d&rsquo;un fitxer</a>    </li>
+    <li class=""><a name="toc-Com-escriure-fitxers-d_0027entrada-1" href="how-to-write-input-files.ca.html">1.2 Com escriure fitxers d&rsquo;entrada</a>    </li>
+    <li class=""><a name="toc-Gestio-dels-errors" href="dealing-with-errors.ca.html">1.3 Gestió dels errors</a>    </li>
+    <li class=""><a name="toc-Com-llegir-els-manuals-1" href="how-to-read-the-manuals.ca.html">1.4 Com llegir els manuals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notacio-corrent" href="common-notation.ca.html">2. Notació corrent</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Notacio-en-un-sol-pentagrama" href="single-staff-notation.ca.html">2.1 Notació en un sol pentagrama</a>    </li>
+    <li class=""><a name="toc-Diverses-notes-a-l_0027hora-1" href="multiple-notes-at-once.ca.html">2.2 Diverses notes a l&rsquo;hora</a>    </li>
+    <li class=""><a name="toc-Cancons" href="songs.ca.html">2.3 Cançons</a>    </li>
+    <li class=""><a name="toc-Retocs-finals-1" href="final-touches.ca.html">2.4 Retocs finals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Conceptes-fonamentals-1" href="fundamental-concepts.ca.html">3. Conceptes fonamentals</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Com-funcionen-els-fitxers-d_0027entrada-del-LilyPond-1" href="how-lilypond-input-files-work.ca.html">3.1 Com funcionen els fitxers d&rsquo;entrada del LilyPond</a>    </li>
+    <li class=""><a name="toc-Les-veus-contenen-musica" href="voices-contain-music.ca.html">3.2 Les veus contenen música</a>    </li>
+    <li class=""><a name="toc-Contextos-i-gravadors-1" href="contexts-and-engravers.ca.html">3.3 Contextos i gravadors</a>    </li>
+    <li class=""><a name="toc-Extensio-de-les-plantilles" href="extending-the-templates.ca.html">3.4 Extensió de les plantilles</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Ajustament-de-la-sortida-1" href="tweaking-output.ca.html">4. Ajustament de la sortida</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Elements-d_0027ajustament-1" href="tweaking-basics.ca.html">4.1 Elements d&rsquo;ajustament</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Introduccio-a-l_0027ajustament" href="introduction-to-tweaks.ca.html">4.1.1 Introducció a l&rsquo;ajustament</a>      </li>
+      <li class=""><a name="toc-Objectes-i-interficies" href="objects-and-interfaces.ca.html">4.1.2 Objectes i interfícies</a>      </li>
+      <li class=""><a name="toc-Convencions-de-noms-d_0027objectes-i-propietats-1" href="naming-conventions-of-objects-and-properties.ca.html">4.1.3 Convencions de noms d&rsquo;objectes i propietats</a>      </li>
+      <li class=" toc_current"><a name="toc-Metodes-d_0027ajustament" href="tweaking-methods.ca.html">4.1.4 Mètodes d&rsquo;ajustament</a>
+      <ul class="toc">
+        <li class=""><a name="toc-L_0027ordre-_005coverride" href="tweaking-methods.ca.html#the-override-command">L&rsquo;ordre <code>\override</code></a>        </li>
+        <li class=""><a name="toc-L_0027ordre-_005crevert" href="tweaking-methods.ca.html#the-revert-command">L&rsquo;ordre <code>\revert</code></a>        </li>
+        <li class=""><a name="toc-El-prefix-_005conce" href="tweaking-methods.ca.html#the-once-prefix">El prefix <code>\once</code></a>        </li>
+        <li class=""><a name="toc-L_0027ordre-_005coverrideProperty" href="tweaking-methods.ca.html#the-overrideproperty-command">L&rsquo;ordre <code>\overrideProperty</code></a>        </li>
+        <li class=""><a name="toc-L_0027ordre-_005ctweak" href="tweaking-methods.ca.html#the-tweak-command">L&rsquo;ordre <code>\tweak</code></a>        </li>
+        <li class=""><a name="toc-El-prefix-_005csingle" href="tweaking-methods.ca.html#the-single-prefix">El prefix <code>\single</code></a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Manual-de-referencia-de-funcionament-intern" href="the-internals-reference-manual.ca.html">4.2 Manual de referència de funcionament intern</a>    </li>
+    <li class=""><a name="toc-Aparenca-dels-objectes" href="appearance-of-objects.ca.html">4.3 Aparença dels objectes</a>    </li>
+    <li class=""><a name="toc-Col_00b7locacio-dels-objectes" href="placement-of-objects.ca.html">4.4 Col·locació dels objectes</a>    </li>
+    <li class=""><a name="toc-Espaiat-vertical-1" href="vertical-spacing.ca.html">4.5 Espaiat vertical</a>    </li>
+    <li class=""><a name="toc-Col_00b7lisions-d_0027objectes-1" href="col_00c2_00b7lisions-of-objects.ca.html">4.6 Col·lisions d&rsquo;objectes</a>    </li>
+    <li class=""><a name="toc-Ajustaments-addicionals-1" href="further-tweaking.ca.html">4.7 Ajustaments addicionals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Plantilles-1" href="templates.ca.html">A. Plantilles</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Plantilles-de-pentagrama-unic" href="single-staff-templates.ca.html">A.1 Plantilles de pentagrama únic</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-piano-1" href="piano-templates.ca.html">A.2 Plantilles de piano</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-quartet-de-corda-1" href="string-quartet-templates.ca.html">A.3 Plantilles de quartet de corda</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-conjunts-vocals-1" href="vocal-ensembles-templates.ca.html">A.4 Plantilles de conjunts vocals</a>    </li>
+    <li class=""><a name="toc-Plantilles-orquestrals-1" href="orchestral-templates.ca.html">A.5 Plantilles orquestrals</a>    </li>
+    <li class=""><a name="toc-Plantilles-per-a-notacio-antiga" href="ancient-notation-templates.ca.html">A.6 Plantilles per a notació antiga</a>    </li>
+    <li class=""><a name="toc-Altres-plantilles-1" href="other-templates.ca.html">A.7 Altres plantilles</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">B. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">C. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

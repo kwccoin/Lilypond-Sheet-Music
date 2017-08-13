@@ -31,7 +31,7 @@ vd = \relative c' {
   g-- r a--
   fis-- r d'8-- fis,--
   g4-- r h--
-  r d \clef "tenor" a'8 fis
+  r d \clef "bass" a'8 fis
   e4 e d8 fis
   e4 a, a'8 fis
   e4 e fis8 a

@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.6.2 Modificació de pentagrames separats</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.6.2 Modificació de pentagrames separats">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.6.2 Modificació de pentagrames separats">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="staff-notation.ca.html#staff-notation" rel="up" title="1.6 Notació dels pentagrames">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="displaying-staves.ca.html#displaying-staves" rel="previous" title="1.6.1 Visualització dels pentagrames">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Modificaci_00f3-de-pentagrames-separats"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="displaying-staves.ca.html#separating-systems" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Separació de sistemes&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="staff-notation.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Notació dels pentagrames&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#staff-symbol" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;El símbol del pentagrama &gt; </a>]</td></tr></table>
+<a name="modifying-single-staves"></a>
+<h3 class="subsection">1.6.2 Modificació de pentagrames separats</h3>
+
+<p>Aquesta secció explica com canviar els atributs específics d&rsquo;un
+pentagrama: per exemple, canviar el nombre de línies o la mida de
+la pauta.  També es descriuen els mètodes per començar i acabar
+els pentagrames, i establir seccions d&rsquo;ossia.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#staff-symbol" accesskey="1">El símbol del pentagrama</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#ossia-staves" accesskey="2">Pentagrames d&rsquo;Ossia</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#hiding-staves" accesskey="3">Ocultament de pentagrames</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="El-s_00edmbol-del-pentagrama"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#modifying-single-staves" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Modificació de pentagrames separats&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-single-staves" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de pentagrames separats&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#ossia-staves" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Pentagrames d'Ossia &gt; </a>]</td></tr></table>
+<a name="staff-symbol"></a>
+<h4 class="unnumberedsubsubsec">El símbol del pentagrama</h4>
+
+<a name="index-pentagrama_002c-simbol-del"></a>
+<a name="index-pentagrama_002c-aturar-i-iniciar-linies-del"></a>
+<a name="index-pentagrama_002c-modificar-les-linies-del"></a>
+<a name="index-addicionals_002c-linies"></a>
+<a name="index-addicionals-internes_002c-linies"></a>
+<a name="index-addicionals_002c-modificar-linies"></a>
+<a name="index-linies-del-pentagrama"></a>
+<a name="index-linies-addicionals"></a>
+
+<a name="index-_005cstartStaff"></a>
+<a name="index-_005cstartStaff-1"></a>
+<a name="index-_005cstopStaff"></a>
+<a name="index-_005cstopStaff-1"></a>
+
+<p>Es poden usar les ordres <code>\stopStaff</code> i
+<code>\startStaff</code> per aturar i (re)iniciar, respectivament, la
+impressió de les línies de la pauta a qualsevol punt de la partitura.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \stopStaff f''4 d \startStaff g, e
+  f'4 d \stopStaff g, e
+  f'4 d \startStaff g, e
+}
+</pre><p>
+ <a href="../f5/lily-4adaf548.ly">
+  <img align="middle"
+       border="0"
+       src="../f5/lily-4adaf548.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides-14"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\startStaff</code>,
+<code>\stopStaff</code>.
+</p>
+<p>Les línies de la pauta pertanyen al grob <code>StaffSymbol</code>
+(incloses les línies addicionals) i es poden modificar usant es
+propietats de <code>StaffSymbol</code>, però aquestes modificacions
+s&rsquo;han de fer abans que el pentagrama es (re)iniciï.
+</p>
+<p>Es pot canviar el nombre línies de la pauta:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f''4 d \stopStaff
+  \override Staff.StaffSymbol.line-count = #2
+  \startStaff g, e |
+
+  f'4 d \stopStaff
+  \revert Staff.StaffSymbol.line-count
+  \startStaff g, e |
+}
+</pre><p>
+ <a href="../39/lily-abf69cf8.ly">
+  <img align="middle"
+       border="0"
+       src="../39/lily-abf69cf8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La posició de cada una de les línies de la pauta també poden
+canviar-se.  Una llista de números fixa la posició de cada línia.
+<code>0</code>&nbsp;correspon a la línia central normal, i les posicions
+normals de les línies són
+<code>(-4&nbsp;-2&nbsp;0&nbsp;2&nbsp;4)</code>.  S&rsquo;imprimeix una sola
+línia de pauta per cada valor que s&rsquo;introdueix, de manera que el
+nombre de línies així com la seva posició a la pauta poden
+canviar-se amb una sola operació de sobreescriptura.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f''4 d \stopStaff
+  \override Staff.StaffSymbol.line-positions = #'(1 3 5 -1 -3)
+  \startStaff g, e |
+  f'4 d \stopStaff
+  \override Staff.StaffSymbol.line-positions = #'(8 6.5 -6 -8 -0.5)
+  \startStaff g, e |
+}
+</pre><p>
+ <a href="../c7/lily-4ffc385c.ly">
+  <img align="middle"
+       border="0"
+       src="../c7/lily-4ffc385c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per preservar les direccions típiques de les pliques (cap amunt
+per a la meitat inferior del pentagrama i cap avall per a la
+meitat superior), ham d&rsquo;alinear la línia (o espai) central de la
+pauta personalitzada amb la posició de la línia central normal
+(0).  Pot caldre un ajust de la posició de la clau i del
+Do&nbsp;central perquè es corresponguin a les línies noves.
+Vegeu <a href="displaying-pitches.ca.html#clef">Clau</a>.
+</p>
+<p>Pot canviar-se el gruix de les línies de la pauta.  També resulten
+afectades, de forma predeterminada, les línies addicionals i no la
+plica de les figures.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override StaffSymbol.thickness = #3
+} \relative {
+  f''4 d g, e
+}
+</pre><p>
+ <a href="../ff/lily-2502dd2f.ly">
+  <img align="middle"
+       border="0"
+       src="../ff/lily-2502dd2f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>També és possible fixar el gruix de les línies addicionals de
+forma independent del de les línies de la pauta.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override StaffSymbol.thickness = #2
+  \override StaffSymbol.ledger-line-thickness = #'(0.5 . 0.4)
+} \relative {
+  f'''4 a, a,, f
+}
+</pre><p>
+ <a href="../94/lily-a345c176.ly">
+  <img align="middle"
+       border="0"
+       src="../94/lily-a345c176.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El primer valor es multiplica pel gruix de les línies del
+pentagrama, el segon per l&rsquo;amplada d&rsquo;un espai del pentagrama, i
+després els dos valors se sumen per obtenir el gruix de les línies
+addicionals.
+</p>
+<p>Es poden alterar les posicions de les línies addicionals:
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override StaffSymbol.ledger-positions = #'(-3 -2 -1 2 5 6)
+} \relative {
+  f'''4 a, a,, f
+}
+</pre><p>
+ <a href="../1b/lily-7b243070.ly">
+  <img align="middle"
+       border="0"
+       src="../1b/lily-7b243070.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Pot aconseguir-se que les línies addicionals afegides apareguin
+per sobre o per sota del cap de les figures, depenent de la
+posició actual relativa a d&rsquo;altres caps de figura que tenen també
+les seves pròpies línies addicionals.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override StaffSymbol.ledger-extra = #4
+} \relative {
+  f'''4 a, d, f,
+}
+</pre><p>
+ <a href="../6e/lily-85335eee.ly">
+  <img align="middle"
+       border="0"
+       src="../6e/lily-85335eee.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>També es pot fer que les línies addicionals apareguin dins del
+pentagrama al lloc on es requereixin línies de pauta
+personalitzades.  L&rsquo;exemple mostra la posició predeterminada de
+les línies addicionals quan el valor de posició explícit
+<code>ledger-position</code> se ha fixat o no.  L&rsquo;ordre
+<code>\stopStaff</code> cal a l&rsquo;exemple per revertir l&rsquo;ordre de
+sobreescriptura <code>\override</code> per a tot el
+<code>StaffSymbol</code> (el símbol de pauta).
+</p>
+<blockquote><pre class="verbatim">\relative d' {
+  \override Staff.StaffSymbol.line-positions = #'(-8 0 2 4)
+  d4 e f g
+  \stopStaff
+  \startStaff
+  \override Staff.StaffSymbol.ledger-positions = #'(-8 -6 (-4 -2) 0)
+  d4 e f g
+}
+</pre><p>
+ <a href="../c3/lily-4e64bd2c.ly">
+  <img align="middle"
+       border="0"
+       src="../c3/lily-4e64bd2c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Pot alterar-se la distància entre línies de pauta.  Això afecta
+també l&rsquo;espaiat de les línies addicionals.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override StaffSymbol.staff-space = #1.5
+} \relative {
+  f'''4 d, g, e,
+}
+</pre><p>
+ <a href="../c6/lily-157ebedb.ly">
+  <img align="middle"
+       border="0"
+       src="../c6/lily-157ebedb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-65"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Making some staff lines thicker than the others</em>
+</p>
+
+<p>For educational purposes, a staff line can be thickened (e.g., the
+middle line, or to emphasize the line of the G clef).  This can be
+achieved by adding extra lines very close to the line that should be
+emphasized, using the <code>line-positions</code> property of the
+<code>StaffSymbol</code> object.
+</p>
+
+<blockquote><pre class="verbatim">{
+  \override Staff.StaffSymbol.line-positions =
+    #'(-4 -2 -0.2 0 0.2 2 4)
+  d'4 e' f' g'
+}
+</pre><p>
+ <a href="../da/lily-6edd578a.ly">
+  <img align="middle"
+       border="0"
+       src="../da/lily-6edd578a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-257"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-line"></a>
+<a href="../music-glossary/line.ca.html">line</a>,
+<a name="index-ledger-line"></a>
+<a href="../music-glossary/ledger-line.ca.html">ledger line</a>,
+<a name="index-staff-1"></a>
+<a href="../music-glossary/staff.ca.html">staff</a>.
+</p>
+<p>Referència de la notació:
+<a href="displaying-pitches.ca.html#clef">Clau</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-StaffSymbol-1"></a>
+<a href="../internals/staffsymbol.ca.html">StaffSymbol</a>,
+<a name="index-staff_002dsymbol_002dinterface"></a>
+<a href="../internals/staff_002dsymbol_002dinterface.ca.html">staff-symbol-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Pentagrames-d_0027Ossia"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#staff-symbol" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; El símbol del pentagrama&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-single-staves" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de pentagrames separats&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#hiding-staves" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Ocultament de pentagrames &gt; </a>]</td></tr></table>
+<a name="ossia-staves"></a>
+<h4 class="unnumberedsubsubsec">Pentagrames d&rsquo;Ossia</h4>
+
+<a name="index-pentagrama-a-la-francesa"></a>
+<a name="index-ossia"></a>
+<a name="index-francesa_002c-pentagrames-a-la"></a>
+<a name="index-pauta_002c-escalat-de"></a>
+<a name="index-escalat-de-pentagrames"></a>
+
+<a name="index-_005cstartStaff-2"></a>
+<a name="index-_005cstartStaff-3"></a>
+<a name="index-_005cstopStaff-2"></a>
+<a name="index-_005cstopStaff-3"></a>
+
+<p>Els pentagrames <var>Ossia</var> es poden preparar mitjançant la
+creació d&rsquo;un pentagrama simultani nou a la posició adequada:
+</p>
+<blockquote><pre class="verbatim">\new Staff \relative {
+  c''4 b d c
+  &lt;&lt;
+    { c4 b d c }
+    \new Staff { e4 d f e }
+  &gt;&gt;
+  c4 b c2
+}
+</pre><p>
+ <a href="../66/lily-a591e10d.ly">
+  <img align="middle"
+       border="0"
+       src="../66/lily-a591e10d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Tanmateix, l&rsquo;exemple anterior no es el que normalment es desitja.
+Per crear pentagrames d&rsquo;ossia que estiguin per sobre el pentagrama
+original, que no tinguin ni compàs ni clau, i que tinguin una mida
+menor de tipus de lletra, es poden fer servir diversos
+ajustaments.  El Manual d&rsquo;Aprenentatge descriu una tècnica
+específica per assolir aquest objectiu, començant per
+<a name="index-Niuat-d_0027expressions-musicals"></a>
+<a href="../learning/nesting-music-expressions.ca.html">Niuat d'expressions musicals</a>.
+</p>
+<p>L&rsquo;exemple següent fa servir la propietat <code>alignAboveContext</code>
+per alinear el pentagrama d&rsquo;ossia.  Aquest mètode és molt
+convenient quan calen sols alguns pentagrames d&rsquo;ossia.
+</p>
+<blockquote><pre class="verbatim">\new Staff = &quot;main&quot; \relative {
+  c''4 b d c
+  &lt;&lt;
+    { c4 b d c }
+
+    \new Staff \with {
+      \remove &quot;Time_signature_engraver&quot;
+      alignAboveContext = #&quot;main&quot;
+      \magnifyStaff #2/3
+      firstClef = ##f
+    }
+    { e4 d f e }
+  &gt;&gt;
+  c4 b c2
+}
+</pre><p>
+ <a href="../d2/lily-2df53743.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-2df53743.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si es requereixen molts pentagrames d&rsquo;ossia aïllats, pot ser més
+convenient la creació d&rsquo;un context <code>Staff</code> buit amb
+un <em>identificador de context</em> específic; després es poden
+crear els pentagrames d&rsquo;ossia <em>cridant</em> a aquest context i
+usant <code>\startStaff</code> i <code>\stopStaff</code> als punts desitjats.
+Els avantatges d&rsquo;aquest mètode són més patents si la peça és més
+llarga com a l&rsquo;exemple següent.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff = &quot;ossia&quot; \with {
+    \remove &quot;Time_signature_engraver&quot;
+    \hide Clef
+    \magnifyStaff #2/3
+  }
+  { \stopStaff s1*6 }
+
+  \new Staff \relative {
+    c'4 b c2
+    &lt;&lt;
+      { e4 f e2 }
+      \context Staff = &quot;ossia&quot; {
+        \startStaff e4 g8 f e2 \stopStaff
+      }
+    &gt;&gt;
+    g4 a g2 \break
+    c4 b c2
+    &lt;&lt;
+      { g4 a g2 }
+      \context Staff = &quot;ossia&quot; {
+        \startStaff g4 e8 f g2 \stopStaff
+      }
+    &gt;&gt;
+    e4 d c2
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../7f/lily-955c6968.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-955c6968.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Com a alternativa, es pot usar l&rsquo;ordre
+<code>\RemoveAllEmptyStaves</code> per crear pentagrames d&rsquo;ossia. Aquest
+mètode és molt convenient quan els pentagrames d&rsquo;ossia apareixen
+immediatament després d&rsquo;un salt de línia.  Per veure més
+informació sobre <code>\RemoveAllEmptyStaves</code>, consulteu
+<a href="#hiding-staves">Ocultament de pentagrames</a>.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff = &quot;ossia&quot; \with {
+    \remove &quot;Time_signature_engraver&quot;
+    \hide Clef
+    \magnifyStaff #2/3
+    \RemoveAllEmptyStaves
+  } \relative {
+    R1*3
+    c''4 e8 d c2
+  }
+  \new Staff \relative {
+    c'4 b c2
+    e4 f e2
+    g4 a g2 \break
+    c4 b c2
+    g4 a g2
+    e4 d c2
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../f4/lily-4eab2522.ly">
+  <img align="middle"
+       border="0"
+       src="../f4/lily-4eab2522.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Fragments-de-codi-seleccionats-48"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Vertically aligning ossias and lyrics</em>
+</p>
+
+<p>This snippet demonstrates the use of the context properties
+<code>alignBelowContext</code> and <code>alignAboveContext</code> to control the
+positioning of lyrics and ossias.
+</p>
+
+<blockquote><pre class="verbatim">\paper {
+  ragged-right = ##t
+}
+
+\relative c' &lt;&lt;
+  \new Staff = &quot;1&quot; { c4 c s2 }
+  \new Staff = &quot;2&quot; { c4 c s2 }
+  \new Staff = &quot;3&quot; { c4 c s2 }
+  { \skip 2
+    &lt;&lt;
+      \lyrics {
+        \set alignBelowContext = #&quot;1&quot;
+        lyrics4 below
+      }
+      \new Staff \with {
+        alignAboveContext = #&quot;3&quot;
+        fontSize = #-2
+        \override StaffSymbol.staff-space = #(magstep -2)
+        \remove &quot;Time_signature_engraver&quot;
+      } {
+        \tuplet 6/4 {
+          \override TextScript.padding = #3
+          c8[^&quot;ossia above&quot; d e d e f]
+        }
+      }
+    &gt;&gt;
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../2c/lily-e02a8eca.ly">
+  <img align="middle"
+       border="0"
+       src="../2c/lily-e02a8eca.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-145"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-ossia-1"></a>
+<a href="../music-glossary/ossia.ca.html">ossia</a>,
+<a name="index-staff-2"></a>
+<a href="../music-glossary/staff.ca.html">staff</a>,
+<a name="index-Frenched-staff"></a>
+<a href="../music-glossary/frenched-staff.ca.html">Frenched staff</a>.
+</p>
+<p>Manual d&rsquo;aprenentatge:
+<a name="index-Niuat-d_0027expressions-musicals-1"></a>
+<a href="../learning/nesting-music-expressions.ca.html">Niuat d'expressions musicals</a>,
+<a name="index-Mida-dels-objectes"></a>
+<a href="../learning/size-of-objects.ca.html">Mida dels objectes</a>,
+<a name="index-Longitud-i-gruix-dels-objectes"></a>
+<a href="../learning/length-and-thickness-of-objects.ca.html">Longitud i gruix dels objectes</a>.
+</p>
+<p>Referència de la notació:
+<a href="#hiding-staves">Ocultament de pentagrames</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-StaffSymbol-2"></a>
+<a href="../internals/staffsymbol.ca.html">StaffSymbol</a>.
+</p>
+
+<hr size="6">
+<a name="Ocultament-de-pentagrames"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#ossia-staves" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Pentagrames d'Ossia&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-single-staves" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de pentagrames separats&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="writing-parts.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Escriptura de les particel·les &gt; </a>]</td></tr></table>
+<a name="hiding-staves"></a>
+<h4 class="unnumberedsubsubsec">Ocultament de pentagrames</h4>
+
+<a name="index-francesa_002c-partitures-a-la"></a>
+<a name="index-ocultament-de-pentagrames"></a>
+<a name="index-francesa_002c-pentagrama-a-la"></a>
+<a name="index-pentagrama_002c-ocultament-de"></a>
+<a name="index-pentagrama-buit"></a>
+<a name="index-ocultar-pentagrames"></a>
+<a name="index-buit_002c-pentagrama"></a>
+
+<a name="index-_005cRemoveEmptyStaves"></a>
+<a name="index-_005cRemoveEmptyStaves-1"></a>
+<a name="index-_005cRemoveAllEmptyStaves"></a>
+<a name="index-_005cRemoveAllEmptyStaves-1"></a>
+<a name="index-Staff_005fsymbol_005fengraver"></a>
+<a name="index-Staff_005fsymbol_005fengraver-1"></a>
+<a name="index-_005cstopStaff-4"></a>
+<a name="index-_005cstopStaff-5"></a>
+
+<p>Es poden ocultar les línies del pentagrama traient el gravador
+<code>Staff_symbol_engraver</code> del context de <code>Staff</code>.  Com a
+alternativa es pot utilitzar l&rsquo;ordre <code>\stopStaff</code>.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \remove &quot;Staff_symbol_engraver&quot;
+}
+\relative { a''8 f e16 d c b a2 }
+</pre><p>
+ <a href="../63/lily-84d13f73.ly">
+  <img align="middle"
+       border="0"
+       src="../63/lily-84d13f73.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>Es poden ocultar els pentagrames buits (per fer el que es coneix
+com a &lsquo;partitura a la francesa&rsquo;) aplicant l&rsquo;ordre
+<code>\RemoveEmptyStaves</code> sobre un context, cosa que es pot fer
+globalment (dins del bloc <code>\layout</code>) així com per a pautes
+específiques sols (dins d&rsquo;un bloc <code>\with</code>). Aquest ordre
+elimina totes les pautes buides de la partitura excepte les del
+primer sistema.  Si volem ocultar també les del primer sistema,
+usem <code>\RemoveAllEmptyStaves</code>.  Els contextos que estan
+contemplats són <code>Staff</code>,
+<code>RhythmicStaff</code> i <code>VaticanaStaff</code>.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Un pentagrama es considera buit quan conté sols silencis,
+silencis multicompàs, desplaçaments, silencis de separació o una
+combinació d&rsquo;aquests elements.
+</p>
+</div>
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Staff
+    \RemoveEmptyStaves
+  }
+}
+
+\relative &lt;&lt;
+  \new Staff {
+    e'4 f g a \break
+    b1 \break
+    a4 b c2
+  }
+  \new Staff {
+    c,4 d e f \break
+    R1 \break
+    f4 g c,2
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../bb/lily-132c9483.ly">
+  <img align="middle"
+       border="0"
+       src="../bb/lily-132c9483.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-ossia-2"></a>
+
+<p>També es pot fer ser servir <code>\RemoveAllEmptyStaves</code> per crear
+seccions d&rsquo;ossia per a un pentagrama.  Per veure més detalls, consulteu
+<a href="#ossia-staves">Pentagrames d&rsquo;Ossia</a>.
+</p>
+
+<a name="Instruccions-predefinides-21"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\RemoveEmptyStaves</code>,
+<code>\RemoveAllEmptyStaves</code>.
+</p>
+<a name="Vegeu-tambe-65"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-Frenched-staff-1"></a>
+<a href="../music-glossary/frenched-staff.ca.html">Frenched staff</a>.
+</p>
+<p>Manual d&rsquo;aprenentatge:
+<a name="index-Visibilitat-i-color-dels-objectes-1"></a>
+<a href="../learning/visibility-and-color-of-objects.ca.html">Visibilitat i color dels objectes</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Changing-context-default-settings"></a>
+<a href="../notation/changing-context-default-settings.ca.html">Canvi dels valores per defecte dels contextos</a>,
+<a href="#staff-symbol">El símbol del pentagrama</a>,
+<a href="#ossia-staves">Pentagrames d&rsquo;Ossia</a>,
+<a name="index-Hidden-notes-1"></a>
+<a href="../notation/inside-the-staff.ca.html#hidden-notes">Notes ocultes</a>,
+<a href="writing-rests.ca.html#invisible-rests">Silencis invisibles</a>,
+<a name="index-Visibility-of-objects-3"></a>
+<a href="../notation/visibility-of-objects.ca.html">Visibilitat dels objectes</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-ChordNames"></a>
+<a href="../internals/chordnames.ca.html">ChordNames</a>,
+<a name="index-FiguredBass"></a>
+<a href="../internals/figuredbass.ca.html">FiguredBass</a>,
+<a name="index-Lyrics"></a>
+<a href="../internals/lyrics.ca.html">Lyrics</a>,
+<a name="index-Staff-5"></a>
+<a href="../internals/staff.ca.html">Staff</a>,
+<a name="index-VerticalAxisGroup"></a>
+<a href="../internals/verticalaxisgroup.ca.html">VerticalAxisGroup</a>,
+<a name="index-Staff_005fsymbol_005fengraver-2"></a>
+<a href="../internals/staff_005fsymbol_005fengraver.ca.html">Staff_symbol_engraver</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-9"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>L&rsquo;eliminació del gravador <code>Staff_symbol_engraver</code> també
+oculta les barres de compàs.  Si es força la visibilitat de la
+barra de compàs, poden ocórrer errors de format visual.  En aquest
+cas, utilitzeu les següents sobreescriptures de valors en comptes
+de treure el gravador:
+</p>
+<blockquote><pre class="example">\omit StaffSymbol
+\override NoteHead.no-ledgers = ##t
+</pre></blockquote>
+
+<p>Per veure els errors i problemes coneguts, així com els
+advertiments associats amb <code>\RemoveEmptyStaves</code>, consulteu
+<a name="index-Changing-context-default-settings-1"></a>
+<a href="../notation/changing-context-default-settings.ca.html">Canvi dels valores per defecte dels contextos</a>.
+</p>
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#ossia-staves" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Pentagrames d'Ossia&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-single-staves" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de pentagrames separats&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="writing-parts.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Escriptura de les particel·les &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="modifying-single-staves.html">English</a>, <a href="modifying-single-staves.de.html">deutsch</a>, <a href="modifying-single-staves.es.html">español</a>, <a href="modifying-single-staves.fr.html">français</a>, <a href="modifying-single-staves.it.html">italiano</a>, <a href="modifying-single-staves.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=" toc_current"><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Visualitzacio-dels-pentagrames" href="displaying-staves.ca.html">1.6.1 Visualització dels pentagrames</a>      </li>
+      <li class=" toc_current"><a name="toc-Modificacio-de-pentagrames-separats" href="modifying-single-staves.ca.html">1.6.2 Modificació de pentagrames separats</a>
+      <ul class="toc">
+        <li class=""><a name="toc-El-simbol-del-pentagrama" href="modifying-single-staves.ca.html#staff-symbol">El símbol del pentagrama</a>        </li>
+        <li class=""><a name="toc-Pentagrames-d_0027Ossia-1" href="modifying-single-staves.ca.html#ossia-staves">Pentagrames d&rsquo;Ossia</a>        </li>
+        <li class=""><a name="toc-Ocultament-de-pentagrames-1" href="modifying-single-staves.ca.html#hiding-staves">Ocultament de pentagrames</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Escriptura-de-les-particel_00b7les-1" href="writing-parts.ca.html">1.6.3 Escriptura de les particel·les</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>
