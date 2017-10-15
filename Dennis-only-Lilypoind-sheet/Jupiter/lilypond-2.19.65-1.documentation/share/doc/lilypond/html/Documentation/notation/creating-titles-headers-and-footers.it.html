@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 3.2.1 Creazione di titoli intestazioni e piè di pagina</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 3.2.1 Creazione di titoli intestazioni e piè di pagina">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 3.2.1 Creazione di titoli intestazioni e piè di pagina">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="titles-and-headers.it.html#titles-and-headers" rel="up" title="3.2 Titoli e intestazioni">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="titles-and-headers.it.html#titles-and-headers" rel="previous" title="3.2 Titoli e intestazioni">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Creazione-di-titoli-intestazioni-e-pi_00e8-di-pagina"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="titles-and-headers.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Titoli e intestazioni&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="titles-and-headers.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Titoli e intestazioni&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#titles-explained" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Come funzionano i titoli &gt; </a>]</td></tr></table>
+<a name="creating-titles-headers-and-footers"></a>
+<h3 class="subsection">3.2.1 Creazione di titoli intestazioni e piè di pagina</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#titles-explained" accesskey="1">Come funzionano i titoli</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#default-layout-of-bookpart-and-score-titles" accesskey="2">Formattazione predefinita dei titoli delle parti e dei brani</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#default-layout-of-headers-and-footers" accesskey="3">Formattazione predefinita delle intestazioni e dei piè di pagina</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Come-funzionano-i-titoli"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#creating-titles-headers-and-footers" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Creazione di titoli intestazioni e piè di pagina&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#creating-titles-headers-and-footers" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Creazione di titoli intestazioni e piè di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#default-layout-of-bookpart-and-score-titles" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Formattazione predefinita dei titoli delle parti e dei brani &gt; </a>]</td></tr></table>
+<a name="titles-explained"></a>
+<h4 class="unnumberedsubsubsec">Come funzionano i titoli</h4>
+
+<p>Ogni blocco <code>\book</code> in un singolo file di input produce un diverso
+file di output, vedi <a href="file-structure.it.html">Struttura del file</a>.  In ciascun file di output
+sono disponibili tre tipi di titolazioni: <em>titoli del libro</em> all&rsquo;inizio
+di ogni libro (<em>book</em>), <em>titoli della parte</em> all&rsquo;inizio di ciascuna
+parte (<em>bookpart</em>) e <em>titoli del brano</em> all&rsquo;inizio di ciascun
+brano (<em>score</em>).
+</p>
+<p>I valori dei campi dei titoli come <code>title</code> (titolo) e <code>composer</code>
+(compositore) sono definiti nei blocchi <code>\header</code> (la sintassi dei
+blocchi <code>\header</code> e un elenco completo dei campi disponibili si
+trovano in <a href="#default-layout-of-bookpart-and-score-titles">Formattazione predefinita dei titoli delle parti e dei brani</a>).  I titoli
+del libro, delle parti e dei brani possono avere tutti gli stessi campi,
+sebbene per impostazione predefinita i campi dei titoli del brano siano
+limitati a <code>piece</code> e <code>opus</code>.
+</p>
+<p>I blocchi <code>\header</code> possono essere inseriti in quattro diversi punti
+formando una gerarchia discendente di blocchi <code>\header</code>:
+</p>
+<ul>
+<li>
+All&rsquo;inizio del file di input, prima di tutti i blocchi <code>\book</code>,
+<code>\bookpart</code> e <code>\score</code>.
+
+</li><li>
+All&rsquo;interno di un blocco <code>\book</code> ma fuori da tutti i blocchi
+<code>\bookpart</code> e <code>\score</code> compresi in quel libro.
+
+</li><li>
+All&rsquo;interno di un blocco <code>\bookpart</code> ma fuori da tutti i blocchi
+<code>\score</code> compresi in quella parte.
+
+</li><li>
+Dopo l&rsquo;espressione musicale in un blocco <code>\score</code>.
+
+</li></ul>
+
+<p>I valori dei campi vengono filtrati attraverso questa gerarchia, con i valori
+più in alto nella gerarchia che persistono finché un valore più in basso nella
+gerarchia non ha la precedenza. In sintesi:
+</p>
+<ul>
+<li>
+Il titolo di un libro deriva dai campi impostati all&rsquo;inizio del file di input,
+modificati dai campi definiti nel blocco <code>\book</code>.  I valori
+risultanti vengono usati per stampare il titolo di quel libro, purché ci sia
+altro materiale che generi una pagina all&rsquo;inizio del libro, prima della prima
+parte.  Una singola interruzione di pagina (<code>\pageBreak</code>) è sufficiente.
+
+</li><li>
+Il titolo di una parte deriva dai campi impostati all&rsquo;inizio del file di input,
+modificati dai campi definiti nel blocco <code>\book</code> e poi da quelli definiti
+nel blocco <code>\bookpart</code>.  I valori risultanti vengono usati per stampare il
+titolo di quella parte del libro.
+
+</li><li>
+Il titolo di un brano deriva dai campi all&rsquo;inizio del file di input,
+modificati dai campi definiti nel blocco <code>\book</code> e poi da quelli
+definiti nel blocco <code>\bookpart</code> e infine da quelli definiti
+nel blocco <code>\score</code>.  I valori risultanti vengono usati per
+stampare il titolo di quel brano. Nota bene: per impostazione
+predefinita nei titoli del brano appaiono soltanto i campi <code>piece</code>
+e <code>opus</code> a meno che la variabile <code>print-all-headers</code> di
+<code>\paper</code> non sia impostata su <code>#t</code>.
+
+</li></ul>
+
+<div class="warning"><p><strong>Nota:</strong> Ricordarsi che quando si mette un blocco \<code>header</code> in
+un blocco \<code>score</code>, l&rsquo;espressione musicale deve precedere il
+blocco \<code>header</code>.
+</p>
+</div>
+<p>Non è necessario inserire blocchi <code>\header</code> in tutti e quattro
+i luoghi: alcuni o perfino tutti possono essere omessi. Analogalmente,
+in semplici file di input si possono omettere i blocchi <code>\book</code> e
+<code>\bookpart</code>, lasciando che questi siano creati implicitamente.
+</p>
+<p>Se il libro ha un solo brano, il blocco <code>\header</code> viene di
+solito messo all&rsquo;inizio del file, in modo che sia prodotto soltanto
+il titolo della parte e lasciando disponibili tutti i campi di
+titolazione.
+</p>
+<p>Se il libro ha vari brani, è possibile usare diverse disposizioni dei
+blocchi <code>\header</code>, corrispondenti ai diversi tipi di pubblicazione
+musicale.  Per esempio, se la pubblicazione contiene vari brani dello
+stesso compositore, la soluzione più adatta prevederebbe un blocco <code>\header</code>
+all&rsquo;inizio del file che specifichi il titolo del libro e il nome del compositore,
+e dei blocchi <code>\header</code> in ciascun blocco <code>\score</code> che specifichino il
+titolo del brano (<code>piece</code>) e dell&rsquo;opera (<code>opus</code>), come in questo
+esempio:
+</p>
+<blockquote><pre class="verbatim">\header {
+  title = &quot;SUITE I.&quot;
+  composer = &quot;J. S. Bach.&quot;
+}
+
+\score {
+  \new Staff \relative {
+    \clef bass
+    \key g \major
+    \repeat unfold 2 { g,16( d' b') a b d, b' d, } |
+    \repeat unfold 2 { g,16( e' c') b c e, c' e, } |
+  }
+  \header {
+    piece = &quot;Prélude.&quot;
+  }
+}
+
+\score {
+  \new Staff \relative {
+    \clef bass
+    \key g \major
+    \partial 16 b16 |
+    &lt;g, d' b'~&gt;4 b'16 a( g fis) g( d e fis) g( a b c) |
+    d16( b g fis) g( e d c) b(c d e) fis( g a b) |
+  }
+  \header {
+    piece = &quot;Allemande.&quot;
+  }
+}
+</pre><p>
+ <a href="../12/lily-9b1c0743.ly">
+  <img align="middle"
+       border="0"
+       src="../12/lily-9b1c0743.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Sono possibili disposizioni più complesse.  Per esempio, i campi testuali
+del blocco <code>\header</code> di un libro possono essere stampati nei titoli
+di tutti i brani, magari sovrascrivendo alcuni campi e sopprimendone altri:
+</p>
+<blockquote><pre class="verbatim">\book {
+  \paper {
+    print-all-headers = ##t
+  }
+  \header {
+    title = &quot;DAS WOHLTEMPERIRTE CLAVIER&quot;
+    subtitle = &quot;TEIL I&quot;
+    % Non mostrare il piè di pagina predefinito nell'ultima pagina di questo libro
+    tagline = ##f
+  }
+  \markup { \vspace #1 }
+  \score {
+    \new PianoStaff &lt;&lt;
+      \new Staff { s1 }
+      \new Staff { \clef &quot;bass&quot; s1 }
+    &gt;&gt;
+    \header {
+      title = &quot;PRAELUDIUM I&quot;
+      opus = &quot;BWV 846&quot;
+      % Non mostrare il sottotitolo in questo brano
+      subtitle = ##f
+    }
+  }
+  \score {
+    \new PianoStaff &lt;&lt;
+      \new Staff { s1 }
+      \new Staff { \clef &quot;bass&quot; s1 }
+    &gt;&gt;
+    \header {
+      title = &quot;FUGA I&quot;
+      subsubtitle = &quot;A 4 VOCI&quot;
+      opus = &quot;BWV 846&quot;
+      % Non mostrare il sottotitolo in questo brano
+      subtitle = ##f
+    }
+  }
+}
+</pre><p>
+ <a href="../1d/lily-b8441f2a.ly">
+  <img align="middle"
+       border="0"
+       src="../1d/lily-b8441f2a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche-157"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="file-structure.it.html">Struttura del file</a>,
+<a href="#default-layout-of-bookpart-and-score-titles">Formattazione predefinita dei titoli delle parti e dei brani</a>,
+<a href="custom-titles-headers-and-footers.it.html#custom-layout-for-titles">Formattazione personalizzata dei titoli</a>.
+</p>
+
+<hr size="6">
+<a name="Formattazione-predefinita-dei-titoli-delle-parti-e-dei-brani"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#titles-explained" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Come funzionano i titoli&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#creating-titles-headers-and-footers" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Creazione di titoli intestazioni e piè di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#default-layout-of-headers-and-footers" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Formattazione predefinita delle intestazioni e dei piè di pagina &gt; </a>]</td></tr></table>
+<a name="default-layout-of-bookpart-and-score-titles"></a>
+<h4 class="unnumberedsubsubsec">Formattazione predefinita dei titoli delle parti e dei brani</h4>
+
+<p>Questo esempio illustra visivamente tutte le variabili del
+blocco <code>\header</code>:
+</p>
+<blockquote><pre class="verbatim">\book {
+  \header {
+      % I seguenti campi sono centrati
+    dedication = &quot;Dedica&quot;
+    title = &quot;Titolo&quot;
+    subtitle = &quot;Sottotitolo&quot;
+    subsubtitle = &quot;Sottosottotitolo&quot;
+      % I seguenti campi sono distribuiti uniformemente su una riga
+      % il campo &quot;instrument&quot; appare anche nelle pagine seguenti
+    instrument = \markup \with-color #green &quot;Strumento&quot;
+    poet = &quot;Poeta&quot;
+    composer = &quot;Compositore&quot;
+      % I campi seguenti sono posti agli estremi opposti della stessa riga
+    meter = &quot;Tempo&quot;
+    arranger = &quot;Arrangiatore&quot;
+      % I campi seguenti sono centrati in fondo
+    tagline = &quot;Lo slogan va in fondo all'ultima pagina&quot;
+    copyright = &quot;Il copyright va in fondo alla prima pagina&quot;
+  }
+  \score {
+    { s1 }
+    \header {
+        % I campi seguenti sono posti agli estremi opposti della stessa riga
+      piece = &quot;Brano 1&quot;
+      opus = &quot;Opera 1&quot;
+    }
+  }
+  \score {
+    { s1 }
+    \header {
+        % I campi seguenti sono posti agli estremi opposti della stessa riga
+      piece = &quot;Brano 2 sulla stessa pagina&quot;
+      opus = &quot;Opera 2&quot;
+    }
+  }
+  \pageBreak
+  \score {
+    { s1 }
+    \header {
+        % I campi seguenti sono posti agli estremi opposti della stessa riga
+      piece = &quot;Brano 3 su una nuova pagina&quot;
+      opus = &quot;Opera 3&quot;
+    }
+  }
+}
+</pre><p>
+ <a href="../b2/lily-1831fca7.ly">
+  <img align="middle"
+       border="0"
+       src="../b2/lily-1831fca7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Notare che:
+</p>
+<ul>
+<li>
+Il nome dello strumento sarà ripetuto su ogni pagina.
+
+</li><li>
+Appaiono soltanto i campi <code>piece</code> e <code>opus</code> di un blocco <code>\score</code>
+quando la variabile <code>print-all-headers</code> del foglio è impostata su
+<code>##f</code> (valore predefinito).
+
+</li><li>
+I campi testuali non specificati in un blocco <code>\header</code> sono sostituiti
+con <code>\null</code> in modo da non sprecare spazio.
+
+</li><li>
+Le impostazioni predefinite per <code>scoreTitleMarkup</code> posizionano i campi
+<code>piece</code> e <code>opus</code> alle estremità opposte della stessa riga.
+
+</li></ul>
+
+<p>Per cambiare la formattazione predefinita leggere <a href="custom-titles-headers-and-footers.it.html#custom-layout-for-titles">Formattazione personalizzata dei titoli</a>.
+</p>
+<a name="index-breakbefore"></a>
+
+<p>Se un blocco <code>\book</code> inizia subito con un blocco <code>\bookpart</code>,
+non verrà stampato alcun titolo per il libro, dato che non esiste una
+pagina in cui farlo apparire. Se il titolo del libro deve comunque
+apparire, conviene inserire all&rsquo;inizio  di <code>\book</code> del testo
+inserito con <code>\markup</code> oppure un comando <code>\pageBreak</code>.
+</p>
+<p>Usare la variabile <code>breakbefore</code> all&rsquo;interno di un blocco <code>\header</code>
+racchiuso in un blocco <code>\score</code> per far sì che i titoli del blocco
+<code>\header</code> di più alto livello appaiano da soli nella prima pagina,
+mentre la musica (definita nel blocco <code>\score</code>) inizia nella
+pagina successiva.
+</p>
+<pre class="verbatim">\book {
+  \header {
+    title = &quot;Titolo del libro&quot;
+    subtitle = &quot;Sottotitolo del libro&quot;
+    copyright = &quot;Fine della prima pagina&quot;
+  }
+  \score {
+    \repeat unfold 4 { e'' e'' e'' e'' }
+    \header {
+      piece = &quot;Titolo del brano&quot;
+      breakbefore = ##t
+    }
+  }
+}
+</pre><p>
+ <a href="../0d/lily-f0fe2fcc.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-f0fe2fcc.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<a name="Vedi-anche-40"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Come-funzionano-i-file-di-input-di-LilyPond-1"></a>
+<a href="../learning/how-lilypond-input-files-work.it.html">Come funzionano i file di input di LilyPond</a>,
+</p>
+<p>Guida alla notazione:
+<a href="custom-titles-headers-and-footers.it.html#custom-layout-for-titles">Formattazione personalizzata dei titoli</a>,
+<a href="file-structure.it.html">Struttura del file</a>.
+</p>
+<p>File installati:
+&lsquo;<tt>ly/titling-init.ly</tt>&rsquo;.
+</p>
+
+<hr size="6">
+<a name="Formattazione-predefinita-delle-intestazioni-e-dei-pi_00e8-di-pagina"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#default-layout-of-bookpart-and-score-titles" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Formattazione predefinita dei titoli delle parti e dei brani&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#creating-titles-headers-and-footers" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Creazione di titoli intestazioni e piè di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="custom-titles-headers-and-footers.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Titoli intestazioni e piè di pagina personalizzati &gt; </a>]</td></tr></table>
+<a name="default-layout-of-headers-and-footers"></a>
+<h4 class="unnumberedsubsubsec">Formattazione predefinita delle intestazioni e dei piè di pagina</h4>
+
+<p>Le <em>intestazioni</em> e i <em>piè di pagina</em> sono linee di testo che appaiono
+in cima e in fondo alle pagine, distinte dal testo principale di un libro.
+Possono essere definite nelle seguenti variabili del blocco <code>\paper</code>:
+</p>
+<ul>
+<li> <code>oddHeaderMarkup</code>
+</li><li> <code>evenHeaderMarkup</code>
+</li><li> <code>oddFooterMarkup</code>
+</li><li> <code>evenFooterMarkup</code>
+</li></ul>
+
+<p>Queste variabili di markup possono soltanto accedere ai campi testuali definiti
+nei blocchi <code>\header</code> del livello superiore (che vengono applicati a tutti
+i brani del libro) e sono definiti in &lsquo;<tt>ly/titling-init.ly</tt>&rsquo;.  Impostazioni
+predefinite:
+</p>
+<ul>
+<li>
+i numeri di pagina sono collocati automaticamente in alto a sinistra (se la
+pagina è pari) o in alto a destra (se la pagina è dispari), a partire dalla
+seconda pagina.
+
+</li><li>
+il campo <code>instrument</code> viene ripetuto al centro di ogni pagina, a
+partire dalla seconda pagina.
+
+</li><li>
+il testo del <code>copyright</code> è centrato in fondo alla prima pagina.
+
+</li><li>
+lo &ldquo;slogan&rdquo; (o firma) &ndash; <code>tagline</code> &ndash; è centrato in fondo
+all&rsquo;ultima pagina o sotto il campo del <code>copyright</code> se c&rsquo;è
+una sola pagina.
+
+</li></ul>
+
+<p>Il testo del piè di pagina predefinito per l&rsquo;ultima pagina può essere
+modificato aggiungendo il campo <code>tagline</code> al blocco <code>\header</code>
+del livello superiore.
+</p>
+<pre class="verbatim">\book {
+  \header {
+    tagline = &quot;... notazione musicale per tutti&quot;
+  }
+  \score {
+    \relative {
+      c'4 d e f
+    }
+  }
+}
+</pre><p>
+ <a href="../7f/lily-2dedc497.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-2dedc497.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Per toglierlo, impostare <code>tagline</code> su <code>##f</code>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Input e output&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.it.html" title="Capitolo successivo">&nbsp;Gestione dello spazio &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#default-layout-of-bookpart-and-score-titles" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Formattazione predefinita dei titoli delle parti e dei brani&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#creating-titles-headers-and-footers" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Creazione di titoli intestazioni e piè di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="custom-titles-headers-and-footers.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Titoli intestazioni e piè di pagina personalizzati &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="creating-titles-headers-and-footers.html">English</a>, <a href="creating-titles-headers-and-footers.ca.html">català</a>, <a href="creating-titles-headers-and-footers.de.html">deutsch</a>, <a href="creating-titles-headers-and-footers.es.html">español</a>, <a href="creating-titles-headers-and-footers.fr.html">français</a>, <a href="creating-titles-headers-and-footers.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=" toc_current"><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-Creazione-di-titoli-intestazioni-e-pie-di-pagina" href="creating-titles-headers-and-footers.it.html">3.2.1 Creazione di titoli intestazioni e piè di pagina</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Come-funzionano-i-titoli-1" href="creating-titles-headers-and-footers.it.html#titles-explained">Come funzionano i titoli</a>        </li>
+        <li class=""><a name="toc-Formattazione-predefinita-dei-titoli-delle-parti-e-dei-brani-1" href="creating-titles-headers-and-footers.it.html#default-layout-of-bookpart-and-score-titles">Formattazione predefinita dei titoli delle parti e dei brani</a>        </li>
+        <li class=""><a name="toc-Formattazione-predefinita-delle-intestazioni-e-dei-pie-di-pagina" href="creating-titles-headers-and-footers.it.html#default-layout-of-headers-and-footers">Formattazione predefinita delle intestazioni e dei piè di pagina</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Titoli-intestazioni-e-pie-di-pagina-personalizzati" href="custom-titles-headers-and-footers.it.html">3.2.2 Titoli intestazioni e piè di pagina personalizzati</a>      </li>
+      <li class=""><a name="toc-Creazione-di-metadati-per-i-file-di-output-1" href="creating-output-file-metadata.it.html">3.2.3 Creazione di metadati per i file di output</a>      </li>
+      <li class=""><a name="toc-Creazione-di-note-a-pie-di-pagina" href="creating-footnotes.it.html">3.2.4 Creazione di note a piè di pagina</a>      </li>
+      <li class=""><a name="toc-Riferimento-ai-numeri-di-pagina-1" href="reference-to-page-numbers.it.html">3.2.5 Riferimento ai numeri di pagina</a>      </li>
+      <li class=""><a name="toc-Indice-1" href="table-of-contents.it.html">3.2.6 Indice</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

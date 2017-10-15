@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 5.5.1 Allineamento degli oggetti</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 5.5.1 Allineamento degli oggetti">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 5.5.1 Allineamento degli oggetti">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="advanced-tweaks.it.html#advanced-tweaks" rel="up" title="5.5 Ritocchi avanzati">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="advanced-tweaks.it.html#advanced-tweaks" rel="previous" title="5.5 Ritocchi avanzati">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Allineamento-degli-oggetti"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="advanced-tweaks.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Ritocchi avanzati&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="advanced-tweaks.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Ritocchi avanzati&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#setting-x_002doffset-and-y_002doffset-directly" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Impostazione diretta di X-offset e Y-offset &gt; </a>]</td></tr></table>
+<a name="aligning-objects"></a>
+<h3 class="subsection">5.5.1 Allineamento degli oggetti</h3>
+
+<p>Gli oggetti grafici che supportano l&rsquo;interfaccia <code>self-alignment-interface</code>
+e/o l&rsquo;interfaccia <code>side-position-interface</code> possono essere allineati a un
+oggetto disposto precedentemente in vari modi.  L&rsquo;elenco di questi oggetti è
+consultabile in <a name="index-self_002dalignment_002dinterface-1"></a>
+<a href="../internals/self_002dalignment_002dinterface.it.html">self-alignment-interface</a> e
+<a name="index-side_002dposition_002dinterface-1"></a>
+<a href="../internals/side_002dposition_002dinterface.it.html">side-position-interface</a>.
+</p>
+<p>Tutti gli oggetti grafici hanno un punto di riferimento, un&rsquo;estensione
+orizzontale e una verticale.  L&rsquo;estensione orizzontale è una coppia di
+numeri che determina gli spostamenti dal punto di riferimento dei margini
+sinistro e destro (gli spostamenti a sinistra sono negativi).  L&rsquo;estensione
+verticale è una coppia di numeri che determina lo spostamento dal punto di
+riferimento ai margini inferiore e superiore (gli spostamenti in giù sono
+negativi).
+</p>
+<p>La posizione di un oggetto su un rigo è dato dai valori delle proprietà
+<code>X-offset</code> e <code>Y-offset</code>.  Il valore di <code>X-offset</code> dà lo
+spostamento dalla coordinata X del punto di riferimento dell&rsquo;oggetto genitore,
+mentre il valore di <code>Y-offset</code> dà lo spostamento dalla linea centrale del
+rigo.  I valori di <code>X-offset</code> e <code>Y-offset</code> possono essere impostati
+direttamente oppure possono essere impostati per essere calcolati dalle
+procedure in modo da consentire un allineamento con l&rsquo;oggetto genitore.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Molti oggetti hanno speciali questioni di posizionamento che fanno
+sì che qualsiasi impostazione di <code>X-offset</code> o <code>Y-offset</code> sia
+ignorata o modificata, anche se l&rsquo;oggetto supporta l&rsquo;interfaccia
+<code>self-alignment-interface</code>.  Sovrascrivendo le proprietà <code>X-offset</code>
+o <code>Y-offset</code> su un valore fisso la rispettiva proprietà
+<code>self-alignment</code> verrà ignorata.
+</p>
+</div>
+<p>Per esempio, un&rsquo;alterazione può essere riposizionata verticalmente impostando
+<code>Y-offset</code> ma qualsiasi modifica di <code>X-offset</code> non avrà effetto.
+</p>
+<p>I segni di chiamata possono essere allineati con oggetti spezzabili come
+stanghette, simboli di chiave, simboli di indicazione di tempo e armature
+di chiave.  Ci sono proprietà speciali elencate nell&rsquo;interfaccia
+<code>break-aligned-interface</code> per posizionare i segni di chiamata su tali
+oggetti.
+</p>
+<a name="Vedi-anche-178"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="#using-the-break_002dalignable_002dinterface">Uso di <code>break-alignable-interface</code></a>.
+</p>
+<p>Estendere LilyPond:
+<a name="index-Callback-functions"></a>
+<a href="../extending/callback-functions.it.html">Callback functions</a>.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#setting-x_002doffset-and-y_002doffset-directly" accesskey="1">Impostazione diretta di <code>X-offset</code> e <code>Y-offset</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#using-the-side_002dposition_002dinterface" accesskey="2">Uso di <code>side-position-interface</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#using-the-self_002dalignment_002dinterface" accesskey="3">Uso di <code>self-alignment-interface</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#using-the-break_002dalignable_002dinterface" accesskey="4">Uso di <code>break-alignable-interface</code></a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Impostazione-diretta-di-X_002doffset-e-Y_002doffset"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#aligning-objects" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#aligning-objects" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-the-side_002dposition_002dinterface" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Uso di side-position-interface &gt; </a>]</td></tr></table>
+<a name="setting-x_002doffset-and-y_002doffset-directly"></a>
+<h4 class="unnumberedsubsubsec">Impostazione diretta di <code>X-offset</code> e <code>Y-offset</code></h4>
+
+<p>Si possono assegnare valori numerici alle prietà <code>X-offset</code> e
+<code>Y-offset</code> di molti oggetti.  L&rsquo;esempio seguente mostra tre note
+con la posizione predefinita della diteggiatura e le posizioni con <code>X-offset</code>
+e <code>Y-offset</code> modificate.
+</p>
+<blockquote><pre class="verbatim">a'-3
+a'
+-\tweak X-offset #0
+-\tweak Y-offset #0
+-3
+a'
+-\tweak X-offset #-1
+-\tweak Y-offset #1
+-3
+</pre><p>
+ <a href="../f8/lily-06fa918f.ly">
+  <img align="middle"
+       border="0"
+       src="../f8/lily-06fa918f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="Uso-di-side_002dposition_002dinterface"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#setting-x_002doffset-and-y_002doffset-directly" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Impostazione diretta di X-offset e Y-offset&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#aligning-objects" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-the-self_002dalignment_002dinterface" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Uso di self-alignment-interface &gt; </a>]</td></tr></table>
+<a name="using-the-side_002dposition_002dinterface"></a>
+<h4 class="unnumberedsubsubsec">Uso di <code>side-position-interface</code></h4>
+
+<p>Un oggetto che supporta l&rsquo;interfaccia <code>side-position-interface</code> può
+essere posizionato accanto al suo oggetto genitore in modo che i margini
+indicati dei due oggetti si tocchino.  L&rsquo;oggetto può essere posizionato
+sopra, sotto, a destra o a sinistra dell&rsquo;oggetto genitore.  Quest&rsquo;ultimo
+non può essere specificato; è invece determinato dall&rsquo;ordine degli elementi
+nel flusso di input.  La maggior parte degli oggetti ha la testa di nota
+associata come oggetto genitore.
+</p>
+<p>I valori delle proprietà <code>side-axis</code> e <code>direction</code> determinano
+dove l&rsquo;oggetto deve essere posizionato, in questo modo:
+</p>
+
+<table>
+<thead><tr><th width="30%"><code>side-axis</code></th><th width="30%"><code>direction</code></th><th width="30%"></th></tr></thead>
+<thead><tr><th width="30%">proprietà</th><th width="30%">proprietà</th><th width="30%">Posizionamento</th></tr></thead>
+<tr><td width="30%"><code>0</code></td><td width="30%"><code>-1</code></td><td width="30%">sinistra</td></tr>
+<tr><td width="30%"><code>0</code></td><td width="30%"><code>1</code></td><td width="30%">destra</td></tr>
+<tr><td width="30%"><code>1</code></td><td width="30%"><code>-1</code></td><td width="30%">sotto</td></tr>
+<tr><td width="30%"><code>1</code></td><td width="30%"><code>1</code></td><td width="30%">sopra</td></tr>
+</table>
+
+<p>Quando <code>side-axis</code> è <code>0</code>, <code>X-offset</code> deve essere impostato
+sulla procedura <code>ly:side-position-interface::x-aligned-side</code>.
+Questa procedura restituirà il valore corretto di <code>X-offset</code> per
+porre l&rsquo;oggetto al lato sinistro o destro dell&rsquo;oggetto genitore in base
+al valore di <code>direction</code>.
+</p>
+<p>Quando <code>side-axis</code> è <code>1</code>, <code>Y-offset</code> deve essere impostato
+sulla procedura <code>ly:side-position-interface::y-aligned-side</code>.
+Questa procedura restituirà il valore corretto di <code>Y-offset</code> per
+porre l&rsquo;oggetto sopra o sotto l&rsquo;oggetto genitore in base al valore di
+<code>direction</code>.
+</p>
+
+<hr size="6">
+<a name="Uso-di-self_002dalignment_002dinterface"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-the-side_002dposition_002dinterface" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso di side-position-interface&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#aligning-objects" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#using-the-break_002dalignable_002dinterface" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Uso di break-alignable-interface &gt; </a>]</td></tr></table>
+<a name="using-the-self_002dalignment_002dinterface"></a>
+<h4 class="unnumberedsubsubsec">Uso di <code>self-alignment-interface</code></h4>
+
+<a name="-Autoallineamento-orizzontale-degli-oggetti"></a>
+<h4 class="subsubheading"><i> Autoallineamento orizzontale degli oggetti</i></h4>
+
+<p>L&rsquo;allineamento orizzontale di un oggetto che supporta l&rsquo;interfaccia
+<code>self-alignment-interface</code> è regolato dal valore della proprietà
+<code>self-alignment-X</code>, purché la proprietà <code>X-offset</code> dell&rsquo;oggetto
+sia impostata su <code>ly:self-alignment-interface::x-aligned-on-self</code>.
+A <code>self-alignment-X</code>  può essere assegnato qualsiasi numero reale,
+in unità di metà del totale dell&rsquo;estensione X dell&rsquo;oggetto.  Valori
+negativi spostano l&rsquo;oggetto a destra, valori positivi lo spostano a
+sinistra.  Un valore di <code>0</code> centra l&rsquo;oggetto sul punto di riferimento
+del suo oggetto genitore, un valore di <code>-1</code> allinea il margine
+sinistro dell&rsquo;oggetto al punto di riferimento del suo genitore, e un
+valore di <code>1</code> allinea il margine destro dell&rsquo;oggetto al punto di
+riferimento del suo genitore.  I simboli <code>LEFT</code>, <code>CENTER</code> e
+<code>RIGHT</code> possono essere usati al posto dei valori <code>-1</code>,
+<code>0</code> e <code>1</code>, rispettivamente.
+</p>
+<p>Normalmente si usa il comando <code>\override</code> per modificare il valore
+di <code>self-alignment-X</code>, ma il comando <code>\tweak</code> può essere utile
+per allineare separatamente varie annotazioni su una singola nota:
+</p>
+<blockquote><pre class="verbatim">a'
+-\tweak self-alignment-X #-1
+^&quot;allineato a sinistra&quot;
+-\tweak self-alignment-X #0
+^&quot;allineato al centro&quot;
+-\tweak self-alignment-X #RIGHT
+^&quot;allineato a destra&quot;
+-\tweak self-alignment-X #-2.5
+^&quot;allineato ancora più a destra&quot;
+</pre><p>
+ <a href="../d5/lily-d77c1c17.ly">
+  <img align="middle"
+       border="0"
+       src="../d5/lily-d77c1c17.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="-Autoallineamento-verticale-degli-oggetti"></a>
+<h4 class="subsubheading"><i> Autoallineamento verticale degli oggetti</i></h4>
+
+<p>Gli oggetti possono essere allineati verticalmente in un modo analogo
+al loro allineamento orizzontale se la proprietà <code>Y-offset</code> è
+impostata su <code>ly:self-alignment-interface::y-aligned-on-self</code>.
+Tuttavia altri meccanismi sono spesso implicati nell&rsquo;allineamento
+verticale: il valore di <code>Y-offset</code> è solo una delle variabili
+da prendere in considerazione.  Ciò potrebbe rendere complicato
+l&rsquo;aggiustamento del valore di alcuni oggetti.
+Le unità sono soltanto la metà dell&rsquo;estensione verticale dell&rsquo;oggetto, che
+è di solito piuttosto piccola, dunque potrebbero essere necessari grossi
+numeri.  Un valore di <code>-1</code> allinea il margine inferiore dell&rsquo;oggetto
+al punto di riferimento dell&rsquo;oggetto genitore, un valore di <code>0</code>
+allinea il centro dell&rsquo;oggetto al punto di riferimento del genitore,
+e un valore di <code>1</code> allinea il margine superiore dell&rsquo;oggetto
+al punto di riferimento del genitore.  I simboli <code>DOWN</code>,
+<code>CENTER</code> e <code>UP</code> possono essere usati al posto di <code>-1</code>,
+<code>0</code> e <code>1</code>, rispettivamente.
+</p>
+<a name="-Autoallineamento-degli-oggetti-in-entrambe-le-direzioni"></a>
+<h4 class="subsubheading"><i> Autoallineamento degli oggetti in entrambe le direzioni</i></h4>
+
+<p>Impostando sia <code>X-offset</code> che <code>Y-offset</code>, un oggetto può essere
+allineato in entrambe le direzioni simultaneamente.
+</p>
+<p>L&rsquo;esempio seguente mostra come aggiustare un segno di diteggiatura in modo
+che stia vicino alla testa di nota.
+</p>
+<blockquote><pre class="verbatim">a'
+-\tweak self-alignment-X #0.5  % sposta orizzontalmente a sinistra
+-\tweak Y-offset #ly:self-alignment-interface::y-aligned-on-self
+-\tweak self-alignment-Y #-1  % sposta verticalmente in su
+-3  % terzo dito
+</pre><p>
+ <a href="../f0/lily-d63fb114.ly">
+  <img align="middle"
+       border="0"
+       src="../f0/lily-d63fb114.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+
+
+<hr size="6">
+<a name="Uso-di-break_002dalignable_002dinterface"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-the-self_002dalignment_002dinterface" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso di self-alignment-interface&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#aligning-objects" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="vertical-grouping-of-grobs.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Raggruppamento verticale dei grob &gt; </a>]</td></tr></table>
+<a name="using-the-break_002dalignable_002dinterface"></a>
+<h4 class="unnumberedsubsubsec">Uso di <code>break-alignable-interface</code></h4>
+
+<a name="index-allineamento-sugli-oggetti"></a>
+<a name="index-break_002dalign_002dsymbols"></a>
+
+<p>I segni di chiamata e i numeri di battuta possono essere allineati con oggetti
+della notazione diversi dalle stanghette.  Questi oggetti comprendono
+<code>ambitus</code>, <code>breathing-sign</code>, <code>clef</code>, <code>custos</code>, <code>staff-bar</code>,
+<code>left-edge</code>, <code>key-cancellation</code>, <code>key-signature</code> e
+<code>time-signature</code>.
+</p>
+<p>Ogni tipo di oggetto ha il suo punto di riferimento predefinito, al quale i
+segni di chiamata sono allineati:
+</p>
+<blockquote><pre class="verbatim">% Il segno di chiamata sarà allineato al margine destro della chiave
+\override Score.RehearsalMark.break-align-symbols = #'(clef)
+\key a \major
+\clef treble
+\mark &quot;↓&quot;
+e'1
+% Il segno di chiamata sarà allineato al margine sinistro dell'indicazione di tempo
+\override Score.RehearsalMark.break-align-symbols = #'(time-signature)
+\key a \major
+\clef treble
+\time 3/4
+\mark &quot;↓&quot;
+e'2.
+% Il segno di chiamata sarà centrato sul segno di respiro
+\override Score.RehearsalMark.break-align-symbols = #'(breathing-sign)
+\key a \major
+\clef treble
+\time 4/4
+e'1
+\breathe
+\mark &quot;↓&quot;
+</pre><p>
+ <a href="../d2/lily-226902f1.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-226902f1.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si può specificare un elenco dei possibili oggetti a cui allineare.  Se
+alcuni oggetti sono invisibili in quel punto a causa dell&rsquo;impostazione
+di <code>break-visibility</code> o di impostazioni esplicite della visibilità
+di tonalità e chiavi, il segno di chiamata o il numero di battuta viene
+allineato al primo oggetto dell&rsquo;elenco che è visibile.  Se nessun oggetto
+dell&rsquo;elenco è visibile, l&rsquo;oggetto è allineato alla stanghetta.  Se la
+stanghetta è invisibile, l&rsquo;oggetto viene allineato al punto in cui si
+dovrebbe trovare la stanghetta.
+</p>
+<blockquote><pre class="verbatim">% Il segno di chiamata sarà allineato al margine destro dell'armatura di chiave
+\override Score.RehearsalMark.break-align-symbols = #'(key-signature clef)
+\key a \major
+\clef treble
+\mark &quot;↓&quot;
+e'1
+% Il segno di chiamata sarà allineato al margine destro della chiave
+\set Staff.explicitKeySignatureVisibility = #all-invisible
+\override Score.RehearsalMark.break-align-symbols = #'(key-signature clef)
+\key a \major
+\clef bass
+\mark &quot;↓&quot;
+gis,1
+% Il segno di chiamata sarà centrato sopra la stanghetta
+\set Staff.explicitKeySignatureVisibility = #all-invisible
+\set Staff.explicitClefVisibility = #all-invisible
+\override Score.RehearsalMark.break-align-symbols = #'(key-signature clef)
+\key a \major
+\clef treble
+\mark &quot;↓&quot;
+e'1
+</pre><p>
+ <a href="../64/lily-8db0a9b6.ly">
+  <img align="middle"
+       border="0"
+       src="../64/lily-8db0a9b6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;allineamento del segno di chiamata relativo all&rsquo;oggetto della notazione
+può essere modificato, come evidenziato nell&rsquo;esempio seguente.  In una
+partitura con molteplici righi, questa impostazione deve essere fatta per
+tutti i righi.
+</p>
+<blockquote><pre class="verbatim">% Il segno di chiamata sarà allineato al margine destro dell'armatura di chiave
+\override Score.RehearsalMark.break-align-symbols = #'(key-signature)
+\key a \major
+\clef treble
+\time 4/4
+\mark &quot;↓&quot;
+e'1
+% Il segno di chiamata sarà centrato sopra l'armatura di chiave
+\once \override Score.KeySignature.break-align-anchor-alignment = #CENTER
+\mark &quot;↓&quot;
+\key a \major
+e'1
+% Il segno di chiamata sarà allineato al margine sinistro dell'armatura di chiave
+\once \override Score.KeySignature.break-align-anchor-alignment = #LEFT
+\key a \major
+\mark &quot;↓&quot;
+e'1
+</pre><p>
+ <a href="../7f/lily-03f0640f.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-03f0640f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Il segno di chiamata può anche essere spostato a destra o a sinistra del
+margine sinistro di una quantità arbitraria.  Le unità sono gli spazi rigo:
+</p>
+<blockquote><pre class="verbatim">% Il segno di chiamata sarà allineato al margine sinistro dell'armatura di chiave
+% e poi spostato a destra di 3.5 spazi rigo
+\override Score.RehearsalMark.break-align-symbols = #'(key-signature)
+\once \override Score.KeySignature.break-align-anchor = #3.5
+\key a \major
+\mark &quot;↓&quot;
+e'1
+% Il segno di chiamata sarà allineato al margine sinistro dell'armatura di chiave
+% e poi spostato a sinistra di 2 spazi rigo
+\once \override Score.KeySignature.break-align-anchor = #-2
+\key a \major
+\mark &quot;↓&quot;
+e'1
+</pre><p>
+ <a href="../73/lily-42ef6639.ly">
+  <img align="middle"
+       border="0"
+       src="../73/lily-42ef6639.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#using-the-self_002dalignment_002dinterface" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Uso di self-alignment-interface&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#aligning-objects" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Allineamento degli oggetti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="vertical-grouping-of-grobs.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Raggruppamento verticale dei grob &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="aligning-objects.html">English</a>, <a href="aligning-objects.ca.html">català</a>, <a href="aligning-objects.de.html">deutsch</a>, <a href="aligning-objects.es.html">español</a>, <a href="aligning-objects.fr.html">français</a>, <a href="aligning-objects.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=" toc_current"><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-Allineamento-degli-oggetti-1" href="aligning-objects.it.html">5.5.1 Allineamento degli oggetti</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Impostazione-diretta-di-X_002doffset-e-Y_002doffset-1" href="aligning-objects.it.html#setting-x_002doffset-and-y_002doffset-directly">Impostazione diretta di <code>X-offset</code> e <code>Y-offset</code></a>        </li>
+        <li class=""><a name="toc-Uso-di-side_002dposition_002dinterface-1" href="aligning-objects.it.html#using-the-side_002dposition_002dinterface">Uso di <code>side-position-interface</code></a>        </li>
+        <li class=""><a name="toc-Uso-di-self_002dalignment_002dinterface-1" href="aligning-objects.it.html#using-the-self_002dalignment_002dinterface">Uso di <code>self-alignment-interface</code></a>        </li>
+        <li class=""><a name="toc-Uso-di-break_002dalignable_002dinterface-1" href="aligning-objects.it.html#using-the-break_002dalignable_002dinterface">Uso di <code>break-alignable-interface</code></a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Raggruppamento-verticale-dei-grob-1" href="vertical-grouping-of-grobs.it.html">5.5.2 Raggruppamento verticale dei grob</a>      </li>
+      <li class=""><a name="toc-Modifica-degli-stampi-1" href="modifying-stencils.it.html">5.5.3 Modifica degli stampi</a>      </li>
+      <li class=""><a name="toc-Modifica-delle-forme-1" href="modifying-shapes.it.html">5.5.4 Modifica delle forme</a>      </li>
+      <li class=""><a name="toc-Modifica-degli-estensori-spezzati-1" href="modifying-broken-spanners.it.html">5.5.5 Modifica degli estensori spezzati</a>      </li>
+      <li class=""><a name="toc-Contenitori-unpure_002dpure-1" href="unpure_002dpure-containers.it.html">5.5.6 Contenitori unpure-pure</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

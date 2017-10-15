@@ -1,0 +1,2148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.1.3 Impressió de les altures</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.1.3 Impressió de les altures">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.1.3 Impressió de les altures">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="pitches.ca.html#pitches" rel="up" title="1.1 Altures">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="changing-multiple-pitches.ca.html#changing-multiple-pitches" rel="previous" title="1.1.2 Modificació de diverses notes a l'hora">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Impressi_00f3-de-les-altures"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="changing-multiple-pitches.ca.html#modal-transformations" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Transformacions modals&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="pitches.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#clef" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Clau &gt; </a>]</td></tr></table>
+<a name="displaying-pitches"></a>
+<h3 class="subsection">1.1.3 Impressió de les altures</h3>
+
+<p>Aquesta secció tracta de com alterar la presentació de l&rsquo;altura de
+les notes.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#clef" accesskey="1">Clau</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#key-signature" accesskey="2">Armadura de la tonalitat</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#ottava-brackets" accesskey="3">Indicadors d&rsquo;octava</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#instrument-transpositions" accesskey="4">Transposició dels instruments</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#automatic-accidentals" accesskey="5">Alteracions accidentals automàtiques</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#ambitus" accesskey="6">Tessitura</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Clau"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#displaying-pitches" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#key-signature" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Armadura de la tonalitat &gt; </a>]</td></tr></table>
+<a name="clef"></a>
+<h4 class="unnumberedsubsubsec">Clau</h4>
+
+<a name="index-Sol_002c-clau-de"></a>
+<a name="index-Do_002c-clau-de"></a>
+<a name="index-Fa_002c-clau-de"></a>
+<a name="index-violi_002c-clau-de"></a>
+<a name="index-alto_002c-clau-de"></a>
+<a name="index-tenor_002c-clau-de"></a>
+<a name="index-baix_002c-clau-de"></a>
+<a name="index-francesa_002c-clau"></a>
+<a name="index-soprano_002c-clau-de"></a>
+<a name="index-mezzosoprano_002c-clau-de"></a>
+<a name="index-bariton_002c-clau-de"></a>
+<a name="index-contrabaix_002c-clau-de"></a>
+<a name="index-clau"></a>
+<a name="index-antigues_002c-claus"></a>
+<a name="index-clau-antiga"></a>
+<a name="index-clau-de-Sol"></a>
+<a name="index-clau-de-Do"></a>
+<a name="index-clau-de-Fa"></a>
+<a name="index-clau-de-violi"></a>
+<a name="index-clau-de-alto"></a>
+<a name="index-clau-de-tenor"></a>
+<a name="index-clau-de-baix"></a>
+<a name="index-clau-francesa"></a>
+<a name="index-clau-de-soprano"></a>
+<a name="index-clau-de-mezzosoprano"></a>
+<a name="index-clau-de-bariton"></a>
+<a name="index-clau-de-contrabaix"></a>
+
+<a name="index-_005cclef"></a>
+<a name="index-_005cclef-1"></a>
+
+<p>Sense cap ordre explícita, la clau predeterminada al LilyPond és
+la clau &ldquo;treble&rdquo; (o clau de <em>Sol</em>).
+</p>
+<blockquote><pre class="verbatim">c'2 c'
+</pre><p>
+ <a href="../b6/lily-1293d5fe.ly">
+  <img align="middle"
+       border="0"
+       src="../b6/lily-1293d5fe.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Tanmateix, es pot  canviar la clau usant l&rsquo;ordre
+<code>\clef</code> i el nom de la clau corresponent.  Als exemples
+següents es mostra la posició del <em>Do central</em> en diferents claus.
+</p>
+<blockquote><pre class="verbatim">\clef treble
+c'2 c'
+\clef alto
+c'2 c'
+\clef tenor
+c'2 c'
+\clef bass
+c'2 c'
+</pre><p>
+ <a href="../8c/lily-094a99cf.ly">
+  <img align="middle"
+       border="0"
+       src="../8c/lily-094a99cf.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per veure el repertori complet dels possibles noms per a les
+claus, consulteu <a name="index-Clef-styles"></a>
+<a href="../notation/clef-styles.ca.html">Estils de clau</a>.
+</p>
+<p>Les claus especials, com les utilitzades a la música
+<em>antiga</em>, es descriuen a
+<a name="index-Mensural-clefs"></a>
+<a href="../notation/typesetting-mensural-music.ca.html#mensural-clefs">Claus de la música mensural</a> i a
+<a name="index-Gregorian-clefs"></a>
+<a href="../notation/typesetting-gregorian-chant.ca.html#gregorian-clefs">Claus del cant gregorià</a>. La música
+que requereix claus de tabulatura s&rsquo;estudia a
+<a name="index-Default-tablatures"></a>
+<a href="../notation/common-notation-for-fretted-strings.ca.html#default-tablatures">Tabulatures predeterminades</a> i a
+<a name="index-Custom-tablatures"></a>
+<a href="../notation/common-notation-for-fretted-strings.ca.html#custom-tablatures">Tabulatures personalizadas</a>.
+</p>
+<a name="index-Claus-de-guia"></a>
+<a name="index-Claus-amb-notes-guia"></a>
+
+<p>Per fer servir claus a les notes guia, vegeu les ordres
+<code>\cueClef</code> i <code>\cueDuringWithClef</code> a
+<a href="writing-parts.ca.html#formatting-cue-notes">Format de les notes guia</a>.
+</p>
+<a name="index-transpositores_002c-claus"></a>
+<a name="index-clau-transpositora"></a>
+<a name="index-octava_002c-transposicio"></a>
+<a name="index-transposicio_002c-de-octava_002c-opcional"></a>
+<a name="index-octava_002c-transposicio_002c-opcional"></a>
+<a name="index-coral_002c-clau-de-tenor"></a>
+<a name="index-tenor_002c-clau-de_002c-coral"></a>
+
+<p>En afegir <code>_8</code> o <code>^8</code> al nom de la clau, la clau es
+transposa una octava cap avall o cap amunt, respectivament, i
+<code>_15</code> i <code>^15</code> la transposa dos octaves.  Si cal
+es poden usar altres nombres enters.  L&rsquo;argument
+<var>nome_de_clau</var> s&rsquo;ha de envoltar entre cometes si conté
+caràcters no alfabètics:
+</p>
+<blockquote><pre class="verbatim">\clef treble
+c'2 c'
+\clef &quot;treble_8&quot;
+c'2 c'
+\clef &quot;bass^15&quot;
+c'2 c'
+\clef &quot;alto_2&quot;
+c'2 c'
+\clef &quot;G_8&quot;
+c'2 c'
+\clef &quot;F^5&quot;
+c'2 c'
+</pre><p>
+ <a href="../70/lily-8079425f.ly">
+  <img align="middle"
+       border="0"
+       src="../70/lily-8079425f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es pot obtenir una indicació d&rsquo;octava opcional envoltant
+l&rsquo;argument numèric entre parèntesis o claudàtors:
+</p>
+<blockquote><pre class="verbatim">\clef &quot;treble_(8)&quot;
+c'2 c'
+\clef &quot;bass^[15]&quot;
+c'2 c'
+</pre><p>
+ <a href="../b5/lily-54828113.ly">
+  <img align="middle"
+       border="0"
+       src="../b5/lily-54828113.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Les altures s&rsquo;imprimeixen com si l&rsquo;argument numèric no tingués els
+parèntesis o claudàtors.
+</p>
+<p>De forma predeterminada, un canvi de clau que es produeix en un
+salt de línia provoca que el símbol de clau nou s&rsquo;imprimeixi al
+final de la línia anterior, com una clau <em>de cortesia</em>, així
+com al principi del següent.  Aquesta clau <em>de cortesia</em> es
+pot suprimir.
+</p>
+<blockquote><pre class="verbatim">\clef treble { c'2 c' } \break
+\clef bass { c'2 c' } \break
+\clef alto
+  \set Staff.explicitClefVisibility = #end-of-line-invisible
+  { c'2 c' } \break
+  \unset Staff.explicitClefVisibility
+\clef bass { c'2 c' } \break
+</pre><p>
+ <a href="../0d/lily-41048468.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-41048468.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>De forma predeterminada, una clau que s&rsquo;ha imprès prèviament no es
+torna a imprimir si es fa servir un altre cop la mateixa ordre
+<code>\clef</code>, i s&rsquo;ignora.  La instrucció <code>\set
+Staff.forceClef = ##t</code> modifica aquest comportament.
+</p>
+<blockquote><pre class="verbatim">  \clef treble
+  c'1
+  \clef treble
+  c'1
+  \set Staff.forceClef = ##t
+  c'1
+  \clef treble
+  c'1
+</pre><p>
+ <a href="../21/lily-6dede6a9.ly">
+  <img align="middle"
+       border="0"
+       src="../21/lily-6dede6a9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Quan hi ha un canvi de clau manual, el glif de la clau modificada
+és més petit del normal.  Es pot sobreescriure aquest comportament.
+</p>
+<blockquote><pre class="verbatim">  \clef &quot;treble&quot;
+  c'1
+  \clef &quot;bass&quot;
+  c'1
+  \clef &quot;treble&quot;
+  c'1
+  \override Staff.Clef.full-size-change = ##t
+  \clef &quot;bass&quot;
+  c'1
+  \clef &quot;treble&quot;
+  c'1
+  \revert Staff.Clef.full-size-change
+  \clef &quot;bass&quot;
+  c'1
+  \clef &quot;treble&quot;
+  c'1
+</pre><p>
+ <a href="../50/lily-71d778b9.ly">
+  <img align="middle"
+       border="0"
+       src="../50/lily-71d778b9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-31"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Tweaking clef properties</em>
+</p>
+
+<p>Changing the Clef glyph, its position, or the ottavation does not
+change the position of subsequent notes on the staff.  To get key
+signatures on their correct staff lines <code>middleCClefPosition</code> must
+also be specified, with positive or negative values moving <code>middle
+C</code> up or down respectively, relative to the staff&rsquo;s center line.
+</p>
+
+<p>For example, <code>\clef &quot;treble_8&quot;</code> is equivalent to setting the
+<code>clefGlyph</code>, <code>clefPosition</code> (the vertical position of the
+clef itself on the staff), <code>middleCPosition</code> and
+<code>clefTransposition</code>. Note that when any of these properties
+(except <code>middleCPosition</code>) are changed a new clef symbol is
+printed.
+</p>
+
+<p>The following examples show the possibilities when setting these
+properties manually. On the first line, the manual changes preserve the
+standard relative positioning of clefs and notes, whereas on the second
+line, they do not.
+</p>
+
+<blockquote><pre class="verbatim">{
+  % The default treble clef
+  \key f \major
+  c'1
+  % The standard bass clef
+  \set Staff.clefGlyph = #&quot;clefs.F&quot;
+  \set Staff.clefPosition = #2
+  \set Staff.middleCPosition = #6
+  \set Staff.middleCClefPosition = #6
+  \key g \major
+  c'1
+  % The baritone clef
+  \set Staff.clefGlyph = #&quot;clefs.C&quot;
+  \set Staff.clefPosition = #4
+  \set Staff.middleCPosition = #4
+  \set Staff.middleCClefPosition = #4
+  \key f \major
+  c'1
+  % The standard choral tenor clef
+  \set Staff.clefGlyph = #&quot;clefs.G&quot;
+  \set Staff.clefPosition = #-2
+  \set Staff.clefTransposition = #-7
+  \set Staff.middleCPosition = #1
+  \set Staff.middleCClefPosition = #1
+  \key f \major
+  c'1
+  % A non-standard clef
+  \set Staff.clefPosition = #0
+  \set Staff.clefTransposition = #0
+  \set Staff.middleCPosition = #-4
+  \set Staff.middleCClefPosition = #-4
+  \key g \major
+  c'1 \break
+
+  % The following clef changes do not preserve
+  % the normal relationship between notes, key signatures
+  % and clefs:
+
+  \set Staff.clefGlyph = #&quot;clefs.F&quot;
+  \set Staff.clefPosition = #2
+  c'1
+  \set Staff.clefGlyph = #&quot;clefs.G&quot;
+  c'1
+  \set Staff.clefGlyph = #&quot;clefs.C&quot;
+  c'1
+  \set Staff.clefTransposition = #7
+  c'1
+  \set Staff.clefTransposition = #0
+  \set Staff.clefPosition = #0
+  c'1
+
+  % Return to the normal clef:
+
+  \set Staff.middleCPosition = #0
+  c'1
+}
+</pre><p>
+ <a href="../f2/lily-8a6b8f5b.ly">
+  <img align="middle"
+       border="0"
+       src="../f2/lily-8a6b8f5b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-216"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referencia de la notación:
+<a name="index-Mensural-clefs-1"></a>
+<a href="../notation/typesetting-mensural-music.ca.html#mensural-clefs">Claus de la música mensural</a>,
+<a name="index-Gregorian-clefs-1"></a>
+<a href="../notation/typesetting-gregorian-chant.ca.html#gregorian-clefs">Claus del cant gregorià</a>,
+<a name="index-Default-tablatures-1"></a>
+<a href="../notation/common-notation-for-fretted-strings.ca.html#default-tablatures">Tabulatures predeterminades</a>
+<a name="index-Custom-tablatures-1"></a>
+<a href="../notation/common-notation-for-fretted-strings.ca.html#custom-tablatures">Tabulatures personalizadas</a>.
+<a href="writing-parts.ca.html#formatting-cue-notes">Format de les notes guia</a>.
+</p>
+<p>Fitxers instal·lats:
+&lsquo;<tt>scm/parser-clef.scm</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-Clef_005fengraver"></a>
+<a href="../internals/clef_005fengraver.ca.html">Clef_engraver</a>,
+<a name="index-Clef"></a>
+<a href="../internals/clau.ca.html">Clef</a>,
+<a name="index-ClefModifier"></a>
+<a href="../internals/clefmodifier.ca.html">ClefModifier</a>,
+<a name="index-clef_002dinterface"></a>
+<a href="../internals/clef_002dinterface.ca.html">clef-interface</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-88"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Els números d&rsquo;octava adjunts a les claus es tracten com grobs
+diferents.  Així doncs, qualsevol <code>\override</code>
+(sobreescriptura) efectuada a l&rsquo;objecte <var>Clef</var> s&rsquo;haurà
+d&rsquo;aplicar també al grob <var>ClefModifier</var> com un <code>\override</code>
+diferent.
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  \override Clef.color = #blue
+  \override ClefModifier.color = #red
+}
+
+\clef &quot;treble_8&quot; c'4
+</pre><p>
+ <a href="../ec/lily-2b803c67.ly">
+  <img align="middle"
+       border="0"
+       src="../ec/lily-2b803c67.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<a name="Armadura-de-la-tonalitat"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#clef" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Clau&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#ottava-brackets" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Indicadors d'octava &gt; </a>]</td></tr></table>
+<a name="key-signature"></a>
+<h4 class="unnumberedsubsubsec">Armadura de la tonalitat</h4>
+
+<a name="index-Armadura-de-la-tonalitat"></a>
+
+<a name="index-_005ckey"></a>
+<a name="index-_005ckey-1"></a>
+
+<div class="warning"><p><strong>Nota:</strong> Les alteracions accidentals i les armadures són una causa
+freqüent de confusió per al nous usuaris.  Al LilyPond, el noms de
+les notes són el codi d&rsquo;entrada en brut; l&rsquo;armadura i la clau
+determinen de quina forma es presenta aquest codi en brut.  Una
+nota sense alteració com&nbsp;<code>c</code> significa &lsquo;Do natural&rsquo;,
+sense que l&rsquo;afectin l&rsquo;armadura o la clau.  Per veure més
+informació, consulteu <a name="index-Alteracions-accidentals-i-armadures-2"></a>
+<a href="../learning/accidentals-and-key-signatures.ca.html">Alteracions accidentals i armadures</a>.
+</p>
+</div>
+<p>L&rsquo;armadura indica la tonalitat en la qual es toca una peça.  Està
+denotada per un conjunt d&rsquo;alteracions (bemolls o sostinguts) al
+començament del pentagrama.  L&rsquo;establiment o modificació de
+l&rsquo;armadura es fa amb l&rsquo;ordre <code>\key</code>:
+</p>
+<blockquote><pre class="example">\key <var>nota</var> <var>modo</var>
+</pre></blockquote>
+
+<a name="index-_005cmajor"></a>
+<a name="index-_005cmajor-1"></a>
+<a name="index-_005cminor"></a>
+<a name="index-_005cminor-1"></a>
+<a name="index-_005cionian"></a>
+<a name="index-_005cionian-1"></a>
+<a name="index-_005clocrian"></a>
+<a name="index-_005clocrian-1"></a>
+<a name="index-_005caeolian"></a>
+<a name="index-_005caeolian-1"></a>
+<a name="index-_005cmixolydian"></a>
+<a name="index-_005cmixolydian-1"></a>
+<a name="index-_005clydian"></a>
+<a name="index-_005clydian-1"></a>
+<a name="index-_005cphrygian"></a>
+<a name="index-_005cphrygian-1"></a>
+<a name="index-_005cdorian"></a>
+<a name="index-_005cdorian-1"></a>
+
+<a name="index-modes-eclesiasticos"></a>
+<a name="index-modes"></a>
+<a name="index-major_002c-mode"></a>
+<a name="index-menor_002c-mode"></a>
+<a name="index-eoni_002c-mode"></a>
+<a name="index-locri_002c-mode"></a>
+<a name="index-eoli_002c-mode"></a>
+<a name="index-mixolidi_002c-mode"></a>
+<a name="index-lidi_002c-mode"></a>
+<a name="index-frigi_002c-mode"></a>
+<a name="index-doric_002c-mode"></a>
+
+<p>Aquí, <code><var>mode</var></code> ha de ser <code>\major</code> o <code>\minor</code>
+per obtenir la tonalitat <code><var>nota</var></code> major o noms estàndard
+de mode (també coneguts com <var>modes eclesiàstics</var>):
+<code>\ionian</code> (jònic), <code>\dorian</code> (dòric),
+<code>\phrygian</code> (frigi), <code>\lydian</code> (lidi),
+<code>\mixolydian</code> (mixolidi), <code>\aeolian</code> (eoli) i
+<code>\locrian</code> (locri).
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \key g \major
+  fis''1
+  f
+  fis
+}
+</pre><p>
+ <a href="../7d/lily-1162eb41.ly">
+  <img align="middle"
+       border="0"
+       src="../7d/lily-1162eb41.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden definir modes addicionals, escrivint una llista amb
+l&rsquo;alteració que porta cada nota de l&rsquo;escala quan el mode comença
+amb Do.
+</p>
+<blockquote><pre class="verbatim">freygish = #`((0 . ,NATURAL) (1 . ,FLAT) (2 . ,NATURAL)
+    (3 . ,NATURAL) (4 . ,NATURAL) (5 . ,FLAT) (6 . ,FLAT))
+
+\relative {
+  \key c \freygish c'4 des e f
+  \bar &quot;||&quot; \key d \freygish d es fis g
+}
+</pre><p>
+ <a href="../7d/lily-cf62e7ab.ly">
+  <img align="middle"
+       border="0"
+       src="../7d/lily-cf62e7ab.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Les alteracions de l&rsquo;armadura de la tonalitat es poden imprimir en
+una octava diferent que en les seves posicions tradicionals, o en
+més d&rsquo;una octava, usat les propietats <code>flat-positions</code> i
+<code>sharp-positions</code> de <code>KeySignature</code>.  Les entrades en
+aquestes propietats especifiquen el rang de posicions de
+pentagrama en el qual s&rsquo;imprimiran les alteracions, les
+alteracions es col·loquen dins de l&rsquo;octava que acaba en aquesta
+posició del pentagrama.
+</p>
+<blockquote><pre class="verbatim">\override Staff.KeySignature.flat-positions = #'((-5 . 5))
+\override Staff.KeyCancellation.flat-positions = #'((-5 . 5))
+\clef bass \key es \major es g bes d'
+\clef treble \bar &quot;||&quot; \key es \major es' g' bes' d''
+
+\override Staff.KeySignature.sharp-positions = #'(2)
+\bar &quot;||&quot; \key b \major b' fis' b'2
+</pre><p>
+ <a href="../d9/lily-a55fdff9.ly">
+  <img align="middle"
+       border="0"
+       src="../d9/lily-a55fdff9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-27"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Preventing natural signs from being printed when the key signature changes</em>
+</p>
+
+<p>When the key signature changes, natural signs are automatically printed
+to cancel any accidentals from previous key signatures.  This may be
+prevented by setting to <code>f</code> the <code>printKeyCancellation</code>
+property in the <code>Staff</code> context.
+</p>
+
+<blockquote><pre class="verbatim">\relative c' {
+  \key d \major
+  a4 b cis d
+  \key g \minor
+  a4 bes c d
+  \set Staff.printKeyCancellation = ##f
+  \key d \major
+  a4 b cis d
+  \key g \minor
+  a4 bes c d
+}
+</pre><p>
+ <a href="../df/lily-557c1796.ly">
+  <img align="middle"
+       border="0"
+       src="../df/lily-557c1796.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Non-traditional key signatures</em>
+</p>
+
+<p>The commonly used <code>\key</code> command sets the <code>keyAlterations</code>
+property, in the <code>Staff</code> context.
+</p>
+<p>To create non-standard key signatures, set this property directly. The
+format of this command is a list:
+</p>
+<p><code> \set Staff.keyAlterations = #`(((octave . step) . alter) ((octave
+. step) . alter) ...) </code> where, for each element in the list,
+<code>octave</code> specifies the octave (0 being the octave from middle C to
+the B above), <code>step</code> specifies the note within the octave (0 means
+C and 6 means B), and <code>alter</code> is <code>,SHARP ,FLAT ,DOUBLE-SHARP</code>
+etc. (Note the leading comma.)
+</p>
+
+<p>Alternatively, for each item in the list, using the more concise format
+<code>(step . alter)</code> specifies that the same alteration should hold in
+all octaves.
+</p>
+
+<p>For microtonal scales where a &ldquo;sharp&rdquo; is not 100 cents, <code>alter</code>
+refers to the alteration as a proportion of a 200-cent whole tone.
+</p>
+
+<p>Here is an example of a possible key signature for generating a
+whole-tone scale:
+</p>
+
+<blockquote><pre class="verbatim">\relative {
+  \set Staff.keyAlterations = #`((6 . ,FLAT)
+                                 (5 . ,FLAT)
+                                 (3 . ,SHARP))
+  c'4 d e fis
+  aes4 bes c2
+}
+</pre><p>
+ <a href="../ce/lily-07c3e0db.ly">
+  <img align="middle"
+       border="0"
+       src="../ce/lily-07c3e0db.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Vegeu-tambe-34"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-church-mode"></a>
+<a href="../music-glossary/church-mode.ca.html">church mode</a>,
+<a name="index-scordatura"></a>
+<a href="../music-glossary/scordatura.ca.html">scordatura</a>.
+</p>
+<p>Manual de aprenentatge:
+<a name="index-Alteracions-accidentals-i-armadures-3"></a>
+<a href="../learning/accidentals-and-key-signatures.ca.html">Alteracions accidentals i armadures</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-KeyChangeEvent"></a>
+<a href="../internals/keychangeevent.ca.html">KeyChangeEvent</a>,
+<a name="index-Key_005fengraver"></a>
+<a href="../internals/key_005fengraver.ca.html">Key_engraver</a>,
+<a name="index-Key_005fperformer"></a>
+<a href="../internals/key_005fperformer.ca.html">Key_performer</a>,
+<a name="index-KeyCancellation"></a>
+<a href="../internals/keycancellation.ca.html">KeyCancellation</a>,
+<a name="index-KeySignature"></a>
+<a href="../internals/keysignature.ca.html">KeySignature</a>,
+<a name="index-key_002dsignature_002dinterface"></a>
+<a href="../internals/key_002dsignature_002dinterface.ca.html">key-signature-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Indicadors-d_0027octava"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#key-signature" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Armadura de la tonalitat&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#instrument-transpositions" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Transposició dels instruments &gt; </a>]</td></tr></table>
+<a name="ottava-brackets"></a>
+<h4 class="unnumberedsubsubsec">Indicadors d&rsquo;octava</h4>
+
+<a name="index-ottava"></a>
+<a name="index-15ma"></a>
+<a name="index-8va"></a>
+<a name="index-octava"></a>
+
+<a name="index-set_002doctavation"></a>
+<a name="index-set_002doctavation-1"></a>
+<a name="index-_005cottava"></a>
+<a name="index-_005cottava-1"></a>
+
+<p>Els <var>indicadors d&rsquo;octava</var> introdueixen un transport
+addicional d&rsquo;una octava per al pentagrama.
+</p>
+<blockquote><pre class="verbatim">\relative a' {
+  a2 b
+  \ottava #-2
+  a2 b
+  \ottava #-1
+  a2 b
+  \ottava #0
+  a2 b
+  \ottava #1
+  a2 b
+  \ottava #2
+  a2 b
+}
+</pre><p>
+ <a href="../1d/lily-79a59437.ly">
+  <img align="middle"
+       border="0"
+       src="../1d/lily-79a59437.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-20"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+
+<p><em> Ottava text</em>
+</p>
+
+<p>Internally, <code>\ottava</code> sets the properties <code>ottavation</code> (for
+example, to <code>8va</code> or <code>8vb</code>) and <code>middleCPosition</code>.  To
+override the text of the bracket, set <code>ottavation</code> after invoking
+<code>\ottava</code>.
+</p>
+
+<blockquote><pre class="verbatim">{
+  \ottava #1
+  \set Staff.ottavation = #&quot;8&quot;
+  c''1
+  \ottava #0
+  c'1
+  \ottava #1
+  \set Staff.ottavation = #&quot;Text&quot;
+  c''1
+}
+</pre><p>
+ <a href="../a4/lily-e1bfe8f6.ly">
+  <img align="middle"
+       border="0"
+       src="../a4/lily-e1bfe8f6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Adding an ottava marking to a single voice</em>
+</p>
+
+<p>If you have more than one voice on the staff, setting octavation in one
+voice will transpose the position of notes in all voices for the
+duration of the ottava bracket. If the ottavation is only intended to
+apply to one voice, the middleCPosition and ottava bracket may be set
+explicitly.  In this snippet, the bass clef usually has middleCPosition
+set to 6, six positions above the center  line, so in the 8va portion
+middleCPosition is 7 positions (one octave) higher still.
+</p>
+
+<blockquote><pre class="verbatim">{
+  \clef bass
+  &lt;&lt; { &lt;g d'&gt;1~ q2 &lt;c' e'&gt; }
+  \\
+    {
+      r2.
+      \set Staff.ottavation = #&quot;8vb&quot;
+      \once \override Staff.OttavaBracket.direction = #DOWN
+      \set Voice.middleCPosition = #(+ 6 7)
+      &lt;b,,, b,,&gt;4 ~ |
+      q2
+      \unset Staff.ottavation
+      \unset Voice.middleCPosition
+      &lt;c e&gt;2
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../d4/lily-c67b3f07.ly">
+  <img align="middle"
+       border="0"
+       src="../d4/lily-c67b3f07.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Modifying the Ottava spanner slope</em>
+</p>
+
+<p>It is possible to change the slope of the Ottava spanner.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \override Staff.OttavaBracket.stencil = #ly:line-spanner::print
+  \override Staff.OttavaBracket.bound-details =
+    #`((left . ((Y . 0) ; Change the integer here
+                (attach-dir . ,LEFT)
+                (padding . 0)
+                (stencil-align-dir-y . ,CENTER)))
+       (right . ((Y . 5) ; Change the integer here
+                 (padding . 0)
+                 (attach-dir . ,RIGHT)
+                 (text . ,(make-draw-dashed-line-markup (cons 0 -1.2))))))
+  \override Staff.OttavaBracket.left-bound-info =
+     #ly:line-spanner::calc-left-bound-info-and-text
+  \override Staff.OttavaBracket.right-bound-info =
+     #ly:line-spanner::calc-right-bound-info
+  \ottava #1
+  c1
+  c'''1
+}
+</pre><p>
+ <a href="../15/lily-ef5769c9.ly">
+  <img align="middle"
+       border="0"
+       src="../15/lily-ef5769c9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-27"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-octavation"></a>
+<a href="../music-glossary/octavation.ca.html">octavation</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-Ottava_005fspanner_005fengraver"></a>
+<a href="../internals/ottava_005fspanner_005fengraver.ca.html">Ottava_spanner_engraver</a>,
+<a name="index-OttavaBracket"></a>
+<a href="../internals/ottavabracket.ca.html">OttavaBracket</a>,
+<a name="index-ottava_002dbracket_002dinterface"></a>
+<a href="../internals/ottava_002dbracket_002dinterface.ca.html">ottava-bracket-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Transposici_00f3-dels-instruments"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#ottava-brackets" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Indicadors d'octava&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#automatic-accidentals" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Alteracions accidentals automàtiques &gt; </a>]</td></tr></table>
+<a name="instrument-transpositions"></a>
+<h4 class="unnumberedsubsubsec">Transposició dels instruments</h4>
+
+<a name="index-transposicio-de-MIDI"></a>
+<a name="index-transposicio-instrumental"></a>
+<a name="index-transpositor_002c-instrument"></a>
+<a name="index-MIDI"></a>
+<a name="index-MIDI_002c-transposicio"></a>
+
+<a name="index-_005ctransposition"></a>
+<a name="index-_005ctransposition-1"></a>
+
+<p>En gravar partitures on participen instruments transpositors,
+certes partes es poden gravar en un to diferent del
+<var>to de concert</var>.  En aquests casos s&rsquo;ha d&rsquo;especificar la
+tonalitat del <var>instrumento transpositor</var>; si no es fa
+així, la sortida MIDI i les notes guia a altres parts produiran
+altures incorrectes.  Per veure més informació sobre parts citades
+com a guia, consulteu <a href="writing-parts.ca.html#quoting-other-voices">Cites a altres veus</a>.
+</p>
+<blockquote><pre class="example">\transposition <var>pitch</var>
+</pre></blockquote>
+
+<p>El to usat per a <code>\transposition</code> s&rsquo;ha de correspondre amb el
+so real que s&rsquo;escolta quan l&rsquo;instrument transpositor interpreta un
+Do central <code>c'</code> escrit al pentagrama.  Aquesta nota s&rsquo;escriu
+en altura absoluta, per tant un instrument que produeix un so real
+un to més agut que la música impresa (un instrument en Re) ha d&rsquo;usar
+<code>\transposition d'</code>.  L&rsquo;ordre <code>\transposition</code> s&rsquo;ha
+d&rsquo;usar <em>solament</em> si les notes <em>no</em> s&rsquo;escriuran en
+afinació de concert.
+</p>
+<p>A continuació es poden veure algunes notes per a violí i per a
+clarinet en Si bemoll, on les parts s&rsquo;han introduït usant les
+notes i l&rsquo;armadura tal i com apareixen a la partitura del
+director.  El que toquen els dos instruments està sonant a l&rsquo;uníson.
+</p>
+<blockquote><pre class="verbatim">\new GrandStaff &lt;&lt;
+  \new Staff = &quot;violin&quot; {
+    \relative c'' {
+      \set Staff.instrumentName = #&quot;Vln&quot;
+      \set Staff.midiInstrument = #&quot;violin&quot;
+      % no estrictament necessari, però un bon recordatori
+      \transposition c'
+
+      \key c \major
+      g4( c8) r c r c4
+    }
+  }
+  \new Staff = &quot;clarinet&quot; {
+    \relative c'' {
+      \set Staff.instrumentName = \markup { Cl (B\flat) }
+      \set Staff.midiInstrument = #&quot;clarinet&quot;
+      \transposition bes
+
+      \key d \major
+      a4( d8) r d r d4
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../eb/lily-95cdce1b.ly">
+  <img align="middle"
+       border="0"
+       src="../eb/lily-95cdce1b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;ordre <code>\transposition</code> es pot canviar durant la peça.  Per
+exemple, un clarinetista pot canviar del clarinet en La al
+clarinet en Si bemoll.
+</p>
+<blockquote><pre class="verbatim">flute = \relative c'' {
+  \key f \major
+  \cueDuring #&quot;clarinet&quot; #DOWN {
+    R1 _\markup\tiny &quot;clarinet&quot;
+    c4 f e d
+    R1 _\markup\tiny &quot;clarinet&quot;
+  }
+}
+clarinet = \relative c'' {
+  \key aes \major
+  \transposition a
+  aes4 bes c des
+  R1^\markup { muta in B\flat }
+  \key g \major
+  \transposition bes
+  d2 g,
+}
+\addQuote &quot;clarinet&quot; \clarinet
+&lt;&lt;
+  \new Staff \with { instrumentName = #&quot;Flute&quot; }
+    \flute
+  \new Staff \with { instrumentName = #&quot;Cl (A)&quot; }
+    \clarinet
+&gt;&gt;
+</pre><p>
+ <a href="../e2/lily-fc649bfd.ly">
+  <img align="middle"
+       border="0"
+       src="../e2/lily-fc649bfd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-166"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-concert-pitch"></a>
+<a href="../music-glossary/concert-pitch.ca.html">concert pitch</a>,
+<a name="index-transposing-instrument"></a>
+<a href="../music-glossary/transposing-instrument.ca.html">transposing instrument</a>.
+</p>
+<p>Referència de la notació:
+<a href="writing-parts.ca.html#quoting-other-voices">Cites a altres veus</a>,
+<a href="changing-multiple-pitches.ca.html#transpose">Transposició</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+
+<hr size="6">
+<a name="Alteracions-accidentals-autom_00e0tiques"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#instrument-transpositions" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Transposició dels instruments&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#ambitus" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Tessitura &gt; </a>]</td></tr></table>
+<a name="automatic-accidentals"></a>
+<h4 class="unnumberedsubsubsec">Alteracions accidentals automàtiques</h4>
+
+<a name="index-automatiques_002c-alteracions"></a>
+<a name="index-alteracions-automatiques"></a>
+<a name="index-alteracions-accidentals"></a>
+<a name="index-alteracions_002c-estil-de-las"></a>
+<a name="index-predeterminat_002c-estil-de-las-alteracions"></a>
+<a name="index-alteracions_002c-estilo-predeterminat-de-les"></a>
+
+<a name="index-_005caccidentalStyle"></a>
+<a name="index-_005caccidentalStyle-1"></a>
+<a name="index-voice"></a>
+<a name="index-voice-1"></a>
+<a name="index-default"></a>
+<a name="index-default-1"></a>
+
+<p>Hi ha moltes convencions diferents sobre la forma de gravar
+les alteracions. El LilyPond proporciona una funció per
+especificar quin estil d&rsquo;alteracions usar.  Aquesta funció
+s&rsquo;invoca de la manera següent:
+</p>
+<blockquote><pre class="example">\new Staff &lt;&lt;
+  \accidentalStyle voice
+  { &hellip; }
+&gt;&gt;
+</pre></blockquote>
+
+<p>L&rsquo;estil d&rsquo;alteracions s&rsquo;aplica al <code>Staff</code> en curs de forma
+predeterminada (amb l&rsquo;excepció dels estils <code>piano</code> i
+<code>piano-cautionary</code>, que s&rsquo;expliquen més
+endavant). Opcionalment, la funció pot agafar un segon argument
+que determina en quin àmbit s&rsquo;ha de canviar l&rsquo;estil. Per exemple,
+per usar el mateix estil en tots els pentagrames del
+<code>StaffGroup</code> en curs, useu
+</p>
+<blockquote><pre class="example">\accidentalStyle StaffGroup.voice
+</pre></blockquote>
+
+<p>Estan contemplats els següents estils d&rsquo;alteració.  Per donar una
+mostra de cada u dels estils, utilitzem l&rsquo;exemple següent:
+</p>
+<blockquote><pre class="verbatim">musicA = {
+  &lt;&lt;
+    \relative {
+      cis''8 fis, bes4 &lt;a cis&gt;8 f bis4 |
+      cis2. &lt;c, g'&gt;4 |
+    }
+    \\
+    \relative {
+      ais'2 cis, |
+      fis8 b a4 cis2 |
+    }
+  &gt;&gt;
+}
+
+musicB = {
+  \clef bass
+  \new Voice {
+    \voiceTwo \relative {
+      &lt;fis a cis&gt;8[ &lt;fis a cis&gt;
+      \change Staff = up
+      cis' cis
+      \change Staff = down
+      &lt;fis, a&gt; &lt;fis a&gt;]
+      \showStaffSwitch
+      \change Staff = up
+      dis'4 |
+      \change Staff = down
+      &lt;fis, a cis&gt;4 gis &lt;f a d&gt;2 |
+    }
+  }
+}
+
+\new PianoStaff {
+  &lt;&lt;
+    \context Staff = &quot;up&quot; {
+      \accidentalStyle default
+      \musicA
+    }
+    \context Staff = &quot;down&quot; {
+      \accidentalStyle default
+      \musicB
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../56/lily-0c662f99.ly">
+  <img align="middle"
+       border="0"
+       src="../56/lily-0c662f99.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Observeu que les últimes línies d&rsquo;aquest exemple es poden
+substituir per les següents, sempre i quan vulguem usar el mateix
+estil als dos pentagrames.
+</p>
+<blockquote><pre class="example">\new PianoStaff {
+  &lt;&lt;
+    \context Staff = &quot;up&quot; {
+      %%% canvieu la línia següent com desitgeu:
+      \accidentalStyle Score.default
+      \musicA
+    }
+    \context Staff = &quot;down&quot; {
+      \musicB
+    }
+  &gt;&gt;
+}
+</pre></blockquote>
+
+<dl compact="compact">
+<dt> <code>default (predeterminado)</code></dt>
+<dd>
+<a name="index-alteracions_002c-estil-predeterminat"></a>
+
+<a name="index-default-2"></a>
+<a name="index-default-3"></a>
+
+<p>Es el comportament de gravat predeterminat per a composició.
+Correspon a la pràctica comuna del segle XVIII: les alteracions
+accidentals es recorden fins al final del compàs en el qual
+apareixen i sols en la mateixa octava.  Així, a l&rsquo;exemple següent,
+no s&rsquo;imprimeixen becaires abans del Si natural al segon compàs ni
+a l&rsquo;últim Do:
+</p>
+<blockquote><p>
+ <a href="../56/lily-0c662f99.ly">
+  <img align="middle"
+       border="0"
+       src="../56/lily-0c662f99.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>voice (veu)</code></dt>
+<dd>
+<a name="index-alteracio_002c-estil-de-veu-de"></a>
+<a name="index-veu_002c-estil-d_0027alteracions"></a>
+<a name="index-alteracions-estil-modern"></a>
+<a name="index-modern_002c-estil-de-alteracions"></a>
+<a name="index-alteracions_002c-estil_002c-modern_002dprecaucio"></a>
+<a name="index-modern_002dprecaucio_002c-estil-d_0027alteracions"></a>
+
+<a name="index-voice-2"></a>
+<a name="index-voice-3"></a>
+
+<p>El comportament normal és recordar les alteracions accidentals al
+nivell de <code>Staff</code>.  En aquest estil, tanmateix, es graven les
+alteracions individualment per a cada veu.  A part d&rsquo;això la regla
+és semblant a <code>default</code>.
+</p>
+<p>Com a resultat, les alteracions d&rsquo;una veu no es cancel·len a les
+altres veus, el que amb freqüència porta a un resultat no
+desitjat: a l&rsquo;exemple següent és difícil determinar si el segon La
+s&rsquo;ha de tocar natural o sostingut.  Per tant, l&rsquo;opció <code>voice</code>
+s&rsquo;ha d&rsquo;usar sols si les veus es llegiran individualment per músics
+diferents.  Si el pentagrama s&rsquo;utilitzarà per part d&rsquo;un sols músic
+(per exemple un director, o a una partitura de piano), aleshores
+s&rsquo;han d&rsquo;usar en el seu lloc els estils <code>modern</code> o
+<code>modern-cautionary</code>.
+</p>
+
+<blockquote><p>
+ <a href="../1b/lily-82ee9f53.ly">
+  <img align="middle"
+       border="0"
+       src="../1b/lily-82ee9f53.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>modern</code></dt>
+<dd>
+<a name="index-alteracions_002c-estil-modern"></a>
+<a name="index-modern_002c-alteracions-d_0027estil"></a>
+
+<a name="index-modern"></a>
+<a name="index-modern-1"></a>
+
+<p>Aquesta regla correspon a la pràctica comuna del segle XX.  Omet
+alguns becaires addicionals, que tradicionalment s&rsquo;imprimien
+precedint a un sostingut que segueix a un doble sostingut, o a un
+bemoll que segueix a un doble bemoll.  La regla <code>modern</code>
+imprimeix les mateix alteracions que l&rsquo;estil <code>default</code>, amb
+dos addicions que serveixen per evitar la ambigüitat: després
+d&rsquo;alteracions temporals s&rsquo;imprimeixen indicacions de cancel·lació
+també al compàs següent (per a notes a la mateixa octava) i, al
+mateix compàs, per a notes a octaves diferents.  D&rsquo;aquí els
+becaires abans del Si natural i del Do al segon compàs del
+pentagrama superior:
+</p>
+<blockquote><p>
+ <a href="../a5/lily-048ce4c0.ly">
+  <img align="middle"
+       border="0"
+       src="../a5/lily-048ce4c0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>modern-cautionary (modern de precaució)</code></dt>
+<dd>
+<a name="index-alteracions_002c-estil-modern-de-precaucio"></a>
+<a name="index-modern_002c-alteracions-d_0027estil-1"></a>
+<a name="index-modern-de-precaucio_002c-alteracions-d_0027estil"></a>
+
+<a name="index-modern_002dcautionary"></a>
+<a name="index-modern_002dcautionary-1"></a>
+
+<p>Aquesta regla és semblant a <code>modern</code>, però les alteracions
+&lsquo;afegides&rsquo; se imprimeixen como alteracions de precaució (entre
+parèntesis).  També es poden imprimir en una mida diferent
+sobreescrivint la propietat <code>font-size</code> de l&rsquo;objecte
+<code>AccidentalCautionary</code>.
+</p>
+<blockquote><p>
+ <a href="../c6/lily-14c65bb8.ly">
+  <img align="middle"
+       border="0"
+       src="../c6/lily-14c65bb8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>modern-voice (modern, per a veus)</code></dt>
+<dd>
+<a name="index-alteracions_002c-en-diverses-veus"></a>
+<a name="index-alteracions-modernes"></a>
+<a name="index-modern_002c-alteracions-d_0027estil-2"></a>
+<a name="index-veus_002c-alteracions-en-diverses"></a>
+<a name="index-alteracio_002c-estil-modern-de"></a>
+
+<a name="index-modern_002dvoice"></a>
+<a name="index-modern_002dvoice-1"></a>
+
+<p>Aquesta regla s&rsquo;usa perquè puguin llegir les alteracions a
+diverses veus, tant els músics que toquen una veu com els musics
+que toquen totes les veus.  S&rsquo;imprimeixen les alteracions per a
+cada veu, però <em>es cancel·len</em> entre veus dins del mateix
+<code>Staff</code>.  Per tant, el La a l&rsquo;últim compàs es cancel·la
+perquè la cancel·lació anterior estava a una veu diferent, i el Re
+al pentagrama inferior es cancel·la a causa de l&rsquo;alteració a una
+altra veu al compàs previ:
+</p>
+<blockquote><p>
+ <a href="../37/lily-083aab34.ly">
+  <img align="middle"
+       border="0"
+       src="../37/lily-083aab34.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>modern-voice-cautionary (modern, veu, de precaució)</code></dt>
+<dd>
+<a name="index-alteracio_002c-estil-de-veu-de-precaucio-modern"></a>
+<a name="index-alteracio-de-veu-de-precaucio-modern_002c-estil-de"></a>
+<a name="index-alteracio_002c-modern-de-precaucio_002c-veu_002c-estil-de"></a>
+<a name="index-modern_002dvoice_002dcautionary"></a>
+<a name="index-modern_002dvoice_002dcautionary-1"></a>
+
+<p>Aquesta regla és la mateixa que <code>modern-voice</code>, però amb les
+alteracions afegides (les que l&rsquo;estilo <code>voice</code> no imprimeix)
+composades com de precaució.  Fins i tot malgrat que totes les
+alteracions impreses per l&rsquo;estil <code>default</code> <em>són</em>
+impreses amb aquesta regla, algunes d&rsquo;elles es graven com de
+precaució.
+</p>
+<blockquote><p>
+ <a href="../78/lily-79185513.ly">
+  <img align="middle"
+       border="0"
+       src="../78/lily-79185513.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>piano</code></dt>
+<dd>
+<a name="index-piano_002c-alteracions-de"></a>
+<a name="index-alteracions-de-piano"></a>
+<a name="index-piano_002c-estil-de-alteracions-de"></a>
+
+<a name="index-piano"></a>
+<a name="index-piano-1"></a>
+
+<p>Aquesta regla reflexa la pràctica del segle XX per a la notació de
+piano.  El seu comportament és molt semblan a l&rsquo;estil
+<code>modern</code>, però aquí les alteracions també es cancel·len entre
+diferents pentagrames del mateix grup <code>GrandStaff</code> o <code>PianoStaff</code>,
+d&rsquo;aquí totes les cancel·lacions de les últimes notes.
+</p>
+<p>Aquest estil d&rsquo;alteració s&rsquo;aplica de manera predeterminada al grup
+<code>GrandStaff</code> o <code>PianoStaff</code> en curs.
+</p>
+<blockquote><p>
+ <a href="../fe/lily-1dc90642.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-1dc90642.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>piano-cautionary (piano, de precaución)</code></dt>
+<dd>
+<a name="index-alteracions_002c-piano-de-precaucio_002c-estilo-de"></a>
+<a name="index-alteracions_002c-piano-de-precaucio"></a>
+<a name="index-precaucio_002c-estilo-de-alteracions_002c-piano"></a>
+<a name="index-precaucio_002c-alteracions-de-piano-de"></a>
+<a name="index-piano-de-precaucio_002c-estilo-de-alteracions"></a>
+<a name="index-piano-de-precaucio_002c-alteracions"></a>
+
+<a name="index-piano_002dcautionary"></a>
+<a name="index-piano_002dcautionary-1"></a>
+
+<p>Igual que <code>\accidentalStyle piano</code> però amb les alteracions
+afegides composades com de precaució.
+</p>
+<blockquote><p>
+ <a href="../7f/lily-9b0cd6dc.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-9b0cd6dc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>neo-modern</code></dt>
+<dd>
+<a name="index-neo_002dmodern_002c-estilo-de-alteracions"></a>
+<a name="index-alteracions_002c-estilo-de_002c-neo_002dmodern"></a>
+
+<a name="index-neo_002dmodern"></a>
+<a name="index-neo_002dmodern-1"></a>
+
+<p>Aquesta regla reprodueix una pràctica comuna a la música
+contemporània: les alteracions accidentals s&rsquo;imprimeixen com a
+<code>modern</code>, però es tornen a imprimir si apareix la mateixa
+nota una altra vegada al mateix compàs (excepte si la nota es
+repeteix immediatament).
+</p>
+<blockquote><p>
+ <a href="../d6/lily-9123aa24.ly">
+  <img align="middle"
+       border="0"
+       src="../d6/lily-9123aa24.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>neo-modern-cautionary</code></dt>
+<dd>
+<a name="index-neo_002dmodern-de-precaucio_002c-estilo-de-alteracions"></a>
+<a name="index-alteracions_002c-estilo_002c-neo_002dmoderno-de-precaucio"></a>
+
+<a name="index-neo_002dmodern_002dcautionary"></a>
+<a name="index-neo_002dmodern_002dcautionary-1"></a>
+
+<p>Aquesta regla és sembla a <code>neo-modern</code>, però les alteracions
+&lsquo;addicionals&rsquo; s&rsquo;imprimeixen com alteracions de precaució (amb
+parèntesis).  També es poden imprimir a una mida diferent
+sobreescrivint la propietat <code>font-size</code> de l&rsquo;objecte
+<code>AccidentalCautionary</code>.
+</p>
+<blockquote><p>
+ <a href="../32/lily-3820cc37.ly">
+  <img align="middle"
+       border="0"
+       src="../32/lily-3820cc37.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>neo-modern-voice</code></dt>
+<dd>
+<a name="index-neo_002dmodern_002dvoice_002c-estil-d_0027alteracio"></a>
+<a name="index-alteracions_002c-estil_002c-neo_002dmodern-de-veu"></a>
+
+<a name="index-neo_002dmodern_002dvoice"></a>
+<a name="index-neo_002dmodern_002dvoice-1"></a>
+
+<p>Aquesta regla s&rsquo;usa per alteracions accidentals sobre diverses
+veus que s&rsquo;han de llegir per part de músics que toquen una veu,
+així com per músics que toquen totes les veus.  Les alteracions
+s&rsquo;imprimeixen per a cada veu com amb <code>neo-modern</code>, però es
+cancel·len per a altres veus que estan al mateix pentagrama
+<code>Staff</code>.
+</p>
+<blockquote><p>
+ <a href="../87/lily-e193066b.ly">
+  <img align="middle"
+       border="0"
+       src="../87/lily-e193066b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>neo-modern-voice-cautionary</code></dt>
+<dd>
+<a name="index-neo_002dmodern_002dvoice_002dcautionary_002c-estil-de-alteracions"></a>
+<a name="index-alteracions_002c-estil_002c-neo_002dmodern_002dvoice_002dcautionary"></a>
+
+<a name="index-neo_002dmodern_002dvoice_002dcautionary"></a>
+<a name="index-neo_002dmodern_002dvoice_002dcautionary-1"></a>
+
+<p>Aquesta regla és semblant a <code>neo-modern-voice</code>, però les
+alteracions addicionals s&rsquo;imprimeixen com alteracions de
+precaució.
+</p>
+<blockquote><p>
+ <a href="../ed/lily-eb5a7c53.ly">
+  <img align="middle"
+       border="0"
+       src="../ed/lily-eb5a7c53.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>dodecaphonic</code></dt>
+<dd>
+<a name="index-dodecafonic_002c-estil-de-alteracions"></a>
+<a name="index-alteracions_002c-estil_002c-dodecafonic"></a>
+
+<a name="index-dodecaphonic"></a>
+<a name="index-dodecaphonic-1"></a>
+
+<p>Aquesta regla reflexa una pràctica introduïda pels compositors de
+principis del segle XX, en un intent d&rsquo;abolir la jerarquia
+entre notes naturals i alterades.  Amb aquest estil, <em>todas</em>
+les notes porten alteració, fins i tot becaires.
+</p>
+<blockquote><p>
+ <a href="../df/lily-7a1e3e54.ly">
+  <img align="middle"
+       border="0"
+       src="../df/lily-7a1e3e54.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>dodecaphonic-no-repeat</code></dt>
+<dd>
+<a name="index-estil-accidental-dodecafonic"></a>
+<a name="index-estil-dodecafonic_002c-neo_002dmodern"></a>
+
+<a name="index-dodecaphonic_002dno_002drepeat"></a>
+<a name="index-dodecaphonic_002dno_002drepeat-1"></a>
+
+<p>Com amb l&rsquo;estil d&rsquo;alteracions dodecafònic <em>totes</em> les notes
+porten una alteració de forma predeterminada, però les alteracions
+se suprimeixen quan hi ha notes repetides immediatament al mateix pentagrama.
+</p>
+<blockquote><p>
+ <a href="../bd/lily-a9dd2421.ly">
+  <img align="middle"
+       border="0"
+       src="../bd/lily-a9dd2421.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+</dd>
+<dt> <code>dodecaphonic-first</code></dt>
+<dd>
+<a name="index-estil-accidental-dodecafonic-1"></a>
+<a name="index-estil-dodecafonic_002c-neo_002dmodern-1"></a>
+
+<a name="index-dodecaphonic_002dfirst"></a>
+<a name="index-dodecaphonic_002dfirst-1"></a>
+
+<p>Semblant a l&rsquo;estil d&rsquo;alteracions dodecafònic, <em>totes</em> les
+notes porten una alteració, però sols la primera vegada que es
+troben al compàs.  Les alteracions es recorden sols per a l&rsquo;octava
+actual però a través de les veus.
+</p>
+<blockquote><p>
+ <a href="../d5/lily-5c4cec34.ly">
+  <img align="middle"
+       border="0"
+       src="../d5/lily-5c4cec34.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+</dd>
+<dt> <code>teaching (ensenyament)</code></dt>
+<dd>
+<a name="index-teaching-_0028ensenanza_0029_002c-estilo-de-alteraciones"></a>
+<a name="index-alteracions_002c-estil-teaching-_0028ensenyament_0029"></a>
+
+<a name="index-teaching"></a>
+<a name="index-teaching-1"></a>
+
+<p>Aquesta regla està pensada per a estudiants, i fa més senzill
+crear automàticament fulls d&rsquo;escales amb alteracions de
+precaució.  Les alteracions s&rsquo;imprimeixen com a l&rsquo;estil
+<code>modern</code>, però s&rsquo;afegeixen alteracions de precaució per a
+totes les notes sostingudes o bemolls especificats per l&rsquo;armadura,
+excepte si la nota es repeteix immediatament.
+</p>
+<blockquote><p>
+ <a href="../a9/lily-ce498e41.ly">
+  <img align="middle"
+       border="0"
+       src="../a9/lily-ce498e41.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>no-reset (sense restabliment)</code></dt>
+<dd>
+<a name="index-alteracions-sense-restabliment_002c-estil-de"></a>
+<a name="index-sense-restabliment_002c-estil-d_0027alteracions"></a>
+
+<a name="index-no_002dreset"></a>
+<a name="index-no_002dreset-1"></a>
+
+<p>És el mateix que <code>default</code> però amb alteracions que duren
+&lsquo;per sempre&rsquo; i no sols dins del mateix compàs:
+</p>
+<blockquote><p>
+ <a href="../44/lily-922c79bc.ly">
+  <img align="middle"
+       border="0"
+       src="../44/lily-922c79bc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</dd>
+<dt> <code>forget (oblit)</code></dt>
+<dd>
+<a name="index-oblit_002c-estil-de-alteracions"></a>
+<a name="index-alteracio_002c-estil-de_002c-oblit"></a>
+
+<a name="index-forget"></a>
+<a name="index-forget-1"></a>
+
+<p>És l&rsquo;oposat a <code>sense restabliment</code>: Les alteracions no es
+recorden en absolut: d&rsquo;aquí que totes les alteracions es gravin en
+relació a l&rsquo;armadura de la tonalitat, sense que es vegin afectades
+pel que hi ha abans.
+</p>
+
+<blockquote><p>
+ <a href="../61/lily-476ec55c.ly">
+  <img align="middle"
+       border="0"
+       src="../61/lily-476ec55c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+</dd>
+</dl>
+
+<a name="Vegeu-tambe-198"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referècia de funcionament interno:
+<a name="index-Accidental-1"></a>
+<a href="../internals/accidental.ca.html">Accidental</a>,
+<a name="index-Accidental_005fengraver-1"></a>
+<a href="../internals/accidental_005fengraver.ca.html">Accidental_engraver</a>,
+<a name="index-GrandStaff"></a>
+<a href="../internals/grandstaff.ca.html">GrandStaff</a>,
+<a name="index-PianoStaff"></a>
+<a href="../internals/pianostaff.ca.html">PianoStaff</a>,
+<a name="index-Staff"></a>
+<a href="../internals/staff.ca.html">Staff</a>,
+<a name="index-AccidentalSuggestion"></a>
+<a href="../internals/accidentalsuggestion.ca.html">AccidentalSuggestion</a>,
+<a name="index-AccidentalPlacement"></a>
+<a href="../internals/accidentalplacement.ca.html">AccidentalPlacement</a>,
+<a name="index-accidental_002dsuggestion_002dinterface"></a>
+<a href="../internals/accidental_002dsuggestion_002dinterface.ca.html">accidental-suggestion-interface</a>.
+</p>
+<a name="index-alteracions-i-notes-simultanies"></a>
+<a name="index-simultanies_002c-notes-i-alteracions"></a>
+<a name="index-alteracions-en-acordes"></a>
+<a name="index-acordes_002c-alteracions-dins-de"></a>
+
+<a name="Advertiments-i-problemes-coneguts-34"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Les notes simultànies no es tenen en compte per a la determinació
+automàtica de les alteracions accidentals; sols es consideren les
+notes anteriors i l&rsquo;armadura de la tonalitat.  Pot ser necessari
+forçar les alteracions accidentals amb with&nbsp;<code>!</code>
+o&nbsp;<code>?</code> quan la mateixa nota, amb al mateix nom, aparegui
+simultàniament amb diferents alteracions, com a &lsquo;<samp>&lt;f! fis!&gt;</samp>&rsquo;.
+</p>
+<p>La cancel·lació de precaució d&rsquo;alteracions es fa mirant el compàs
+previ.  Malgrat això, al bloc <code>\alternative</code> que segueix a
+una secció de repetició de primera i segona vegada <code>\repeat
+volta N</code>, s&rsquo;esperaria que la cancel·lació es calculés utilitzant
+el compàs previ <em>que s&rsquo;ha tocat</em>, no el compàs previ
+<em>que s&rsquo;ha imprès</em>.  A l&rsquo;exemple següent al Do natural de la
+casella de segona vegada no li cal becaire:
+</p>
+<blockquote><p>
+ <a href="../e1/lily-9b66810f.ly">
+  <img align="middle"
+       border="0"
+       src="../e1/lily-9b66810f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es pot usar la següent solució del problema: definir una funció
+que canviï localment l&rsquo;estil d&rsquo;alteracions a <code>forget</code>:
+</p>
+<blockquote><pre class="verbatim">forget = #(define-music-function (music) (ly:music?) #{
+  \accidentalStyle forget
+  #music
+  \accidentalStyle modern
+#})
+{
+  \accidentalStyle modern
+  \time 2/4
+  \repeat volta 2 {
+    c'2
+  }
+  \alternative {
+     cis'
+     \forget c'
+  }
+}
+</pre><p>
+ <a href="../85/lily-b9014625.ly">
+  <img align="middle"
+       border="0"
+       src="../85/lily-b9014625.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<hr size="6">
+<a name="Tessitura"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#automatic-accidentals" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Alteracions accidentals automàtiques&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="note-heads.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Cap de les notes &gt; </a>]</td></tr></table>
+<a name="ambitus"></a>
+<h4 class="unnumberedsubsubsec">Tessitura</h4>
+
+<a name="index-ambitus"></a>
+<a name="index-rang-de-altures"></a>
+<a name="index-tessitura"></a>
+
+<p>El terme <em>ambitus</em> o àmbit denota el rang de notes que abasta
+una veu donada a una part musical.  També pot denotar el marge de
+notes que és capaç de tocar un determinat instrument musical.  Els
+àmbits s&rsquo;imprimeixen a les parts vocals de tal manera que els
+intèrprets puguin determinar amb facilitat si compleixen amb les
+seves pròpies possibilitats.
+</p>
+<p>Els àmbits es presenten al començament de la peça junt a la clau
+inicial.  El rang s&rsquo;especifica gràficament mitjançant dos caps de
+nota que representen a les notes inferior i superior.  Sols
+s&rsquo;imprimeixen alteracions si no formen part de l&rsquo;armadura de la
+tonalitat.
+</p>
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Voice
+    \consists &quot;Ambitus_engraver&quot;
+  }
+}
+
+\relative {
+  aes' c e2
+  cis,1
+}
+</pre><p>
+ <a href="../68/lily-f0950882.ly">
+  <img align="middle"
+       border="0"
+       src="../68/lily-f0950882.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-25"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Adding ambitus per voice</em>
+</p>
+
+<p>Ambitus can be added per voice. In this case, the ambitus must be moved
+manually to prevent collisions.
+</p>
+
+<blockquote><pre class="verbatim">\new Staff &lt;&lt;
+  \new Voice \with {
+    \consists &quot;Ambitus_engraver&quot;
+  } \relative c'' {
+    \override Ambitus.X-offset = #2.0
+    \voiceOne
+    c4 a d e
+    f1
+  }
+  \new Voice \with {
+    \consists &quot;Ambitus_engraver&quot;
+  } \relative c' {
+    \voiceTwo
+    es4 f g as
+    b1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../ea/lily-388b97ec.ly">
+  <img align="middle"
+       border="0"
+       src="../ea/lily-388b97ec.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Ambitus with multiple voices</em>
+</p>
+
+<p>Adding the <code>Ambitus_engraver</code> to the <code>Staff</code> context creates
+a single ambitus per staff, even in the case of staves with multiple
+voices.
+</p>
+
+<blockquote><pre class="verbatim">\new Staff \with {
+  \consists &quot;Ambitus_engraver&quot;
+  }
+&lt;&lt;
+  \new Voice \relative c'' {
+    \voiceOne
+    c4 a d e
+    f1
+  }
+  \new Voice \relative c' {
+    \voiceTwo
+    es4 f g as
+    b1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../38/lily-447a52e9.ly">
+  <img align="middle"
+       border="0"
+       src="../38/lily-447a52e9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Changing the ambitus gap</em>
+</p>
+
+<p>It is possible to change the default gap between the ambitus noteheads
+and the line joining them.
+</p>
+
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Voice
+    \consists &quot;Ambitus_engraver&quot;
+  }
+}
+
+\new Staff {
+  \time 2/4
+  % Default setting
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #0
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #1
+  c'4 g''
+}
+
+\new Staff {
+  \time 2/4
+  \override AmbitusLine.gap = #1.5
+  c'4 g''
+}
+</pre><p>
+ <a href="../f4/lily-265fe61c.ly">
+  <img align="middle"
+       border="0"
+       src="../f4/lily-265fe61c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-123"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossri musical:
+<a name="index-ambitus-1"></a>
+<a href="../music-glossary/ambitus.ca.html">ambitus</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-Ambitus_005fengraver"></a>
+<a href="../internals/ambitus_005fengraver.ca.html">Ambitus_engraver</a>,
+<a name="index-Voice"></a>
+<a href="../internals/voice.ca.html">Voice</a>,
+<a name="index-Staff-1"></a>
+<a href="../internals/staff.ca.html">Staff</a>,
+<a name="index-Ambitus"></a>
+<a href="../internals/tessitura.ca.html">Ambitus</a>,
+<a name="index-AmbitusAccidental"></a>
+<a href="../internals/ambitusaccidental.ca.html">AmbitusAccidental</a>,
+<a name="index-AmbitusLine"></a>
+<a href="../internals/ambitusline.ca.html">AmbitusLine</a>,
+<a name="index-AmbitusNoteHead"></a>
+<a href="../internals/ambitusnotehead.ca.html">AmbitusNoteHead</a>,
+<a name="index-ambitus_002dinterface"></a>
+<a href="../internals/ambitus_002dinterface.ca.html">ambitus-interface</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-3"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>No s&rsquo;efectua un tractament de les possibles col·lisions en cas de
+diverses indicacions d&rsquo;àmbit simultànies a veus diferents.
+</p>
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#automatic-accidentals" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Alteracions accidentals automàtiques&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#displaying-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Impressió de les altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="note-heads.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Cap de les notes &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="displaying-pitches.html">English</a>, <a href="displaying-pitches.de.html">deutsch</a>, <a href="displaying-pitches.es.html">español</a>, <a href="displaying-pitches.fr.html">français</a>, <a href="displaying-pitches.it.html">italiano</a>, <a href="displaying-pitches.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Escriptura-de-notes-1" href="writing-pitches.ca.html">1.1.1 Escriptura de notes</a>      </li>
+      <li class=""><a name="toc-Modificacio-de-diverses-notes-a-l_0027hora" href="changing-multiple-pitches.ca.html">1.1.2 Modificació de diverses notes a l&rsquo;hora</a>      </li>
+      <li class=" toc_current"><a name="toc-Impressio-de-les-altures" href="displaying-pitches.ca.html">1.1.3 Impressió de les altures</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Clau-1" href="displaying-pitches.ca.html#clef">Clau</a>        </li>
+        <li class=""><a name="toc-Armadura-de-la-tonalitat-1" href="displaying-pitches.ca.html#key-signature">Armadura de la tonalitat</a>        </li>
+        <li class=""><a name="toc-Indicadors-d_0027octava-1" href="displaying-pitches.ca.html#ottava-brackets">Indicadors d&rsquo;octava</a>        </li>
+        <li class=""><a name="toc-Transposicio-dels-instruments" href="displaying-pitches.ca.html#instrument-transpositions">Transposició dels instruments</a>        </li>
+        <li class=""><a name="toc-Alteracions-accidentals-automatiques" href="displaying-pitches.ca.html#automatic-accidentals">Alteracions accidentals automàtiques</a>        </li>
+        <li class=""><a name="toc-Tessitura-1" href="displaying-pitches.ca.html#ambitus">Tessitura</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Cap-de-les-notes-1" href="note-heads.ca.html">1.1.4 Cap de les notes</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

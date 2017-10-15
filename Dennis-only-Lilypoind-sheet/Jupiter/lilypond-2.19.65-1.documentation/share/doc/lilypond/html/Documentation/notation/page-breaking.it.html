@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 4.3.2 Interruzioni di pagina</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 4.3.2 Interruzioni di pagina">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 4.3.2 Interruzioni di pagina">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="breaks.it.html#breaks" rel="up" title="4.3 Interruzioni">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="line-breaking.it.html#line-breaking" rel="previous" title="4.3.1 Interruzioni di linea">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Interruzioni-di-pagina"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="line-breaking.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzioni di linea&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="breaks.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#manual-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina manuale &gt; </a>]</td></tr></table>
+<a name="page-breaking"></a>
+<h3 class="subsection">4.3.2 Interruzioni di pagina</h3>
+
+<p>Questa sezione descrive i diversi metodi di interruzione di pagina e
+spiega come modificarli.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#manual-page-breaking" accesskey="1">Interruzione di pagina manuale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#optimal-page-breaking" accesskey="2">Interruzione di pagina ottimale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#minimal-page-breaking" accesskey="3">Interruzione di pagina minimale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#one_002dpage-page-breaking" accesskey="4">Interruzione di pagina di una pagina</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#one_002dline-page-breaking" accesskey="5">Interruzione di pagina su una linea</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#one_002dline_002dauto_002dheight-page-breaking" accesskey="6">Interruzione di pagina su una linea con altezza automatica</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#optimal-page-turning" accesskey="7">Voltata di pagina ottimale</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Interruzione-di-pagina-manuale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#optimal-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina ottimale &gt; </a>]</td></tr></table>
+<a name="manual-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina manuale</h4>
+
+<a name="index-_005cpageBreak"></a>
+<a name="index-_005cpageBreak-1"></a>
+<a name="index-_005cnoPageBreak"></a>
+<a name="index-_005cnoPageBreak-1"></a>
+<a name="index-_005cautoPageBreaksOn"></a>
+<a name="index-_005cautoPageBreaksOn-1"></a>
+<a name="index-_005cautoPageBreaksOff"></a>
+<a name="index-_005cautoPageBreaksOff-1"></a>
+<a name="index-page-breaking_002c-manual"></a>
+
+<p>L&rsquo;interruzione di pagina predefinita può essere sovrascritta con i
+comandi <code>\pageBreak</code> o <code>\noPageBreak</code>.  Questi comandi,
+analoghi a <code>\break</code> e <code>\noBreak</code>, devono essere
+inseriti dopo una stanghetta e forzano o proibiscono l&rsquo;interruzione
+di pagina in quel punto.  Ovviamente il comando <code>\pageBreak</code>
+forza anche un&rsquo;interruzione di linea.
+</p>
+<p>I comandi <code>\pageBreak</code> e <code>\noPageBreak</code> possono essere
+inseriti anche nel livello superiore, tra le partiture e i testi
+(nel blocco <code>markup</code>) di livello superiore.
+</p>
+<p>In un brano, le interruzioni di pagina automatiche sono vietate per
+la musica compresa tra i comandi <code>\autoPageBreaksOff</code> e
+<code>\autoPageBreaksOn</code>.  Le interruzioni di pagina manuali non
+sono interessate da questi comandi.
+</p>
+<p>Esistono impostazioni analoghe a <code>ragged-right</code> e
+<code>ragged-last</code> che hanno lo stesso effetto sulla spaziatura
+verticale.  Se <code>ragged-bottom</code> è impostato su <code>#t</code>, i
+sistemi non saranno giustificati verticalmente.  Quando
+<code>ragged-last-bottom</code> è impostato su <code>#t</code> (valore
+predefinito), è permesso dello spazio vuoto in fondo all&rsquo;ultima
+pagina (o in fondo all&rsquo;ultima pagina di ciascun
+<code>\bookpart</code>).  Vedi
+<a href="fixed-vertical-spacing-paper-variables.it.html">Variabili fisse della spaziatura verticale di <code>\paper</code></a>.
+</p>
+<p>Le interruzioni di pagina sono calcolate dalla funzione <code>page-breaking</code>.
+LilyPond fornisce vari algoritmi per calcolare le interruzioni di pagina, tra
+cui <code>ly:optimal-breaking</code>, <code>ly:page-turn-breaking</code> e
+<code>ly:minimal-breaking</code>.  Quello predefinito è
+<code>ly:optimal-breaking</code>, ma il valore può essere modificato nel
+blocco <code>\paper</code>:
+</p>
+<blockquote><pre class="example">\paper {
+  page-breaking = #ly:page-turn-breaking
+}
+</pre></blockquote>
+
+<a name="index-_005cbookpart-4"></a>
+<a name="index-_005cbookpart-5"></a>
+
+<p>Quando un libro ha molte partiture e pagine, il problema delle interruzioni
+di pagina potrebbe essere difficile da risolvere e richiedere lunghi tempi
+di elaborazione e molta memoria.  Per semplificare il processo di interruzione
+delle pagine, si usano i blocchi <code>\bookpart</code> per dividere il libro in
+varie parti: in questo modo l&rsquo;interruzione di pagina si verifica separatamente
+in ciascuna parte.  Si possono anche usare algoritmi di interruzione di
+pagina diversi per le diverse parti del libro.
+</p>
+<blockquote><pre class="example">\bookpart {
+  \header {
+    subtitle = &quot;Prefazione&quot;
+  }
+  \paper {
+     %% In una parte contenente soprattutto testo,
+     %% ly:minimal-breaking potrebbe essere preferibile
+     page-breaking = #ly:minimal-breaking
+  }
+  \markup { &hellip; }
+  &hellip;
+}
+\bookpart {
+  %% In questa parte, contenente musica, si usa l'algoritmo di
+  %% interruzione di pagina ottimale.
+  \header {
+    subtitle = &quot;Primo movimento&quot;
+  }
+  \score { &hellip; }
+  &hellip;
+}
+</pre></blockquote>
+
+
+<a name="Comandi-predefiniti-49"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\pageBreak</code>,
+<code>\noPageBreak</code>,
+<code>\autoPageBreaksOn</code>,
+<code>\autoPageBreaksOff</code>.
+</p>
+<a name="Vedi-anche-189"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="other-paper-variables.it.html#paper-variables-for-page-breaking">Variabili di <code>\paper</code> per l&rsquo;interruzione di pagina</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-26"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+
+<p>Il prefisso <code>\once</code> non funziona con i comandi <code>\autoPageBreaksOn</code>
+e <code>\autoPageBreaksOff</code>.  Se l&rsquo;interruzione di pagina automatica è
+disabilitata e poi viene abilitata per permettere un&rsquo;interruzione di
+pagina, deve restare attiva per alcune battute (il numero preciso di
+battute dipende dalla partitura) prima di essere disattivata, altrimenti
+la possibilità di interrompere la pagina non verrà considerata.
+</p>
+
+<hr size="6">
+<a name="Interruzione-di-pagina-ottimale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#manual-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina manuale&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#minimal-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina minimale &gt; </a>]</td></tr></table>
+<a name="optimal-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina ottimale</h4>
+
+<a name="index-ly_003aoptimal_002dbreaking"></a>
+<a name="index-ly_003aoptimal_002dbreaking-1"></a>
+
+<p>La funzione <code>ly:optimal-breaking</code> è il metodo predefinito di LilyPond
+per determinare le interruzioni di pagina.  Tenta di individuare un&rsquo;interruzione
+di pagina che minimizzi la densità e l&rsquo;allungamento, sia orizzontalmente che
+verticalmente.  Diversamente da <code>ly:page-turn-breaking</code>, non prende in
+considerazione le voltate di pagina.
+</p>
+<a name="Vedi-anche-116"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+
+<hr size="6">
+<a name="Interruzione-di-pagina-minimale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#optimal-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina ottimale&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#one_002dpage-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina di una pagina &gt; </a>]</td></tr></table>
+<a name="minimal-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina minimale</h4>
+
+<a name="index-ly_003aminimal_002dbreaking"></a>
+<a name="index-ly_003aminimal_002dbreaking-1"></a>
+
+<p>La funzione <code>ly:minimal-breaking</code> fa dei calcoli minimi
+per valutare l&rsquo;interruzione di pagina: riempie una pagina col
+maggior numero possibile di sistemi prima di passare a quella
+successiva.  Dunque potrebbe essere preferibile per le partiture
+con molte pagine, per le quali le altre funzioni di interruzione
+di pagina potrebbero essere troppo lente o richiedere troppa
+memoria, o con molto testo.  Si abilita con:
+</p>
+<blockquote><pre class="example">\paper {
+  page-breaking = #ly:minimal-breaking
+}
+</pre></blockquote>
+
+<a name="Vedi-anche-109"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+
+<hr size="6">
+<a name="Interruzione-di-pagina-di-una-pagina"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#minimal-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina minimale&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#one_002dline-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina su una linea &gt; </a>]</td></tr></table>
+<a name="one_002dpage-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina di una pagina</h4>
+
+<a name="index-ly_003aone_002dpage_002dbreaking"></a>
+<a name="index-ly_003aone_002dpage_002dbreaking-1"></a>
+
+<p>La funzione <code>ly:one-page-breaking</code> è un algoritmo di interruzione di
+pagina per casi speciali che regola automaticamente l&rsquo;altezza della pagina
+per farci entrare la musica, in modo che stia tutto in una sola pagina.
+La variabile <code>paper-height</code> del blocco paper viene ignorata, ma le
+altre impostazioni funzionano normalmente.  In particolare, la spaziatura
+tra l&rsquo;ultimo sistema (o il testo markup di livello superiore) e il piè di pagina
+può essere personalizzata grazie a <code>last-bottom-spacing</code> nel blocco paper.
+La larghezza della pagina non viene modificata ma può essere impostata con
+<code>paper-width</code> nel blocco paper.
+</p>
+<a name="Problemi-noti-e-avvertimenti-72"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p><code>ly:one-page-breaking</code> non è attualmente compatibile con
+<code>\bookpart</code>.
+</p>
+
+<hr size="6">
+<a name="Interruzione-di-pagina-su-una-linea"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#one_002dpage-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina di una pagina&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#one_002dline_002dauto_002dheight-page-breaking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Interruzione di pagina su una linea con altezza automatica &gt; </a>]</td></tr></table>
+<a name="one_002dline-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina su una linea</h4>
+
+<a name="index-ly_003aone_002dline_002dbreaking"></a>
+<a name="index-ly_003aone_002dline_002dbreaking-1"></a>
+
+<p>La funzione <code>ly:one-line-breaking</code> è un algoritmo di interruzione
+di pagina per uso speciale in quanto pone ogni brano su una sola pagina e
+una singola linea.  Non appaiono né titoli né margini, ma viene
+mostrato solo il brano musicale.
+</p>
+<p>La larghezza della pagina è regolata in modo che il brano più
+lungo stia su una sola linea.  In particolare, le variabili <code>paper-width</code>,
+<code>line-width</code> e <code>indent</code> del blocco <code>\paper</code> vengono
+ignorate, sebbene <code>left-margin</code> e <code>right-margin</code> siano
+comunque considerate.  L&rsquo;altezza della pagina resta invariata.
+</p>
+
+<hr size="6">
+<a name="Interruzione-di-pagina-su-una-linea-con-altezza-automatica"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#one_002dline-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina su una linea&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#optimal-page-turning" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Voltata di pagina ottimale &gt; </a>]</td></tr></table>
+<a name="one_002dline_002dauto_002dheight-page-breaking"></a>
+<h4 class="unnumberedsubsubsec">Interruzione di pagina su una linea con altezza automatica</h4>
+
+<a name="index-ly_003aone_002dline_002dauto_002dheight_002dbreaking"></a>
+<a name="index-ly_003aone_002dline_002dauto_002dheight_002dbreaking-1"></a>
+
+<p>La funzione <code>ly:one-line-auto-height-breaking</code> funziona proprio come
+<code>ly:one-line-breaking</code> con la differenza che l&rsquo;altezza della pagina
+viene modificata automaticamente per adattarsi all&rsquo;altezza della musica.
+Più precisamente, la variabile <code>paper-height</code> del blocco <code>\paper</code>
+viene impostata in modo che abbracci l&rsquo;altezza della partitura più alta
+e i margini superiore e inferiore (<code>top-margin</code> e <code>bottom-margin</code>).
+</p>
+<p>Fare attenzione al fatto che l&rsquo;impostazione <code>top-system-spacing</code> avrà
+effetto sulla posizione verticale della musica.  Impostarla su <code>##f</code> in
+un blocco <code>\paper</code> per posizionare la musica tra i margini superiore e
+inferiore.
+</p>
+
+<hr size="6">
+<a name="Voltata-di-pagina-ottimale"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#one_002dline_002dauto_002dheight-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina su una linea con altezza automatica&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="vertical-spacing.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Spaziatura verticale &gt; </a>]</td></tr></table>
+<a name="optimal-page-turning"></a>
+<h4 class="unnumberedsubsubsec">Voltata di pagina ottimale</h4>
+
+<a name="index-ly_003apage_002dturn_002dbreaking"></a>
+<a name="index-ly_003apage_002dturn_002dbreaking-1"></a>
+
+<p>È spesso necessario trovare una configurazione delle interruzioni di
+pagina in cui ci sia una pausa al termine di ogni due pagine.
+In questo modo il musicista può voltare la pagina senza perdere
+le note.  La funzione <code>ly:page-turn-breaking</code> tenta di trovare
+un&rsquo;interruzione di pagina che minimizzi densità e allungamento, ma
+con l&rsquo;ulteriore restrizione che le voltate di pagina sono permesse
+solo in punti specifici.
+</p>
+<p>Ci sono due passi da seguire per usare questa funzione.  Prima
+occorre abilitarla nel blocco <code>\paper</code>, come è spiegato in
+<a href="#page-breaking">Interruzioni di pagina</a>.  Poi bisogna indicare alla funzione dove
+sono permesse le interruzioni di pagina.
+</p>
+<p>Ci sono due modi per fare il secondo passo.  Si può specificare
+manualmente ogni potenziale voltata di pagina, inserendo
+<code>\allowPageTurn</code> nei punti adatti del file di input.
+</p>
+<p>Oppure, se ciò è troppo noioso, si può aggiungere l&rsquo;incisore
+<code>Page_turn_engraver</code> a un contesto Staff o Voice.  L&rsquo;incisore
+<code>Page_turn_engraver</code> analizzerà il contesto in cerca di sezioni
+senza note (non cerca pause, bensì l&rsquo;assenza di note, in modo che
+la polifonia su un singolo rigo con pause in una delle parti non
+confonda <code>Page_turn_engraver</code>).  Quando trova una sezione
+senza note abbastanza lunga, <code>Page_turn_engraver</code> inserirà il
+comando <code>\allowPageTurn</code> nella stanghetta finale di quella
+sezione, a meno che non ci sia una stanghetta &lsquo;speciale&rsquo; (come
+una doppia stanghetta), nel qual caso il comando <code>\allowPageTurn</code>
+sarà inserito nella stanghetta finale &ldquo;speciale&rdquo; della sezione.
+</p>
+<a name="index-minimumPageTurnLength"></a>
+<a name="index-minimumPageTurnLength-1"></a>
+<p>L&rsquo;incisore <code>Page_turn_engraver</code> legge la proprietà di contesto
+<code>minimumPageTurnLength</code> per determinare quanto deve essere lunga
+una sezione senza note prima che una voltata di pagina sia considerata.
+Il valore predefinito di <code>minimumPageTurnLength</code> è
+<code>(ly:make-moment 1/1)</code>.  Per disabilitare le voltate di pagina,
+impostarla su un valore &ldquo;molto grande&rdquo;.
+</p>
+<blockquote><pre class="example">\new Staff \with { \consists &quot;Page_turn_engraver&quot; }
+{
+  a4 b c d |
+  R1 | % voltata di pagina permessa qui
+  a4 b c d |
+  \set Staff.minimumPageTurnLength = #(ly:make-moment 5/2)
+  R1 | % voltata di pagina non permessa qui
+  a4 b r2 |
+  R1*2 | % voltata di pagina permessa qui
+  a1
+}
+</pre></blockquote>
+
+<a name="index-minimumRepeatLengthForPageTurn"></a>
+<a name="index-minimumRepeatLengthForPageTurn-1"></a>
+<p>Quando si usano ripetizioni con finali alternativi, l&rsquo;incisore <code>Page_turn_engraver</code>
+permetterà una voltata di pagina durante la ripetizione soltanto se c&rsquo;è
+abbastanza tempo all&rsquo;inizio e alla fine della ripetizione per voltare
+indietro la pagina.  Se la ripetizione è troppo breve, si può usare
+<code>Page_turn_engraver</code> per <em>disabilitare</em> le voltate impostando
+un valore appropriato per la proprietà di contesto <code>minimumRepeatLengthForPageTurn</code>.
+In questo caso <code>Page_turn_engraver</code> consentirà le voltate soltanto nelle
+ripetizioni la cui durata sia maggiore del valore specificato.
+</p>
+<p>I comandi per le voltate di pagina (<code>\pageTurn</code>, <code>\noPageTurn</code>
+e <code>\allowPageTurn</code>), possono essere usati anche nel livello superiore,
+nei blocchi markup di livello superiore e tra una partitura e l&rsquo;altra.
+</p>
+<a name="Comandi-predefiniti-33"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<a name="index-_005cpageTurn"></a>
+<a name="index-_005cpageTurn-1"></a>
+<p><code>\pageTurn</code>,
+<a name="index-_005cnoPageTurn"></a>
+<a name="index-_005cnoPageTurn-1"></a>
+<code>\noPageTurn</code>,
+<a name="index-_005callowPageTurn"></a>
+<a name="index-_005callowPageTurn-1"></a>
+<code>\allowPageTurn</code>.
+</p>
+<a name="Vedi-anche-48"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="other-paper-variables.it.html#paper-variables-for-line-breaking">Variabili di <code>\paper</code> per l&rsquo;interruzione di linea</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-61"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>Usare soltanto un incisore <code>Page_turn_engraver</code> per partitura.  Se ce
+n&rsquo;è più d&rsquo;uno, interferiranno uno con l&rsquo;altro.
+</p>
+
+<a name="Vedi-anche-256"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="vertical-spacing.it.html">Spaziatura verticale</a>.
+</p>
+<p>Frammenti:
+<a href="../snippets/spacing.it.html">Spacing</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="spacing-issues.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Gestione dello spazio&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="changing-defaults.it.html" title="Capitolo successivo">&nbsp;Modifica delle impostazioni predefinite &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#one_002dline_002dauto_002dheight-page-breaking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Interruzione di pagina su una linea con altezza automatica&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#page-breaking" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Interruzioni di pagina&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="vertical-spacing.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Spaziatura verticale &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="page-breaking.html">English</a>, <a href="page-breaking.ca.html">català</a>, <a href="page-breaking.de.html">deutsch</a>, <a href="page-breaking.es.html">español</a>, <a href="page-breaking.fr.html">français</a>, <a href="page-breaking.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=" toc_current"><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Interruzioni-di-linea-1" href="line-breaking.it.html">4.3.1 Interruzioni di linea</a>      </li>
+      <li class=" toc_current"><a name="toc-Interruzioni-di-pagina-1" href="page-breaking.it.html">4.3.2 Interruzioni di pagina</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Interruzione-di-pagina-manuale-1" href="page-breaking.it.html#manual-page-breaking">Interruzione di pagina manuale</a>        </li>
+        <li class=""><a name="toc-Interruzione-di-pagina-ottimale-1" href="page-breaking.it.html#optimal-page-breaking">Interruzione di pagina ottimale</a>        </li>
+        <li class=""><a name="toc-Interruzione-di-pagina-minimale-1" href="page-breaking.it.html#minimal-page-breaking">Interruzione di pagina minimale</a>        </li>
+        <li class=""><a name="toc-Interruzione-di-pagina-di-una-pagina-1" href="page-breaking.it.html#one_002dpage-page-breaking">Interruzione di pagina di una pagina</a>        </li>
+        <li class=""><a name="toc-Interruzione-di-pagina-su-una-linea-1" href="page-breaking.it.html#one_002dline-page-breaking">Interruzione di pagina su una linea</a>        </li>
+        <li class=""><a name="toc-Interruzione-di-pagina-su-una-linea-con-altezza-automatica-1" href="page-breaking.it.html#one_002dline_002dauto_002dheight-page-breaking">Interruzione di pagina su una linea con altezza automatica</a>        </li>
+        <li class=""><a name="toc-Voltata-di-pagina-ottimale-1" href="page-breaking.it.html#optimal-page-turning">Voltata di pagina ottimale</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

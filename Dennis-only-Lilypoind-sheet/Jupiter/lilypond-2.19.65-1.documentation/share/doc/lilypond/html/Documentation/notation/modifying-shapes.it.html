@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 5.5.4 Modifica delle forme</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 5.5.4 Modifica delle forme">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 5.5.4 Modifica delle forme">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="advanced-tweaks.it.html#advanced-tweaks" rel="up" title="5.5 Ritocchi avanzati">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="modifying-stencils.it.html#modifying-stencils" rel="previous" title="5.5.3 Modifica degli stampi">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Modifica-delle-forme"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="modifying-stencils.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Modifica degli stampi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="advanced-tweaks.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Ritocchi avanzati&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#modifying-ties-and-slurs" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Modifica di legature di valore e di portamento &gt; </a>]</td></tr></table>
+<a name="modifying-shapes"></a>
+<h3 class="subsection">5.5.4 Modifica delle forme</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#modifying-ties-and-slurs" accesskey="1">Modifica di legature di valore e di portamento</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Modifica-di-legature-di-valore-e-di-portamento"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#modifying-shapes" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Modifica delle forme&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-shapes" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Modifica delle forme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="modifying-broken-spanners.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Modifica degli estensori spezzati &gt; </a>]</td></tr></table>
+<a name="modifying-ties-and-slurs"></a>
+<h4 class="unnumberedsubsubsec">Modifica di legature di valore e di portamento</h4>
+
+<a name="index-legature-di-portamento_002c-modificare"></a>
+<a name="index-legature-di-valore_002c-modificare"></a>
+<a name="index-curve-Bezier_002c-punti-di-controllo"></a>
+<a name="index-punti-di-controllo_002c-curve-Bezier"></a>
+<a name="index-Bezier_002c-curve_002c-punti-di-controllo"></a>
+
+<p>Le legature, siano esse di valore (<code>Tie</code>), di portamento (<code>Slur</code>),
+di frase (<code>PhrasingSlur</code>), di laisser-vibrer (<code>LaissezVibrerTie</code>)
+o di valore ripetute (<code>RepeatTie</code>), sono tutte disegnate come curve Bézier
+di terzo ordine.  Se la forma della legatura di valore o di frase che viene
+calcolata automaticamente non è ottimale, può essere modificata manualmente
+in due modi:
+</p>
+<ol>
+<li>
+specificando di quanto spostare i punti di controllo della curva
+Bézier calcolata automaticamente, o
+
+</li><li>
+specificando esplicitamente le posizioni dei quattro punti di controllo
+richiesti per definire la curva desiderata.
+</li></ol>
+
+<p>Entrambi i metodi sono spiegati di seguito.  Il primo metodo è più adatto
+se sono necessari solo piccoli aggiustamenti alla curva; il secondo può
+essere migliore per creare curve che riguardano soltanto una singola nota.
+</p>
+<a name="-Curve-Bezier-cubiche"></a>
+<h4 class="subsubheading"><i> Curve Bézier cubiche</i></h4>
+
+<p>Le curve Bézier di terzo ordine o cubiche sono definite da quattro punti
+di controllo.  Il primo e il quarto punto di controllo sono esattamente
+i punti di inizio e fine della curva.  I due punti intermedi definiscono
+la forma.  Sul web si trovano delle animazioni che mostrano come viene
+disegnata la curva, ma la seguente descrizione può comunque essere utile.
+La curva inizia dal primo punto di controllo e si dirige verso il secondo,
+piegandosi gradualmente per arrivare al terzo e poi al quarto, arrivando
+lì direttamente dal terzo punto di controllo.  La curva è contenuta
+interamente nel quadrilatero definito dai quattro punti di controllo.
+Traslazioni, rotazioni e ridimensionamenti dei punti di controllo risultano
+tutti esattamente nelle stesse operazioni sulla curva.
+</p>
+<a name="-Specificare-gli-spostamenti-dai-punti-di-controllo-correnti"></a>
+<h4 class="subsubheading"><i> Specificare gli spostamenti dai punti di controllo correnti</i></h4>
+
+<a name="index-disegnare-legature-di-valore-e-di-portamento"></a>
+<a name="index-_005cshape"></a>
+<a name="index-_005cshape-1"></a>
+
+<p>In questo esempio la disposizone automatica della legatura di valore non è
+ottimale, e <code>\tieDown</code> non sarebbe di aiuto.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  { e'1~ 1 }
+\\
+  \relative { r4 &lt;g' c,&gt; &lt;g c,&gt; &lt;g c,&gt; }
+&gt;&gt;
+</pre><p>
+ <a href="../e9/lily-3b5b1852.ly">
+  <img align="middle"
+       border="0"
+       src="../e9/lily-3b5b1852.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Cambiando i punti di controllo della legatura con <code>\shape</code> consente di
+evitare le collisioni.
+</p>
+<p>La sintassi di <code>\shape</code> è
+</p>
+<blockquote><pre class="example">[-]\shape <var>spostamenti</var> <var>elemento</var>
+</pre></blockquote>
+
+<p>Questo comando riposiziona i punti di controllo di <var>elemento</var> di quanto
+indicato da <var>spostamenti</var>.  L&rsquo;argomento <var>spostamenti</var> è una lista
+di coppie di numeri o una lista di tali liste.  Ogni elemento di una coppia
+rappresenta lo spostamento di una delle coordinate di un punto di controllo.
+Se <var>elemento</var> è una stringa, il risultato è <code>\once\override</code> per il
+tipo di grob specificato.  Se <var>elemento</var> è un&rsquo;espressione musicale, il
+risultato è la stessa espressione musicale con un&rsquo;appropriata modifica.
+</p>
+<p>In altre parole, la funzione <code>\shape</code> può comportarsi come un comando
+<code>\once\override</code> o un comando <code>\tweak</code> a seconda che l&rsquo;argomento
+<var>elemento</var> sia il nome di un grob, come &ldquo;Slur&rdquo;, o un&rsquo;espressione
+musicale, come &ldquo;(&rdquo;.  L&rsquo;argomento <var>spostamenti</var> specifica gli
+sfasamenti dei quattro punti di controllo nella forma di una lista di
+quattro coppie di valori (dx . dy) in unità di spazi rigo (o una lista
+di tali liste se la curva ha più di un segmento).
+</p>
+<p>Il trattino iniziale è richiesto se e solo se si usa la forma con
+<code>\tweak</code>.
+</p>
+<p>Dunque usando lo stesso esempio precedente e la forma <code>\once\override</code>
+di <code>\shape</code>, il seguente comando alzerà la legatura di valore di
+metà spazio rigo:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  {
+    \shape #'((0 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) Tie
+    e'1~ 1
+  }
+\\
+  \relative { r4 &lt;g' c,&gt; &lt;g c,&gt; &lt;g c,&gt; }
+&gt;&gt;
+</pre><p>
+ <a href="../34/lily-38c74a3f.ly">
+  <img align="middle"
+       border="0"
+       src="../34/lily-38c74a3f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Questo posizionamento è migliore, ma forse dovrebbe essere alzato di più
+al centro, come viene fatto nel prossimo esempio, dove stavolta si usa
+la forma alternativa <code>\tweak</code>:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  {
+    e'1-\shape #'((0 . 0.5) (0 . 1) (0 . 1) (0 . 0.5)) ~ e'
+  }
+\\
+  \relative { r4 &lt;g' c,&gt; &lt;g c,&gt; &lt;g c,&gt; }
+&gt;&gt;
+</pre><p>
+ <a href="../19/lily-ab194301.ly">
+  <img align="middle"
+       border="0"
+       src="../19/lily-ab194301.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Le modifiche alle posizioni orizzontali dei punti di controllo funzionano
+nello stesso modo.  Si possono ridefinire anche due curve diverse che
+iniziano nello stesso momento musicale:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''8(\( a) a'4 e c\)
+  \shape #'((0.7 . -0.4) (0.5 . -0.4) (0.3 . -0.3) (0 . -0.2)) Slur
+  \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) PhrasingSlur
+  c8(\( a) a'4 e c\)
+}
+</pre><p>
+ <a href="../24/lily-09c0a232.ly">
+  <img align="middle"
+       border="0"
+       src="../24/lily-09c0a232.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La funzione <code>\shape</code> può sostituire anche i punti di controllo di
+curve che si estendono oltre le interruzioni di linea.  A ogni pezzo
+della curva spezzata può essere assegnata la sua lista di spostamenti.
+Se non sono necessarie delle modifiche a un segmento in particolare,
+la lista vuota può servire come segnaposto.  In questo esempio l&rsquo;interruzione
+di linea fa sembrare doppia la legatura di portamento singola:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c'4( f g c
+  \break
+  d,4 c' f, c)
+}
+</pre><p>
+ <a href="../c4/lily-c2fa312b.ly">
+  <img align="middle"
+       border="0"
+       src="../c4/lily-c2fa312b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Cambiando le forme delle due metà della legatura di portamento diventa più
+chiaro che la legatura continua oltre l&rsquo;interruzione di linea:
+</p>
+<blockquote><pre class="verbatim">% () può essere usato come una scorciatoia per ((0 . 0) (0 . 0) (0 . 0) (0 . 0))
+% nel caso in cui uno dei segmenti non necessiti di modifiche
+\relative c' {
+  \shape #'(
+             (( 0 . 0) (0 . 0) (0 . 0) (0 . 1))
+             ((0.5 . 1.5) (1 . 0) (0 . 0) (0 . -1.5))
+           ) Slur
+  c4( f g c
+  \break
+  d,4 c' f, c)
+}
+</pre><p>
+ <a href="../07/lily-6c8c452c.ly">
+  <img align="middle"
+       border="0"
+       src="../07/lily-6c8c452c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Se è richiesta una curva a forma di S, bisogna sempre definire manualmente i
+punti di controllo &mdash; LilyPond non sceglierà mai tali forme automaticamente.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c8( e b-&gt; f d' a e-&gt; g)
+  \shape #'((0 . -1) (5.5 . -0.5) (-5.5 . -10.5) (0 . -5.5)) PhrasingSlur
+  c8\( e b-&gt; f d' a e-&gt; g\)
+}
+</pre><p>
+ <a href="../77/lily-623d5927.ly">
+  <img align="middle"
+       border="0"
+       src="../77/lily-623d5927.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="-Specificare-i-punti-di-controllo-esplicitamente"></a>
+<h4 class="subsubheading"><i> Specificare i punti di controllo esplicitamente</i></h4>
+
+<p>Le coordinate dei punti di controllo della curva di Bézier sono specificate
+in unità di spazi rigo.  La coordinata&nbsp;X è relativa al punto di
+riferimento della nota a cui la legatura si attacca, mentre la
+coordinata&nbsp;Y è relativa alla linea centrale del rigo.  Le coordinate
+sono specificate come una lista di quattro coppie di numeri decimali
+(reali).  Un possibile approccio consiste nel valutare prima le coordinate
+delle due estremità e poi indovinare i due punti intermedi.  I valori
+ottimali vengono quindi trovati per tentativi.  Tenere conto del fatto
+che, in caso di ulteriori modifiche alla musica o alla formattazione, questi
+valori potrebbero dover essere nuovamente cambiati manualmente.
+</p>
+<p>Una situazione in cui è preferibile specificare i punti di controllo
+esplicitamente invece di specificarne gli spostamenti è quella in cui
+devono essere indicati per una singola nota.  Il prossimo esempio
+mostra un modo in cui rappresentare una legatura di portamento che
+si estende nelle sezioni alternative di una volta.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''1
+  \repeat volta 3 { c4 d( e f }
+  \alternative {
+    { g2) d }
+    {
+      g2
+      % crea una legatura di portamento e spostala in una nuova posizione
+      % il &lt;&gt; è solamente un accordo vuoto che serve a terminare la legatura
+      -\tweak control-points #'((-2 . 3.8) (-1 . 3.9) (0 . 4) (1 . 3.4)) ( &lt;&gt; )
+      f,
+    }
+    {
+      e'2
+      % crea una legatura di portamento e spostala in una nuova posizione
+      -\tweak control-points #'((-2 . 3) (-1 . 3.1) (0 . 3.2) (1 . 2.4)) ( &lt;&gt; )
+      f,
+    }
+  }
+}
+</pre><p>
+ <a href="../8a/lily-4d65d659.ly">
+  <img align="middle"
+       border="0"
+       src="../8a/lily-4d65d659.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Problemi-noti-e-avvertimenti-73"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>Non è possibile modificare le forme di legature di valore e di portamento
+cambiando la proprietà <code>control-points</code> se ci sono molteplici legature
+nello stesso momento musicale &ndash; anche il comando <code>\tweak</code> non funzionerà
+in questo caso.  Tuttavia si può sovrascrivere la proprietà
+<code>tie-configuration</code> di <code>TieColumn</code> per impostare l&rsquo;inizio della linea
+e la direzione come desiderato.
+</p>
+<a name="Vedi-anche-254"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida al funzionamento interno:
+<a name="index-TieColumn-1"></a>
+<a href="../internals/tiecolumn.it.html">TieColumn</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#modifying-shapes" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Modifica delle forme&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#modifying-shapes" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Modifica delle forme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="modifying-broken-spanners.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Modifica degli estensori spezzati &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="modifying-shapes.html">English</a>, <a href="modifying-shapes.ca.html">català</a>, <a href="modifying-shapes.de.html">deutsch</a>, <a href="modifying-shapes.es.html">español</a>, <a href="modifying-shapes.fr.html">français</a>, <a href="modifying-shapes.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=" toc_current"><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Allineamento-degli-oggetti-1" href="aligning-objects.it.html">5.5.1 Allineamento degli oggetti</a>      </li>
+      <li class=""><a name="toc-Raggruppamento-verticale-dei-grob-1" href="vertical-grouping-of-grobs.it.html">5.5.2 Raggruppamento verticale dei grob</a>      </li>
+      <li class=""><a name="toc-Modifica-degli-stampi-1" href="modifying-stencils.it.html">5.5.3 Modifica degli stampi</a>      </li>
+      <li class=" toc_current"><a name="toc-Modifica-delle-forme-1" href="modifying-shapes.it.html">5.5.4 Modifica delle forme</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Modifica-di-legature-di-valore-e-di-portamento-1" href="modifying-shapes.it.html#modifying-ties-and-slurs">Modifica di legature di valore e di portamento</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Modifica-degli-estensori-spezzati-1" href="modifying-broken-spanners.it.html">5.5.5 Modifica degli estensori spezzati</a>      </li>
+      <li class=""><a name="toc-Contenitori-unpure_002dpure-1" href="unpure_002dpure-containers.it.html">5.5.6 Contenitori unpure-pure</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

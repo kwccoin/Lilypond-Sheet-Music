@@ -1,0 +1,660 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Manual d'aprenentatge del GNU LilyPond: 4.6.3 Exemple real de música</title>
+
+<meta name="description" content="Manual d'aprenentatge del GNU LilyPond: 4.6.3 Exemple real de música">
+<meta name="keywords" content="Manual d'aprenentatge del GNU LilyPond: 4.6.3 Exemple real de música">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Manual d'aprenentatge">
+<link href="lilypond-index.ca.html#lilypond-index" rel="index" title="C. Índex del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="col_00c2_00b7lisions-of-objects.ca.html#col_00c2_00b7lisions-of-objects" rel="up" title="4.6 Col·lisions d'objectes">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="C. Índex del LilyPond">
+<link href="fixing-overlapping-notation.ca.html#fixing-overlapping-notation" rel="previous" title="4.6.2 Ajustament de la notació amb superposicions">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="learning devStatus">
+
+
+<div id="main">
+<a name="Exemple-real-de-m_00fasica"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="fixing-overlapping-notation.ca.html#the-force_002dhshift-property" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; La propietat force-hshift (forçar desplaçament horitzontal)&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="col_00c2_00b7lisions-of-objects.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Col·lisions d'objectes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="further-tweaking.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Ajustaments addicionals &gt; </a>]</td></tr></table>
+<a name="real-music-example"></a>
+<h3 class="subsection">4.6.3 Exemple real de música</h3>
+
+<p>Finalitzarem aquesta secció sobre els ajustaments mostrant els
+passos que s&rsquo;han de prendre per tractar amb un exemple complicat
+al que li calen diversos ajustaments per produir el resultat
+desitjat.  L&rsquo;exemple s&rsquo;ha escollit deliberadament per il·lustrar
+l&rsquo;ús de la Referència de la Notació per resoldre problemes de
+notació poc comuns.  No és representatiu del procés de gravat més
+usual, per la qual cosa, us recomanem que no deixeu que aquestes
+dificultats us desanimin! Afortunadament, les dificultats com
+aquestes no són massa comunes!
+</p>
+<p>L&rsquo;exemple està extret de la Primera Balada de Chopin, Op. 23,
+compassos 6 al 9, la transició entre el Lent inicial i el
+Moderato.  Presentem en primer lloc l&rsquo;aspecte que volem que tingui
+el resultat, però per evitar complicar massa l&rsquo;exemple hem tret
+les indicacions dinàmiques, les digitacions i el pedal.
+</p>
+<blockquote><p>
+ <a href="../47/lily-bb73f8d6.ly">
+  <img align="middle"
+       border="0"
+       src="../47/lily-bb73f8d6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Observem en primer lloc que la part de la ma dreta del tercer
+compàs requereix quatre veus.  Són les cinc corxeres unides per
+una barra, la nota Do lligada, el Re blanca que es fusiona amb el
+Re corxera, i el Fa sostingut negra amb puntet, que també està
+fusionada amb la corxera de la seva mateixa alçada.  Tota la resta
+està en una sola veu, així que el més fàcil és introduir aquestes
+tres veus addicionals, en el moment que facin falta i de forma
+temporal.  Si us heu oblidat de com fer-ho, llegiu les seccions
+<a href="i_0027m-hearing-voices.ca.html">Sento veus</a> i <a href="explicitly-instantiating-voices.ca.html">Veus explícites</a>.  Aquí prenem la decisió
+d&rsquo;utilitzar veus instanciades explícitament per al passatge
+polifònic, atès que el LilyPond és més probable que pugui evitar
+les col·lisions si totes les veus s&rsquo;instancien explícitament
+d&rsquo;aquesta manera.
+</p>
+<p>Començarem introduint les notes com dues variables i disposant
+l&rsquo;estructura de pentagrames a un bloc Score, i veurem què produeix
+el LilyPond de forma predeterminada:
+</p>
+<blockquote><pre class="verbatim">rhMusic = \relative {
+  \new Voice {
+    r2 c''4. g8 |
+    bes1~ |
+    \time 6/4
+    bes2. r8
+    % Inicia la secció polifònica de quatre veus
+    &lt;&lt;
+      { c,8 d fis bes a }  % continuació de la veu principal
+      \new Voice {
+        \voiceTwo
+        c,8~ 2
+      }
+      \new Voice {
+        \voiceThree
+        s8 d2
+      }
+      \new Voice {
+        \voiceFour
+        s4 fis4.
+      }
+    &gt;&gt; |
+    g2.  % continuació de la veu principal
+  }
+}
+
+lhMusic = \relative {
+  r2 &lt;c' g ees&gt;2 |
+  &lt;d g, d&gt;1 |
+  r2. d,,4 r4 r |
+  r4
+}
+
+\score {
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;RH&quot;  &lt;&lt;
+      \key g \minor
+      \rhMusic
+    &gt;&gt;
+    \new Staff = &quot;LH&quot; &lt;&lt;
+      \key g \minor
+      \clef &quot;bass&quot;
+      \lhMusic
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../54/lily-2ef157e8.ly">
+  <img align="middle"
+       border="0"
+       src="../54/lily-2ef157e8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Totes les notes són correctes, però l&rsquo;aspecte està lluny de ser
+satisfactori.  La lligadura d&rsquo;unió xoca amb el canvi de compàs,
+certes notes no es fusionen correctament, i falten alguns elements
+de notació.  En primer lloc tractarem amb el més senzill.  Podem
+afegir fàcilment la lligadura d&rsquo;expressió de la mà esquerra i la
+lligadura de fraseig de la ma dreta, atès que tot això es va
+estudiar al Tutorial.  En fer-ho així obtenim:
+</p>
+<blockquote><pre class="verbatim">rhMusic = \relative {
+  \new Voice {
+    r2 c''4.\( g8 |
+    bes1~ |
+    \time 6/4
+    bes2. r8
+    % Inicia la secció polifònica de quatre veus
+    &lt;&lt;
+      { c,8 d fis bes a }  % continuació de la veu principal
+      \new Voice {
+        \voiceTwo
+        c,8~ 2
+      }
+      \new Voice {
+        \voiceThree
+        s8 d2
+      }
+      \new Voice {
+        \voiceFour
+        s4 fis4.
+      }
+    &gt;&gt; |
+    g2.\)  % continuació de la veu principal
+  }
+}
+
+lhMusic = \relative {
+  r2 &lt;c' g ees&gt;2( |
+  &lt;d g, d&gt;1) |
+  r2. d,,4 r4 r |
+  r4
+}
+
+\score {
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;RH&quot;  &lt;&lt;
+      \key g \minor
+      \rhMusic
+    &gt;&gt;
+    \new Staff = &quot;LH&quot; &lt;&lt;
+      \key g \minor
+      \clef &quot;bass&quot;
+      \lhMusic
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../3f/lily-74bc1bcb.ly">
+  <img align="middle"
+       border="0"
+       src="../3f/lily-74bc1bcb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El primer compàs ara és correcte.  El segon compàs conté un
+arpegi i acaba amb una barra doble.  Com es fan, ja que no han
+estat mencionats en aquest Manual d&rsquo;Aprenentatge?  Aquí és on hem
+de tornar a la Referència de Notació.  Buscant la paraula
+&lsquo;arpegi&rsquo; i &lsquo;línia divisòria&rsquo; a l&rsquo;índex ens mostra ràpidament
+que un arpegi es fa afegint <code>\arpeggio</code> a un acord, i la
+doble barra es produeix per mitjà de la instrucció
+<code>\bar &quot;||&quot;</code>.  Això ho podem fer fàcilment.  A continuació hem
+de corregir la col·lisió entre la lligadura d&rsquo;unió i la indicació
+de compàs.  Això es fa millor movent la lligadura cap amunt.  Vam
+estudiar com moure objectes anteriorment a <a href="moving-objects.ca.html">Moviment d&rsquo;objectes</a>,
+on diu que els objectes estan situats de forma relativa al
+pentagrama es poden moure verticalment sobreescrivint la seva
+propietat <code>staff-position</code>, que s&rsquo;especifica en unitats de
+mig espai de pentagrama respecte de la línia central del
+pentagrama.  Així doncs, la sobreescriptura següent col·locada
+just abans de la primera nota lligada pujarà la lligadura 3.5 mig
+espais de pentagrama per sobre de la línia central:
+</p>
+<p><code>\once \override Tie.staff-position = #3.5</code>
+</p>
+<p>Amb això és completa el compàs dos, donant com a resultat:
+</p>
+<blockquote><pre class="verbatim">rhMusic = \relative {
+  \new Voice {
+    r2 c''4.\( g8 |
+    \once \override Tie.staff-position = #3.5
+    bes1~ |
+    \bar &quot;||&quot;
+    \time 6/4
+    bes2. r8
+    % Inicia la secció polifònica amb quatre veus
+    &lt;&lt;
+      { c,8 d fis bes a }  % continuació de la veu principal
+      \new Voice {
+        \voiceTwo
+        c,8~ 2
+      }
+      \new Voice {
+        \voiceThree
+        s8 d2
+      }
+      \new Voice {
+        \voiceFour
+        s4 fis4.
+      }
+    &gt;&gt; |
+    g2.\)  % continuació de la veu principal
+  }
+}
+
+lhMusic = \relative {
+  r2 &lt;c' g ees&gt;2( |
+  &lt;d g, d&gt;1)\arpeggio |
+  r2. d,,4 r4 r |
+  r4
+}
+
+\score {
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;RH&quot;  &lt;&lt;
+      \key g \minor
+      \rhMusic
+    &gt;&gt;
+    \new Staff = &quot;LH&quot; &lt;&lt;
+      \key g \minor
+      \clef &quot;bass&quot;
+      \lhMusic
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../7d/lily-f6c2697d.ly">
+  <img align="middle"
+       border="0"
+       src="../7d/lily-f6c2697d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Anem ara al tercer compàs i començament de la secció Moderato. El
+tutorial ens va ensenyar com escriure una indicació de tempo
+mitjançant l&rsquo;ordre <code>\tempo</code>, por lo qual cosa afegir
+&ldquo;Moderato&rdquo; és fàcil. Pero ara, com fusionem notes estan a
+diferents veus?  Aquí és on hem de tornar a buscar ajuda al manual
+de Referència de la notació.  En cuscar la paraula &ldquo;merge&rdquo;
+(fusiona) a l&rsquo;índex de la Referència de la notació arribem
+ràpidament a les ordres per barrejar notes amb diferent cap i amb
+o sense puntet, a
+<a name="index-Resolucio-de-les-col_00b7lisions"></a>
+<a href="../notation/collision-resolution.ca.html">Resolució de les col·lisions</a>.
+Al nostre exemple hem de fusionar ambdós tipus de notes al
+transcurs de la secció polifònica del compàs 3; per tant, gràcies
+a la informació que apareix a la Referència de la Notació, escrivim
+</p>
+<blockquote><pre class="example">\mergeDifferentlyHeadedOn
+\mergeDifferentlyDottedOn
+</pre></blockquote>
+
+<p>al principi de la secció, i
+</p>
+<blockquote><pre class="example">\mergeDifferentlyHeadedOff
+\mergeDifferentlyDottedOff
+</pre></blockquote>
+
+<p>al final, obtenint com a resultat:
+</p>
+<blockquote><p>
+ <a href="../98/lily-f33c8768.ly">
+  <img align="middle"
+       border="0"
+       src="../98/lily-f33c8768.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Aquestes sobreescriptures han fusionat els dos Fa sostingut, però
+no els dos Re.  Perquè no?  La resposta està a la mateixa secció
+de la Referència de la Notació: les notes que es fusionen han de
+tenir les pliques en direccions oposades i dues notes no es poden
+fusionar bé si hi ha una tercera nota a la mateixa columna.  Aquí
+els dos Re tenen les pliques cap amunt i hi ha una tercera nota:
+el Do.  Sabem com canviar la direcció de la plica usant
+<code>\stemDown</code>, i la Referència de la notació també explica com
+moure el Do: aplicar un desplaçament usant una de les ordres
+<code>\shift</code>.  Però, quin?  El Do està a la veu dos que té
+desactivat el desplaçament, i els dos Re estan a les veus u i
+tres, que tenen el desplaçament desactivat i activat,
+respectivament.  Per això hem de desplaçar el Do un nivell més
+encara, usant <code>\shiftOnn</code> per evitar que interfereixi amb els
+dos Re.  En aplicar aquests canvis obtenim:
+</p>
+<a name="index-Tie_002c-exemple-de-sobreescriptura"></a>
+<a name="index-staff_002dposition_002c-propietat_002c-exemple-1"></a>
+
+<blockquote><pre class="verbatim">rhMusic = \relative {
+  \new Voice {
+    r2 c''4.\( g8 |
+    \once \override Tie.staff-position = #3.5
+    bes1~ |
+    \bar &quot;||&quot;
+    \time 6/4
+    bes2.\tempo &quot;Moderato&quot; r8
+    \mergeDifferentlyHeadedOn
+    \mergeDifferentlyDottedOn
+    % Inicia la secció polifònica de quatre veus
+    &lt;&lt;
+      { c,8 d fis bes a }  % continuació de la veu principal
+      \new Voice {
+        \voiceTwo
+        % Mou el c2 fora de la columna de la nota principal
+        % perquè la fusió funcioni
+        c,8~ \shiftOnn c2
+      }
+      \new Voice {
+        \voiceThree
+        % La plica al d2 ha de ser cap avall per permetre la fusió
+        s8 \stemDown d2
+      }
+      \new Voice {
+        \voiceFour
+        s4 fis4.
+      }
+    &gt;&gt; |
+    \mergeDifferentlyHeadedOff
+    \mergeDifferentlyDottedOff
+    g2.\)  % continuació de la veu principal
+  }
+}
+
+lhMusic = \relative {
+  r2 &lt;c' g ees&gt;2( |
+  &lt;d g, d&gt;1)\arpeggio |
+  r2. d,,4 r4 r |
+  r4
+}
+
+\score {
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;RH&quot;  &lt;&lt;
+      \key g \minor
+      \rhMusic
+    &gt;&gt;
+    \new Staff = &quot;LH&quot; &lt;&lt;
+      \key g \minor
+      \clef &quot;bass&quot;
+      \lhMusic
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../29/lily-7ef6b856.ly">
+  <img align="middle"
+       border="0"
+       src="../29/lily-7ef6b856.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Ja gairebé està.  Sols queden dos problemes: la plica cap avall
+sobre el Re fusionat no hauria d&rsquo;estar aquí, i el Do estaria
+millor col·locat a la dreta dels Re.  Sabem com fer les dues coses
+a partir d&rsquo;ajustaments anteriors: fem la plica transparent, i
+movem el Do amb la propietat <code>force-hshift</code>.  Aquí tenim el
+resultat final:
+</p>
+<a name="index-NoteColumn_002c-exemple-de-sobreescriptura-1"></a>
+<a name="index-force_002dhshift_002c-propietat_002c-exemple-1"></a>
+<a name="index-Stem_002c-exemple-de-sobreescriptura-1"></a>
+<a name="index-transparent_002c-propietat_002c-exemple-2"></a>
+
+<blockquote><pre class="verbatim">rhMusic = \relative {
+  \new Voice {
+    r2 c''4.\( g8 |
+    \once \override Tie.staff-position = #3.5
+    bes1~ |
+    \bar &quot;||&quot;
+    \time 6/4
+    bes2.\tempo &quot;Moderato&quot; r8
+    \mergeDifferentlyHeadedOn
+    \mergeDifferentlyDottedOn
+    % Inicia la secció polifònica de quatre veus
+    &lt;&lt;
+      { c,8 d fis bes a }  % continuació de la veu principal
+      \new Voice {
+        \voiceTwo
+        c,8~
+        % Torna a posicionar el C2 a la dreta de la nota fucionada
+        \once \override NoteColumn.force-hshift = #1.0
+        % Mou el c2 for de la columna de la nota principal
+        % perquè funcioni la fusió
+        \shiftOnn
+        c2
+      }
+      \new Voice {
+        \voiceThree
+        s8
+        % La plica sobre la d2 ha de ser cap avall per permetre la fusió
+        \stemDown
+        % La plica sobre la d2 ha de ser invisible
+        \tweak Stem.transparent ##t
+        d2
+      }
+      \new Voice {
+        \voiceFour
+        s4 fis4.
+      }
+    &gt;&gt; |
+    \mergeDifferentlyHeadedOff
+    \mergeDifferentlyDottedOff
+    g2.\)  % continuació de la veu principal
+  }
+}
+
+lhMusic = \relative {
+  r2 &lt;c' g ees&gt;2( |
+  &lt;d g, d&gt;1)\arpeggio |
+  r2. d,,4 r4 r |
+  r4
+}
+
+\score {
+  \new PianoStaff &lt;&lt;
+    \new Staff = &quot;RH&quot;  &lt;&lt;
+      \key g \minor
+      \rhMusic
+    &gt;&gt;
+    \new Staff = &quot;LH&quot; &lt;&lt;
+      \key g \minor
+      \clef &quot;bass&quot;
+      \lhMusic
+    &gt;&gt;
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../89/lily-806cf41a.ly">
+  <img align="middle"
+       border="0"
+       src="../89/lily-806cf41a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="tweaking-output.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Ajustament de la sortida&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="templates.ca.html" title="Capítol següent">&nbsp;Plantilles &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="fixing-overlapping-notation.ca.html#the-force_002dhshift-property" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; La propietat force-hshift (forçar desplaçament horitzontal)&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="col_00c2_00b7lisions-of-objects.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Col·lisions d'objectes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="further-tweaking.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Ajustaments addicionals &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="real-music-example.html">English</a>, <a href="real-music-example.cs.html">česky</a>, <a href="real-music-example.de.html">deutsch</a>, <a href="real-music-example.es.html">español</a>, <a href="real-music-example.fr.html">français</a>, <a href="real-music-example.it.html">italiano</a>, <a href="real-music-example.ja.html">日本語</a>, <a href="real-music-example.nl.html">nederlands</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Manual d&rsquo;aprenentatge  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Tutorial-1" href="tutorial.ca.html">1. Tutorial</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Compilacio-d_0027un-fitxer" href="compiling-a-file.ca.html">1.1 Compilació d&rsquo;un fitxer</a>    </li>
+    <li class=""><a name="toc-Com-escriure-fitxers-d_0027entrada-1" href="how-to-write-input-files.ca.html">1.2 Com escriure fitxers d&rsquo;entrada</a>    </li>
+    <li class=""><a name="toc-Gestio-dels-errors" href="dealing-with-errors.ca.html">1.3 Gestió dels errors</a>    </li>
+    <li class=""><a name="toc-Com-llegir-els-manuals-1" href="how-to-read-the-manuals.ca.html">1.4 Com llegir els manuals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notacio-corrent" href="common-notation.ca.html">2. Notació corrent</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Notacio-en-un-sol-pentagrama" href="single-staff-notation.ca.html">2.1 Notació en un sol pentagrama</a>    </li>
+    <li class=""><a name="toc-Diverses-notes-a-l_0027hora-1" href="multiple-notes-at-once.ca.html">2.2 Diverses notes a l&rsquo;hora</a>    </li>
+    <li class=""><a name="toc-Cancons" href="songs.ca.html">2.3 Cançons</a>    </li>
+    <li class=""><a name="toc-Retocs-finals-1" href="final-touches.ca.html">2.4 Retocs finals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Conceptes-fonamentals-1" href="fundamental-concepts.ca.html">3. Conceptes fonamentals</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Com-funcionen-els-fitxers-d_0027entrada-del-LilyPond-1" href="how-lilypond-input-files-work.ca.html">3.1 Com funcionen els fitxers d&rsquo;entrada del LilyPond</a>    </li>
+    <li class=""><a name="toc-Les-veus-contenen-musica" href="voices-contain-music.ca.html">3.2 Les veus contenen música</a>    </li>
+    <li class=""><a name="toc-Contextos-i-gravadors-1" href="contexts-and-engravers.ca.html">3.3 Contextos i gravadors</a>    </li>
+    <li class=""><a name="toc-Extensio-de-les-plantilles" href="extending-the-templates.ca.html">3.4 Extensió de les plantilles</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Ajustament-de-la-sortida-1" href="tweaking-output.ca.html">4. Ajustament de la sortida</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Elements-d_0027ajustament-1" href="tweaking-basics.ca.html">4.1 Elements d&rsquo;ajustament</a>    </li>
+    <li class=""><a name="toc-Manual-de-referencia-de-funcionament-intern" href="the-internals-reference-manual.ca.html">4.2 Manual de referència de funcionament intern</a>    </li>
+    <li class=""><a name="toc-Aparenca-dels-objectes" href="appearance-of-objects.ca.html">4.3 Aparença dels objectes</a>    </li>
+    <li class=""><a name="toc-Col_00b7locacio-dels-objectes" href="placement-of-objects.ca.html">4.4 Col·locació dels objectes</a>    </li>
+    <li class=""><a name="toc-Espaiat-vertical-1" href="vertical-spacing.ca.html">4.5 Espaiat vertical</a>    </li>
+    <li class=" toc_current"><a name="toc-Col_00b7lisions-d_0027objectes-1" href="col_00c2_00b7lisions-of-objects.ca.html">4.6 Col·lisions d&rsquo;objectes</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Moviment-d_0027objectes-1" href="moving-objects.ca.html">4.6.1 Moviment d&rsquo;objectes</a>      </li>
+      <li class=""><a name="toc-Ajustament-de-la-notacio-amb-superposicions" href="fixing-overlapping-notation.ca.html">4.6.2 Ajustament de la notació amb superposicions</a>      </li>
+      <li class=" toc_current"><a name="toc-Exemple-real-de-musica" href="real-music-example.ca.html">4.6.3 Exemple real de música</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Ajustaments-addicionals-1" href="further-tweaking.ca.html">4.7 Ajustaments addicionals</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Plantilles-1" href="templates.ca.html">A. Plantilles</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Plantilles-de-pentagrama-unic" href="single-staff-templates.ca.html">A.1 Plantilles de pentagrama únic</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-piano-1" href="piano-templates.ca.html">A.2 Plantilles de piano</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-quartet-de-corda-1" href="string-quartet-templates.ca.html">A.3 Plantilles de quartet de corda</a>    </li>
+    <li class=""><a name="toc-Plantilles-de-conjunts-vocals-1" href="vocal-ensembles-templates.ca.html">A.4 Plantilles de conjunts vocals</a>    </li>
+    <li class=""><a name="toc-Plantilles-orquestrals-1" href="orchestral-templates.ca.html">A.5 Plantilles orquestrals</a>    </li>
+    <li class=""><a name="toc-Plantilles-per-a-notacio-antiga" href="ancient-notation-templates.ca.html">A.6 Plantilles per a notació antiga</a>    </li>
+    <li class=""><a name="toc-Altres-plantilles-1" href="other-templates.ca.html">A.7 Altres plantilles</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">B. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">C. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

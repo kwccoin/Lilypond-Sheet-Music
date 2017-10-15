@@ -1,0 +1,1150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.6.3 Escriptura de les particel·les</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.6.3 Escriptura de les particel·les">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.6.3 Escriptura de les particel·les">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="staff-notation.ca.html#staff-notation" rel="up" title="1.6 Notació dels pentagrames">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="modifying-single-staves.ca.html#modifying-single-staves" rel="previous" title="1.6.2 Modificació de pentagrames separats">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Escriptura-de-les-particel_00b7les"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="modifying-single-staves.ca.html#hiding-staves" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Ocultament de pentagrames&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="staff-notation.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Notació dels pentagrames&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#instrument-names" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Noms d'instruments &gt; </a>]</td></tr></table>
+<a name="writing-parts"></a>
+<h3 class="subsection">1.6.3 Escriptura de les particel·les</h3>
+
+<p>Aquesta secció explica com inserir indicacions de temps i noms
+d&rsquo;instruments a una partitura.  També es descriuen mètodes per
+citar altres veus i donar format a les notes guia.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#instrument-names" accesskey="1">Noms d&rsquo;instruments</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#quoting-other-voices" accesskey="2">Cites a altres veus</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#formatting-cue-notes" accesskey="3">Format de les notes guia</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Noms-d_0027instruments"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#writing-parts" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Escriptura de les particel·les&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#writing-parts" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Escriptura de les particel·les&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#quoting-other-voices" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Cites a altres veus &gt; </a>]</td></tr></table>
+<a name="instrument-names"></a>
+<h4 class="unnumberedsubsubsec">Noms d&rsquo;instruments</h4>
+
+<a name="index-instrument_002c-nom-del"></a>
+<a name="index-instrument_002c-nom-abreujat"></a>
+
+<p>Es poden imprimir els noms dels instruments al costat esquerre
+dels pentagrames dins dels contextos <code>Staff</code>,
+<code>PianoStaff</code>, <code>StaffGroup</code>, <code>GrandStaff</code> i
+<code>ChoirStaff</code>.  El valor de <code>instrumentName</code> s&rsquo;usa per al
+primer pentagrama, i el valor de <code>shortInstrumentName</code>
+s&rsquo;usa per a tots los pentagrames següents..
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  instrumentName = #&quot;Violin &quot;
+  shortInstrumentName = #&quot;Vln. &quot;
+} \relative {
+  c'4.. g'16 c4.. g'16 \break | c1 |
+}
+</pre><p>
+ <a href="../49/lily-d7bf7db1.ly">
+  <img align="middle"
+       border="0"
+       src="../49/lily-d7bf7db1.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-instruments_002c-noms-complexos-de"></a>
+
+<p>També podem fer servir <code>\markup</code> per construir noms
+d&rsquo;instrument més complicats:
+</p>
+<blockquote><pre class="verbatim">\new Staff \with {
+  instrumentName = \markup {
+    \column { &quot;Clarinetti&quot;
+      \line { &quot;in B&quot; \smaller \flat }
+    }
+  }
+} \relative {
+  c''4 c,16 d e f g2
+}
+</pre><p>
+ <a href="../8f/lily-17136bc0.ly">
+  <img align="middle"
+       border="0"
+       src="../8f/lily-17136bc0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-noms-d_0027instruments_002c-centrat"></a>
+
+<p>Quan s&rsquo;agrupen dos o més contextos de pentagrama, els noms
+d&rsquo;instrument i els noms curts apareixen centrats de forma
+predeterminada.  Per centrar noms d&rsquo;instrument de diverses línies,
+s&rsquo;ha d&rsquo;utilitzar <code>\center-column</code>:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \with {
+    instrumentName = #&quot;Flute&quot;
+  } \relative {
+    f''2 g4 f
+}
+  \new Staff \with {
+    instrumentName = \markup {
+      \center-column { &quot;Clarinet&quot;
+        \line { &quot;in B&quot; \smaller \flat }
+      }
+    }
+  } \relative { c''4 b c2 }
+&gt;&gt;
+</pre><p>
+ <a href="../c0/lily-e35e2587.ly">
+  <img align="middle"
+       border="0"
+       src="../c0/lily-e35e2587.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-indent"></a>
+<a name="index-indent-1"></a>
+<a name="index-short_002dindent"></a>
+<a name="index-short_002dindent-1"></a>
+
+<p>Malgrat això, si els noms d&rsquo;instrument són més llargs, no se
+centren per a un grup de pentagrames a no ser que s&rsquo;augmentin els
+valors del sagnat, <code>indent</code>, i del sagnat curt,
+<code>short-indent</code>.  Per veure més detalls sobre aquests
+ajustaments, consulteu
+<a name="index-paper-variables-for-shifts-and-indents"></a>
+<a href="../notation/horizontal-spacing-paper-variables.ca.html#paper-variables-for-shifts-and-indents">Variables de paper per a desplaçaments i sagnats</a>.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \with {
+    instrumentName = #&quot;Alto Flute in G&quot;
+    shortInstrumentName = #&quot;Flt.&quot;
+  } \relative {
+    f''2 g4 f \break
+    g4 f g2
+  }
+  \new Staff \with {
+    instrumentName = #&quot;Clarinet&quot;
+    shortInstrumentName = #&quot;Clar.&quot;
+  } \relative {
+    c''4 b c2 \break
+    c2 b4 c
+  }
+&gt;&gt;
+
+\layout {
+  indent = 3.0\cm
+  short-indent = 1.5\cm
+}
+</pre><p>
+ <a href="../f1/lily-6ff8284c.ly">
+  <img align="middle"
+       border="0"
+       src="../f1/lily-6ff8284c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-noms-de-instrument_002c-afegir-a-d_0027altres-contextos"></a>
+
+<p>Per afegir noms d&rsquo;instrument a d&rsquo;altres contextos (com ara
+<code>ChordNames</code> o <code>FiguredBass</code>), hem d&rsquo;afegir el gravador
+<code>Instrument_name_engraver</code> a aquest context.  Per veure més
+detalls, consulteu
+<a name="index-Modifying-context-plugins"></a>
+<a href="../notation/modifying-context-plugins.ca.html">Modificació dels connectors de context</a>.
+</p>
+
+<a name="index-noms-d_0027instrument_002c-canviar"></a>
+
+<p>El nom d&rsquo;instrument curt <code>shortInstrumentName</code> es pot canviar
+a la meitat d&rsquo;una peça, igual que d&rsquo;altres ajustaments que poden
+caldre per al nou instrument; tanmateix, sols el primer
+<code>instrumentName</code> s&rsquo;imprimeix i la resta d&rsquo;ells s&rsquo;ignoren:
+</p>
+<blockquote><pre class="verbatim">prepPiccolo = &lt;&gt;^\markup \italic { muta in Piccolo }
+
+setPiccolo = {
+  \set Staff.instrumentName = #&quot;Piccolo&quot;
+  \set Staff.shortInstrumentName = #&quot;Picc.&quot;
+  \set Staff.midiInstrument = #&quot;piccolo&quot;
+  &lt;&gt;^\markup \bold { Piccolo }
+  \transposition c''
+}
+
+prepFlute = &lt;&gt;^\markup \italic { muta in Flauto }
+
+setFlute = {
+  \set Staff.instrumentName = #&quot;Flute&quot;
+  \set Staff.shortInstrumentName = #&quot;Flt.&quot;
+  \set Staff.midiInstrument = #&quot;flute&quot;
+  &lt;&gt;^\markup \bold { Flute }
+  \transposition c'
+}
+
+\new Staff \with {
+  instrumentName = #&quot;Flute&quot;
+  shortInstrumentName = #&quot;Flt.&quot;
+  midiInstrument = #&quot;flute&quot;
+}
+\relative {
+  g'1 g g g \break
+  g1 g \prepPiccolo R R \break
+  \setPiccolo
+  g1 g g g \break
+  g1 g \prepFlute R R \break
+  \setFlute
+  g1 g g g
+}
+</pre><p>
+ <a href="../ae/lily-7a66e8d5.ly">
+  <img align="middle"
+       border="0"
+       src="../ae/lily-7a66e8d5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Vegeu-tambe-243"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-paper-variables-for-shifts-and-indents-1"></a>
+<a href="../notation/horizontal-spacing-paper-variables.ca.html#paper-variables-for-shifts-and-indents">Variables de paper per a desplaçaments i sagnats</a>,
+<a name="index-Modifying-context-plugins-1"></a>
+<a href="../notation/modifying-context-plugins.ca.html">Modificació dels connectors de context</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-InstrumentName"></a>
+<a href="../internals/instrumentname.ca.html">InstrumentName</a>,
+<a name="index-PianoStaff-3"></a>
+<a href="../internals/pianostaff.ca.html">PianoStaff</a>,
+<a name="index-Staff-6"></a>
+<a href="../internals/staff.ca.html">Staff</a>.
+</p>
+
+<hr size="6">
+<a name="Cites-a-altres-veus"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#instrument-names" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Noms d'instruments&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#writing-parts" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Escriptura de les particel·les&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#formatting-cue-notes" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Format de les notes guia &gt; </a>]</td></tr></table>
+<a name="quoting-other-voices"></a>
+<h4 class="unnumberedsubsubsec">Cites a altres veus</h4>
+
+<a name="index-guia_002c-veus"></a>
+<a name="index-citar-altres-veus"></a>
+<a name="index-fragments_002c-citar"></a>
+<a name="index-notes-guia"></a>
+
+<a name="index-_005caddQuote"></a>
+<a name="index-_005caddQuote-1"></a>
+<a name="index-_005cquoteDuring"></a>
+<a name="index-_005cquoteDuring-1"></a>
+<a name="index-_005ctransposition-2"></a>
+<a name="index-_005ctransposition-3"></a>
+
+<p>És molt freqüent que una veu usi les mateixes notes que una altra
+veu.  Per exemple, els violins primer i segon tocant la mateixa
+frase durant un determinat passatge musical.  Això es fa deixant
+que una veu<em>citi</em> a l&rsquo;altra, sense que s&rsquo;hagi de tornar a
+introduir la música per segon cop.
+</p>
+<p>L&rsquo;ordre <code>\addQuote</code>, utilitzada a l&rsquo;àmbit del nivell
+sintàctic superior, defineix un flux de música des del qual és
+possible citar fragments.
+</p>
+<p>L&rsquo;ordre <code>\quoteDuring</code> s&rsquo;usa per indicar el punt en el qual
+comença la cita.  Va seguida per dos arguments: el nom de la veu
+citada, tal i com es va definir amb <code>\addQuote</code>, i una
+expressió musical que indica la duració de la cita.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  a'4 gis g gis | b4^&quot;quoted&quot; r8 ais\p a4( f)
+}
+
+oboeNotes = \relative {
+  c''4 cis c b \quoteDuring #&quot;flute&quot; { s1 }
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\score {
+  &lt;&lt;
+    \new Staff \with { instrumentName = &quot;Flute&quot; } \fluteNotes
+    \new Staff \with { instrumentName = &quot;Oboe&quot; } \oboeNotes
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../19/lily-457eb37c.ly">
+  <img align="middle"
+       border="0"
+       src="../19/lily-457eb37c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si l&rsquo;expressió musical que s&rsquo;usa per <code>\quoteDuring</code> conté
+qualsevol cosa que no sigui un silenci de separació o un silenci
+multicompàs, es produeix una situació de polifonia, cosa que no és
+habitualment desitjable:
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  a'4 gis g gis | b4^&quot;quoted&quot; r8 ais\p a4( f)
+}
+
+oboeNotes = \relative {
+  c''4 cis c b \quoteDuring #&quot;flute&quot; { e4 r8 ais b4 a }
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\score {
+  &lt;&lt;
+    \new Staff \with { instrumentName = &quot;Flute&quot; } \fluteNotes
+    \new Staff \with { instrumentName = &quot;Oboe&quot; } \oboeNotes
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../ab/lily-4050f7a0.ly">
+  <img align="middle"
+       border="0"
+       src="../ab/lily-4050f7a0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si cal imprimir una ordre <code>\unfoldRepeat</code> dins d&rsquo;una
+expressió musical en usar <code>\quoteDuring</code>, aleshores ha de
+contenir també la seva pròpia ordre <code>\unfoldRepeat</code>:
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  \repeat volta 2 { a'4 gis g gis }
+}
+
+oboeNotesDW = \relative {
+  \repeat volta 2 \quoteDuring #&quot;incorrecte&quot; { s1 }
+}
+
+oboeNotesW = \relative {
+  \repeat volta 2 \quoteDuring #&quot;correcte&quot; { s1 }
+}
+
+
+\addQuote &quot;incorrecte&quot; { \fluteNotes }
+
+\addQuote &quot;correcte&quot; { \unfoldRepeats \fluteNotes }
+
+\score {
+  \unfoldRepeats
+  &lt;&lt;
+    \new Staff \with { instrumentName = &quot;Flute&quot; }
+    \fluteNotes
+    \new Staff \with { instrumentName = &quot;Oboe (incorrecte)&quot; }
+    \oboeNotesDW
+    \new Staff \with { instrumentName = &quot;Oboe (correcte)&quot; }
+    \oboeNotesW
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../e5/lily-3c48af57.ly">
+  <img align="middle"
+       border="0"
+       src="../e5/lily-3c48af57.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;ordre <code>\quoteDuring</code> usa els ajustament de
+<code>\transposition</code> tant de la part citada com de la que cita,
+per produir notes que tenen la mateixa alçada de so a la part que
+cita i en les de la part citada.
+</p>
+<blockquote><pre class="verbatim">clarinetNotes = \relative c'' {
+  \transposition bes
+  \key d \major
+  b4 ais a ais | cis4^&quot;citat&quot; r8 bis\p b4( f)
+}
+
+oboeNotes = \relative {
+  c''4 cis c b \quoteDuring #&quot;clarinet&quot; { s1 }
+}
+
+\addQuote &quot;clarinet&quot; { \clarinetNotes }
+
+
+\score {
+  &lt;&lt;
+    \new Staff \with { instrumentName = &quot;Clarinet&quot; } \clarinetNotes
+    \new Staff \with { instrumentName = &quot;Oboe&quot; } \oboeNotes
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../a6/lily-7ac7ef38.ly">
+  <img align="middle"
+       border="0"
+       src="../a6/lily-7ac7ef38.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-note_002devent-3"></a>
+<a name="index-articulation_002devent"></a>
+<a name="index-dynamic_002devent"></a>
+<a name="index-rest_002devent"></a>
+<a name="index-slur_002devent"></a>
+<a name="index-crescendo_002devent"></a>
+
+<a name="index-quotedEventTypes"></a>
+<a name="index-quotedEventTypes-1"></a>
+<a name="index-quotedCueEventTypes"></a>
+<a name="index-quotedCueEventTypes-1"></a>
+
+<p>De forma predeterminada, la música citada inclou totes les
+articulacions, matisos dinàmics, elements de marcatge, etc., de
+l&rsquo;expressió citada.  És possible escollir quins d&rsquo;aquests
+objectes de la música que se cita s&rsquo;imprimeixen, mitjançant la
+propietat de context <code>quotedEventTypes</code>.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  a'2 g2 |
+  b4\&lt;^&quot;quoted&quot; r8 ais a4\f( c-&gt;)
+ }
+
+oboeNotes = \relative {
+  c''2. b4 |
+  \quoteDuring #&quot;flute&quot; { s1 }
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\score {
+  &lt;&lt;
+    \set Score.quotedEventTypes = #'(note-event articulation-event
+                                     crescendo-event rest-event
+                                     slur-event dynamic-event)
+    \new Staff \with { instrumentName = &quot;Flute&quot; } \fluteNotes
+    \new Staff \with { instrumentName = &quot;Oboe&quot; } \oboeNotes
+  &gt;&gt;
+ }
+</pre><p>
+ <a href="../fe/lily-42d590ad.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-42d590ad.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Las cites també es poden etiquetar, vegeu
+<a name="index-Using-tags"></a>
+<a href="../notation/different-editions-from-one-source.ca.html#using-tags">Us de etiquetes</a>.
+</p>
+<a name="Vegeu-tambe-39"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="displaying-pitches.ca.html#instrument-transpositions">Transposició dels instruments</a>,
+<a name="index-Using-tags-1"></a>
+<a href="../notation/different-editions-from-one-source.ca.html#using-tags">Ús de etiquetes</a>.
+</p>
+<p>Fitxers d&rsquo;inici:
+&lsquo;<tt>scm/define-event-classes.scm</tt>&rsquo;.
+</p>
+<p>Fragments de codio:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-Music-classes"></a>
+<a href="../internals/music-classes.ca.html">Music classes</a>,
+<a name="index-QuoteMusic"></a>
+<a href="../internals/quotemusic.ca.html">QuoteMusic</a>,
+<a name="index-Voice-6"></a>
+<a href="../internals/voice.ca.html">Voice</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-55"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Sols el contingut de la primera veu d&rsquo;una ordre
+<code>\addQuote</code> s&rsquo;ha de tenir en compte per a la cita, de manera
+que si l&rsquo;expressió musical conté enunciats <code>\new</code> o
+<code>\context Voice</code>, els seus continguts no seran citats.  La
+cita de notes d&rsquo;adorn no està contemplada i pot fer que el
+LilyPond acabi de forma abrupta; la cita d&rsquo;uns tresets dins d&rsquo;uns
+altres pot donar com a resultat una notació de qualitat pobre.
+</p>
+<hr size="6">
+<a name="Format-de-les-notes-guia"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#quoting-other-voices" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Cites a altres veus&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#writing-parts" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Escriptura de les particel·les&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="editorial-annotations.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Editorial annotations &gt; </a>]</td></tr></table>
+<a name="formatting-cue-notes"></a>
+<h4 class="unnumberedsubsubsec">Format de les notes guia</h4>
+
+<a name="index-guia_002c-format-de-les-notes"></a>
+<a name="index-notes-guia-1"></a>
+<a name="index-guia_002c-notes"></a>
+<a name="index-guia_002c-notes_002c-format-de"></a>
+<a name="index-fragments"></a>
+<a name="index-citar-altres-veus-1"></a>
+<a name="index-veus_002c-citar"></a>
+
+
+<a name="index-_005ccueDuring"></a>
+<a name="index-_005ccueDuring-1"></a>
+<a name="index-_005ccueClef"></a>
+<a name="index-_005ccueClef-1"></a>
+<a name="index-_005ccueDuringWithClef"></a>
+<a name="index-_005ccueDuringWithClef-1"></a>
+<a name="index-_005cquoteDuring-2"></a>
+<a name="index-_005cquoteDuring-3"></a>
+
+<a name="index-notes-petites"></a>
+<a name="index-petites_002c-notes"></a>
+<a name="index-CueVoice"></a>
+
+<p>La manera més senzilla de donar format a les notes guia és crear
+explícitament un context <code>CueVoice</code> dins de la part.
+</p>
+<pre class="verbatim">\relative {
+  R1
+  &lt;&lt;
+    { e'2\rest r4. e8 }
+    \new CueVoice {
+      \stemUp d'8^&quot;flute&quot; c d e fis2
+    }
+  &gt;&gt;
+  d,4 r a r
+}
+</pre><p>
+ <a href="../59/lily-cedec23b.ly">
+  <img align="middle"
+       border="0"
+       src="../59/lily-cedec23b.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>L&rsquo;ordre <code>\cueClef</code> pot usar-se també amb un context
+<code>CueVoice</code> explícit si es requereix un canvi de clau, i
+imprimeix una clau de la mida adequada per a les notes guia.
+Després pot utilitzar-se l&rsquo;ordre <code>\cueClefUnset</code> per tornar a
+la clau original, de nou amb un signe de clau de la mida adequada.
+</p>
+<pre class="verbatim">\relative {
+  \clef &quot;bass&quot;
+  R1
+  &lt;&lt;
+    { e'2\rest r4. \cueClefUnset e,8 }
+    \new CueVoice {
+      \cueClef &quot;treble&quot; \stemUp d''8^&quot;flute&quot; c d e fis2
+    }
+  &gt;&gt;
+  d,,4 r a r
+}
+</pre><p>
+ <a href="../3b/lily-2d8d55c3.ly">
+  <img align="middle"
+       border="0"
+       src="../3b/lily-2d8d55c3.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Les instruccions <code>\cueClef</code> i <code>\cueClefUnset</code> es poden
+usar també sense un <code>CueVoice</code> si cal.
+</p>
+<pre class="verbatim">\relative {
+  \clef &quot;bass&quot;
+  R1
+  \cueClef &quot;treble&quot;
+  d''8^&quot;flute&quot; c d e fis2
+  \cueClefUnset
+  d,,4 r a r
+}
+</pre><p>
+ <a href="../5c/lily-d190ffde.ly">
+  <img align="middle"
+       border="0"
+       src="../5c/lily-d190ffde.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>En casos de col·locació més complexa de notes guia, per exemple
+amb transposició o inserint notes guia, per més d&rsquo;una font, poden
+usar-se les ordres <code>\cueDuring</code> o <code>\cueDuringWithClef</code>.
+Són una forma més especialitzada de <code>\quoteDuring</code>,
+vegeu <a href="#quoting-other-voices">Cites a altres veus</a> a la secció anterior.
+</p>
+<p>La sintaxi és:
+</p>
+<blockquote><pre class="example">\cueDuring #<var>nom_de_la_cita</var> #<var>direcció</var> #<var>música</var>
+</pre></blockquote>
+
+<p>i
+</p>
+<blockquote><pre class="example">\cueDuringWithClef #<var>nom_de_la_cita</var> #<var>direcció</var> #<var>clau</var> #<var>música</var>
+</pre></blockquote>
+
+<p>La música procedent dels compassos corresponents de l&rsquo;element
+<code><var>nom_de_la_cita</var></code> s&rsquo; afegeix com un context
+<code>CueVoice</code> y apareix simultàniament amb la
+<code><var>música</var></code>, cosa que produeix una situació polifònica.  La
+<code><var>direcció</var></code> agafa un argument <code>UP</code> (amunt) o
+<code>DOWN</code> (avall), i correspon amb les veus primera i segona,
+respectivament, determinant com s&rsquo;imprimeixen les notes guia en
+relació a l&rsquo;altra veu.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  r2. c''4 | d8 c d e fis2 | g2 d |
+}
+
+oboeNotes = \relative c'' {
+  R1
+  &lt;&gt;^\markup \tiny { flute }
+  \cueDuring #&quot;flute&quot; #UP { R1 }
+  g2 c,
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\new Staff {
+  \oboeNotes
+}
+</pre><p>
+ <a href="../84/lily-d4da87df.ly">
+  <img align="middle"
+       border="0"
+       src="../84/lily-d4da87df.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>És possible ajustar quins aspectes de la música se citen amb
+<code>\cueDuring</code> establint el valor de la propietat
+<code>quotedCueEventTypes</code>.  El seu valor per defecte és
+<code>'(note-event rest-event tie-event beam-event
+tuplet-span-event)</code>, cosa que significa que sols les notes,
+silencis, lligadures d&rsquo;unió, barres i grups especials se citen,
+però no les articulacions, maques dinàmiques, elements de
+marcatge, etc.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Quan un context <code>Voice</code> comença amb
+<code>cueDuring</code>, com a l&rsquo;exemple següent, el context
+<code>Voice</code> s&rsquo;ha de declarar explícitament, ja que en cas
+contrari tota l&rsquo;expressió musical pertanyeria al context
+<code>CueVoice</code>.
+</p>
+</div>
+<blockquote><pre class="verbatim">oboeNotes = \relative {
+  r2 r8 d''16(\f f e g f a)
+  g8 g16 g g2.
+}
+\addQuote &quot;oboe&quot; { \oboeNotes }
+
+\new Voice \relative c'' {
+  \set Score.quotedCueEventTypes = #'(note-event rest-event tie-event
+                                      beam-event tuplet-span-event
+                                      dynamic-event slur-event)
+  \cueDuring #&quot;oboe&quot; #UP { R1 }
+  g2 c,
+}
+</pre><p>
+ <a href="../71/lily-42eed127.ly">
+  <img align="middle"
+       border="0"
+       src="../71/lily-42eed127.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden usar elements de marcatge per mostrar el nom de
+l&rsquo;instrument citat.  Si les notes guia requereixen un canvi de
+clau, pot fer-se manualment però la clau original s&rsquo;ha de
+restaurar al final de les notes guia.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  r2. c''4 d8 c d e fis2 g2 d2
+}
+
+bassoonNotes = \relative c {
+  \clef bass
+  R1
+  \clef treble
+  &lt;&gt;^\markup \tiny { flute }
+  \cueDuring #&quot;flute&quot; #UP { R1 }
+  \clef bass
+  g4. b8 d2
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\new Staff {
+  \bassoonNotes
+}
+</pre><p>
+ <a href="../44/lily-a7be4452.ly">
+  <img align="middle"
+       border="0"
+       src="../44/lily-a7be4452.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>De forma alternativa, pot usar-se la funció
+<code>\cueDuringWithClef</code> en el seu lloc.  Aquesta ordre admet un
+argument addicional per especificar el canvi de clau que cal
+imprimir per a les notes guia, però després imprimeix
+automàticament la clau original un cop que ha finalitzat la sèrie
+de notes guia.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  r2. c''4 d8 c d e fis2 g2 d2
+}
+
+bassoonNotes = \relative c {
+  \clef bass
+  R1
+  &lt;&gt;^\markup { \tiny &quot;flute&quot; }
+  \cueDuringWithClef #&quot;flute&quot; #UP #&quot;treble&quot; { R1 }
+  g4. b8 d2
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\new Staff {
+  \bassoonNotes
+}
+</pre><p>
+ <a href="../6b/lily-e87ad9c9.ly">
+  <img align="middle"
+       border="0"
+       src="../6b/lily-e87ad9c9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005ctransposedCueDuring"></a>
+<a name="index-_005ctransposedCueDuring-1"></a>
+
+<p>Com <code>\quoteDuring</code>, <code>\cueDuring</code> té en compte les
+transposicions instrumentals.  Les notes guia es produeixen en les
+alçades en les quals s&rsquo;escriurien per a l&rsquo;instrument que rep la
+cita, per produir així les alçades de so de l&rsquo;instrument original.
+</p>
+<p>Per transportar les notes guia de forma diferent, useu
+<code>\transposedCueDuring</code>.  Aquesta ordre accepta un argument
+addicional per especificar el so d&rsquo;un Do central de concert.  Això
+és útil per agafar cites d&rsquo;un instrument que està a un registre
+completament diferent.
+</p>
+<blockquote><pre class="verbatim">piccoloNotes = \relative {
+  \clef &quot;treble^8&quot;
+  R1
+  c'''8 c c e g2
+  c4 g g2
+}
+
+bassClarinetNotes = \relative c' {
+  \key d \major
+  \transposition bes,
+  d4 r a r
+  \transposedCueDuring #&quot;piccolo&quot; #UP d { R1 }
+  d4 r a r
+}
+
+\addQuote &quot;piccolo&quot; { \piccoloNotes }
+
+&lt;&lt;
+  \new Staff \piccoloNotes
+  \new Staff \bassClarinetNotes
+&gt;&gt;
+</pre><p>
+ <a href="../0d/lily-59561b91.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-59561b91.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-removing-cue-notes"></a>
+<a name="index-cue-notes_002c-removing"></a>
+
+<a name="index-_005ckillCues"></a>
+<a name="index-_005ckillCues-1"></a>
+
+<p>L&rsquo;ordre <code>\killCues</code> elimina les notes guia d&rsquo;una expressió
+musical, de forma que la mateixa expressió musical pugui
+utilitzar-se per produir la particel·la instrumental (amb notes
+guia) i la partitura de conjunt.  L&rsquo;ordre <code>\killCues</code> elimina
+solament les notes i esdeveniments que s&rsquo;han citat mitjançant
+<code>\cueDuring</code>.  Altres elements de marcatge associats amb les
+guies, com els canvis de clau o una etiqueta identificativa de
+l&rsquo;instrument font, poden marcar-se per a la seva inclusió
+selectiva dins de la partitura, vegeu
+<a name="index-Using-tags-2"></a>
+<a href="../notation/different-editions-from-one-source.ca.html#using-tags">Ús de etiquetes</a>.
+</p>
+<blockquote><pre class="verbatim">fluteNotes = \relative {
+  r2. c''4 d8 c d e fis2 g2 d2
+}
+
+bassoonNotes = \relative c {
+  \clef bass
+  R1
+  \tag #'part {
+    \clef treble
+    &lt;&gt;^\markup \tiny { flute }
+  }
+  \cueDuring #&quot;flute&quot; #UP { R1 }
+  \tag #'part \clef bass
+  g4. b8 d2
+}
+
+\addQuote &quot;flute&quot; { \fluteNotes }
+
+\new Staff {
+  \bassoonNotes
+}
+
+\new StaffGroup &lt;&lt;
+  \new Staff {
+    \fluteNotes
+  }
+  \new Staff {
+    \removeWithTag #'part { \killCues { \bassoonNotes } }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../e5/lily-9f55de7e.ly">
+  <img align="middle"
+       border="0"
+       src="../e5/lily-9f55de7e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Com a alternativa, els canvis de clau i les etiquetes d&rsquo;instrument
+es poden recol·lectar dins d&rsquo;una definició d&rsquo;instrument per al seu
+ús repetit, utilitzant
+<code>\addInstrumentDefinition</code> que es descriu a
+<a href="#instrument-names">Noms d&rsquo;instruments</a>.
+</p>
+<a name="Vegeu-tambe-105"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="#quoting-other-voices">Cites a altres veus</a>,
+<a href="displaying-pitches.ca.html#instrument-transpositions">Transposició dels instruments</a>,
+<a href="#instrument-names">Noms d&rsquo;instruments</a>,
+<a href="displaying-pitches.ca.html#clef">Clau</a>,
+<a href="opera-and-stage-musicals.ca.html#musical-cues">Pistes musicals</a>,
+<a name="index-Using-tags-3"></a>
+<a href="../notation/different-editions-from-one-source.ca.html#using-tags">Ús de etiquetes</a>.
+</p>
+
+<p>Fragments de codi:
+<a href="../snippets/notacio-dels-pentagrames.ca.html#notaci_00f3-dels-pentagrames">Staff notation</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-CueVoice-1"></a>
+<a href="../internals/cuevoice.ca.html">CueVoice</a>,
+<a name="index-Voice-7"></a>
+<a href="../internals/voice.ca.html">Voice</a>.
+</p>
+<a name="Advertiments-i-problemes-coneguts-69"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Poden ocórrer col·lisions amb els silencis si s&rsquo;usa
+<code>\cueDuring</code>, entre els contextos de <code>Voice</code> i de
+<code>CueVoice</code>.  En usar <code>\cueDuringWithClef</code> o
+<code>\transposedCueDuring</code> l&rsquo;argument addicional requerit per a
+cada cas ha d&rsquo;anar després de la cita i de la direcció.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#quoting-other-voices" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Cites a altres veus&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#writing-parts" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Escriptura de les particel·les&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="editorial-annotations.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Editorial annotations &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="writing-parts.html">English</a>, <a href="writing-parts.de.html">deutsch</a>, <a href="writing-parts.es.html">español</a>, <a href="writing-parts.fr.html">français</a>, <a href="writing-parts.it.html">italiano</a>, <a href="writing-parts.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=" toc_current"><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Visualitzacio-dels-pentagrames" href="displaying-staves.ca.html">1.6.1 Visualització dels pentagrames</a>      </li>
+      <li class=""><a name="toc-Modificacio-de-pentagrames-separats" href="modifying-single-staves.ca.html">1.6.2 Modificació de pentagrames separats</a>      </li>
+      <li class=" toc_current"><a name="toc-Escriptura-de-les-particel_00b7les-1" href="writing-parts.ca.html">1.6.3 Escriptura de les particel·les</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Noms-d_0027instruments-1" href="writing-parts.ca.html#instrument-names">Noms d&rsquo;instruments</a>        </li>
+        <li class=""><a name="toc-Cites-a-altres-veus-1" href="writing-parts.ca.html#quoting-other-voices">Cites a altres veus</a>        </li>
+        <li class=""><a name="toc-Format-de-les-notes-guia-1" href="writing-parts.ca.html#formatting-cue-notes">Format de les notes guia</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

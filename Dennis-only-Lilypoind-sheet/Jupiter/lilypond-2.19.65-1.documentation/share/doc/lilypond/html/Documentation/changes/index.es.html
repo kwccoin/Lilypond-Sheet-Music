@@ -1,0 +1,1432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created on el 6 agosto 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Registro de cambios de LilyPond: Funcionalidades nuevas de la versión 2.20 desde la 2.18</title>
+
+<meta name="description" content="Registro de cambios de LilyPond: Funcionalidades nuevas de la versión 2.20 desde la 2.18">
+<meta name="keywords" content="Registro de cambios de LilyPond: Funcionalidades nuevas de la versión 2.20 desde la 2.18">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#index" rel="start" title="Funcionalidades nuevas de la versión 2.20 desde la 2.18">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="es" class="changes devStatus">
+
+
+<div id="main">
+<a name="Top"></a>
+<a name="index"></a>
+<h1 class="unnumbered">Funcionalidades nuevas de la versión 2.20 desde la 2.18</h1>
+
+
+
+<ul>
+<li>
+Ahora se pueden mover sistemas respecto a su posición actual
+usando la subpropiedad <code>extra-offset</code> de
+<code>NonMusicalPaperColumn.line-break-system-details</code>.  Son
+posibles tanto desplazamientos horizontales como verticales.  Esta
+funcionalidad es especialmente útil para hacer pequeños ajustes
+sobre la posición vertical predeterminada de los sistemas
+individuales. Véase <a name="index-Explicit-staff-and-system-positioning"></a>
+<a href="../notation/explicit-staff-and-system-positioning.es.html">Explicit staff and system positioning</a>
+para más información.
+
+</li><li>
+Ahora se puede añadir texto sobre los corchetes de análisis
+mediante el objeto <code>HorizontalBracketText</code>.
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Voice
+    \consists &quot;Horizontal_bracket_engraver&quot;
+  }
+}
+
+{
+  \once \override HorizontalBracketText.text = &quot;a&quot;
+  c''\startGroup d''\stopGroup
+  e''-\tweak HorizontalBracketText.text &quot;a'&quot; \startGroup d''\stopGroup
+}
+</pre><p>
+ <a href="../87/lily-271056c8.ly">
+  <img align="middle"
+       border="0"
+       src="../87/lily-271056c8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se puede hacer ahora un ajuste fino de los extremos de los
+reguladores usando la propiedad de grob <code>shorten-pair</code>, que
+anteriormente afectaba solo a los objetos extensos de texto como
+<code>TupletBracket</code> y <code>OttavaBracket</code>.  Los valores
+positivos producen un desplazamiento a la derecha, los negativos a
+la izquierda.
+<blockquote><pre class="verbatim">{ \once \override Hairpin.shorten-pair = #'(2 . 2)
+  c'1~\&lt;
+  c'2~ c'\!
+  \once \override Hairpin.shorten-pair = #'(-2 . -2)
+  c'1~\&lt;
+  c'2~ c'\! }
+</pre><p>
+ <a href="../f5/lily-a4cb322e.ly">
+  <img align="middle"
+       border="0"
+       src="../f5/lily-a4cb322e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+En los diagramas de posiciones de acorde, la distancia entre los
+trastes y entre las cuerdas se puede ajustar de forma
+independiente.  Eestán disponibles <code>fret-distance</code> y
+<code>string-distance</code> como subpropiedades de
+<code>fret-diagram-details</code>.
+<blockquote><pre class="verbatim">fretMrkp = \markup { \fret-diagram-terse #&quot;x;x;o;2;3;2;&quot; }
+
+\markuplist
+\override #'(padding . 2)
+\table #'(0 -1) {
+  &quot;default&quot;
+
+  \fretMrkp
+
+  &quot;fret-distance&quot;
+
+  \override #'(fret-diagram-details . ((fret-distance . 2)))
+  \fretMrkp
+
+  &quot;string-distance&quot;
+
+  \override #'(fret-diagram-details . ((string-distance . 2)))
+  \fretMrkp
+}
+</pre><p>
+ <a href="../a4/lily-febce9af.ly">
+  <img align="middle"
+       border="0"
+       src="../a4/lily-febce9af.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Las reglas de alteraciones accidentales se pueden definir ahora
+para todo un contexto de <code>ChoirStaff</code>.  Se encuentran
+disponibles dos nuevas reglas, <code>choral</code> y
+<code>choral-cautionary</code>, que combinan las características de
+<code>modern-voice</code> y de <code>piano</code> o sus equivalentes con
+alteraciones de precaución.
+
+</li><li>
+La función musical <code>\unfoldRepeats</code> ahora puede tomar unla
+lista de argumentos opcional que especifica qué tipo de música (o
+músicas) repetida(s) se debe(n) desplegar.  Los valores posibles
+son <code>percent</code> (para repeticiones de compás o parte de ellos),
+<code>tremolo</code> y <code>volta</code> (para casillas de primera y segunda
+vez).  Si no se especifica la lista opcional de argumentos, se usa
+<code>repeated-music</code>, que lo despliega todo.
+
+</li><li>
+Ahora se usa una nueva propiedad de grob,
+<code>output-attributes</code>, para la salida de SVG en lugar de la
+propiedad de grob <code>id</code>.  Permite que más de un atributo se
+pueda definir como una lista de asociación.  Por ejemplo,
+<code>#'((id . 123) (class . fulano) (data-loquesea
+. &ldquo;mengano&rdquo;))</code> produce la siguiente etiqueta de grupo en el
+archivo SVG de salida: <code>&lt;g id=&ldquo;123&rdquo; class=&ldquo;fulano&rdquo;
+data-loquesea=&ldquo;mengano&rdquo;&gt; &hellip; &lt;/g&gt;</code>.
+
+</li><li>
+Las ligaduras de expresión y de fraseo pueden comenzar ahora a
+partir de las notas individuales de un acorde.  Las diferentes
+ligaduras simultáneas por cada contexto <code>Voice</code> se deben
+distinguir especificando su <code>spanner-id</code>.
+
+</li><li>
+La propiedad musical y de grob <code>spanner-id</code> para distinguir
+ligaduras simultáneas de expresión y de fraseo ha cambiado de ser
+una cadena a ser una &lsquo;key&rsquo;, un entero no negativo o un símbolo.
+
+</li><li>
+Existe una instrucción nueva <code>\=</code> para especificar el
+identificador de objeto extenso <code>spanner-id</code> para ligaduras
+simultáneas de expresión o de fraseo.
+<blockquote><pre class="verbatim">\fixed c' {
+  &lt;c~ f\=1( g\=2( &gt;2 &lt;c e\=1) a\=2) &gt;
+}
+</pre><p>
+ <a href="../d7/lily-65f71dbd.ly">
+  <img align="middle"
+       border="0"
+       src="../d7/lily-65f71dbd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Los bloques <code>\header</code> se pueden almacenar dentro de variables
+y usados como argumentos para las funciones musicales y de Scheme,
+y como cuerpo de construcciones del tipo <code>#{&hellip;#}</code>.  Se
+representan como un módulo de Guile.
+
+<p>Si bien los bloques <code>\book</code>, <code>\bookpart</code>, <code>\score</code>,
+<code>\with</code>, <code>\layout</code>, <code>\midi</code> y <code>\paper</code> se
+pueden pasar de manera similar, están representados por distintos
+tipos de datos.
+</p>
+</li><li>
+Las listas de elementos separados por puntos como
+<code>FretBoard.stencil</code> ya estaban contempladas a partir de la
+versión&nbsp;2.18.  Ahora también pueden contener enteros sin
+signo, y se pueden hacer separar opcionalmente mediante comas.
+Ello permite un uso semejante a
+<blockquote><pre class="verbatim">{ \time 2,2,1 5/8  g'8 8 8 8 8 }
+</pre><p>
+ <a href="../67/lily-116be5e4.ly">
+  <img align="middle"
+       border="0"
+       src="../67/lily-116be5e4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+<p>y
+</p><blockquote><pre class="example">\tagGroup violin,oboe,bassoon
+</pre></blockquote>
+
+</li><li>
+Tales listas se pueden usar también dentro de expresiones para
+asignaciones, conjuntos y sobreescrituras.  Así, ahora puede
+usarse de la forma siguiente:
+<blockquote><pre class="verbatim">{ \unset Timing.beamExceptions
+  \set Timing.beatStructure = 1,2,1
+  g'8 8 8 8 8 8 8 8 }
+</pre><p>
+ <a href="../da/lily-a4e58419.ly">
+  <img align="middle"
+       border="0"
+       src="../da/lily-a4e58419.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Anteriormente se podían asignar valores a los elementos de las
+listas de asociación individualmente (por ejemplo, variables de
+papel como <code>system-system-spacing.basic-distance</code>).  Ahora
+también pueden ser referenciadas de esta manera, como en
+<blockquote><pre class="example">\paper {
+  \void \displayScheme \system-system-spacing.basic-distance
+}
+</pre></blockquote>
+
+<p>En combinación con los cambios mencionados anteriormente, esto
+permite el establecimiento de valores y la referenciación de
+pseudovariables como <code>violin.1</code>.
+</p>
+</li><li>
+Ahora se pueden incrustar los archivos de código fuente de
+LilyPond dentro de los archivos PDF generados.  Esta funcionalidad
+experimental está inhabilitada de forma predeterminada y se puede
+calificar como de no segura, pues los documentos PDF con contenido
+oculto tienden a presentar un riesgo para la seguridad.  Observe
+que no todos los visores de PDF son capaces de manejar documentos
+incrustados (en caso de que no sea así, la salida de PDF se verá
+normalmente y los archivos fuente serán invisibles).  Esta
+funcionalidad solamente funciona con el backend PDF.
+
+</li><li>
+Ahora se puden definir específicamente los nombres de las notas en
+idioma francés en lugar de constituir un alias de los nombres
+italianos: además de la sintaxis genérica derivada del italiano,
+la altura de la nota <var>d</var> (<var>re</var>) se puede escribir ahora
+como <code>ré</code>.  Los dobles sostenidos se pueden escribir también
+usando el sufijo <code>-x</code>.
+
+</li><li>
+Están contempladas cuerdas bajas adicionales (para la tablatura de
+laúd).
+<blockquote><pre class="verbatim">m = { f'4 d' a f d a, g, fis, e, d, c,  \bar &quot;|.&quot; }
+
+\score {
+  \new TabStaff \m
+  \layout {
+    \context {
+      \Score
+      tablatureFormat = #fret-letter-tablature-format
+    }
+    \context {
+      \TabStaff
+      stringTunings = \stringTuning &lt;a, d f a d' f'&gt;
+      additionalBassStrings = \stringTuning &lt;c, d, e, fis, g,&gt;
+      fretLabels = #'(&quot;a&quot; &quot;b&quot; &quot;r&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;k&quot;)
+    }
+  }
+}
+</pre><p>
+ <a href="../25/lily-bda13ae9.ly">
+  <img align="middle"
+       border="0"
+       src="../25/lily-bda13ae9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Ahora está disponible la instrucción de lista de marcados
+<code>\table</code>.  Cada columna se puede alinear de distinta forma.
+<blockquote><pre class="verbatim">\markuplist {
+    \override #'(padding . 2)
+    \table
+      #'(0 1 0 -1)
+      {
+        \underline { center-aligned right-aligned center-aligned left-aligned }
+        one &quot;1&quot; thousandth &quot;0.001&quot;
+        eleven &quot;11&quot; hundredth &quot;0.01&quot;
+        twenty &quot;20&quot; tenth &quot;0.1&quot;
+        thousand &quot;1000&quot; one &quot;1.0&quot;
+      }
+}
+</pre><p>
+ <a href="../89/lily-19d6aaad.ly">
+  <img align="middle"
+       border="0"
+       src="../89/lily-19d6aaad.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Una instrucción de marcado nueva, <code>\with-dimensions-from</code>,
+hace que sea más fácil de usar <code>\with-dimensions</code> obteniendo
+las dimentiones nuevas a partir de un objeto de marcado, dado como
+primer argumento.
+<blockquote><pre class="verbatim">\markup {
+  \pattern #5 #Y #0 &quot;x&quot;
+  \pattern #5 #Y #0 \with-dimensions-from &quot;x&quot; &quot;f&quot;
+  \pattern #5 #Y #0 \with-dimensions-from &quot;x&quot; &quot;g&quot;
+  \override #'(baseline-skip . 2)
+  \column {
+    \pattern #5 #X #0 &quot;n&quot;
+    \pattern #5 #X #0 \with-dimensions-from &quot;n&quot; &quot;m&quot;
+    \pattern #5 #X #0 \with-dimensions-from &quot;n&quot; &quot;!&quot;
+  }
+}
+</pre><p>
+ <a href="../41/lily-6de44edc.ly">
+  <img align="middle"
+       border="0"
+       src="../41/lily-6de44edc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+La nueva función de salto de página
+<code>ly:one-line-auto-height-breaking</code> sitúa una partitura
+completa en una sola línea y cambia la anchura del papel de forma
+correspondiente, de igual manera que <code>ly:one-line-breaking</code>.
+La diferencia es que también modifica automáticamente la altura de
+la página para que se ajuste a la altura de la música.
+
+</li><li>
+Está disponible la instrucción de marcado
+<code>\draw-squiggle-line</code>.  Es posible la personalización a
+través de la sobreescritura de <code>thickness</code>,
+<code>angularity</code>, <code>height</code> and <code>orientation</code>.
+<blockquote><pre class="verbatim">\markup
+  \overlay {
+    \draw-squiggle-line #0.5 #'(3 . 3) ##t
+
+    \translate #'(3 . 3)
+    \override #'(thickness . 4)
+    \draw-squiggle-line #0.5 #'(3 . -3) ##t
+
+    \translate #'(6 . 0)
+    \override #'(angularity . -5)
+    \draw-squiggle-line #0.5 #'(-3 . -3) ##t
+
+    \translate #'(3 . -3)
+    \override #'(angularity . 2)
+    \override #'(height . 0.3)
+    \override #'(orientation . -1)
+    \draw-squiggle-line #0.2 #'(-3 . 3) ##t
+  }
+</pre><p>
+ <a href="../a4/lily-91505bc1.ly">
+  <img align="middle"
+       border="0"
+       src="../a4/lily-91505bc1.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Existe una instrucción nueva para eliminar los pentagramas vacíos,
+<code>\RemoveAllEmptyStaves</code>, que actúa de la misma forma que
+<code>\RemoveEmptyStaves</code>, excepto porque también elimina los
+pentagramas vacíos del primer sistema de una partitura.
+
+</li><li>
+Las instrucciones de marcado <code>\undertie</code> y <code>\overtie</code>
+están disponibles, así como la instrucción de marcado genérica
+<code>\tie</code>.
+<blockquote><pre class="verbatim">\markup {
+  \undertie &quot;undertied&quot;
+  \overtie &quot;overtied&quot;
+}
+
+m = {
+  c''1 \prall -\tweak text \markup \tie &quot;131&quot; -1
+}
+
+{ \voiceOne \m \voiceTwo \m }
+</pre><p>
+ <a href="../da/lily-9e5b0000.ly">
+  <img align="middle"
+       border="0"
+       src="../da/lily-9e5b0000.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+<code>TabStaff</code> puede ahora imprimir microtonos para las
+curvaturas de tono y otros efectos.
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Score
+    supportNonIntegerFret = ##t
+  }
+}
+
+mus = \relative { c'4 cih d dih }
+
+&lt;&lt;
+  \new Staff &lt;&lt; \clef &quot;G_8&quot; \mus &gt;&gt;
+  \new TabStaff \mus
+&gt;&gt;
+</pre><p>
+ <a href="../be/lily-26d1c888.ly">
+  <img align="middle"
+       border="0"
+       src="../be/lily-26d1c888.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Ahora están disponibles dos estilos nuevos de enmarcado en blanco
+para enmascarar el material de fondo.  El estilo <code>outline</code>
+aproxima los contornos de la forma de un glifo, y la forma se
+produce a partir de un conjunto de copias desplazadas del glifo.
+El estilo <code>rounded-box</code> produce una forma de rectángulo
+redondeado.  Para los tres estilos, incluido el estilo <code>box</code>
+predeterminado, se puede personalizar el <code>thickness</code> o grosor
+de la forma del enmarcado en blanco, como un múltiplo del grosor
+de una línea del pentagrama.
+
+<blockquote><pre class="verbatim">\markup {
+  \combine
+    \filled-box #'(-1 . 15) #'(-3 . 4) #1
+    \override #'(thickness . 3)
+    \whiteout whiteout-box
+}
+\markup {
+  \combine
+    \filled-box #'(-1 . 24) #'(-3 . 4) #1
+    \override #'(style . rounded-box)
+    \override #'(thickness . 3)
+    \whiteout whiteout-rounded-box
+}
+\markup {
+  \combine
+    \filled-box #'(-1 . 18) #'(-3 . 4) #1
+    \override #'(style . outline)
+    \override #'(thickness . 3)
+    \whiteout whiteout-outline
+}
+\relative {
+  \override Staff.Clef.whiteout-style = #'outline
+  \override Staff.Clef.whiteout = 3
+  g'1
+}
+</pre><p>
+ <a href="../a5/lily-9433be3e.ly">
+  <img align="middle"
+       border="0"
+       src="../a5/lily-9433be3e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Todas las instrucciones <code>\override</code>, <code>\revert</code>,
+<code>\set</code> y <code>\unset</code> ahora funcionan con el prefijo
+<code>\once</code> para hacer ajustes de una sola vez.
+<blockquote><pre class="verbatim">\relative {
+  c'4 d
+  \override NoteHead.color = #red
+  e4 f |
+  \once \override NoteHead.color = #green
+  g4 a
+  \once \revert NoteHead.color
+  b c |
+  \revert NoteHead.color
+  f2 c |
+}
+</pre><p>
+ <a href="../f1/lily-c2078184.ly">
+  <img align="middle"
+       border="0"
+       src="../f1/lily-c2078184.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Al crear una salida MIDI, LilyPond ahora almacena el <code>title</code>
+que se ha definido en el bloque <code>\header</code> de la partitura (o,
+si no existe tal definición en el nivel de <code>\score</code>, la
+primera definición de ese tipo que aparezca en un bloque
+<code>\header</code> del <code>\bookpart</code>, <code>\book</code>, o ámbito de
+nivel superior que encierra a la partitura) como el nombre de la
+secuencia dentro del archivo MIDI.  De forma opcional, el nombre
+de la secuencia MIDI se puede sobreescribir usando el nuevo campo
+<code>midititle</code> del bloque <code>\header</code> independientemente del
+<code>title</code> (por ejemplo, en caso de que <code>title</code> contenga
+código de elementos de marcado que no se convierta automáticamente
+a texto sencillo de manera satisfactoria).
+
+</li><li>
+Las funciones musicales (además de las funciones vacías y de
+Scheme) e instrucciones de marcado que se limitan a aplicar los
+parámetros finales a una cadena de sobreescrituras, se pueden
+definir ahora de forma que solamente escriben la expresión
+interrumpida con <code>\etc</code>.
+
+<blockquote><pre class="verbatim">bold-red-markup = \markup \bold \with-color #red \etc
+highlight = \tweak font-size 3 \tweak color #red \etc
+
+\markup \bold-red &quot;text&quot;
+\markuplist \column-lines \bold-red { One Two }
+
+{ c' \highlight d' e'2-\highlight -! }
+</pre><p>
+ <a href="../51/lily-bcb9eeeb.ly">
+  <img align="middle"
+       border="0"
+       src="../51/lily-bcb9eeeb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Las funciones de LilyPond definidas con
+<code>define-music-function</code>, <code>define-event-function</code>,
+<code>define-scheme-function</code> y <code>define-void-function</code> ahora
+se pueden llamar directamente desde Scheme como si fuesen
+procedimientos de Scheme reales.  Se sigue efectuando una
+comprobación de los argumentos en su número y tipo de la misma
+forma que cuando se llama a la función a través de código de
+LilyPond.  Esto incluye la inserción de valores predeterminados
+para los argumentos opcionales que no se corresponden con sus
+predicados.  En lugar de usar <code>\default</code> en la propia lista
+de argumentos para saltar explícitamente una secuencia de
+argumentos opcionales, se puede emplear <code>*unspecified*</code>.
+
+</li><li>
+La posición actual del cursor de entrada y del analizador
+sintáctico se almacenan ahora dentro de fluidos de GUILE y se
+pueden referenciar a través de las llamadas de función
+<code>(*location*)</code> y <code>(*parser*)</code>.  Como consecuencia, un
+gran número de funciones que anteriormente tomaban un argumento
+<code>parser</code> explícito, ya no lo hacen.
+
+<p>Las funciones definidas con <code>define-music-function</code>,
+<code>define-event-function</code>, <code>define-scheme-function</code> y
+<code>define-void-function</code> ya no usan los argumentos
+<code>parser</code> <code>location</code>.
+</p>
+<p>Con estas definiciones, LilyPond trata de reconocer el uso
+obsoleto de los argumentos <code>parser</code> y <code>location</code>,
+ofreciendo durante algún tiempo una semántica compatible hacia
+atrás.
+</p>
+</li><li>
+En el idioma de nombre de nota &quot;english&quot;, los nombres largos de
+las alturas con alteración ahora contienen un guión para una mejor
+legibilidad.  Ahora se debe escribir
+<blockquote><pre class="example">\key a-flat \major
+</pre></blockquote>
+<p>en lugar de
+</p><blockquote><pre class="example">\key aflat \major
+</pre></blockquote>
+<p>como se hacía antes.
+</p>
+<p>Las alteraciones dobles no llevan otro guión, de forma que el
+holandés <code>cisis</code> lleva el nombre largo <code>c-sharpsharp</code> en
+inglés.
+</p>
+</li><li>
+El estilo visual de las barras de trémolo (forma, estilo e
+inclinación) se controla ahora con más precisión.
+<blockquote><p>
+ <a href="../8f/lily-118b8275.ly">
+  <img align="middle"
+       border="0"
+       src="../8f/lily-118b8275.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+</li><li>
+Los silencios de varios compases tienen una longitud que depende
+de su duración, bajo el control de
+<code>MultiMeasureRest.space-increment</code>.
+<blockquote><p>
+ <a href="../06/lily-c954bfe2.ly">
+  <img align="middle"
+       border="0"
+       src="../06/lily-c954bfe2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Los números de página se pueden imprimir ahora en números romanos,
+fijando el valor de la variable <code>page-number-type</code> del bloque
+<code>\paper</code>.
+
+</li><li>
+Ahora se pueden usar <code>\time</code> y <code>\partial</code> combinados
+para cambiar la indicación de compás en la mitad de un compás.
+
+<blockquote><pre class="verbatim">\override Score.BarNumber.break-visibility = #end-of-line-invisible
+\partial 4 \time 3/4 f4 | 2 4 | 2 \bar &quot;||&quot;
+\time 9/8 \partial 4. f8 8 8 | 2. 8 8 8 |
+</pre><p>
+ <a href="../40/lily-05b316d2.ly">
+  <img align="middle"
+       border="0"
+       src="../40/lily-05b316d2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Ahora es posible la sobreescritura de la propiedad <code>text</code> de
+los nombres de acorde.
+
+<blockquote><pre class="verbatim">&lt;&lt;
+\new ChordNames \chordmode {
+  a' b c:7
+  \once \override ChordName.text = #&quot;foo&quot;
+  d
+}
+&gt;&gt;      
+</pre><p>
+ <a href="../f8/lily-c055448e.ly">
+  <img align="middle"
+       border="0"
+       src="../f8/lily-c055448e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se ha mejorado la alineación horizontal cuando se usa
+<code>TextScript</code>, con <code>DynamicText</code> o con <code>LyricText</code>.
+
+</li><li>
+Se ha añadido una instrucción nueva <code>\magnifyStaff</code> que
+cambia la escala visual de los pentagramas, líneas, barras de
+compás, barras cortadas y el espaciado horizontal general en el
+nivel del contexto de <code>Staff</code>.  Se evita que las líneas del
+pentagrama disminuyan a un tamaño menor que el predeterminado
+porque todos los grosores de las plicas, ligaduras y otros objetos
+gráficos están basados en el grosor de las líneas del pentagrama.
+
+</li><li>
+<code>InstrumentName</code> contempla ahora el <code>text-interface</code>.
+
+</li><li>
+Se contempla ahora el control del &lsquo;nivel de expresión&rsquo; de los
+canales MIDI usando la propiedad de contexto
+<code>Staff.midiExpression</code>.  Se puede usar para alterar incluso
+el volumen percibido de notas mantenidas (si bien a muy &lsquo;bajo
+nivel&rsquo;) y acepta un valor numérico entre <code>0.0</code> y <code>1.0</code>.
+
+<blockquote><pre class="example">\score {
+  \new Staff \with {
+    midiExpression = #0.6
+    midiInstrument = #&quot;clarinet&quot;
+  }
+  &lt;&lt;
+    { a'1~ a'1 }
+    {
+      \set Staff.midiExpression = #0.7 s4\f\&lt;
+      \set Staff.midiExpression = #0.8 s4
+      \set Staff.midiExpression = #0.9 s4
+      \set Staff.midiExpression = #1.0 s4
+
+      \set Staff.midiExpression = #0.9 s4\&gt;
+      \set Staff.midiExpression = #0.8 s4
+      \set Staff.midiExpression = #0.7 s4
+      \set Staff.midiExpression = #0.6 s4\!
+    }
+  &gt;&gt;
+  \midi { }
+}
+</pre></blockquote>
+
+</li><li>
+Se ha añadido la posibiliidad de hacer más fácil usar tipografías
+alternativas &lsquo;de música&rsquo; diferentes de la predeterminada
+Emmentaler de LilyPond.  Véase
+<a href="http://fonts.openlilylib.org">http://fonts.openlilylib.org/</a> para más información.
+
+</li><li>
+Los &lsquo;grobs&rsquo; u objetos gráficos y sus ancestros se pueden ahora
+alinear separadamente permitiendo más flexibilidad para las
+posiciones de los grobs.  Por ejemplo, el borde izquierdo de un
+grob se puede alinear sobre el centro de su ancestro.
+
+</li><li>
+Se han hecho mejoras en la instrucción <code>\partial</code> para evitar
+problemas cuando se usa en varios contextos en paralelo.
+
+</li><li>
+<code>\chordmode</code> puede usar ahora las construcciones <code>&lt; &gt;</code> y
+<code>&lt;&lt; &gt;&gt;</code>.
+
+</li><li>
+Se ha añadido una instrucción <code>\tagGroup</code> que complementa a
+las instrucciones existentes <code>\keepWithTag</code> y
+<code>\removeWithTag</code>.  Por ejemplo:
+
+<blockquote><pre class="example">\tagGroup #'(violinI violinII viola cello)
+</pre></blockquote>
+
+<p>declara una lista de &lsquo;tags&rsquo; o etiquetas que pertenecen a un solo
+&lsquo;tag group&rsquo; o grupo de etiquetas.
+</p>
+<blockquote><pre class="example">\keepWithTag #'violinI
+</pre></blockquote>
+
+<p>se ocupa solamente de las &lsquo;tags&rsquo; del grupo de etiquetas
+&lsquo;violinI&rsquo;.
+</p>
+<p>Cualquier elemento de la música incluida que lleve una o más
+etiquetas del grupo, pero <em>no</em> la etiqueta <var>violinI</var>,
+será eliminado.
+</p>
+</li><li>
+La función <code>\addlyrics</code> funciona ahora con contextos
+arbitrarios, entre ellos <code>Staff</code>.
+
+</li><li>
+Ahora se pueden usar también los números de cuerda para imprimir
+números romanos (p. ej. para instrumentos de cuerda sin trastes).
+<blockquote><pre class="verbatim">c2\2
+\romanStringNumbers
+c\2
+\arabicStringNumbers
+c1\3
+</pre><p>
+ <a href="../c4/lily-9fba1aa6.ly">
+  <img align="middle"
+       border="0"
+       src="../c4/lily-9fba1aa6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+El nombre de la propiedad <code>thin-kern</code> del objeto gráfico
+<code>BarLine</code> ha cambiado a <code>segno-kern</code>.
+
+</li><li>
+Los objetos gráficos <code>KeyCancellation</code> ahora ignoran las
+claves de las notas guía (como hacen los objetos
+<code>KeySignature</code>).
+
+</li><li>
+Se contempla ahora <code>\once&nbsp;\unset</code>
+
+</li><li>
+Ahora es posible colorear independientemente tanto los puntos como
+los paréntesis en los diagramas de posición de acordes, si se usa
+la instrucción de marcado <code>\fret-diagram-verbose</code>.
+
+<blockquote><pre class="verbatim">\new Voice {
+  c1^\markup {
+    \override #'(fret-diagram-details . (
+                 (finger-code . in-dot))) {
+      \fret-diagram-verbose #'((mute 6)
+                               (place-fret 5 3 1 red)
+                               (place-fret 4 5 2 inverted)
+                               (place-fret 3 5 3 green)
+                               (place-fret 2 5 4 blue inverted)
+                               (place-fret 1 3 1 violet)
+                               (barre 5 1 3 ))
+    }
+  }
+  c1^\markup {
+    \override #'(fret-diagram-details . (
+                 (finger-code . below-string))) {
+      \fret-diagram-verbose #'((mute 6)
+                             (place-fret 5 3 1 red parenthesized)
+                             (place-fret 4 5 2 yellow
+                                               default-paren-color
+                                               parenthesized)
+                             (place-fret 3 5 3 green)
+                             (place-fret 2 5 4 blue )
+                             (place-fret 1 3 1)
+                             (barre 5 1 3))
+    }
+  }
+}
+</pre><p>
+ <a href="../4e/lily-14262971.ly">
+  <img align="middle"
+       border="0"
+       src="../4e/lily-14262971.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se han añadido dos propiedades nuevas para usarlas dentro de
+<code>fret-diagram-details</code> con la instrucción de marcado
+<code>\fret-diagram-verbose</code>; <code>fret-label-horizontal-offset</code>,
+que afecta a la <code>fret-label-indication</code>, y
+<code>paren-padding</code>, que controla la distancia entre el puntillo
+y los paréntesis que lo rodean.
+
+<blockquote><pre class="verbatim">\new Voice {
+  c1^\markup {
+    \fret-diagram-verbose #'((mute 6)
+                             (place-fret 5 3 1)
+                             (place-fret 4 5 2)
+                             (place-fret 3 5 3)
+                             (place-fret 1 6 4 parenthesized)
+                             (place-fret 2 3 1)
+                             (barre 5 2 3))
+  }
+  c1^\markup {
+    \override #'(fret-diagram-details . (
+                 (fret-label-horizontal-offset . 2)
+                 (paren-padding . 0.25))) {
+      \fret-diagram-verbose #'((mute 6)
+                               (place-fret 5 3 1)
+                               (place-fret 4 5 2)
+                               (place-fret 3 5 3)
+                               (place-fret 1 6 4 parenthesized)
+                               (place-fret 2 3 1)
+                               (barre 5 2 3))
+    }
+  }
+}
+</pre><p>
+ <a href="../71/lily-237d86d2.ly">
+  <img align="middle"
+       border="0"
+       src="../71/lily-237d86d2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se ha añadido una instrucción de marcado nueva,
+<code>\justify-line</code>.  Similar a la instrucción de marcado
+<code>\fill-line</code> excepto que en lugar de disponer <em>palabras</em>
+en columnas, la instrucción <code>\justify-line</code> equilibra la
+distancia entre ellas, haciendo que cuando hay tres o más palabras
+en una instrucción de marcado, las distancias sean siempre
+consistentes.
+
+<blockquote><pre class="verbatim">\markup \fill-line {oooooo oooooo oooooo oooooo}
+\markup \fill-line {ooooooooo oooooooo oo ooo}
+</pre><p>
+ <a href="../a2/lily-69e67acc.ly">
+  <img align="middle"
+       border="0"
+       src="../a2/lily-69e67acc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<blockquote><pre class="verbatim">\markup \justify-line {oooooo oooooo oooooo oooooo}
+\markup \justify-line {ooooooooo oooooooo oo ooo}
+</pre><p>
+ <a href="../33/lily-c0a93b4c.ly">
+  <img align="middle"
+       border="0"
+       src="../33/lily-c0a93b4c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se ha añadido la instrucción <code>\magnifyMusic</code>, que permite
+modificar el tamaño de la notación sin alterar el tamaño del
+pentagrama, mientras que se escalan automáticamente las plicas,
+barras y el espaciado horizontal.
+<blockquote><pre class="verbatim">\new Staff &lt;&lt;
+  \new Voice \relative {
+    \voiceOne
+    &lt;e' e'&gt;4 &lt;f f'&gt;8. &lt;g g'&gt;16 &lt;f f'&gt;8 &lt;e e'&gt;4 r8
+  }
+  \new Voice \relative {
+    \voiceTwo
+    \magnifyMusic 0.63 {
+      \override Score.SpacingSpanner.spacing-increment = #(* 1.2 0.63)
+      r32 c'' a c a c a c r c a c a c a c
+      r c a c a c a c a c a c a c a c
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../3e/lily-8cc6ae6f.ly">
+  <img align="middle"
+       border="0"
+       src="../3e/lily-8cc6ae6f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se ha añadido una plantilla flexible adecuada para una amplia
+variedad de piezas de música coral.  Se puede usar para crear
+música coral sencilla, con o sin acompañamiento de piano, en dos o
+en cuatro pentagramas. A diferencia de otras, esta plantilla está
+&lsquo;incorporada&rsquo;, lo que significa que no necesita ser copiada y
+editada: en lugar de ello sencillamente se incluye con la
+instrucción <code>\include</code> en el archivo de entrada.  Para ver
+más detalles, consulte <a name="index-Plantillas-incorporadas"></a>
+<a href="../learning/built_002din-templates.es.html">Plantillas incorporadas</a>.
+
+</li><li>
+Se ha mejorado significativamente el posicionado de los números de
+grupos especiales para las barras en forma de codo.
+Anteriormente, los números de grupo especial se colocaban de
+acuerdo a la posición del corchete del grupo, incluso si éste no
+se imprimía.  Ello podía dar lugar a números de tresillo
+descolocados.  Ahora se sitúan más cerca de la barra cuando hay un
+segmento de barra adecuado para su colocación y cuando el corchete
+no se dibuja.
+
+<p>Se ha añadido también detección de colisiones, desplazando
+horizontalmente si está demasiado cerca de una columna de notas
+adyacente pero preservando la distancia vertical del número a la
+barra acodada.  Si el propio número es demasiado grande como para
+caber en el espacio disponible, se usa en su lugar el sistema
+original de posicionamiento basado en el corchete; en cambio, en
+caso de colisión (p. ej. con una alteración accidental) el número
+de tresillo se aleja moviéndolo verticalmente.
+</p>
+<blockquote><pre class="verbatim">\time 3/4
+\override Beam.auto-knee-gap = 3
+\tuplet 3/2 4 {
+  g8 c'' e,
+  c'8 g,, e''
+  g,,8 e''' c,,
+}
+</pre><p>
+ <a href="../71/lily-4817dffb.ly">
+  <img align="middle"
+       border="0"
+       src="../71/lily-4817dffb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El comportamiento original del tresillo para las barras acodadas
+aún está disponible mediante una sobreescritura con la instrucción
+<code>\override</code> a travé de la nueva propiedad
+<code>knee-to-beam</code>.
+</p>
+<blockquote><pre class="verbatim">\time 3/4
+\override Beam.auto-knee-gap = 3
+\override TupletNumber.knee-to-beam = ##f
+\tuplet 3/2 4 {
+  g8 c'' e,
+  c'8 g,, e''
+  g,,8 e''' c,,
+}
+</pre><p>
+ <a href="../f0/lily-17df27da.ly">
+  <img align="middle"
+       border="0"
+       src="../f0/lily-17df27da.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Se han &lsquo;armonizado&rsquo; las instrucciones <code>\lyricsto</code> y
+<code>\addLyrics</code>.  Ambas aceptan ahora el mismo tipo de lasta de
+argumentos delimitada que aceptan <code>\lyrics</code> y <code>\chords</code>.
+Se añade compatibilidad hacia atrás de manera que se permiten como
+argumentos identificadores musicales (p. ej. <code>\mus</code>).  Se ha
+añadido una regla de <code>convert-ly</code> que elimina los usos
+redundantes de <code>\lyricmode</code> y reorganiza las combinaciones
+con iniciadores de contexto de forma que <code>\lyricsto</code> en
+general se aplica al final (es decir, como lo haría
+<code>\lyricmode</code>).
+
+</li><li>
+Las funciones e identificadores de Scheme se pueden usar ahora
+como definiciones de salida.
+
+</li><li>
+Las expresiones de Scheme se pueden usar ahora como constituyentes
+de acordes.
+
+</li><li>
+Espaciado visual mejorado de las cabezas de nota con formas &lsquo;MI&rsquo;
+Funk y Walker pequeñas y normales, de forma que tengan la misma
+anchura que otras notas con forma dentro de sus respectivos
+conjuntos.  Las cabezas del tipo <code>SOL</code> también han mejorado
+visualmente cuando se usan tanto con las cabezas normales de tipo
+Aiken como con las de tipo Sacred Harp, así como con las variantes
+de línea delgada.
+
+</li><li>
+<code>LeftEdge</code> tiene ahora unas dimensiones verticales
+<code>Y-extent</code> definibles.  Véase <a name="index-LeftEdge"></a>
+<a href="../internals/leftedge.es.html">LeftEdge</a>.
+
+</li><li>
+Se ha añadido una función nueva <code>make-path-stencil</code> que
+contempla todas las instrucciones <code>path</code> tanto relativas como
+absolutas: <code>lineto</code>, <code>rlineto</code>, <code>curveto</code>,
+<code>rcurveto</code>, <code>moveto</code>, <code>rmoveto</code>, <code>closepath</code>.
+
+<p>La función también contempla la sintaxis de &lsquo;letra única&rsquo;
+utilizada en las instrucciones de ruta estándares del SVG:
+<code>L</code>, <code>l</code>, <code>C</code>, <code>c</code>, <code>M</code>, <code>m</code>,
+<code>Z</code> y <code>z</code>.
+</p>
+<p>Asimismo, la nueva instrucción es compatible hacia atrás con la
+función original <code>make-connected-path-stencil</code>.  Véase
+también &lsquo;<tt>scm/stencil.scm</tt>&rsquo;.
+</p>
+</li><li>
+Las propiedades de contexto nombradas en la propiedad
+&lsquo;<samp>alternativeRestores</samp>&rsquo; se restauran a su valor al comienzo de
+la <em>primera</em> alternativa en todas las alternativas
+siguientes.
+
+<p>Actualmente el conjunto predeterminado restaura el &lsquo;compás
+actual&rsquo;:
+</p>
+<blockquote><pre class="verbatim">\time 3/4
+\repeat volta 2 { c2 e4 | }
+\alternative {
+  { \time 4/4 f2 d | }
+  { f2 d4 | }
+}
+g2. |
+</pre><p>
+ <a href="../2a/lily-00fc9fe1.ly">
+  <img align="middle"
+       border="0"
+       src="../2a/lily-00fc9fe1.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>la &lsquo;posición dentro del compás&rsquo;:
+</p>
+<blockquote><pre class="verbatim">\time 3/4
+\repeat volta 2 { c2 e4 | }
+\alternative {
+  { \time 4/4
+    \set Timing.measurePosition = #(ly:make-moment -1/2)
+    f2 | }
+  { f2 d4 | }
+}
+g2. |
+</pre><p>
+ <a href="../d3/lily-58dea92c.ly">
+  <img align="middle"
+       border="0"
+       src="../d3/lily-58dea92c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>y los &lsquo;cambios de acorde&rsquo;;
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new ChordNames {
+    \set chordChanges = ##t
+    \chordmode { c1:m d:m c:m d:m }
+  }
+  \new Staff {
+    \repeat volta 2 { \chordmode { c1:m } }
+    \alternative {
+      { \chordmode { d:m } }
+      { \chordmode { c:m } }
+    }
+  \chordmode { d:m }
+}
+&gt;&gt;
+</pre><p>
+ <a href="../29/lily-89064a3b.ly">
+  <img align="middle"
+       border="0"
+       src="../29/lily-89064a3b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Salida MIDI mejorada para las marcas de respiración.  Después de
+las notas unidas mediante una ligadura, las respiraciones toman la
+duración <em>solo</em> de la última nota de la ligadura; p. ej.
+<code>{ c4~ c8 \breathe }</code> se ejecuta como <code>{ c4~ c16 r
+}</code> en lugar de <code>{ c4 r8 }</code>.  Esto es más consistente con
+las articulaciones y con la forma en que los humanos interpretan
+las respiraciones después de las ligaduras de unión.  También hace
+que ahora sea más fácil alinear varias marcas de respiración
+simultáneas sobre más de una parte, aunque las notas tengan
+distintas duraciones.
+
+</li><li>
+Se ha añadido un nuevo estilo de cabeza de nota para la tablatura:
+<code>TabNoteHead.style = #'slash</code>.
+
+</li><li>
+Se ha añadido cuatro nuevos glifos de clave <em>Doble de Sol</em>,
+<em>Sol de tenor</em>, <em>Variante de percusión</em> y <em>Variante
+de Do</em> así como sus correspondientes formas reducidas de cambio de
+clave.
+<blockquote><pre class="verbatim">  \override Staff.Clef.full-size-change = ##t
+
+  \clef &quot;GG&quot; c c c c
+  \clef &quot;tenorG&quot; c c c c
+  \clef &quot;varC&quot; c c c c
+  \clef &quot;altovarC&quot; c c c c
+  \clef &quot;tenorvarC&quot; c c c c
+  \clef &quot;baritonevarC&quot; c c c c
+  \clef &quot;varpercussion&quot; c c c c
+
+  \break
+  \override Staff.Clef.full-size-change = ##f
+
+  \clef &quot;GG&quot; c c c c
+  \clef &quot;tenorG&quot; c c c c
+  \clef &quot;varC&quot; c c c c
+  \clef &quot;altovarC&quot; c c c c
+  \clef &quot;tenorvarC&quot; c c c c
+  \clef &quot;baritonevarC&quot; c c c c
+  \clef &quot;varpercussion&quot; c c c c
+</pre><p>
+ <a href="../e6/lily-c11b3c53.ly">
+  <img align="middle"
+       border="0"
+       src="../e6/lily-c11b3c53.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+Las duraciones aisladas en las secuencias musicales ahora tienen
+el significado de notas sin altura.  Esto puede ser de utilidad
+para especificar duraciones de música o de funciones de Scheme.
+Cuando se encuentran en la partitura final, las alturas vienen
+provistas por la nota o acorde anterior.  He aquí dos ejemplos en
+los que se aprecia que produce una entrada más legible:
+
+<blockquote><pre class="verbatim">\new DrumStaff \with { \override StaffSymbol.line-count = 1 }
+\drummode {
+  \time 3/4
+  tambourine 8 \tuplet 3/2 { 16 16 16 }
+             8 \tuplet 3/2 { 16 16 16 } 8 8 |
+}
+</pre><p>
+ <a href="../fa/lily-b8bef0d3.ly">
+  <img align="middle"
+       border="0"
+       src="../fa/lily-b8bef0d3.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<blockquote><pre class="verbatim">\new Staff { r16 c'16 ~ 8 ~ 4 ~ 2 | }
+</pre><p>
+ <a href="../74/lily-bfeecc42.ly">
+  <img align="middle"
+       border="0"
+       src="../74/lily-bfeecc42.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+<code>\displayLilyMusic</code> y sus funciones de Scheme subyacentes ya
+no omiten las duraciones de nota redundantes.  Ello hace que sea
+más fácil reconocer correctamente y formatear las duraciones
+aisladas en expresiones como
+<blockquote><pre class="example">{ c4 d4 8 }
+</pre></blockquote>
+
+</li><li>
+Las excepciones en el barrado se pueden construir ahora usando la
+función de Scheme <code>\beamExceptions</code>.  Ahora se puede escribir
+
+<blockquote><pre class="verbatim">\time #'(2 1) 3/16
+\set Timing.beamExceptions =
+  \beamExceptions { 32[ 32] 32[ 32] 32[ 32] }
+c16 c c |
+\repeat unfold 6 { c32 } |
+</pre><p>
+ <a href="../13/lily-95f961a5.ly">
+  <img align="middle"
+       border="0"
+       src="../13/lily-95f961a5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>con las diversas excepciones separadas mediante comprobaciones de
+compás <code>|</code> (la escritura del patrón de la excepción la altura
+de las notas es conveniente pero no obligatorio).  Anteriormente
+habría sido necesario escribir las excepciones del barrado como
+</p>
+<blockquote><pre class="example">\set Timing.beamExceptions =
+#'(                         ;start of alist
+   (end .                   ;entry for end of beams
+    (                       ;start of alist of end points
+     ((1 . 32) . (2 2 2))   ;rule for 1/32 beams -- end each 1/16
+    )))
+</pre></blockquote>
+
+</li><li>
+Las articulaciones más comunes se reflejan ahora en la salida
+MIDI.  El acento y el marcato hacen a las notas sonar más fuerte;
+el picado, el staccato, el staccatissimo y el portato las hacen
+más cortas.  Las marcas de respiración acortan la nota anterior.
+
+<p>Este comportamiento se puede personalizar a través de las
+propiedades <code>midiLength</code> <code>midiExtraVelocity</code> sobre
+<code>ArticulationEvent</code>.  Para ver ejemplos, consulre
+&lsquo;<tt>script-init.ly</tt>&rsquo;.
+</p>
+</li><li>
+La funcionalidad de PostScript del ajuste del trazo ya no se
+aplica automáticamente, sino que se deja a la discreción del
+dispositivo PostScript (de forma predeterminada, Ghostscript lo
+usa para las resoluciones de hasta 150 ppp al generar imagenes de
+matriz de puntos).  Cuando se activa, se emplea (principalmente
+para las plicas y las líneas divisorias) un algoritmo de trazado
+más complejo diseñado para sacar provecho del ajuste del trazo.
+
+<p>El ajuste del trazo se puede forzar especificando la opción de
+línea de órdenes &lsquo;<samp>-dstrokeadjust</samp>&rsquo; al llamar a LilyPond.
+CUando se generan archivos <code>PDF</code>, ello dará lugar por lo
+general a vistas previas de <code>PDF</code> con un aspecto marcadamente
+mejorado pero un tamaño de archivo significativamente mayor.  La
+calidad de impresión en resoluciones altas no resulta afectada.
+</p>
+</li></ul>
+
+<p>Para ver noticias anteriores, diríjase a
+<a href="http://lilypond.org/doc/v2.18/Documentation/changes">http://lilypond.org/doc/v2.18/Documentation/changes/</a>,
+<a href="http://lilypond.org/doc/v2.16/Documentation/changes">http://lilypond.org/doc/v2.16/Documentation/changes/</a>,
+o <a href="..">vuelva</a> al índice de la documentación.
+</p>
+
+
+<hr size="1">
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Esta página corresponde a LilyPond-2.19.65 (rama de desarrollo).
+</p>
+<p class="footer_report">
+Se agradecen las <a href="http://lilypond.org/help-us.html">sugerencias para la documentación</a>. Informe de los fallos a través de la lista en español <a href="http://lists.gnu.org/mailman/listinfo/lilypond-es">lilypond-es</a>, o en inglés a través de <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">la lista oficial de fallos</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Otros idiomas: <a href="index.html">English</a>, <a href="index.fr.html">français</a>, <a href="index.it.html">italiano</a>.
+ <br>
+ Acerca de la <a href="http://www.lilypond.org/website/misc/browser-language">selección automática del idioma</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.es.html"
+         title="Documentation Index">&lt;&lt; Volver al índice de la documentación</a></p>
+<h4 class="toc_header"> <a href="#index" title="Start of the manual">Funcionalidades nuevas de la versión 2.20 desde la 2.18  v2.19.65 (rama de desarrollo). </a></h4>
+<div class="contents">
+<ul class="toc">
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Búsqueda de Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

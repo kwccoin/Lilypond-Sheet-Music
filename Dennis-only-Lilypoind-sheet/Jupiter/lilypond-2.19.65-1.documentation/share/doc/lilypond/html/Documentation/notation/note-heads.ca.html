@@ -1,0 +1,828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.1.4 Cap de les notes</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.1.4 Cap de les notes">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.1.4 Cap de les notes">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="pitches.ca.html#pitches" rel="up" title="1.1 Altures">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="displaying-pitches.ca.html#displaying-pitches" rel="previous" title="1.1.3 Impressió de les altures">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Cap-de-les-notes"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="displaying-pitches.ca.html#ambitus" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Tessitura&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="pitches.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#special-note-heads" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Caps de nota especials &gt; </a>]</td></tr></table>
+<a name="note-heads"></a>
+<h3 class="subsection">1.1.4 Cap de les notes</h3>
+
+<p>Aquesta secció proposa formes d&rsquo;alterar els caps de les figures.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#special-note-heads" accesskey="1">Caps de nota especials</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#easy-notation-note-heads" accesskey="2">Caps de notes de Notació Fàcil</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#shape-note-heads" accesskey="3">Caps de notes amb formes diverses</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#improvisation" accesskey="4">Improvisació</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Caps-de-nota-especials"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#note-heads" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Cap de les notes&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Cap de les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#easy-notation-note-heads" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Caps de notes de Notació Fàcil &gt; </a>]</td></tr></table>
+<a name="special-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Caps de nota especials</h4>
+
+<a name="index-figura_002c-cap-de-la"></a>
+<a name="index-nota_002c-cap-especial-de"></a>
+<a name="index-nota_002c-cap-de_002c-en-aspes"></a>
+<a name="index-nota_002c-cap-de_002c-en-rombe"></a>
+<a name="index-nota_002c-cap-de_002c-en-parlato"></a>
+<a name="index-nota_002c-cap-de_002c-harmonics"></a>
+<a name="index-nota_002c-cap-de_002c-guitarra"></a>
+<a name="index-especials_002c-caps-de-figura"></a>
+<a name="index-aspes_002c-caps-de-nota"></a>
+<a name="index-rombe_002c-caps-de-nota"></a>
+<a name="index-parlato_002c-caps-de-nota"></a>
+<a name="index-harmonics_002c-caps-de-nota"></a>
+<a name="index-guitarra_002c-caps-de-nota"></a>
+<a name="index-nota_002c-cap-de_002c-estils"></a>
+<a name="index-estils-de-cap-de-nota"></a>
+
+<a name="index-cross"></a>
+<a name="index-cross-1"></a>
+
+<p>Es pot modificar l&rsquo;aparença del cap de les notes:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c4 b
+  \override NoteHead.style = #'cross
+  c4 b
+  \revert NoteHead.style
+  a b
+  \override NoteHead.style = #'harmonic
+  a b
+  \revert NoteHead.style
+  c4 d e f
+}
+</pre><p>
+ <a href="../06/lily-c7886195.ly">
+  <img align="middle"
+       border="0"
+       src="../06/lily-c7886195.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per veure totes els estils de caps de les notes, consulteu
+<a name="index-Note-head-styles"></a>
+<a href="../notation/note-head-styles.ca.html">Estils de caps de nota</a>.
+</p>
+<p>L&rsquo;estil <code>cross</code> (aspes) es fa servir per representar una
+àmplia varietat d&rsquo;intencions musicals.  Les següent ordres
+genèriques predefinides modifiquen la forma del cap de les figures
+tant al context del pentagrama normal com al de tabulatura, i es
+poden fer servir per representar qualsevol significat musical:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 b
+  \xNotesOn
+   a b c4 b
+  \xNotesOff
+  c4 d
+}
+</pre><p>
+ <a href="../ef/lily-3f541fd3.ly">
+  <img align="middle"
+       border="0"
+       src="../ef/lily-3f541fd3.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La forma de funció musical d&rsquo;aquesta ordre predefinida es pot usar
+dins i fora dels acords per generar caps de nota en aspa, tant al
+context de pentagrama normal com al de tabulatura:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 b
+  \xNote { e f }
+  c b &lt; g \xNote c f &gt; b
+}
+</pre><p>
+ <a href="../e6/lily-5679a976.ly">
+  <img align="middle"
+       border="0"
+       src="../e6/lily-5679a976.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Como sinònims de <code>\xNote</code>, <code>\xNotesOn</code> i
+<code>\xNotesOff</code>, se poden usar <code>\deadNote</code>,
+<code>\deadNotesOn</code> i <code>\deadNotesOff</code>.  El terme
+<var>dead note</var> (nota morta) s&rsquo;utilitza habitualment per part
+dels guitarristes.
+</p>
+<p>També hi ha una abreviatura semblant per a les formes en rombe:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  &lt;c f\harmonic&gt;2 &lt;d a'\harmonic&gt;4 &lt;c g'\harmonic&gt; f\harmonic
+}
+</pre><p>
+ <a href="../99/lily-21488db9.ly">
+  <img align="middle"
+       border="0"
+       src="../99/lily-21488db9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides-46"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\harmonic</code>,
+<code>\xNotesOn</code>,
+<code>\xNotesOff</code>,
+<code>\xNote</code>.
+</p>
+<a name="Vegeu-tambe-11"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Note-head-styles-1"></a>
+<a href="../notation/note-head-styles.ca.html">Estils de caps de nota</a>,
+<a name="index-Chorded-notes"></a>
+<a href="../notation/chorded-notes.ca.html">Notes en acord</a>,
+<a name="index-Indicating-harmonics-and-dampened-notes"></a>
+<a href="../notation/guitar.ca.html#indicating-harmonics-and-dampened-notes">Indicació d&rsquo;harmònics y notes tapades</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-note_002devent"></a>
+<a href="../internals/note_002devent.ca.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver"></a>
+<a href="../internals/note_005fheads_005fengraver.ca.html">Note_heads_engraver</a>,
+<a name="index-Ledger_005fline_005fengraver"></a>
+<a href="../internals/ledger_005fline_005fengraver.ca.html">Ledger_line_engraver</a>,
+<a name="index-NoteHead"></a>
+<a href="../internals/notehead.ca.html">NoteHead</a>,
+<a name="index-LedgerLineSpanner"></a>
+<a href="../internals/ledgerlinespanner.ca.html">LedgerLineSpanner</a>,
+<a name="index-note_002dhead_002dinterface"></a>
+<a href="../internals/note_002dhead_002dinterface.ca.html">note-head-interface</a>,
+<a name="index-ledger_002dline_002dspanner_002dinterface"></a>
+<a href="../internals/ledger_002dline_002dspanner_002dinterface.ca.html">ledger-line-spanner-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Caps-de-notes-de-Notaci_00f3-F_00e0cil"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#special-note-heads" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Caps de nota especials&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Cap de les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#shape-note-heads" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Caps de notes amb formes diverses &gt; </a>]</td></tr></table>
+<a name="easy-notation-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Caps de notes de Notació Fàcil</h4>
+
+<a name="index-Hal-Leonard"></a>
+<a name="index-principiants_002c-musica-per-a"></a>
+<a name="index-facil_002c-notacio_002c-caps-de-nota-de"></a>
+<a name="index-musica-para-principiants"></a>
+<a name="index-notes_002c-caps-de_002c-estudio"></a>
+<a name="index-notes_002c-caps-de_002c-notacio-simplificada"></a>
+<a name="index-notes_002c-caps-de_002c-para-practicar"></a>
+<a name="index-simplificada_002c-notacio"></a>
+
+<a name="index-_005ceasyHeadsOn"></a>
+<a name="index-_005ceasyHeadsOn-1"></a>
+<a name="index-_005ceasyHeadsOff"></a>
+<a name="index-_005ceasyHeadsOff-1"></a>
+
+<p>Les notes amb cap de &lsquo;notació facilitada&rsquo; tenen el nom de la
+nota (en angles) dins del cap.  S&rsquo;usen a la música per a
+principiants.  Perquè que les lletres siguin llegibles, s&rsquo;han
+d&rsquo;imprimir en una mida gran de tipus de lletra.  Per imprimir amb
+un tipus de lletra més gran, vegeu
+<a name="index-Setting-the-staff-size"></a>
+<a href="../notation/setting-the-staff-size.ca.html">Establiment de la mida del pentagrama</a>.
+</p>
+<blockquote><pre class="verbatim">#(set-global-staff-size 26)
+\relative c' {
+  \easyHeadsOn
+  c2 e4 f
+  g1
+  \easyHeadsOff
+  c,1
+}
+</pre><p>
+ <a href="../70/lily-9ae29520.ly">
+  <img align="middle"
+       border="0"
+       src="../70/lily-9ae29520.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\easyHeadsOn</code>,
+<code>\easyHeadsOff</code>.
+</p>
+<a name="Fragments-de-codi-seleccionats-34"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Numbers as easy note heads</em>
+</p>
+
+<p>Easy notation note heads use the <code>note-names</code> property of the
+<code>NoteHead</code> object to determine what appears inside the note head.
+By overriding this property, it is possible to print numbers
+representing the scale-degree.
+</p>
+<p>A simple engraver can be created to do this for every note head object
+it sees.
+</p>
+
+<blockquote><pre class="verbatim">#(define Ez_numbers_engraver
+   (make-engraver
+    (acknowledgers
+     ((note-head-interface engraver grob source-engraver)
+      (let* ((context (ly:translator-context engraver))
+	     (tonic-pitch (ly:context-property context 'tonic))
+	     (tonic-name (ly:pitch-notename tonic-pitch))
+	     (grob-pitch
+	      (ly:event-property (event-cause grob) 'pitch))
+	     (grob-name (ly:pitch-notename grob-pitch))
+	     (delta (modulo (- grob-name tonic-name) 7))
+	     (note-names
+	      (make-vector 7 (number-&gt;string (1+ delta)))))
+	(ly:grob-set-property! grob 'note-names note-names))))))
+
+#(set-global-staff-size 26)
+
+\layout {
+  ragged-right = ##t
+  \context {
+    \Voice
+    \consists \Ez_numbers_engraver
+  }
+}
+
+\relative c' {
+  \easyHeadsOn
+  c4 d e f
+  g4 a b c \break
+
+  \key a \major
+  a,4 b cis d
+  e4 fis gis a \break
+
+  \key d \dorian
+  d,4 e f g
+  a4 b c d
+}
+</pre><p>
+ <a href="../68/lily-f0be8920.ly">
+  <img align="middle"
+       border="0"
+       src="../68/lily-f0be8920.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-138"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-Setting-the-staff-size-1"></a>
+<a href="../notation/setting-the-staff-size.ca.html">Establiment de la mida del pentagrama</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-note_002devent-1"></a>
+<a href="../internals/note_002devent.ca.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver-1"></a>
+<a href="../internals/note_005fheads_005fengraver.ca.html">Note_heads_engraver</a>,
+<a name="index-NoteHead-1"></a>
+<a href="../internals/notehead.ca.html">NoteHead</a>,
+<a name="index-note_002dhead_002dinterface-1"></a>
+<a href="../internals/note_002dhead_002dinterface.ca.html">note-head-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Caps-de-notes-amb-formes-diverses"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#easy-notation-note-heads" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Caps de notes de Notació Fàcil&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Cap de les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#improvisation" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Improvisació &gt; </a>]</td></tr></table>
+<a name="shape-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Caps de notes amb formes diverses</h4>
+
+<a name="index-notes_002c-caps-de_002c-con-formes"></a>
+<a name="index-formes_002c-notes-con"></a>
+
+<a name="index-Aiken_002c-caps-de-nota-amb-forma"></a>
+<a name="index-arpa-sacra_002c-caps-de-nota-amb-forma"></a>
+<a name="index-Southern-Harmony_002c-caps-de-nota-amb-forma"></a>
+<a name="index-Funk_002c-caps-de-nota-amb-forma"></a>
+<a name="index-Harmonica-Sacra_002c-caps-de-nota-amb-forma"></a>
+<a name="index-Christian-Harmony_002c-caps-de-nota-amb-forma"></a>
+<a name="index-Walker_002c-caps-de-nota-amb-forma"></a>
+
+<a name="index-notes_002c-caps-de_002c-Aiken"></a>
+<a name="index-notes_002c-caps-de_002c-arpa-sacra"></a>
+<a name="index-notes_002c-caps-de_002c-Southern-Harmony"></a>
+<a name="index-notes_002c-caps-de_002c-Funk"></a>
+<a name="index-notes_002c-caps-de_002c-Harmonica-Sacra"></a>
+<a name="index-notes_002c-caps-de_002c-Christian-Harmony"></a>
+<a name="index-notes_002c-caps-de_002c-Walker"></a>
+
+<a name="index-_005caikenHeads"></a>
+<a name="index-_005caikenHeads-1"></a>
+<a name="index-_005csacredHarpHeads"></a>
+<a name="index-_005csacredHarpHeads-1"></a>
+<a name="index-_005csouthernHarmonyHeads"></a>
+<a name="index-_005csouthernHarmonyHeads-1"></a>
+<a name="index-_005cfunkHeads"></a>
+<a name="index-_005cfunkHeads-1"></a>
+<a name="index-_005cwalkerHeads"></a>
+<a name="index-_005cwalkerHeads-1"></a>
+
+<p>A la notació de caps amb forma, la forma del cap correspon a la
+funció harmònica d&rsquo;una nota dins de l&rsquo;escala.  Aquesta notació es
+va fer popular als llibres americans de cançons durant el segle
+XIX.  Els caps de nota amb formes es poden produir amb els estils
+&lsquo;Arpa Sacra&rsquo;, &lsquo;Southern Harmony&rsquo;, Funk (Harmonica Sacra),
+Walker i Aiken &lsquo;(Christian Harmony)&rsquo;:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  \aikenHeads
+  c, d e f g2 a b1 c \break
+  \sacredHarpHeads
+  c,4 d e f g2 a b1 c \break
+  \southernHarmonyHeads
+  c,4 d e f g2 a b1 c \break
+  \funkHeads
+  c,4 d e f g2 a b1 c \break
+  \walkerHeads
+  c,4 d e f g2 a b1 c \break
+}
+</pre><p>
+ <a href="../0c/lily-e94a7177.ly">
+  <img align="middle"
+       border="0"
+       src="../0c/lily-e94a7177.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005ckey-2"></a>
+<a name="index-_005ckey-3"></a>
+<a name="index-_005caikenHeadsMinor"></a>
+<a name="index-_005caikenHeadsMinor-1"></a>
+<a name="index-_005csacredHarpHeadsMinor"></a>
+<a name="index-_005csacredHarpHeadsMinor-1"></a>
+<a name="index-_005csouthernHarmonyHeadsMinor"></a>
+<a name="index-_005csouthernHarmonyHeadsMinor-1"></a>
+<a name="index-_005cfunkHeadsMinor"></a>
+<a name="index-_005cfunkHeadsMinor-1"></a>
+<a name="index-_005cwalkerHeadsMinor"></a>
+<a name="index-_005cwalkerHeadsMinor-1"></a>
+
+<p>Les formes es determinen en funció del grau de l&rsquo;escala, on la
+tònica està determinada per l&rsquo;ordre <code>\key</code>. Quan s&rsquo;escriu en
+un to menor, la nota de l&rsquo;escala es pot determinar a partir del
+relatiu major:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  \key a \minor
+  \aikenHeads
+  a b c d e2 f g1 a \break
+  \aikenHeadsMinor
+  a,4 b c d e2 f g1 a \break
+  \sacredHarpHeadsMinor
+  a,2 b c d \break
+  \southernHarmonyHeadsMinor
+  a2 b c d \break
+  \funkHeadsMinor
+  a2 b c d \break
+  \walkerHeadsMinor
+  a2 b c d \break
+}
+</pre><p>
+ <a href="../13/lily-3ac4afc8.ly">
+  <img align="middle"
+       border="0"
+       src="../13/lily-3ac4afc8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides-29"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\aikenHeads</code>,
+<code>\aikenHeadsMinor</code>,
+<code>\funkHeads</code>,
+<code>\funkHeadsMinor</code>,
+<code>\sacredHarpHeads</code>,
+<code>\sacredHarpHeadsMinor</code>,
+<code>\southernHarmonyHeads</code>,
+<code>\southernHarmonyHeadsMinor</code>,
+<code>\walkerHeads</code>,
+<code>\walkerHeadsMinor</code>.
+</p>
+<a name="Fragments-de-codi-seleccionats-54"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Applying note head styles depending on the step of the scale</em>
+</p>
+
+<p>The <code>shapeNoteStyles</code> property can be used to define various note
+head styles for each step of the scale (as set by the key signature or
+the <code>tonic</code> property). This property requires a set of symbols,
+which can be purely arbitrary (geometrical expressions such as
+<code>triangle</code>, <code>cross</code>, and <code>xcircle</code> are allowed) or based
+on old American engraving tradition (some latin note names are also
+allowed).
+</p>
+<p>That said, to imitate old American song books, there are several
+predefined note head styles available through shortcut commands such as
+<code>\aikenHeads</code> or <code>\sacredHarpHeads</code>.
+</p>
+<p>This example shows different ways to obtain shape note heads, and
+demonstrates the ability to transpose a melody without losing the
+correspondence between harmonic functions and note head styles.
+</p>
+
+<blockquote><pre class="verbatim">fragment = {
+  \key c \major
+  c2 d
+  e2 f
+  g2 a
+  b2 c
+}
+
+\new Staff {
+  \transpose c d
+  \relative c' {
+    \set shapeNoteStyles = ##(do re mi fa
+                               #f la ti)
+    \fragment
+  }
+
+  \break
+
+  \relative c' {
+    \set shapeNoteStyles = ##(cross triangle fa #f
+                               mensural xcircle diamond)
+    \fragment
+  }
+}
+</pre><p>
+ <a href="../0d/lily-374eb465.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-374eb465.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per veure tots els estils de formes de cap de nota, consulteu
+<a name="index-Note-head-styles-2"></a>
+<a href="../notation/note-head-styles.ca.html">Estils de caps de nota</a>,
+</p>
+<a name="Vegeu-tambe-175"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de la notació:
+<a name="index-Note-head-styles-3"></a>
+<a href="../notation/note-head-styles.ca.html">Estils de caps de nota</a>,
+</p>
+<p>Referencia de funcionament interno:
+<a name="index-note_002devent-2"></a>
+<a href="../internals/note_002devent.ca.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver-2"></a>
+<a href="../internals/note_005fheads_005fengraver.ca.html">Note_heads_engraver</a>,
+<a name="index-NoteHead-2"></a>
+<a href="../internals/notehead.ca.html">NoteHead</a>,
+<a name="index-note_002dhead_002dinterface-2"></a>
+<a href="../internals/note_002dhead_002dinterface.ca.html">note-head-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Improvisaci_00f3"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#shape-note-heads" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Caps de notes amb formes diverses&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Cap de les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="rhythms.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Duracions &gt; </a>]</td></tr></table>
+<a name="improvisation"></a>
+<h4 class="unnumberedsubsubsec">Improvisació</h4>
+
+<a name="index-improvisacio"></a>
+<a name="index-barrades_002c-capss-de-nota"></a>
+<a name="index-notes_002c-caps-de_002c-improvisacio"></a>
+<a name="index-notes_002c-caps-de_002c-barrades"></a>
+
+<a name="index-_005cimprovisationOn"></a>
+<a name="index-_005cimprovisationOn-1"></a>
+<a name="index-_005cimprovisationOff"></a>
+<a name="index-_005cimprovisationOff-1"></a>
+
+<p>La improvisació es denota a vegades mitjançant caps de nota en
+forma de barra inclinada, on l&rsquo;executant pot escollir qualsevol
+nota però amb el ritme especificat.  Aquests cap de nota es creen
+així:
+</p>
+<blockquote><pre class="verbatim">\new Voice \with {
+  \consists &quot;Pitch_squash_engraver&quot;
+} \relative {
+  e''8 e g a a16( bes) a8 g
+  \improvisationOn
+  e8 ~
+  2 ~ 8 f4 f8 ~
+  2
+  \improvisationOff
+  a16( bes) a8 g e
+}
+</pre><p>
+ <a href="../3b/lily-25cb0b78.ly">
+  <img align="middle"
+       border="0"
+       src="../3b/lily-25cb0b78.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Instruccions-predefinides-50"></a>
+<h4 class="subsubheading">Instruccions predefinides</h4>
+<p><code>\improvisationOn</code>,
+<code>\improvisationOff</code>.
+</p>
+<a name="Vegeu-tambe-51"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-Pitch_005fsquash_005fengraver"></a>
+<a href="../internals/pitch_005fsquash_005fengraver.ca.html">Pitch_squash_engraver</a>,
+<a name="index-Voice-1"></a>
+<a href="../internals/voice.ca.html">Voice</a>,
+<a name="index-RhythmicStaff"></a>
+<a href="../internals/rhythmicstaff.ca.html">RhythmicStaff</a>.
+</p>
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#shape-note-heads" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Caps de notes amb formes diverses&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Cap de les notes&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="rhythms.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Duracions &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="note-heads.html">English</a>, <a href="note-heads.de.html">deutsch</a>, <a href="note-heads.es.html">español</a>, <a href="note-heads.fr.html">français</a>, <a href="note-heads.it.html">italiano</a>, <a href="note-heads.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Escriptura-de-notes-1" href="writing-pitches.ca.html">1.1.1 Escriptura de notes</a>      </li>
+      <li class=""><a name="toc-Modificacio-de-diverses-notes-a-l_0027hora" href="changing-multiple-pitches.ca.html">1.1.2 Modificació de diverses notes a l&rsquo;hora</a>      </li>
+      <li class=""><a name="toc-Impressio-de-les-altures" href="displaying-pitches.ca.html">1.1.3 Impressió de les altures</a>      </li>
+      <li class=" toc_current"><a name="toc-Cap-de-les-notes-1" href="note-heads.ca.html">1.1.4 Cap de les notes</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Caps-de-nota-especials-1" href="note-heads.ca.html#special-note-heads">Caps de nota especials</a>        </li>
+        <li class=""><a name="toc-Caps-de-notes-de-Notacio-Facil" href="note-heads.ca.html#easy-notation-note-heads">Caps de notes de Notació Fàcil</a>        </li>
+        <li class=""><a name="toc-Caps-de-notes-amb-formes-diverses-1" href="note-heads.ca.html#shape-note-heads">Caps de notes amb formes diverses</a>        </li>
+        <li class=""><a name="toc-Improvisacio" href="note-heads.ca.html#improvisation">Improvisació</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

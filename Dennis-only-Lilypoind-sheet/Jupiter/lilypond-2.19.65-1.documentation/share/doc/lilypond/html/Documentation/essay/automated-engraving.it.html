@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 2002-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Saggio sull'incisione musicale automatizzata: 1.3 Incisione automatizzata</title>
+
+<meta name="description" content="Saggio sull'incisione musicale automatizzata: 1.3 Incisione automatizzata">
+<meta name="keywords" content="Saggio sull'incisione musicale automatizzata: 1.3 Incisione automatizzata">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Saggio sull'incisione musicale automatizzata">
+<link href="lilypond-index.it.html#lilypond-index" rel="index" title="B. Indice di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="music-engraving.it.html#music-engraving" rel="up" title="1. Incisione musicale">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="B. Indice di LilyPond">
+<link href="engraving-details.it.html#engraving-details" rel="previous" title="1.2 Incisione in dettaglio">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="essay devStatus">
+
+
+<div id="main">
+<a name="Incisione-automatizzata"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="engraving-details.it.html#why-work-so-hard_003f" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Perché lavorare così duramente?&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="music-engraving.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione musicale&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#beauty-contests" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Concorsi di bellezza &gt; </a>]</td></tr></table>
+<a name="automated-engraving"></a>
+<h2 class="section">1.3 Incisione automatizzata</h2>
+
+<a name="index-incisione_002c-automatizzata"></a>
+<a name="index-incisione-automatizzata"></a>
+
+<p>Qui descriviamo ciò che serve per creare un software in grado di
+simulare l&rsquo;aspetto degli spartiti incisi: un metodo di descrizione della
+buona formattazione al computer e numerosi confronti dettagliati con
+incisioni effettivamente esistenti.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#beauty-contests" accesskey="1">Concorsi di bellezza</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#improvement-by-benchmarking" accesskey="2">Miglioramento per analisi comparativa</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#getting-things-right" accesskey="3">Mettere le cose a posto</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Concorsi-di-bellezza"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#automated-engraving" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Incisione automatizzata&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#automated-engraving" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione automatizzata&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#improvement-by-benchmarking" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Miglioramento per analisi comparativa &gt; </a>]</td></tr></table>
+<a name="beauty-contests"></a>
+<h3 class="unnumberedsubsec">Concorsi di bellezza</h3>
+
+<p>In che modo noi decidiamo veramente sulla formattazione?  In
+altre parole: quale delle tre configurazioni seguenti dovremmo
+scegliere per avere la legatura migliore?
+</p>
+<p>
+ <a href="../b8/lily-0179c477.ly">
+  <img align="middle"
+       border="0"
+       src="../b8/lily-0179c477.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Esistono pochi libri sull&rsquo;arte di incidere la musica, i quali, purtroppo,
+si limitano a fornire alcune semplici regole generali e qualche esempio.
+Da esse si può imparare qualcosa, ma sempre troppo poco per mettere a
+punto un algoritmo implementabile senza troppa fatica in un computer:
+seguendole, le eccezioni da codificare a mano sarebbero ancora troppe.
+Analizzare tutti questi casi è un lavoro enorme, e spesso nemmeno tutti
+vengono contemplati:
+</p>
+<blockquote><img src="../pictures/ross-beam-scan.jpg" alt=".jpg">
+</blockquote>
+
+<p>(Fonte: Ted Ross, <em>The Art of Music Engraving</em>)
+</p>
+<p>Anziché cercare di scrivere regole di formattazione dettagliate
+per ogni situazione possibile, dobbiamo solo descrivere gli
+obiettivi in modo sufficientemente completo da permettere a LilyPond di
+giudicare da solo l&rsquo;attrattiva delle diverse possibilità.  Poi, per ogni
+configurazione calcoliamo un punteggio di  bruttezza e scegliamo quella
+meno brutta.
+</p>
+<p>Per esempio, qui sotto mostriamo tre possibilità per una legatura,
+a ciascuna delle quali LilyPond ha assegnato un punteggio in &lsquo;punti di
+bruttezza&rsquo;.  Il primo esempio ottiene 15,39 punti perché la legatura
+attraversa una delle teste delle note:
+</p>
+<p>
+ <a href="../5d/lily-afb29edc.ly">
+  <img align="middle"
+       border="0"
+       src="../5d/lily-afb29edc.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Il secondo è più bello, ma la legatura non comincia o finisce sulle
+teste delle note. Ottiene 1,71 punti a sinistra e 9,37 punti a destra,
+più altri 2 punti a causa del fatto che la legatura ascende mentre la
+melodia discende, per un totale di 13,08 punti di bruttezza:
+</p>
+<p>
+ <a href="../8a/lily-1a506dd8.ly">
+  <img align="middle"
+       border="0"
+       src="../8a/lily-1a506dd8.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>La legatura finale ottiene 10,04 punti per il vuoto a destra e 2 punti
+per la pendenza verso l&rsquo;alto, ma è la più attraente delle tre
+configurazioni, e così LilyPond sceglie questa:
+</p>
+<p>
+ <a href="../83/lily-7d0e74a1.ly">
+  <img align="middle"
+       border="0"
+       src="../83/lily-7d0e74a1.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Questa tecnica è del tutto generale e viene adoperata per prendere
+decisioni ottimali in merito alla configurazione dei gambi delle note,
+delle legature di valore e dei punti negli accordi, nelle interruzioni
+di rigo e di pagina.  Si può giudicare la bontà di queste decisioni
+confrontandole con incisioni effettivamente esistenti.
+</p>
+<hr size="6">
+<a name="Miglioramento-per-analisi-comparativa"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#beauty-contests" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Concorsi di bellezza&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#automated-engraving" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione automatizzata&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#getting-things-right" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Mettere le cose a posto &gt; </a>]</td></tr></table>
+<a name="improvement-by-benchmarking"></a>
+<h3 class="unnumberedsubsec">Miglioramento per analisi comparativa</h3>
+
+<p>Gli spartiti generati da LilyPond sono migliorati gradualmente nel tempo e
+continuano a migliorare grazie al confronto con quelli incisi a mano.
+</p>
+<p>Per esempio, qui sotto si vede una riga di un brano di riferimento preso
+da un&rsquo;edizione incisa (Bärenreiter BA320):
+</p>
+<img src="../pictures/baer-sarabande.png" alt="png">
+
+<p>e qui la stessa citazione realizzata con una vecchissima versione di LilyPond
+(versione 1.4, maggio 2001):
+</p>
+<img src="../pictures/lily14-sarabande.png" alt="png">
+
+<p>La musica prodotta da LilyPond 1.4 è senza dubbio leggibile, ma un
+confronto serrato con lo spartito precedente ha mostrato numerosi
+errori nei dettagli di formattazione:
+</p>
+<img src="../pictures/lily14-sarabande-annotated.png" alt="png">
+
+<ul>
+<li> c&rsquo;è troppo spazio prima dell&rsquo;indicazione di tempo
+</li><li> i gambi delle note con travature sono troppo lunghi
+</li><li> la seconda e la quarta misura sono troppo strette
+</li><li> la legatura ha un aspetto imbarazzante
+</li><li> le indicazioni di trillo sono troppo grandi
+</li><li> i gambi sono troppo sottili
+</li></ul>
+
+<p>(Mancavano anche due teste di note, alcune indicazioni editoriali e
+c&rsquo;era un&rsquo;altezza errata!)
+</p>
+<p>Aggiustando le regole di formattazione e il disegno del font, lo
+spartito è notevolmente migliorato.  Confrontate lo stesso spartito di
+riferimento e quello prodotto con la versione corrente di LilyPond
+(2.19.65):
+</p>
+<img src="../pictures/baer-sarabande.png" alt="png">
+
+<p>
+ <a href="../64/lily-9356cf70.ly">
+  <img align="middle"
+       border="0"
+       src="../64/lily-9356cf70.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Non è certo un clone dell&rsquo;edizione di riferimento, ma è comunque molto
+più vicino a una qualità editoriale rispetto alla versione precedente.
+</p>
+<hr size="6">
+<a name="Mettere-le-cose-a-posto"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#improvement-by-benchmarking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Miglioramento per analisi comparativa&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#automated-engraving" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione automatizzata&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="building-software.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Costruzione del software &gt; </a>]</td></tr></table>
+<a name="getting-things-right"></a>
+<h3 class="unnumberedsubsec">Mettere le cose a posto</h3>
+
+<p>Siamo in grado di misurare l&rsquo;abilità di LilyPond nel prendere decisioni
+sull&rsquo;incisione della musica anche confrontando il suo prodotto con
+quello di un software commerciale.  In questo caso abbiamo
+scelto Finale 2008, uno dei programmi di notazione musicale
+a pagamento più diffusi, in particolare nel Nord America.  Sibelius è il
+suo più acerrimo rivale e sembra andare particolarmente bene nel mercato
+europeo.
+</p>
+<p>Per il nostro confronto, abbiamo selezionato la Fuga in sol minore dal
+Libro I del <em>Clavicembalo ben temperato</em> BWV 861 di Bach, il cui
+soggetto d&rsquo;apertura è
+</p>
+<p>
+ <a href="../0e/lily-96550f49.ly">
+  <img align="middle"
+       border="0"
+       src="../0e/lily-96550f49.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Abbiamo inciso le ultime sette misure del brano (n. 28&ndash;34) con Finale e
+con LilyPond.  In questo punto della composizione, il soggetto ritorna
+in uno stretto a tre parti e conduce alla sezione finale.  Abbiamo
+resistito alla tentazione di apportare qualunque modifica al prodotto
+predefinito di Finale, perché stiamo cercando di mostrare che cosa
+ciascun software riesce a fare da solo, senza interventi umani.  Le
+uniche modifiche di rilievo introdotte sono state aggiustare le
+dimensioni della pagina per adattarla a quelle di questo saggio e
+forzare la musica in due soli sistemi per rendere più agevole il
+confronto. Per impostazione predefinita, invece, Finale avrebbe inciso
+due sistemi di tre misure ciascuno e un terzo sistema contenente la sola
+misura finale larga tutta la riga.
+</p>
+<p>Molte delle differenze tra le due versioni si concentrano nelle misure
+28&ndash;29, come mostriamo qui di seguito (Finale sta sopra):
+</p>
+<img src="../pictures/bwv861mm28-29.png" alt="png">
+
+<p>
+ <a href="../b8/lily-f3c74e65.ly">
+  <img align="middle"
+       border="0"
+       src="../b8/lily-f3c74e65.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+<p>Tra le carenze nell&rsquo;output non modificato di Finale segnaliamo quanto segue.
+</p><ul>
+<li> La maggior parte delle travature è troppo lontana dal rigo.  Una
+travatura che punta verso il centro del rigo dovrebbe essere lunga circa
+un&rsquo;ottava, ma gli incisori la abbreviano quando nella musica a più voci
+punta in senso contrario.  Il sistema di travature di
+Finale può essere facilmente migliorato con il suo plug-in Patterson
+Beam, ma qui abbiamo scelto di omettere questa funzionalità.
+</li><li> Finale non regola le posizioni delle teste delle note quando queste
+vengono a trovarsi troppo vicine, il che rende la musica estremamente
+difficile da leggere se voce superiore e inferiore invertono
+temporaneamente la posizione:
+
+<p>
+ <a href="../7e/lily-f39b518d.ly">
+  <img align="middle"
+       border="0"
+       src="../7e/lily-f39b518d.png"
+       alt="[image of music]">
+ </a>
+</p>
+
+
+
+</li><li> Finale ha messo tutte le pause alla stessa altezza sul rigo.
+L&rsquo;utente è libero di regolarle secondo la propria necessità, ma in
+nessun modo il programma tenta di prendere in considerazione il contenuto
+dell&rsquo;altra voce.  Il caso ha voluto che in quest&rsquo;esempio non si verificassero
+vere e proprie collisioni tra note e pause, ma la cosa ha a che fare
+più con la posizione delle note che con quella delle pause.  In altre
+parole, Bach merita più considerazione per evitare una collisione
+completa di quanta non gliene riservi Finale.
+</li></ul>
+
+<p>Con il confronto appena operato non intendiamo affatto suggerire che
+Finale non possa essere adoperato per produrre spartiti di qualità
+editoriale.  Tutto il contrario: nelle mani di un utente esperto può farlo e
+in effetti lo fa, ma richiede abilità e tempo.  Una delle differenze
+fondamentali tra LilyPond e i programmi di notazione musicale
+commerciali è che il primo spera di ridurre gli interventi umani al
+minimo, mentre gli altri puntano a fornire un&rsquo;interfaccia attraente in
+cui operare questo tipo di modifiche.
+</p>
+<p>Particolarmente eclatante è l&rsquo;omissione da parte di Finale di un un bemolle
+a misura 33:
+</p>
+<blockquote><img src="../pictures/bwv861mm33-34-annotate.png" alt="png">
+</blockquote>
+
+<p>Il bemolle è richiesto per annullare il bequadro presente poco prima
+nella stessa misura, ma Finale l&rsquo;ha tralasciato perché appartenente a
+un&rsquo;altra voce. Così, oltre ad attivare il plug-in per le travature e a
+controllare la spaziatura delle teste delle note e delle pause, l&rsquo;utente
+deve controllare anche gli accidenti nelle voci che si incrociano per
+scongiurare che errori di questo tipo facciano interrompere una prova.
+</p>
+<p>Se vi interessa esaminare questi esempi più nel dettaglio, alla fine del
+saggio potete trovare l&rsquo;estratto completo di sette misure insieme ad
+altre quattro incisioni pubblicate.  Un attento esame dei
+frammenti rivela che tra le incisioni manuali esiste una certo
+intervallo di variazione tollerabile, ma anche che LilyPond regge il
+confronto abbastanza bene.  L&rsquo;output di LilyPond non è ancora privo
+di difetti, per esempio appare un po&rsquo; troppo aggressivo
+nell&rsquo;accorciare i gambi, il che permette ancora un certo margine di
+manovra per sviluppi e messe a punto successive.
+</p>
+<p>Naturalmente, la tipografia si basa sul giudizio di una forma da parte
+dell&rsquo;uomo, il che rende le persone ancora insostituibili.  Tuttavia si
+può automatizzare gran parte del lavoro noioso, e se LilyPond
+riesce a risolvere correttamente la maggior parte delle situazioni
+frequenti, il miglioramento rispetto al software in circolazione sarà
+enorme.  Via via che gli anni passano, il programma può essere
+perfezionato per eseguire automaticamente un numero sempre più elevato
+di operazioni, così da rendere le sovrascritture manuali sempre meno
+indispensabili.  Dove queste si rivelassero indispensabili, la struttura di
+LilyPond è stata progettata avendo in mente la flessibilità.
+</p>
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#improvement-by-benchmarking" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Miglioramento per analisi comparativa&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#automated-engraving" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione automatizzata&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="building-software.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Costruzione del software &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="automated-engraving.html">English</a>, <a href="automated-engraving.de.html">deutsch</a>, <a href="automated-engraving.es.html">español</a>, <a href="automated-engraving.fr.html">français</a>, <a href="automated-engraving.hu.html">magyar</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Saggio sull&rsquo;incisione musicale automatizzata  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Incisione-musicale-1" href="music-engraving.it.html">1. Incisione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Storia-di-LilyPond-1" href="the-lilypond-story.it.html">1.1 Storia di LilyPond</a>    </li>
+    <li class=""><a name="toc-Incisione-in-dettaglio-1" href="engraving-details.it.html">1.2 Incisione in dettaglio</a>    </li>
+    <li class=" toc_current"><a name="toc-Incisione-automatizzata-1" href="automated-engraving.it.html">1.3 Incisione automatizzata</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Concorsi-di-bellezza-1" href="automated-engraving.it.html#beauty-contests">Concorsi di bellezza</a>      </li>
+      <li class=""><a name="toc-Miglioramento-per-analisi-comparativa-1" href="automated-engraving.it.html#improvement-by-benchmarking">Miglioramento per analisi comparativa</a>      </li>
+      <li class=""><a name="toc-Mettere-le-cose-a-posto-1" href="automated-engraving.it.html#getting-things-right">Mettere le cose a posto</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Costruzione-del-software-1" href="building-software.it.html">1.4 Costruzione del software</a>    </li>
+    <li class=""><a name="toc-Mettere-LilyPond-al-lavoro-1" href="putting-lilypond-to-work.it.html">1.5 Mettere LilyPond al lavoro</a>    </li>
+    <li class=""><a name="toc-Esempi-di-incisione-_0028BWV-861_0029-1" href="engraved-examples-_0028bwv-861_0029.it.html">1.6 Esempi di incisione (BWV 861)</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Bibliografia-1" href="literature-list.it.html">2. Bibliografia</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Bibliografia-breve-1" href="short-literature-list.it.html">2.1 Bibliografia breve</a>    </li>
+    <li class=""><a name="toc-Bibliografia-lunga-1" href="long-literature-list.it.html">2.2 Bibliografia lunga</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">A. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">B. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

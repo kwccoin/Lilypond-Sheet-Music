@@ -1,0 +1,877 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.2.6 Temes especials de ritme</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.2.6 Temes especials de ritme">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.2.6 Temes especials de ritme">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="rhythms.ca.html#rhythms" rel="up" title="1.2 Duracions">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="bars.ca.html#bars" rel="previous" title="1.2.5 Compassos">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Temes-especials-de-ritme"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="bars.ca.html#rehearsal-marks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Marques d'assaig&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="rhythms.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Duracions&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#grace-notes" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Notes d'adorn &gt; </a>]</td></tr></table>
+<a name="special-rhythmic-concerns"></a>
+<h3 class="subsection">1.2.6 Temes especials de ritme</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#grace-notes" accesskey="1">Notes d&rsquo;adorn</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#aligning-to-cadenzas" accesskey="2">Alinear amb una cadenza</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#time-administration" accesskey="3">Gestió del temps</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Notes-d_0027adorn"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#special-rhythmic-concerns" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Temes especials de ritme&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#special-rhythmic-concerns" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Temes especials de ritme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#aligning-to-cadenzas" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Alinear amb una cadenza &gt; </a>]</td></tr></table>
+<a name="grace-notes"></a>
+<h4 class="unnumberedsubsubsec">Notes d&rsquo;adorn</h4>
+
+<a name="index-ornaments"></a>
+<a name="index-mordents"></a>
+<a name="index-appoggiatura"></a>
+<a name="index-acciaccatura"></a>
+
+<a name="index-_005cgrace"></a>
+<a name="index-_005cgrace-1"></a>
+<a name="index-_005cslashedGrace"></a>
+<a name="index-_005cslashedGrace-1"></a>
+<a name="index-_005cacciaccatura"></a>
+<a name="index-_005cacciaccatura-1"></a>
+<a name="index-_005cappoggiatura"></a>
+<a name="index-_005cappoggiatura-1"></a>
+
+<p>Els mordents i les notes d&rsquo;adorn són ornaments musicals, impresos
+a un tipus de lletra més petita i no ocupen cap temps lògic
+addicional al compàs.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 \grace b16 a4(
+  \grace { b16 c16 } a2)
+}
+</pre><p>
+ <a href="../fc/lily-30ab1861.ly">
+  <img align="middle"
+       border="0"
+       src="../fc/lily-30ab1861.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Hi ha tres tipus possibles de notes d&rsquo;adorn; la
+<em>acciaccatura</em> o mordent d&rsquo;una nota (una nota d&rsquo;adorn sense
+mesura que s&rsquo;indica mitjançant una nota lligada i amb la clau
+ratllada) i la <em>appoggiatura</em>, que agafa una fracció fixa de
+la nota principal a la que s&rsquo;adjunta, i que s&rsquo;imprimeix sense
+ratllar.  És possible escriure una nota d&rsquo;adorn amb la plica
+ratllada, com la <em>acciaccatura</em> però sense la lligadura, com
+per col·locar-la entre notes que estan lligades entre sí,
+utilitzant la funció <code>\slashedGrace</code>.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  \acciaccatura d''8 c4
+  \appoggiatura e8 d4
+  \acciaccatura { g16 f } e2
+  \slashedGrace a,8 g4
+  \slashedGrace b16 a4(
+  \slashedGrace b8 a2)
+}
+</pre><p>
+ <a href="../b5/lily-f5e446e7.ly">
+  <img align="middle"
+       border="0"
+       src="../b5/lily-f5e446e7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La col·locació de notes d&rsquo;adorn se sincronitza entres els
+diferents pentagrames.  A l&rsquo;exemple següent, hi ha dues
+semicorxeres d&rsquo;adorn per a cada corxera d&rsquo;adorn:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative { e''2 \grace { c16 d e f } e2 }
+  \new Staff \relative { c''2 \grace { g8 b } c2 }
+&gt;&gt;
+</pre><p>
+ <a href="../4a/lily-4310325b.ly">
+  <img align="middle"
+       border="0"
+       src="../4a/lily-4310325b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-adorn_002c-seguiment-de-notes-de"></a>
+
+<a name="index-_005cafterGrace"></a>
+<a name="index-_005cafterGrace-1"></a>
+
+<p>Si volem acabar una nota amb un adorn, usem l&rsquo;ordre
+<code>\afterGrace</code>.  Agafa dos argument: la nota principal, i les
+notes d&rsquo;adorn que segueixen a la nota principal.
+</p>
+<blockquote><pre class="verbatim">\relative { c''1 \afterGrace d1 { c16[ d] } c1 }
+</pre><p>
+ <a href="../9d/lily-579a946f.ly">
+  <img align="middle"
+       border="0"
+       src="../9d/lily-579a946f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Això posa les notes d&rsquo;adorn després d&rsquo;un espai que dura 3/4 de la
+longitud de la nota principal.  La fracció predeterminada de 3/4
+es pot  canviar establint <code>afterGraceFraction</code>.  L&rsquo;exemple
+següent mostra el resultat d&rsquo;establir l&rsquo;espai en el seu valor
+predeterminat, en 15/16, i per últim en 1/2 de la nota principal.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative {
+    c''1 \afterGrace d1 { c16[ d] } c1
+  }
+  \new Staff \relative {
+    #(define afterGraceFraction (cons 15 16))
+    c''1 \afterGrace d1 { c16[ d] } c1
+  }
+  \new Staff \relative {
+    #(define afterGraceFraction (cons 1 2))
+    c''1 \afterGrace d1 { c16[ d] } c1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../14/lily-a3846b47.ly">
+  <img align="middle"
+       border="0"
+       src="../14/lily-a3846b47.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;espai entre la nota principal i la d&rsquo;adorn també es pot
+especificar usant espaiadors.  L&rsquo;exemple següent situa la nota
+d&rsquo;adorn després d&rsquo;un espai que dura 7/8 de la nota principal.
+</p>
+<blockquote><pre class="verbatim">\new Voice \relative {
+  &lt;&lt;
+    { d''1^\trill_( }
+    { s2 s4. \grace { c16 d } }
+  &gt;&gt;
+  c1)
+}
+</pre><p>
+ <a href="../d3/lily-e3c0616a.ly">
+  <img align="middle"
+       border="0"
+       src="../d3/lily-e3c0616a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-ajustament-de-les-notes-d_0027adorn"></a>
+<a name="index-notes-de-adorno_002c-ajustament"></a>
+<a name="index-notes-d_0027adorn_002c-canviar-els-ajustos-de-disposicio"></a>
+
+<p>Una expressió musical <code>\grace</code> introdueix ajustos de tipus de
+lletra especials, per exemple per produir un tipus de lletra més
+petit i per fixes les direccions.  Per això, quan s&rsquo;introdueixen
+ajustaments per a la presentació, han d&rsquo;anar dins de l&rsquo;expressió
+d&rsquo;adorn.  Les sobreescriptures s&rsquo;han de revertir també dins de
+l&rsquo;expressió d&rsquo;adorn.  Aquí, la direcció predeterminada de la plica
+de la nota d&rsquo;adorn se sobreescriu i després es reverteix.
+</p>
+<blockquote><pre class="verbatim">\new Voice \relative {
+  \acciaccatura {
+    \stemDown
+    f''16-&gt;
+    \stemNeutral
+  }
+  g4 e c2
+}
+</pre><p>
+ <a href="../c4/lily-6ac27812.ly">
+  <img align="middle"
+       border="0"
+       src="../c4/lily-6ac27812.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-plica-creuada"></a>
+
+<a name="Fragments-de-codi-seleccionats-37"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Using grace note slashes with normal heads</em>
+</p>
+
+<p>The slash through the stem found in acciaccaturas can be applied in
+other situations.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \override Flag.stroke-style = #&quot;grace&quot;
+  c8( d2) e8( f4)
+}
+</pre><p>
+ <a href="../a5/lily-61b46131.ly">
+  <img align="middle"
+       border="0"
+       src="../a5/lily-61b46131.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Tweaking grace layout within music</em>
+</p>
+
+<p>The layout of grace expressions can be changed throughout the music
+using the functions <code>add-grace-property</code> and
+<code>remove-grace-property</code>. The following example undefines the
+<code>Stem</code> direction for this grace, so that stems do not always point
+up, and changes the default note heads to crosses.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \new Staff {
+    $(remove-grace-property 'Voice 'Stem 'direction)
+    $(add-grace-property 'Voice 'NoteHead 'style 'cross)
+    \new Voice {
+       \acciaccatura { f16 } g4
+       \grace { d16 e } f4
+       \appoggiatura { f,32 g a } e2
+    }
+  }
+}
+</pre><p>
+ <a href="../08/lily-6742d848.ly">
+  <img align="middle"
+       border="0"
+       src="../08/lily-6742d848.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Redefining grace note global defaults</em>
+</p>
+
+<p>The global defaults for grace notes are stored in the identifiers
+<code>startGraceMusic</code>, <code>stopGraceMusic</code>,
+<code>startAcciaccaturaMusic</code>, <code>stopAcciaccaturaMusic</code>,
+<code>startAppoggiaturaMusic</code> and <code>stopAppoggiaturaMusic</code>, which
+are defined in the file <code>ly/grace-init.ly</code>.  By redefining them
+other effects may be obtained.
+</p>
+
+<blockquote><pre class="verbatim">startAcciaccaturaMusic = {
+  &lt;&gt;(
+  \override Flag.stroke-style = #&quot;grace&quot;
+  \slurDashed
+}
+
+stopAcciaccaturaMusic = {
+  \revert Flag.stroke-style
+  \slurSolid
+  &lt;&gt;)
+}
+
+\relative c'' {
+  \acciaccatura d8 c1
+}
+</pre><p>
+ <a href="../89/lily-18cda6aa.ly">
+  <img align="middle"
+       border="0"
+       src="../89/lily-18cda6aa.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Positioning grace notes with floating space</em>
+</p>
+
+<p>Setting the property <code>'strict-grace-spacing</code> makes the musical
+columns for grace notes &rsquo;floating&rsquo;, i.e., decoupled from the non-grace
+notes: first the normal notes are spaced, then the (musical columns of
+the) graces are put left of the musical columns for the main notes.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  &lt;&lt;
+    \override Score.SpacingSpanner.strict-grace-spacing = ##t
+    \new Staff \new Voice {
+      \afterGrace c4 { c16[ c8 c16] }
+      c8[ \grace { b16 d } c8]
+      c4 r
+    }
+    \new Staff {
+      c16 c c c c c c c c4 r
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../28/lily-cd1b371f.ly">
+  <img align="middle"
+       border="0"
+       src="../28/lily-cd1b371f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-185"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-grace-notes"></a>
+<a href="../music-glossary/grace-notes.ca.html">grace notes</a>,
+<a name="index-acciaccatura-1"></a>
+<a href="../music-glossary/acciaccatura.ca.html">acciaccatura</a>,
+<a name="index-appoggiatura-1"></a>
+<a href="../music-glossary/appoggiatura.ca.html">appoggiatura</a>.
+</p>
+<p>Referència de la notació:
+<a href="writing-rhythms.ca.html#scaling-durations">Escalat de les duracions</a>,
+<a href="beams.ca.html#manual-beams">Barres manuals</a>.
+</p>
+<p>Fitxers d&rsquo;inici:
+&lsquo;<tt>ly/grace-init.ly</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-GraceMusic"></a>
+<a href="../internals/gracemusic.ca.html">GraceMusic</a>,
+<a name="index-Grace_005fbeam_005fengraver"></a>
+<a href="../internals/grace_005fbeam_005fengraver.ca.html">Grace_beam_engraver</a>,
+<a name="index-Grace_005fauto_005fbeam_005fengraver"></a>
+<a href="../internals/grace_005fauto_005fbeam_005fengraver.ca.html">Grace_auto_beam_engraver</a>,
+<a name="index-Grace_005fengraver"></a>
+<a href="../internals/grace_005fengraver.ca.html">Grace_engraver</a>,
+<a name="index-Grace_005fspacing_005fengraver"></a>
+<a href="../internals/grace_005fspacing_005fengraver.ca.html">Grace_spacing_engraver</a>.
+</p>
+
+<a name="Advertiments-i-problemes-coneguts-54"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<a name="index-acciaccatura-de-diverses-notes"></a>
+<a name="index-adorn_002c-sincronitzacio-de-notes-de"></a>
+
+<p>Una <i>acciaccatura</i> de diverses notes amb una barra s&rsquo;imprimeix
+sense ratllar, i té exactament la mateixa aparença que una
+<i>appoggiatura</i> de diverses notes amb barra.
+</p>
+
+<p>La sincronització de les notes d&rsquo;adorn també pot portar
+sorpreses.  La notació de pentagrames, com ara armadures, línies
+divisòries, etc., també se sincronitzen.  Aneu amb cura quan
+barregeu pentagrames amb adorns i sense adorns, per exemple
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative { e''4 \bar &quot;.|:&quot; \grace c16 d2. }
+  \new Staff \relative { c''4 \bar &quot;.|:&quot; d2. }
+&gt;&gt;
+</pre><p>
+ <a href="../b3/lily-25312367.ly">
+  <img align="middle"
+       border="0"
+       src="../b3/lily-25312367.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Això es pot remeiar inserint desplaçaments d&rsquo;adorn de les
+duracions corresponents als altres pentagrames.  Per a l&rsquo;exemple
+anterior
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative { e''4 \bar &quot;.|:&quot; \grace c16 d2. }
+  \new Staff \relative { c''4 \bar &quot;.|:&quot; \grace s16 d2. }
+&gt;&gt;
+</pre><p>
+ <a href="../77/lily-fe6a65cd.ly">
+  <img align="middle"
+       border="0"
+       src="../77/lily-fe6a65cd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>És obligatori usar l&rsquo;ordre <code>\grace</code> per a la part dels
+desplaçaments, fins i tot si la part visual usa
+<code>\acciaccatura</code> o <code>\appoggiatura</code> perquè en cas contrari
+s&rsquo;imprimeix una lligadura lletja que connecta a la nota d&rsquo;adorn
+invisible amb la nota següent.
+</p>
+<p>Les seccions d&rsquo;adorn sols s&rsquo;han d&rsquo;usar dins d&rsquo;expressions de
+música seqüencials.  No estan contemplats ni el niuat ni la
+juxtaposició de seccions d&rsquo;adorn, i podria produir fallades i
+altres errors.
+</p>
+<p>Cada nota d&rsquo;adorn a la sortida MIDI té una longitud que és 1/4 de
+la seva duració real.  Si la duració combinada de les notes
+d&rsquo;adorn és més gran que la longitud de la nota precedent, es
+genera un error &ldquo;<code>Retrocedint al temps MIDI</code>&rdquo;.  Teniu dues
+opcions: en primer lloc, podeu fer més curta la duració de les
+notes d&rsquo;adorn, per exemple:
+</p>
+<blockquote><pre class="example">c'8 \acciaccatura { c'8[ d' e' f' g'] }
+</pre></blockquote>
+
+<p>es converteix a:
+</p>
+<blockquote><pre class="example">c'8 \acciaccatura { c'16[ d' e' f' g'] }
+</pre></blockquote>
+
+<p>Una altra opció és canviar explícitament la duració musical:
+</p>
+<blockquote><pre class="example">c'8 \acciaccatura { \scaleDurations 1/2 { c'8[ d' e' f' g'] } }
+</pre></blockquote>
+
+<p>Vegeu <a href="writing-rhythms.ca.html#scaling-durations">Escalat de les duracions</a>.
+</p>
+<hr size="6">
+<a name="Alinear-amb-una-cadenza"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#grace-notes" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Notes d'adorn&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#special-rhythmic-concerns" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Temes especials de ritme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#time-administration" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Gestió del temps &gt; </a>]</td></tr></table>
+<a name="aligning-to-cadenzas"></a>
+<h4 class="unnumberedsubsubsec">Alinear amb una cadenza</h4>
+
+<a name="index-cadenza-_0028cadencia_0029"></a>
+<a name="index-cadenza-_0028cadencia_0029_002c-alinear-a"></a>
+<a name="index-alineacio-a-una-cadenza-_0028cadencia_0029"></a>
+
+<p>A un context orquestral, les cadenzas presenten un problema
+espacial: en construir una partitura que te una cadenza, tots els
+altres instruments han de saltar tantes notes com la longitud de
+la cadenza, ja que en cas contrari començaran massa aviat o massa
+tard.
+</p>
+<p>Una solució a aquest problema són les funcions
+<code>mmrest-of-length</code> i <code>skip-of-length</code>.  Aquestes
+funcions de l&rsquo;Scheme agafen un fragment de música com a argument i
+generen un <code>\skip</code> o silenci multicompàs de la longitud
+exacta del fragment.
+</p>
+<blockquote><pre class="verbatim">MyCadenza = \relative {
+  c'4 d8 e f g g4
+  f2 g4 g
+}
+
+\new GrandStaff &lt;&lt;
+  \new Staff {
+    \MyCadenza c'1
+    \MyCadenza c'1
+  }
+  \new Staff {
+    #(mmrest-of-length MyCadenza)
+    c'1
+    #(skip-of-length MyCadenza)
+    c'1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../d1/lily-cca35027.ly">
+  <img align="middle"
+       border="0"
+       src="../d1/lily-cca35027.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-275"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Glossari musical:
+<a name="index-cadenza-1"></a>
+<a href="../music-glossary/cadenza.ca.html">cadenza</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+
+<hr size="6">
+<a name="Gesti_00f3-del-temps"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#aligning-to-cadenzas" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Alinear amb una cadenza&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#special-rhythmic-concerns" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Temes especials de ritme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="expressive-marks.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Expressions &gt; </a>]</td></tr></table>
+<a name="time-administration"></a>
+<h4 class="unnumberedsubsubsec">Gestió del temps</h4>
+
+<a name="index-temps_002c-administracio"></a>
+<a name="index-temps_002c-control-del-_0028dins-de-la-partitura_0029"></a>
+<a name="index-musica-sense-mesura"></a>
+<a name="index-mesura_002c-musica-sense"></a>
+
+<a name="index-currentBarNumber-2"></a>
+<a name="index-currentBarNumber-3"></a>
+<a name="index-measurePosition-2"></a>
+<a name="index-measurePosition-3"></a>
+<a name="index-measureLength-2"></a>
+<a name="index-measureLength-3"></a>
+
+<p>El temps esta administrat per <code>Timing_translator</code>, que de
+forma predeterminada es troba al context de <code>Score</code>.
+S&rsquo;afegeix un àlies, <code>Timing</code>, al context que en el qual es
+col·loca el <code>Timing_translator</code>.  Per assegurar que està
+disponible l&rsquo;àlies <code>Timing</code>, potser heu de crear
+explícitament una instància del context contenidor (com <code>Voice</code> o
+<code>Staff</code>).
+</p>
+<p>S&rsquo;usen les següents propietats de <code>Timing</code> per seguir la
+pista del temps dins de la partitura.
+</p>
+<a name="index-compas_002c-numero-de"></a>
+<a name="index-numero-de-compas"></a>
+
+<dl compact="compact">
+<dt> <code>currentBarNumber</code></dt>
+<dd><p>El número de compàs en curs.  Per veure un exemple que mostra l&rsquo;sú
+d&rsquo;aquesta propietat, consulteu <a href="bars.ca.html#bar-numbers">Numeració de compassos</a>.
+</p>
+</dd>
+<dt> <code>measureLength</code></dt>
+<dd><p>La longitud dels compassos dins de la indicació actual de compàs.
+Per a un 4/4 això és&nbsp;1, i per al 6/8 és 3/4. El seu valor
+determina quan s&rsquo;insereixen les línies divisòries i com es generen
+les barres automàtiques.
+</p>
+</dd>
+<dt> <code>measurePosition</code></dt>
+<dd><p>El punt en el qual ens trobem dins del compàs.  Aquesta quantitat
+es reinicia restant <code>measureLength</code> cada cop que s&rsquo;assoleix o
+s&rsquo;excedeix <code>measureLength</code>.  Quan això passa, s&rsquo;incrementa
+<code>currentBarNumber</code>.
+</p>
+</dd>
+<dt> <code>timing</code></dt>
+<dd><p>Si té un valor vertader, les variables anteriors s&rsquo;actualitzen a
+cada pas del temps, quan té un valor fals, el gravador es queda al
+compàs actual indefinidament.
+</p>
+</dd>
+</dl>
+
+<p>El compte del temps es pot canviar establint el valor de qualsevol
+d&rsquo;aquestes variables explícitament.  A l&rsquo;exemple següent,
+s&rsquo;imprimeix la indicació de compàs predeterminada 4/4,
+però <code>measureLength</code> s&rsquo;ajusta a 5/4.  Als 4/8 fins el tercer
+compàs, la posició <code>measurePosition</code> s&rsquo;avança en 1/8 fins a
+5/8, escurçant aquest compàs en 1/8.  Aleshores, la següent línia
+divisòria cau en 9/8 en comptes de fer-ho en 5/4.
+</p>
+<blockquote><pre class="verbatim">\new Voice \relative {
+  \set Timing.measureLength = #(ly:make-moment 5/4)
+  c'1 c4 |
+  c1 c4 |
+  c4 c
+  \set Timing.measurePosition = #(ly:make-moment 5/8)
+  b4 b b8 |
+  c4 c1 |
+}
+</pre><p>
+ <a href="../3b/lily-97003c3e.ly">
+  <img align="middle"
+       border="0"
+       src="../3b/lily-97003c3e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Com s&rsquo;il·lustra a l&rsquo;exemple, <code>ly:make-moment n m</code> construeix
+una duració de la fracció d&rsquo;una rodona.  Per exemple,
+<code>ly:make-moment 1 8</code> és una duració d&rsquo;una corxera i
+<code>ly:make-moment 7 16</code> és la duració de set semicorxeres.
+</p>
+<a name="Vegeu-tambe-223"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="bars.ca.html#bar-numbers">Numeració de compassos</a>,
+<a href="displaying-rhythms.ca.html#unmetered-music">Música sense compassos</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-Timing_005ftranslator-4"></a>
+<a href="../internals/timing_005ftranslator.ca.html">Timing_translator</a>,
+<a name="index-Score"></a>
+<a href="../internals/score.ca.html">Score</a>.
+</p>
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#aligning-to-cadenzas" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Alinear amb una cadenza&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#special-rhythmic-concerns" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Temes especials de ritme&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="expressive-marks.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Expressions &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="special-rhythmic-concerns.html">English</a>, <a href="special-rhythmic-concerns.de.html">deutsch</a>, <a href="special-rhythmic-concerns.es.html">español</a>, <a href="special-rhythmic-concerns.fr.html">français</a>, <a href="special-rhythmic-concerns.it.html">italiano</a>, <a href="special-rhythmic-concerns.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=" toc_current"><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Escriptura-de-les-duracions-_0028valors-ritmics_0029" href="writing-rhythms.ca.html">1.2.1 Escriptura de les duracions (valors rítmics)</a>      </li>
+      <li class=""><a name="toc-Escriptura-dels-silencis-1" href="writing-rests.ca.html">1.2.2 Escriptura dels silencis</a>      </li>
+      <li class=""><a name="toc-Impressio-de-les-duracions" href="displaying-rhythms.ca.html">1.2.3 Impressió de les duracions</a>      </li>
+      <li class=""><a name="toc-Barres-1" href="beams.ca.html">1.2.4 Barres</a>      </li>
+      <li class=""><a name="toc-Compassos-1" href="bars.ca.html">1.2.5 Compassos</a>      </li>
+      <li class=" toc_current"><a name="toc-Temes-especials-de-ritme-1" href="special-rhythmic-concerns.ca.html">1.2.6 Temes especials de ritme</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Notes-d_0027adorn-1" href="special-rhythmic-concerns.ca.html#grace-notes">Notes d&rsquo;adorn</a>        </li>
+        <li class=""><a name="toc-Alinear-amb-una-cadenza-1" href="special-rhythmic-concerns.ca.html#aligning-to-cadenzas">Alinear amb una cadenza</a>        </li>
+        <li class=""><a name="toc-Gestio-del-temps" href="special-rhythmic-concerns.ca.html#time-administration">Gestió del temps</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

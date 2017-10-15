@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 por los autores.
+
+La traducción de la siguiente nota de copyright se ofrece como
+cortesía para las personas de habla no inglesa, pero únicamente la
+nota en inglés tiene validez legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+Se otorga permiso para copiar, distribuir y/o modificar este documento
+bajo los términos de la Licencia de Documentación Libre de GNU, versión 1.1
+o cualquier versión posterior publicada por la Free Software Foundation;
+sin ninguna de las secciones invariantes.
+Se incluye una copia de esta licencia dentro de la sección titulada "Licencia
+de Documentación Libre de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on el 6 agosto 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referencia de la notación de GNU LilyPond: 3.5.4 Control de las dinámicas del MIDI</title>
+
+<meta name="description" content="Referencia de la notación de GNU LilyPond: 3.5.4 Control de las dinámicas del MIDI">
+<meta name="keywords" content="Referencia de la notación de GNU LilyPond: 3.5.4 Control de las dinámicas del MIDI">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.es.html#index" rel="start" title="LilyPond &mdash; Referencia de la notación">
+<link href="lilypond-command-index.es.html#lilypond-command-index" rel="index" title="D. Índice de instrucciones de LilyPond">
+<link href="index_toc.es.html#SEC_Contents" rel="contents" title="&Iacute;ndice General">
+<link href="index_abt.es.html#SEC_About" rel="help" title="Acerca de este documento">
+<link href="creating-midi-output.es.html#creating-midi-output" rel="up" title="3.5 Creación de salida MIDI">
+<link href="lilypond-index.es.html#lilypond-index" rel="next" title="E. Índice de LilyPond">
+<link href="the-midi-block.es.html#the-midi-block" rel="previous" title="3.5.3 El bloque MIDI">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="es" class="notation devStatus">
+
+
+<div id="main">
+<a name="Control-de-las-din_00e1micas-del-MIDI"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="the-midi-block.es.html" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; El bloque MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="creating-midi-output.es.html" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Creación de salida MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#dynamic-marks-in-midi" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Indicaciones de matiz dinámico en el MIDI &gt; </a>]</td></tr></table>
+<a name="controlling-midi-dynamics"></a>
+<h3 class="subsection">3.5.4 Control de las dinámicas del MIDI</h3>
+
+<p>Es posible controlar el volumen MIDI general, el volumen relativo
+de las indicaciones de matiz dinámico y el volumen relativo de
+los distintos instrumentos.
+</p>
+<p>Las indicaciones matiz dinámico se traducen automáticamente a
+niveles de volumen dentro del rango de volúmenes MIDI disponible
+mientras que los crescendos y decrescendos varían el volumen
+linealmente entre sus dos extremos.  Es posible controlar el
+volumen relativo de las indicaciones de matiz dinámico, y el
+volumen general de los diferentes instrumentos.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#dynamic-marks-in-midi" accesskey="1">Indicaciones de matiz dinámico en el MIDI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#setting-midi-volume" accesskey="2">Establecimiento del volumen MIDI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#setting-midi-block-properties" accesskey="3">Establecimiento de las propiedades del bloque MIDI</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<a name="index-MIDI_002c-volumen"></a>
+<a name="index-MIDI_002c-ecualizacion"></a>
+<a name="index-MIDI_002c-matices-dinamicos"></a>
+<a name="index-dinamica-del-MIDI"></a>
+
+
+<hr size="6">
+<a name="Indicaciones-de-matiz-din_00e1mico-en-el-MIDI"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#controlling-midi-dynamics" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Control de las dinámicas del MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#controlling-midi-dynamics" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Control de las dinámicas del MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#setting-midi-volume" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Establecimiento del volumen MIDI &gt; </a>]</td></tr></table>
+<a name="dynamic-marks-in-midi"></a>
+<h4 class="unnumberedsubsubsec">Indicaciones de matiz dinámico en el MIDI</h4>
+
+<p>Solo las marcas de dinámica desde <code>ppppp</code> hasta
+<code>fffff</code>, incluidos <code>mp</code>, <code>mf</code> y <code>sf</code> tienen
+valores asignados.  Este valor se aplica a continuación al valor
+del rango de volumen MIDI general para obtener el volumen final
+que se incluye en la salida MIDI para esa indicación de matiz
+dinámico en particular.  Las fracciones predeterminadas varían
+desde 0.25 para el <var>ppppp</var> hasta 0.95 para el
+<var>fffff</var>. El conjunto completo de las indicaciones de
+matiz dinámico pueden verse en el archivo &lsquo;<tt>scm/midi.scm</tt>&rsquo;.
+</p>
+
+<a name="Fragmentos-de-codigo-seleccionados-22"></a>
+<h4 class="subsubheading">Fragmentos de código seleccionados</h4>
+
+<p><em> Creating custom dynamics in MIDI output</em>
+</p>
+
+<p>The following example shows how to create a dynamic marking, not
+included in the default list, and assign it a specific value so that it
+can be used to affect MIDI output.
+</p>
+
+<p>The dynamic mark <code>\rfz</code> is assigned a value of <code>0.9</code>.
+</p>
+
+<blockquote><pre class="verbatim">#(define (myDynamics dynamic)
+    (if (equal? dynamic &quot;rfz&quot;)
+      0.9
+      (default-dynamic-absolute-volume dynamic)))
+
+\score {
+  \new Staff {
+    \set Staff.midiInstrument = #&quot;cello&quot;
+    \set Score.dynamicAbsoluteVolumeFunction = #myDynamics
+    \new Voice {
+      \relative {
+        a'4\pp b c-\rfz
+      }
+    }
+  }
+  \layout {}
+  \midi {}
+}
+</pre><p>
+ <a href="../11/lily-942838fd.ly">
+  <img align="middle"
+       border="0"
+       src="../11/lily-942838fd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Archivos instalados:
+&lsquo;<tt>ly/script-init.ly</tt>&rsquo;
+&lsquo;<tt>scm/midi.scm</tt>&rsquo;.
+</p>
+<p>Fragmentos de código:
+<a href="../snippets/midi.es.html">MIDI</a>.
+</p>
+<p>Referencia de funcionamiento interno:
+<a name="index-Dynamic_005fperformer"></a>
+<a href="../internals/dynamic_005fperformer.es.html">Dynamic_performer</a>.
+</p>
+
+<hr size="6">
+<a name="Establecimiento-del-volumen-MIDI"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#dynamic-marks-in-midi" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Indicaciones de matiz dinámico en el MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#controlling-midi-dynamics" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Control de las dinámicas del MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#setting-midi-block-properties" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Establecimiento de las propiedades del bloque MIDI &gt; </a>]</td></tr></table>
+<a name="setting-midi-volume"></a>
+<h4 class="unnumberedsubsubsec">Establecimiento del volumen MIDI</h4>
+
+<p>Los volúmenes generales mínimo y máximo de las indicaciones de
+matiz dinámico MIDI se controlan estableciendo las propiedades
+<code>midiMinimumVolume</code> y <code>midiMaximumVolume</code> en el nivel
+del bloque <code>Score</code>.  Estas propiedades tienen efecto
+solamente al comienzo de una vos y sobre las indicaciones
+dinámicas.  La fracción que corresponde a cada indicación
+dinámica se modifica con esta fórmula:
+</p>
+<blockquote><pre class="example">midiMinimumVolume + (midiMaximumVolume - midiMinimumVolume) * fracción
+</pre></blockquote>
+
+<p>En el ejemplo siguiente, el rango dinámico del volumen MIDI
+general se limita al intervalo entre <code>0.2</code> y <code>0.5</code>.
+</p>
+<blockquote><pre class="example">\score {
+  &lt;&lt;
+    \new Staff {
+      \set Staff.midiInstrument = #&quot;flute&quot;
+      <var>&hellip; music &hellip;</var>
+    }
+    \new Staff {
+      \set Staff.midiInstrument = #&quot;clarinet&quot;
+      <var>&hellip; music &hellip;</var>
+    }
+  &gt;&gt;
+  \midi {
+    \context {
+      \Score
+      midiMinimumVolume = #0.2
+      midiMaximumVolume = #0.5
+    }
+  }
+}
+</pre></blockquote>
+
+<p>Se puede obtener una ecualización sencilla de instrumentos MIDI
+estableciendo las propiedades <code>midiMinimumVolume</code> y
+<code>midiMaximumVolume</code> dentro del contexto <code>Staff</code>.
+</p>
+<blockquote><pre class="example">\score {
+  \new Staff {
+    \set Staff.midiInstrument = #&quot;flute&quot;
+    \set Staff.midiMinimumVolume = #0.7
+    \set Staff.midiMaximumVolume = #0.9
+    <var>&hellip; music &hellip;</var>
+  }
+  \midi { }
+}
+</pre></blockquote>
+
+<p>Para partituras con más de un pentagrama y más de un instrumento
+MIDI, se pueden fijar individualmente los volúmenes relativos de
+cada instrumento:
+</p>
+<blockquote><pre class="example">\score {
+  &lt;&lt;
+    \new Staff {
+      \set Staff.midiInstrument = #&quot;flute&quot;
+      \set Staff.midiMinimumVolume = #0.7
+      \set Staff.midiMaximumVolume = #0.9
+      <var>&hellip; music &hellip;</var>
+    }
+    \new Staff {
+      \set Staff.midiInstrument = #&quot;clarinet&quot;
+      \set Staff.midiMinimumVolume = #0.3
+      \set Staff.midiMaximumVolume = #0.6
+      <var>&hellip; music &hellip;</var>
+    }
+  &gt;&gt;
+  \midi { }
+}
+</pre></blockquote>
+
+<p>En este ejemplo el volumen del clarinete se reduce de forma
+relativa al volumen de la flauta.
+</p>
+<p>Si no se establecen estas propiedades de volumen, LilyPond aún
+aplica un &lsquo;pequeño grado&rsquo; de ecualización a ciertos
+instrumentos.  Véase &lsquo;<tt>scm/midi.scm</tt>&rsquo;.
+</p>
+<p>Archivos instalados:
+&lsquo;<tt>scm/midi.scm</tt>&rsquo;.
+</p>
+<a name="Vease-tambien-6"></a>
+<h4 class="subsubheading">Véase también</h4>
+<p>Referencia de la notación:
+<a href="score-layout.es.html">Disposición de la partitura</a>.
+</p>
+<p>Referencia de funcionamiento interno:
+<a name="index-Dynamic_005fperformer-1"></a>
+<a href="../internals/dynamic_005fperformer.es.html">Dynamic_performer</a>.
+</p>
+<a name="Fragmentos-de-codigo-seleccionados-11"></a>
+<h4 class="subsubheading">Fragmentos de código seleccionados</h4>
+
+<p><em> Replacing default MIDI instrument equalization</em>
+</p>
+<p>The default MIDI instrument equalizer can be replaced by
+  setting the <code>instrumentEqualizer</code> property in the <code>Score</code>
+  context to a user-defined Scheme procedure that uses a MIDI instrument
+  name as its argument along with a pair of fractions indicating the
+  minimum and maximum volumes respectively to be applied to that
+  specific instrument.
+</p>
+<p>  The following example sets the minimum and maximum volumes for flute
+  and clarinet respectively.
+</p><blockquote><pre class="verbatim">#(define my-instrument-equalizer-alist '())
+
+#(set! my-instrument-equalizer-alist
+  (append
+    '(
+      (&quot;flute&quot; . (0.7 . 0.9))
+      (&quot;clarinet&quot; . (0.3 . 0.6)))
+    my-instrument-equalizer-alist))
+
+#(define (my-instrument-equalizer s)
+  (let ((entry (assoc s my-instrument-equalizer-alist)))
+    (if entry
+      (cdr entry))))
+
+\score {
+  &lt;&lt;
+    \new Staff {
+      \key g \major
+      \time 2/2
+      \set Score.instrumentEqualizer = #my-instrument-equalizer
+      \set Staff.midiInstrument = #&quot;flute&quot;
+      \new Voice \relative {
+        r2 g''\mp g fis~
+        4 g8 fis e2~
+        4 d8 cis d2
+      }
+    }
+    \new Staff {
+      \key g \major
+      \set Staff.midiInstrument = #&quot;clarinet&quot;
+      \new Voice \relative {
+        b'1\p a2. b8 a
+        g2. fis8 e
+        fis2 r
+      }
+    }
+  &gt;&gt;
+  \layout { }
+  \midi {  }
+}
+</pre><p>
+ <a href="../fe/lily-0155d5d5.ly">
+  <img align="middle"
+       border="0"
+       src="../fe/lily-0155d5d5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Advertencias-y-problemas-conocidos-71"></a>
+<h4 class="subsubheading">Advertencias y problemas conocidos</h4>
+<p>Los cambios en el volumen del MIDI solamente tienen lugar en el
+comienzo de una nota, por lo que los crescendos y decrescendos no
+afectan al volumen de una sola nota.
+</p>
+<hr size="6">
+<a name="Establecimiento-de-las-propiedades-del-bloque-MIDI"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#setting-midi-volume" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Establecimiento del volumen MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#controlling-midi-dynamics" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Control de las dinámicas del MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="using-midi-instruments.es.html" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Uso de los instrumentos MIDI &gt; </a>]</td></tr></table>
+<a name="setting-midi-block-properties"></a>
+<h4 class="unnumberedsubsubsec">Establecimiento de las propiedades del bloque MIDI</h4>
+
+<p>El bloque <code>\midi</code> puede contener distintas disposiciones de
+los contextos, definiciones de contexto nuevas o código que fija
+los valores de ciertas propiedades.
+</p>
+<blockquote><pre class="example">\score {
+  <var>&hellip; music &hellip;</var>
+  \midi {
+    \tempo 4 = 72
+  }
+}
+</pre></blockquote>
+
+<p>Aquí, el tempo se establece a 72 pulsos de negra por minuto.  La
+indicación de tempo dentro del bloque <code>\midi</code> no aparece en
+la partitura impresa.  Aunque cualquier otra indicación de
+<code>\tempo</code> que se especifique dentro del bloque <code>\score</code>
+también se reflejará en la salida MIDI.
+</p>
+<p>Dentro de un bloque <code>\midi</code>, la instrucción <code>\tempo</code>
+está estableciendo propiedades durante la interpretación de la
+música y en el contexto de las definiciones de salida; así, se
+interpreta <em>como si</em> fuera una modificación de contesto.
+</p>
+<a name="index-MIDI_002c-definiciones-de-contexto"></a>
+<a name="index-contexto_002c-definiciones-con--MIDI"></a>
+
+<p>Las definiciones de contexto siguen la misma sintaxis que las del
+bloque <code>\layout</code>:
+</p>
+<blockquote><pre class="example">\score {
+  <var>&hellip; music &hellip;</var>
+  \midi {
+    \context {
+      \Voice
+      \remove &quot;Dynamic_performer&quot;
+    }
+  }
+}
+</pre></blockquote>
+
+<p>Este ejemplo suprime el efecto de las indicaciones dinámicas
+sobre la salida MIDI.  Nota: los módulos de traducción de
+LilyPond usados para el sonido se llaman &lsquo;performers&rsquo;.
+</p>
+<a name="Vease-tambien-183"></a>
+<h4 class="subsubheading">Véase también</h4>
+<p>Manual de aprendizaje:
+<a name="index-Otras-fuentes-de-informacion-4"></a>
+<a href="../learning/other-sources-of-information.es.html">Otras fuentes de información</a>.
+</p>
+<p>Referencia de la notación:
+<a href="expressive-marks.es.html">Expresiones</a>,
+<a href="score-layout.es.html">Disposición de la partitura</a>.
+</p>
+<p>Archivos instalados:
+&lsquo;<tt>ly/performer-init.ly</tt>&rsquo;.
+</p>
+<p>Fragmentos de código:
+<a href="../snippets/midi.es.html">MIDI</a>.
+</p>
+<p>Referencia de funcionamiento interno:
+<a name="index-Dynamic_005fperformer-2"></a>
+<a href="../internals/dynamic_005fperformer.es.html">Dynamic_performer</a>.
+</p>
+<a name="Advertencias-y-problemas-conocidos-26"></a>
+<h4 class="subsubheading">Advertencias y problemas conocidos</h4>
+<p>Ciertos reproductores de MIDI no siempre maneja correctamente los
+cambios de tempo en la salida MIDI.
+</p>
+<p>Los cambios efectuados al <code>midiInstrument</code>, así como ciertas
+opciones MIDI, al <em>comienzo</em> de un pentagrama pueden
+aparecer dos veces en la salida MIDI.
+</p>
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="general-input-and-output.es.html" title="Inicio de este cap&iacute;tulo o cap&iacute;tulo anterior"> &lt;&lt; Entrada y salida generales&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.es.html" title="Portada del documento" rel="start">Arriba</a>][<a href="index_toc.es.html#SEC_Contents" title="&Iacute;ndice general" rel="contents">&Iacute;ndice general</a>][<a href="lilypond-command-index.es.html" title="&Iacute;ndice" rel="index">&Iacute;ndice</a>][<a href="index_abt.es.html#SEC_About" title="Acerca de (p&aacute;gina de ayuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="spacing-issues.es.html" title="Cap&iacute;tulo siguiente">&nbsp;Problemas de espaciado &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#setting-midi-volume" title="Secci&oacute;n anterior en orden de lectura" accesskey="p" rel="previous"> &lt; Establecimiento del volumen MIDI&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#controlling-midi-dynamics" title="Subir secci&oacute;n" accesskey="u" rel="up">&nbsp; Subir :&nbsp;Control de las dinámicas del MIDI&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="using-midi-instruments.es.html" title="Secci&oacute;n siguiente en orden de lectura" accesskey="n" rel="next">&nbsp;Uso de los instrumentos MIDI &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Esta página corresponde a LilyPond-2.19.65 (rama de desarrollo).
+</p>
+<p class="footer_report">
+Se agradecen las <a href="http://lilypond.org/help-us.html">sugerencias para la documentación</a>. Informe de los fallos a través de la lista en español <a href="http://lists.gnu.org/mailman/listinfo/lilypond-es">lilypond-es</a>, o en inglés a través de <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">la lista oficial de fallos</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Otros idiomas: <a href="controlling-midi-dynamics.html">English</a>, <a href="controlling-midi-dynamics.ca.html">català</a>, <a href="controlling-midi-dynamics.de.html">deutsch</a>, <a href="controlling-midi-dynamics.fr.html">français</a>, <a href="controlling-midi-dynamics.it.html">italiano</a>, <a href="controlling-midi-dynamics.ja.html">日本語</a>.
+ <br>
+ Acerca de la <a href="http://www.lilypond.org/website/misc/browser-language">selección automática del idioma</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.es.html"
+         title="Documentation Index">&lt;&lt; Volver al índice de la documentación</a></p>
+<h4 class="toc_header"> <a href="index.es.html" title="Start of the manual">LilyPond &mdash; Referencia de la notación  v2.19.65 (rama de desarrollo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notacion-musical" href="musical-notation.es.html">1. Notación musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Alturas-1" href="pitches.es.html">1.1 Alturas</a>    </li>
+    <li class=""><a name="toc-Duraciones-1" href="rhythms.es.html">1.2 Duraciones</a>    </li>
+    <li class=""><a name="toc-Expresiones-1" href="expressive-marks.es.html">1.3 Expresiones</a>    </li>
+    <li class=""><a name="toc-Repeticiones-1" href="repeats.es.html">1.4 Repeticiones</a>    </li>
+    <li class=""><a name="toc-Notas-simultaneas" href="simultaneous-notes.es.html">1.5 Notas simultáneas</a>    </li>
+    <li class=""><a name="toc-Notacion-de-los-pentagramas" href="staff-notation.es.html">1.6 Notación de los pentagramas</a>    </li>
+    <li class=""><a name="toc-Anotaciones-editoriales-1" href="editorial-annotations.es.html">1.7 Anotaciones editoriales</a>    </li>
+    <li class=""><a name="toc-Texto-1" href="text.es.html">1.8 Texto</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notacion-especializada" href="specialist-notation.es.html">2. Notación especializada</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocal" href="vocal-music.es.html">2.1 Música vocal</a>    </li>
+    <li class=""><a name="toc-Teclados-y-otros-instrumentos-de-varios-pentagramas-1" href="keyboard-and-other-multi_002dstaff-instruments.es.html">2.2 Teclados y otros instrumentos de varios pentagramas</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-cuerda-sin-trastes-1" href="unfretted-string-instruments.es.html">2.3 Instrumentos de cuerda sin trastes</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-cuerda-con-trastes-1" href="fretted-string-instruments.es.html">2.4 Instrumentos de cuerda con trastes</a>    </li>
+    <li class=""><a name="toc-Percusion" href="percussion.es.html">2.5 Percusión</a>    </li>
+    <li class=""><a name="toc-Instrumentos-de-viento-1" href="wind-instruments.es.html">2.6 Instrumentos de viento</a>    </li>
+    <li class=""><a name="toc-Notacion-de-acordes" href="chord-notation.es.html">2.7 Notación de acordes</a>    </li>
+    <li class=""><a name="toc-Musica-contemporanea" href="contemporary-music.es.html">2.8 Música contemporánea</a>    </li>
+    <li class=""><a name="toc-Notacion-antigua" href="ancient-notation.es.html">2.9 Notación antigua</a>    </li>
+    <li class=""><a name="toc-Musicas-del-mundo" href="world-music.es.html">2.10 Músicas del mundo</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Entrada-y-salida-generales-1" href="general-input-and-output.es.html">3. Entrada y salida generales</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Estructura-del-codigo-de-entrada" href="input-structure.es.html">3.1 Estructura del código de entrada</a>    </li>
+    <li class=""><a name="toc-Titulos-y-encabezamientos" href="titles-and-headers.es.html">3.2 Títulos y encabezamientos</a>    </li>
+    <li class=""><a name="toc-Trabajar-sobre-los-archivos-de-entrada-1" href="working-with-input-files.es.html">3.3 Trabajar sobre los archivos de entrada</a>    </li>
+    <li class=""><a name="toc-Controlar-la-salida-1" href="controlling-output.es.html">3.4 Controlar la salida</a>    </li>
+    <li class=" toc_current"><a name="toc-Creacion-de-salida-MIDI" href="creating-midi-output.es.html">3.5 Creación de salida MIDI</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Notacion-contemplada-por-el-MIDI" href="supported-notation-for-midi.es.html">3.5.1 Notación contemplada por el MIDI</a>      </li>
+      <li class=""><a name="toc-Notacion-no-contemplada-en-el-MIDI" href="unsupported-notation-for-midi.es.html">3.5.2 Notación no contemplada en el MIDI</a>      </li>
+      <li class=""><a name="toc-El-bloque-MIDI-1" href="the-midi-block.es.html">3.5.3 El bloque MIDI</a>      </li>
+      <li class=" toc_current"><a name="toc-Control-de-las-dinamicas-del-MIDI" href="controlling-midi-dynamics.es.html">3.5.4 Control de las dinámicas del MIDI</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Indicaciones-de-matiz-dinamico-en-el-MIDI" href="controlling-midi-dynamics.es.html#dynamic-marks-in-midi">Indicaciones de matiz dinámico en el MIDI</a>        </li>
+        <li class=""><a name="toc-Establecimiento-del-volumen-MIDI-1" href="controlling-midi-dynamics.es.html#setting-midi-volume">Establecimiento del volumen MIDI</a>        </li>
+        <li class=""><a name="toc-Establecimiento-de-las-propiedades-del-bloque-MIDI-1" href="controlling-midi-dynamics.es.html#setting-midi-block-properties">Establecimiento de las propiedades del bloque MIDI</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Uso-de-los-instrumentos-MIDI-1" href="using-midi-instruments.es.html">3.5.5 Uso de los instrumentos MIDI</a>      </li>
+      <li class=""><a name="toc-Uso-de-las-repeticiones-con-el-MIDI-1" href="using-repeats-with-midi.es.html">3.5.6 Uso de las repeticiones con el MIDI</a>      </li>
+      <li class=""><a name="toc-Asignacion-de-canales-MIDI" href="midi-channel-mapping.es.html">3.5.7 Asignación de canales MIDI</a>      </li>
+      <li class=""><a name="toc-Propiedades-de-contexto-para-efectos-MIDI-1" href="context-properties-for-midi-effects.es.html">3.5.8 Propiedades de contexto para efectos MIDI</a>      </li>
+      <li class=""><a name="toc-Enriquecimiento-de-la-salida-MIDI-1" href="enhancing-midi-output.es.html">3.5.9 Enriquecimiento de la salida MIDI</a>      </li>
+      <li class=""><a name="toc-El-script-Articulate-1" href="the-articulate-script.es.html">3.5.10 El script Articulate</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Extraer-informacion-musical" href="extracting-musical-information.es.html">3.6 Extraer información musical</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Problemas-de-espaciado-1" href="spacing-issues.es.html">4. Problemas de espaciado</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Disposicion-de-la-pagina" href="page-layout.es.html">4.1 Disposición de la página</a>    </li>
+    <li class=""><a name="toc-Disposicion-de-la-partitura" href="score-layout.es.html">4.2 Disposición de la partitura</a>    </li>
+    <li class=""><a name="toc-Saltos-1" href="breaks.es.html">4.3 Saltos</a>    </li>
+    <li class=""><a name="toc-Espaciado-vertical-1" href="vertical-spacing.es.html">4.4 Espaciado vertical</a>    </li>
+    <li class=""><a name="toc-Espaciado-horizontal-1" href="horizontal-spacing.es.html">4.5 Espaciado horizontal</a>    </li>
+    <li class=""><a name="toc-Encajar-la-musica-en-menos-paginas" href="fitting-music-onto-fewer-pages.es.html">4.6 Encajar la música en menos páginas</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cambiar-los-valores-por-omision" href="changing-defaults.es.html">5. Cambiar los valores por omisión</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contextos-de-interpretacion" href="interpretation-contexts.es.html">5.1 Contextos de interpretación</a>    </li>
+    <li class=""><a name="toc-Explicacion-del-Manual-de-referencia-de-funcionamiento-interno" href="explaining-the-internals-reference.es.html">5.2 Explicación del Manual de referencia de funcionamiento interno</a>    </li>
+    <li class=""><a name="toc-Modificar-las-propiedades-1" href="modifying-properties.es.html">5.3 Modificar las propiedades</a>    </li>
+    <li class=""><a name="toc-Conceptos-y-propiedades-utiles" href="useful-concepts-and-properties.es.html">5.4 Conceptos y propiedades útiles</a>    </li>
+    <li class=""><a name="toc-Trucos-avanzados-1" href="advanced-tweaks.es.html">5.5 Trucos avanzados</a>    </li>
+    <li class=""><a name="toc-Uso-de-las-funciones-musicales-1" href="using-music-functions.es.html">5.6 Uso de las funciones musicales</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tablas-del-manual-sobre-notacion" href="notation-manual-tables.es.html">A. Tablas del manual sobre notación</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Cuadro-de-nombres-de-acordes-1" href="chord-name-chart.es.html">A.1 Cuadro de nombres de acordes</a>    </li>
+    <li class=""><a name="toc-Modificadores-de-acorde-mas-usuales" href="common-chord-modifiers.es.html">A.2 Modificadores de acorde más usuales</a>    </li>
+    <li class=""><a name="toc-Afinaciones-de-cuerdas-predefinidas-1" href="predefined-string-tunings.es.html">A.3 Afinaciones de cuerdas predefinidas</a>    </li>
+    <li class=""><a name="toc-Diagramas-predefinidos-de-posiciones-1" href="predefined-fretboard-diagrams.es.html">A.4 Diagramas predefinidos de posiciones</a>    </li>
+    <li class=""><a name="toc-Tamanos-de-pagina-predefinidos" href="predefined-paper-sizes.es.html">A.5 Tamaños de página predefinidos</a>    </li>
+    <li class=""><a name="toc-Instrumentos-MIDI-1" href="midi-instruments.es.html">A.6 Instrumentos MIDI</a>    </li>
+    <li class=""><a name="toc-Lista-de-colores-1" href="list-of-colors.es.html">A.7 Lista de colores</a>    </li>
+    <li class=""><a name="toc-La-tipografia-Emmentaler" href="the-emmentaler-font.es.html">A.8 La tipografía Emmentaler</a>    </li>
+    <li class=""><a name="toc-Estilos-de-cabezas-de-nota-1" href="note-head-styles.es.html">A.9 Estilos de cabezas de nota</a>    </li>
+    <li class=""><a name="toc-Estilos-de-clave-1" href="clef-styles.es.html">A.10 Estilos de clave</a>    </li>
+    <li class=""><a name="toc-Instrucciones-de-marcado-de-texto-1" href="text-markup-commands.es.html">A.11 Instrucciones de marcado de texto</a>    </li>
+    <li class=""><a name="toc-Instrucciones-de-listas-de-marcado-de-texto-1" href="text-markup-list-commands.es.html">A.12 Instrucciones de listas de marcado de texto</a>    </li>
+    <li class=""><a name="toc-Lista-de-caracteres-especiales-1" href="list-of-special-characters.es.html">A.13 Lista de caracteres especiales</a>    </li>
+    <li class=""><a name="toc-Lista-de-articulaciones-1" href="list-of-articulations.es.html">A.14 Lista de articulaciones</a>    </li>
+    <li class=""><a name="toc-Notas-de-percusion" href="percussion-notes.es.html">A.15 Notas de percusión</a>    </li>
+    <li class=""><a name="toc-Glosario-tecnico" href="technical-glossary.es.html">A.16 Glosario técnico</a>    </li>
+    <li class=""><a name="toc-Todas-las-propiedades-de-contexto-1" href="all-context-properties.es.html">A.17 Todas las propiedades de contexto</a>    </li>
+    <li class=""><a name="toc-Propiedades-de-disposicion" href="layout-properties.es.html">A.18 Propiedades de disposición</a>    </li>
+    <li class=""><a name="toc-Funciones-musicales-disponibles-1" href="available-music-functions.es.html">A.19 Funciones musicales disponibles</a>    </li>
+    <li class=""><a name="toc-Identificadores-de-modificacion-de-contextos" href="context-modification-identifiers.es.html">A.20 Identificadores de modificación de contextos</a>    </li>
+    <li class=""><a name="toc-Predicados-de-tipo-predefinidos-1" href="predefined-type-predicates.es.html">A.21 Predicados de tipo predefinidos</a>    </li>
+    <li class=""><a name="toc-Funciones-de-Scheme-1" href="scheme-functions.es.html">A.22 Funciones de Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Hoja-de-referencia-rapida" href="cheat-sheet.es.html">B. Hoja de referencia rápida</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.es.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-de-instrucciones-de-LilyPond" href="lilypond-command-index.es.html">D. Índice de instrucciones de LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-de-LilyPond" href="lilypond-index.es.html">E. Índice de LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Búsqueda de Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

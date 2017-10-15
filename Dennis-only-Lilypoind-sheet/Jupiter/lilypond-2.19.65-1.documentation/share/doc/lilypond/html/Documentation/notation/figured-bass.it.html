@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 2.7.3 Figured bass</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 2.7.3 Figured bass">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 2.7.3 Figured bass">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="chord-notation.it.html#chord-notation" rel="up" title="2.7 Chord notation">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="displaying-chords.it.html#displaying-chords" rel="previous" title="2.7.2 Displaying chords">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Figured-bass"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="specialist-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione specialistica&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="general-input-and-output.it.html" title="Capitolo successivo">&nbsp;Input e output &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="displaying-chords.it.html#customizing-chord-names" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Customizing chord names&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="chord-notation.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Chord notation&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#introduction-to-figured-bass" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Introduction to figured bass &gt; </a>]</td></tr></table>
+<a name="figured-bass"></a>
+<h3 class="subsection">2.7.3 Figured bass</h3>
+
+<blockquote><p>
+ <a href="../a6/lily-357ee839.ly">
+  <img align="middle"
+       border="0"
+       src="../a6/lily-357ee839.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Figured bass notation can be displayed.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#introduction-to-figured-bass" accesskey="1">Introduction to figured bass</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#entering-figured-bass" accesskey="2">Entering figured bass</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#displaying-figured-bass" accesskey="3">Displaying figured bass</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Introduction-to-figured-bass"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="specialist-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione specialistica&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="general-input-and-output.it.html" title="Capitolo successivo">&nbsp;Input e output &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#figured-bass" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Figured bass&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#figured-bass" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Figured bass&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#entering-figured-bass" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Entering figured bass &gt; </a>]</td></tr></table>
+<a name="introduction-to-figured-bass"></a>
+<h4 class="unnumberedsubsubsec">Introduction to figured bass</h4>
+
+<a name="index-Basso-continuo"></a>
+<a name="index-Thorough-bass"></a>
+<a name="index-Figured-bass"></a>
+<a name="index-Bass_002c-thorough"></a>
+<a name="index-Bass_002c-figured"></a>
+
+
+
+<p>LilyPond has support for figured bass, also called thorough bass
+or basso continuo:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Voice { \clef bass dis4 c d ais g fis}
+  \new FiguredBass {
+    \figuremode {
+      &lt; 6 &gt;4 &lt; 7\+ &gt;8 &lt; 6+ [_!] &gt;
+      &lt; 6 &gt;4 &lt;6 5 [3+] &gt;
+      &lt; _ &gt;4 &lt; 6 5/&gt;4
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../f7/lily-44af4f1f.ly">
+  <img align="middle"
+       border="0"
+       src="../f7/lily-44af4f1f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>The support for figured bass consists of two parts: there is an
+input mode, introduced by <code>\figuremode</code>, that accepts
+entry of bass figures, and there is a context named
+<code>FiguredBass</code> that takes care of displaying
+<code>BassFigure</code> objects.  Figured bass can also be displayed
+in <code>Staff</code> contexts.
+</p>
+<p><code>\figures{ &hellip; }</code> is a shortcut notation for
+<code>\new FiguredBass \figuremode { &hellip; }</code>.
+</p>
+
+<p>Although the support for figured bass may superficially resemble chord
+support, it is much simpler.  <code>\figuremode</code> mode simply
+stores the figures and the <code>FiguredBass</code> context prints them
+as entered.  There is no conversion to pitches.
+</p>
+
+<a name="Vedi-anche-80"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Music Glossary:
+<a name="index-figured-bass"></a>
+<a href="../music-glossary/figured-bass.it.html">figured bass</a>.
+</p>
+<p>Snippets:
+<a href="../snippets/chords.it.html">Chords</a>.
+</p>
+
+<hr size="6">
+<a name="Entering-figured-bass"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="specialist-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione specialistica&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="general-input-and-output.it.html" title="Capitolo successivo">&nbsp;Input e output &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#introduction-to-figured-bass" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Introduction to figured bass&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#figured-bass" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Figured bass&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#displaying-figured-bass" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Displaying figured bass &gt; </a>]</td></tr></table>
+<a name="entering-figured-bass"></a>
+<h4 class="unnumberedsubsubsec">Entering figured bass</h4>
+
+<p><code>\figuremode</code> is used to switch the input mode to figure mode.
+More information on different input modes can be
+found at <a href="input-modes.it.html">Modalità di inserimento</a>.
+</p>
+<p>In figure mode, a group of bass figures is delimited by
+<code>&lt;</code> and <code>&gt;</code>.  The duration is entered after the <code>&gt;</code>.
+</p>
+<blockquote><pre class="verbatim">\new FiguredBass {
+  \figuremode {
+    &lt;6 4&gt;2
+  }
+}
+</pre><p>
+ <a href="../8d/lily-22b84c96.ly">
+  <img align="middle"
+       border="0"
+       src="../8d/lily-22b84c96.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>Accidentals (including naturals) may be used for modifying scale steps.
+These are entered by appending <code>+</code> (for sharps), <code>-</code> (for flats)
+or <code>!</code> (for naturals) after the number.  For double accidentals the
+modifier is applied twice.  For the modification of the third step the
+number is often omitted, which can be achieved by using <code>_</code> instead
+of a number.
+</p>
+<blockquote><pre class="verbatim">\figures {
+  &lt;7! 6+ 4-&gt; &lt;5++&gt; &lt;3--&gt; &lt; _+ &gt; &lt; 7 _!&gt;
+}
+</pre><p>
+ <a href="../55/lily-ce64882c.ly">
+  <img align="middle"
+       border="0"
+       src="../55/lily-ce64882c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Augmented and diminished steps can be indicated:
+</p>
+<blockquote><pre class="verbatim">\figures {
+  &lt;6\+ 5/&gt; &lt;7/&gt;
+}
+</pre><p>
+ <a href="../a3/lily-8d95cb77.ly">
+  <img align="middle"
+       border="0"
+       src="../a3/lily-8d95cb77.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A backward slash through a figure (typically used for raised
+sixth steps) can be created:
+</p>
+<blockquote><pre class="verbatim">\figures {
+  &lt;6&gt; &lt;6\\&gt;
+}
+</pre><p>
+ <a href="../9b/lily-c1431919.ly">
+  <img align="middle"
+       border="0"
+       src="../9b/lily-c1431919.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Brackets can be included in figures:
+</p>
+<blockquote><pre class="verbatim">\figures {
+  &lt;[12] 8 [6  4]&gt;
+}
+</pre><p>
+ <a href="../53/lily-38c3d91d.ly">
+  <img align="middle"
+       border="0"
+       src="../53/lily-38c3d91d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Any text markup can be inserted as a figure:
+</p>
+<blockquote><pre class="verbatim">\figures {
+  &lt;\markup { \tiny \number 6 \super (1) } 5&gt;
+}
+</pre><p>
+ <a href="../29/lily-4b815172.ly">
+  <img align="middle"
+       border="0"
+       src="../29/lily-4b815172.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>Continuation lines can be used to indicate repeated figures:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  {
+    \clef bass
+    e4 d c b,
+    e4 d c b,
+  }
+  \figures {
+    \bassFigureExtendersOn
+    &lt;6 4&gt;4 &lt;6 3&gt; &lt;7 3&gt; &lt;7 3&gt;
+    \bassFigureExtendersOff
+    &lt;6 4&gt;4 &lt;6 3&gt; &lt;7 3&gt; &lt;7 3&gt;
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../d2/lily-38cc9d03.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-38cc9d03.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>In this case, the extender lines replace existing figures,
+unless the continuation lines have been explicitly terminated.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \figures {
+    \bassFigureExtendersOn
+    &lt;6 4&gt;4 &lt;6 4&gt; &lt;6\! 4\!&gt; &lt;6 4&gt;
+  }
+  {
+    \clef bass
+    d4 d c c
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../a0/lily-d68a4943.ly">
+  <img align="middle"
+       border="0"
+       src="../a0/lily-d68a4943.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>The table below summarizes the figure modifiers available.
+</p>
+<table>
+<tr><td width="10%"><b>Modifier</b></td><td width="50%"><b>Purpose</b></td><td width="40%"><b>Example</b></td></tr>
+<tr><td width="10%">+, -, !</td><td width="50%">Accidentals</td><td width="40%"><p>
+ <a href="../b7/lily-a87c87da.ly">
+  <img align="middle"
+       border="0"
+       src="../b7/lily-a87c87da.png"
+       alt="[image of music]">
+ </a>
+</p></td></tr>
+<tr><td width="10%">\+, /</td><td width="50%">Augmented and diminished steps</td><td width="40%"><p>
+ <a href="../70/lily-23dafb8a.ly">
+  <img align="middle"
+       border="0"
+       src="../70/lily-23dafb8a.png"
+       alt="[image of music]">
+ </a>
+</p></td></tr>
+<tr><td width="10%">\\</td><td width="50%">Raised sixth step</td><td width="40%"><p>
+ <a href="../4e/lily-1f72288f.ly">
+  <img align="middle"
+       border="0"
+       src="../4e/lily-1f72288f.png"
+       alt="[image of music]">
+ </a>
+</p></td></tr>
+<tr><td width="10%">\!</td><td width="50%">End of continuation line</td><td width="40%"><p>
+ <a href="../35/lily-3cf1f401.ly">
+  <img align="middle"
+       border="0"
+       src="../35/lily-3cf1f401.png"
+       alt="[image of music]">
+ </a>
+</p></td></tr>
+</table>
+
+
+<a name="Comandi-predefiniti-2"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<a name="index-figured-bass-extender-lines"></a>
+<p><code>\bassFigureExtendersOn</code>,
+<code>\bassFigureExtendersOff</code>.
+</p>
+
+<a name="Frammenti-di-codice-selezionati-8"></a>
+<h4 class="subsubheading">Frammenti di codice selezionati</h4>
+
+<p><em> Changing the positions of figured bass alterations</em>
+</p>
+
+<p>Accidentals and plus signs can appear before or after the numbers,
+depending on the <code>figuredBassAlterationDirection</code> and
+<code>figuredBassPlusDirection</code> properties.
+</p>
+
+<blockquote><pre class="verbatim">\figures {
+  &lt;6\+&gt; &lt;5+&gt; &lt;6 4-&gt; r
+  \set figuredBassAlterationDirection = #RIGHT
+  &lt;6\+&gt; &lt;5+&gt; &lt;6 4-&gt; r
+  \set figuredBassPlusDirection = #RIGHT
+  &lt;6\+&gt; &lt;5+&gt; &lt;6 4-&gt; r
+  \set figuredBassAlterationDirection = #LEFT
+  &lt;6\+&gt; &lt;5+&gt; &lt;6 4-&gt; r
+}
+</pre><p>
+ <a href="../aa/lily-7f50a6cb.ly">
+  <img align="middle"
+       border="0"
+       src="../aa/lily-7f50a6cb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche-91"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Snippets:
+<a href="../snippets/chords.it.html">Chords</a>.
+</p>
+<p>Internals Reference:
+<a name="index-BassFigure"></a>
+<a href="../internals/bassfigure.it.html">BassFigure</a>,
+<a name="index-BassFigureAlignment"></a>
+<a href="../internals/bassfigurealignment.it.html">BassFigureAlignment</a>,
+<a name="index-BassFigureLine"></a>
+<a href="../internals/bassfigureline.it.html">BassFigureLine</a>,
+<a name="index-BassFigureBracket"></a>
+<a href="../internals/bassfigurebracket.it.html">BassFigureBracket</a>,
+<a name="index-BassFigureContinuation"></a>
+<a href="../internals/bassfigurecontinuation.it.html">BassFigureContinuation</a>,
+<a name="index-FiguredBass-1"></a>
+<a href="../internals/figuredbass.it.html">FiguredBass</a>.
+</p>
+
+<hr size="6">
+<a name="Displaying-figured-bass"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="specialist-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione specialistica&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="general-input-and-output.it.html" title="Capitolo successivo">&nbsp;Input e output &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#entering-figured-bass" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Entering figured bass&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#figured-bass" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Figured bass&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="contemporary-music.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Contemporary music &gt; </a>]</td></tr></table>
+<a name="displaying-figured-bass"></a>
+<h4 class="unnumberedsubsubsec">Displaying figured bass</h4>
+
+<p>Figured bass can be displayed using the <code>FiguredBass</code> context,
+or in most staff contexts.
+</p>
+<p>When displayed in a <code>FiguredBass</code> context, the vertical location
+of the figures is independent of the notes on the staff.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \relative {
+    c''4 c'8 r8 c,4 c'
+  }
+  \new FiguredBass {
+    \figuremode {
+      &lt;4&gt;4 &lt;10 6&gt;8 s8
+      &lt;6 4&gt;4 &lt;6 4&gt;
+    }
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../77/lily-5a058139.ly">
+  <img align="middle"
+       border="0"
+       src="../77/lily-5a058139.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>In the example above, the <code>FiguredBass</code> context must be
+explicitly instantiated to avoid creating a second (empty) staff.
+</p>
+
+<p>Figured bass can also be added to <code>Staff</code> contexts
+directly.  In this case, the vertical position of the
+figures is adjusted automatically.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff = &quot;myStaff&quot;
+  \figuremode {
+    &lt;4&gt;4 &lt;10 6&gt;8 s8
+    &lt;6 4&gt;4 &lt;6 4&gt;
+  }
+  %% Put notes on same Staff as figures
+  \context Staff = &quot;myStaff&quot;
+  {
+    \clef bass
+    c4 c'8 r8 c4 c'
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../3b/lily-1b5606f0.ly">
+  <img align="middle"
+       border="0"
+       src="../3b/lily-1b5606f0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p>When added in a <code>Staff</code> context, figured bass can be displayed above
+or below the staff.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff = &quot;myStaff&quot;
+  \figuremode {
+    &lt;4&gt;4 &lt;10 6&gt;8 s8
+    \bassFigureStaffAlignmentDown
+    &lt;6 4&gt;4 &lt;6 4&gt;
+  }
+  %% Put notes on same Staff as figures
+  \context Staff = &quot;myStaff&quot;
+  {
+    \clef bass
+    c4 c'8 r8 c4 c'
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../86/lily-8ad27f18.ly">
+  <img align="middle"
+       border="0"
+       src="../86/lily-8ad27f18.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Comandi-predefiniti-24"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<a name="index-figured-bass-alignment"></a>
+<p><code>\bassFigureStaffAlignmentDown</code>,
+<code>\bassFigureStaffAlignmentUp</code>,
+<code>\bassFigureStaffAlignmentNeutral</code>.
+</p>
+<a name="Vedi-anche-134"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Snippets:
+<a href="../snippets/chords.it.html">Chords</a>.
+</p>
+<p>Internals Reference:
+<a name="index-BassFigure-1"></a>
+<a href="../internals/bassfigure.it.html">BassFigure</a>,
+<a name="index-BassFigureAlignment-1"></a>
+<a href="../internals/bassfigurealignment.it.html">BassFigureAlignment</a>,
+<a name="index-BassFigureLine-1"></a>
+<a href="../internals/bassfigureline.it.html">BassFigureLine</a>,
+<a name="index-BassFigureBracket-1"></a>
+<a href="../internals/bassfigurebracket.it.html">BassFigureBracket</a>,
+<a name="index-BassFigureContinuation-1"></a>
+<a href="../internals/bassfigurecontinuation.it.html">BassFigureContinuation</a>,
+<a name="index-FiguredBass-2"></a>
+<a href="../internals/figuredbass.it.html">FiguredBass</a>.
+</p>
+<a name="Problemi-noti-e-avvertimenti-56"></a>
+<h4 class="subsubheading">Problemi noti e avvertimenti</h4>
+<p>To ensure that continuation lines work properly, it is
+safest to use the same rhythm in the figure line as in
+the bass line.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  {
+    \clef bass
+    \repeat unfold 4 { f16. g32 } f8. es16 d8 es
+  }
+  \figures {
+    \bassFigureExtendersOn
+    % The extenders are correct here, with the same rhythm as the bass
+    \repeat unfold 4 { &lt;6 4-&gt;16. &lt;6 4-&gt;32 }
+    &lt;5&gt;8. r16 &lt;6&gt;8 &lt;6\! 5-&gt;
+  }
+&gt;&gt;
+&lt;&lt;
+  {
+    \clef bass
+    \repeat unfold 4 { f16. g32 } f8. es16 d8 es
+  }
+  \figures {
+    \bassFigureExtendersOn
+    % The extenders are incorrect here, even though the timing is the same
+    &lt;6 4-&gt;4 &lt;6 4-&gt;4
+    &lt;5&gt;8. r16 &lt;6&gt;8 &lt;6\! 5-&gt;
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../93/lily-20d638ff.ly">
+  <img align="middle"
+       border="0"
+       src="../93/lily-20d638ff.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="specialist-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione specialistica&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="general-input-and-output.it.html" title="Capitolo successivo">&nbsp;Input e output &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#entering-figured-bass" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Entering figured bass&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#figured-bass" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Figured bass&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="contemporary-music.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Contemporary music &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="figured-bass.html">English</a>, <a href="figured-bass.ca.html">català</a>, <a href="figured-bass.de.html">deutsch</a>, <a href="figured-bass.es.html">español</a>, <a href="figured-bass.fr.html">français</a>, <a href="figured-bass.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=" toc_current"><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Chord-mode-1" href="chord-mode.it.html">2.7.1 Chord mode</a>      </li>
+      <li class=""><a name="toc-Displaying-chords-1" href="displaying-chords.it.html">2.7.2 Displaying chords</a>      </li>
+      <li class=" toc_current"><a name="toc-Figured-bass-1" href="figured-bass.it.html">2.7.3 Figured bass</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Introduction-to-figured-bass-1" href="figured-bass.it.html#introduction-to-figured-bass">Introduction to figured bass</a>        </li>
+        <li class=""><a name="toc-Entering-figured-bass-1" href="figured-bass.it.html#entering-figured-bass">Entering figured bass</a>        </li>
+        <li class=""><a name="toc-Displaying-figured-bass-1" href="figured-bass.it.html#displaying-figured-bass">Displaying figured bass</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

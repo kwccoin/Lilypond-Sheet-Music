@@ -1,0 +1,941 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.1.2 Modificació de diverses notes a l'hora</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.1.2 Modificació de diverses notes a l'hora">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.1.2 Modificació de diverses notes a l'hora">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="pitches.ca.html#pitches" rel="up" title="1.1 Altures">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="writing-pitches.ca.html#writing-pitches" rel="previous" title="1.1.1 Escriptura de notes">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Modificaci_00f3-de-diverses-notes-a-l_0027hora"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="writing-pitches.ca.html#note-names-in-other-languages" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Noms de les notes en altres llengües&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="pitches.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Altures&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#octave-checks" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Comprovació d'octava &gt; </a>]</td></tr></table>
+<a name="changing-multiple-pitches"></a>
+<h3 class="subsection">1.1.2 Modificació de diverses notes a l&rsquo;hora</h3>
+
+<p>Aquesta secció tracta de la manera de modificar les altures.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#octave-checks" accesskey="1">Comprovació d&rsquo;octava</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#transpose" accesskey="2">Transposició</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#inversion" accesskey="3">Inversió</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#retrograde" accesskey="4">Retrogradació</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#modal-transformations" accesskey="5">Transformacions modals</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Comprovaci_00f3-d_0027octava"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#changing-multiple-pitches" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#transpose" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Transposició &gt; </a>]</td></tr></table>
+<a name="octave-checks"></a>
+<h4 class="unnumberedsubsubsec">Comprovació d&rsquo;octava</h4>
+
+<a name="index-octava_002c-comprovacio-de"></a>
+<a name="index-octava_002c-correccio-de"></a>
+<a name="index-control_002c-altures-de"></a>
+
+<a name="index-_003d"></a>
+<a name="index-_003d-1"></a>
+<a name="index-_005coctaveCheck"></a>
+<a name="index-_005coctaveCheck-1"></a>
+<a name="index-controlpitch"></a>
+<a name="index-controlpitch-1"></a>
+
+<p>Al mode relatiu és fàcil oblidar una marca de canvi d&rsquo;octava.  Les
+comprovacions d&rsquo;octava fan més fàcil trobar aquests errors,
+mitjançant la presentació d&rsquo;un advertiment i corregint l&rsquo;octava si
+la nota es troba a una octava diferent de l&rsquo;esperat.
+</p>
+<p>Per comprovar l&rsquo;octava d&rsquo;una nota, especifiqueu l&rsquo;octava absoluta
+després del símbol&nbsp;<code>=</code>.  Aquest exemple genera un
+missatge d&rsquo;advertiment (i corregeix l&rsquo;altura) perquè la segona
+nota és l&rsquo;octava absoluta <code>d''</code> en lloc de <code>d'</code> com
+indica la correcció d&rsquo;octava.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''2 d='4 d
+  e2 f
+}
+</pre><p>
+ <a href="../1d/lily-f91db5b8.ly">
+  <img align="middle"
+       border="0"
+       src="../1d/lily-f91db5b8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;octava de les notes es pot comprovar també amb l&rsquo;ordre
+<code>\octaveCheck&nbsp;<var>altura_de_control</var></code>.
+<code><var>altura_de_control</var></code> s&rsquo;especifica en mode absolut. Això
+comprova que l&rsquo;interval entre la nota anterior i la
+<code><var>altura_de_control</var></code> es troba dins d&rsquo;una quarta (és a
+dir, el càlcul normal per al mode relatiu).  Si aquesta
+comprovació fracassa, s&rsquo;imprimeix un missatge d&rsquo;advertiment.  Tot
+i que la nota prèvia no es modifica, les notes posteriors estan en
+relació al valor corregit.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''2 d
+  \octaveCheck c'
+  e2 f
+}
+</pre><p>
+ <a href="../ac/lily-c652645a.ly">
+  <img align="middle"
+       border="0"
+       src="../ac/lily-c652645a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Compareu els dos compassos següents.  La primera i tercera
+comprovacions de <code>\octaveCheck</code> fracassen, però la segona és correcta.
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 f g f
+
+  c4
+  \octaveCheck c'
+  f
+  \octaveCheck c'
+  g
+  \octaveCheck c'
+  f
+}
+</pre><p>
+ <a href="../fb/lily-d5ecfb27.ly">
+  <img align="middle"
+       border="0"
+       src="../fb/lily-d5ecfb27.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-99"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-RelativeOctaveCheck"></a>
+<a href="../internals/relativeoctavecheck.ca.html">RelativeOctaveCheck</a>.
+</p>
+
+<hr size="6">
+<a name="Transposici_00f3"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#octave-checks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Comprovació d'octava&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#inversion" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Inversió &gt; </a>]</td></tr></table>
+<a name="transpose"></a>
+<h4 class="unnumberedsubsubsec">Transposició</h4>
+
+<a name="index-transport"></a>
+<a name="index-transposicio"></a>
+<a name="index-transposicio-d_0027altures"></a>
+<a name="index-transposicio-de-notes"></a>
+<a name="index-altures_002c-transport-de"></a>
+<a name="index-notes_002c-transport-de"></a>
+
+<a name="index-_005ctranspose-2"></a>
+<a name="index-_005ctranspose-3"></a>
+
+<p>Una expressió musical es pot transportar mitjançant
+<code>\transpose</code>.  La sintaxi és
+</p><blockquote><pre class="example">\transpose <var>nota_origen</var> <var>nota_destí</var> <var>expressió_musical</var>
+</pre></blockquote>
+
+<p>Això significa que la <code><var>expressió_musical</var></code> es transporta
+l&rsquo;interval que hi ha entre les notes <code><var>nota_origen</var></code> i
+<code><var>nota_destí</var></code>: qualsevol nota amb l&rsquo;altura de
+<code><var>nota_origen</var></code> es canvia per <code><var>nota_destí</var></code> i
+qualsevol altra nota es transporta el mateix interval.  Les dues
+notes s&rsquo;introdueixen en mode absolut.
+</p>
+<div class="warning"><p><strong>Nota:</strong> La música que està dins d&rsquo;un bloc
+<code>\transpose</code> és absoluta, a no ser que s&rsquo;inclogui una introducció
+<code>\relative</code> dins del bloc.
+</p>
+</div>
+<p>Per exemple, agafem una peça escrita en la tonalitat de Re major.
+Es pot transposar cap amunt a Mi major; observeu que també
+l&rsquo;armadura de la tonalitat es transporta automàticament.
+</p>
+<blockquote><pre class="verbatim">\transpose d e {
+  \relative {
+    \key d \major
+    d'4 fis a d
+  }
+}
+</pre><p>
+ <a href="../f3/lily-9b67e663.ly">
+  <img align="middle"
+       border="0"
+       src="../f3/lily-9b67e663.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si una particel·la escrita en Do (<var>afinació de concert</var>
+normal) es pot tocar amb un clarinet en La (per al qual un La
+s&rsquo;escriu com un Do, i que sona una tercera menor per sota del que
+està escrit), la particel·la corresponent es produeix mitjançant:
+</p>
+<blockquote><pre class="verbatim">\transpose a c' {
+  \relative {
+    \key c \major
+    c'4 d e g
+  }
+}
+</pre><p>
+ <a href="../24/lily-4d79f0e5.ly">
+  <img align="middle"
+       border="0"
+       src="../24/lily-4d79f0e5.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Observeu que especifiquem <code>\key c \major</code> de forma explícita.
+Si no especifiquem cap tonalitat, les notes es transporten però no
+s&rsquo;imprimeix l&rsquo;armadura.
+</p>
+<p><code>\transpose</code> distingeix entre notes enarmòniques: tant
+<code>\transpose c cis</code> com <code>\transpose c des</code> transporten
+un semitó cap amunt.  La primera versió imprimeix sostinguts i les
+notes no es mouen del seu lloc a l&rsquo;escala, en canvi la segona
+imprimeix bemolls de la nota següent.
+</p>
+<blockquote><pre class="verbatim">music = \relative { c' d e f }
+\new Staff {
+  \transpose c cis { \music }
+  \transpose c des { \music }
+}
+</pre><p>
+ <a href="../96/lily-6f303e05.ly">
+  <img align="middle"
+       border="0"
+       src="../96/lily-6f303e05.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-transpositors_002c-instruments"></a>
+<a name="index-instruments-transpositors"></a>
+
+<p><code>\transpose</code> també es pot usar per introduir notes escrites
+per a un instrument transpositor.  Els exemples interiors mostren
+com escriure altures en Do (o en <var>afinació de concert</var>) i
+gravar-les per a un instrument transpositor, però també és
+possible el cas contrari si, per exemple, tenim un conjunt de
+parts instrumentals i voleu fer un guió en Do per al director. Per
+exemple, en introduir música per a trompeta en Si bemoll que
+comença per un Mi a la partitura (Re de concert), es pot escriure:
+</p>
+<blockquote><pre class="example">musicaEnSiBemol = { e4 &hellip; }
+\transpose c bes, \musicaEnSiBemol
+</pre></blockquote>
+
+<p>Per imprimir aquesta música en Fa (per exemple, en arreglar-la per
+a trompa) podeu envolta la música existent amb un altre
+<code>\transpose</code>:
+</p>
+<blockquote><pre class="example">musicaEnSiBemol = { e4 &hellip; }
+\transpose f c' { \transpose c bes, \musicaEnSiBemol }
+</pre></blockquote>
+
+<p>Per veure més informació sobre instruments transpositors, consulteu
+<a href="displaying-pitches.ca.html#instrument-transpositions">Transposició dels instruments</a>.
+</p>
+<a name="Fragments-de-codi-seleccionats-6"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Transposing pitches with minimum accidentals (&quot;Smart&quot; transpose)</em>
+</p>
+
+<p>This example uses some Scheme code to enforce enharmonic modifications
+for notes in order to have the minimum number of accidentals.  In this
+case, the following rules apply:
+</p>
+<p>Double accidentals should be removed
+</p>
+
+<p>B sharp -&gt; C
+</p>
+
+<p>E sharp -&gt; F
+</p>
+
+<p>C flat -&gt; B
+</p>
+
+<p>F flat -&gt; E
+</p>
+
+<p>In this manner, the most natural enharmonic notes are chosen.
+</p>
+
+<blockquote><pre class="verbatim">#(define (naturalize-pitch p)
+   (let ((o (ly:pitch-octave p))
+         (a (* 4 (ly:pitch-alteration p)))
+         ;; alteration, a, in quarter tone steps,
+         ;; for historical reasons
+         (n (ly:pitch-notename p)))
+     (cond
+      ((and (&gt; a 1) (or (eqv? n 6) (eqv? n 2)))
+       (set! a (- a 2))
+       (set! n (+ n 1)))
+      ((and (&lt; a -1) (or (eqv? n 0) (eqv? n 3)))
+       (set! a (+ a 2))
+       (set! n (- n 1))))
+     (cond
+      ((&gt; a 2) (set! a (- a 4)) (set! n (+ n 1)))
+      ((&lt; a -2) (set! a (+ a 4)) (set! n (- n 1))))
+     (if (&lt; n 0) (begin (set! o (- o 1)) (set! n (+ n 7))))
+     (if (&gt; n 6) (begin (set! o (+ o 1)) (set! n (- n 7))))
+     (ly:make-pitch o n (/ a 4))))
+
+#(define (naturalize music)
+   (let ((es (ly:music-property music 'elements))
+         (e (ly:music-property music 'element))
+         (p (ly:music-property music 'pitch)))
+     (if (pair? es)
+         (ly:music-set-property!
+          music 'elements
+          (map naturalize es)))
+     (if (ly:music? e)
+         (ly:music-set-property!
+          music 'element
+          (naturalize e)))
+     (if (ly:pitch? p)
+         (begin
+           (set! p (naturalize-pitch p))
+           (ly:music-set-property! music 'pitch p)))
+     music))
+
+naturalizeMusic =
+#(define-music-function (m)
+   (ly:music?)
+   (naturalize m))
+
+music = \relative c' { c4 d e g }
+
+\score {
+  \new Staff {
+    \transpose c ais { \music }
+    \naturalizeMusic \transpose c ais { \music }
+    \transpose c deses { \music }
+    \naturalizeMusic \transpose c deses { \music }
+  }
+  \layout { }
+}
+</pre><p>
+ <a href="../d0/lily-1253424f.ly">
+  <img align="middle"
+       border="0"
+       src="../d0/lily-1253424f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-137"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="displaying-pitches.ca.html#instrument-transpositions">Transposició dels instruments</a>,
+<a href="#inversion">Inversió</a>,
+<a href="#modal-transformations">Transformacions modals</a>,
+<a href="writing-pitches.ca.html#relative-octave-entry">Escriptura d&rsquo;octava relativa</a>,
+<a href="#retrograde">Retrogradació</a>.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/altures.ca.html">Pitches</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-TransposedMusic"></a>
+<a href="../internals/transposedmusic.ca.html">TransposedMusic</a>.
+</p>
+<a name="index-_005ctranspose-4"></a>
+<a name="index-_005ctranspose-5"></a>
+<a name="index-_005cchordmode-2"></a>
+<a name="index-_005cchordmode-3"></a>
+<a name="index-_005crelative-4"></a>
+<a name="index-_005crelative-5"></a>
+
+<a name="Advertiments-i-problemes-coneguts-84"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>La conversió relativa no afecta a les seccions
+<code>\transpose</code>, <code>\chordmode</code> ni <code>\relative</code> dins del
+seu argument.  Per usar el mode relatiu dins de música
+transportada, es pot col·locar un altre <code>\relative</code> dins de
+<code>\transpose</code>.
+</p>
+<p>No s&rsquo;imprimeixen alteracions accidentals triples quan s&rsquo;usa
+<code>\transpose</code>.  En lloc d&rsquo;això, s&rsquo;usarà una nota
+&lsquo;equivalent enarmònicament&rsquo; (p.ex., Re bemoll en lloc de Mi
+triple bemoll).
+</p>
+
+<hr size="6">
+<a name="Inversi_00f3"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#transpose" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Transposició&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#retrograde" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Retrogradació &gt; </a>]</td></tr></table>
+<a name="inversion"></a>
+<h4 class="unnumberedsubsubsec">Inversió</h4>
+
+<a name="index-inversio"></a>
+<a name="index-operacio-de-inversio"></a>
+<a name="index-_005cinversion"></a>
+<a name="index-_005cinversion-1"></a>
+
+<p>Una expressió musical es pot invertir i transportar en una sola
+operació amb:
+</p>
+<blockquote><pre class="example">\inversion <var>nota_pivot</var> <var>nota_destí</var> <var>expressió_musical</var>
+</pre></blockquote>
+
+<p>La <code><var>expressió_musical</var></code> s&rsquo;inverteix interval a interval
+al voltant de <code><var>nota_pivot</var></code>, i després es transport de
+manera que <code><var>nota_pivot</var></code> es fa correspondre amb
+<code><var>nota_destí</var></code>.
+</p>
+<blockquote><pre class="verbatim">music = \relative { c' d e f }
+\new Staff {
+  \music
+  \inversion d' d' \music
+  \inversion d' ees' \music
+}
+</pre><p>
+ <a href="../3d/lily-d870f452.ly">
+  <img align="middle"
+       border="0"
+       src="../3d/lily-d870f452.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<div class="warning"><p><strong>Nota:</strong> Els motius a invertir haurien de venir expressats en mode
+absolut o convertir-se prèviament a la forma absoluta
+envoltant-los en un bloc <code>relative</code>.
+</p>
+</div>
+<a name="Vegeu-tambe-146"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="#modal-transformations">Transformacions modals</a>,
+<a href="#retrograde">Retrogradació</a>,
+<a href="#transpose">Transposició</a>.
+</p>
+
+<hr size="6">
+<a name="Retrogradaci_00f3"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#inversion" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Inversió&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#modal-transformations" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Transformacions modals &gt; </a>]</td></tr></table>
+<a name="retrograde"></a>
+<h4 class="unnumberedsubsubsec">Retrogradació</h4>
+
+<a name="index-retrogradacio_002c-transformacio-de"></a>
+<a name="index-transformacio-de-retrogradacio"></a>
+<a name="index-operacio-de-retrogradacio"></a>
+<a name="index-_005cretrograde"></a>
+<a name="index-_005cretrograde-1"></a>
+
+<p>Es pot revertir una expressió musical per produir la seva retrogradació:
+</p>
+<blockquote><pre class="verbatim">music = \relative { c'8. ees16( fis8. a16 b8.) gis16 f8. d16 }
+
+\new Staff {
+  \music
+  \retrograde \music
+}
+</pre><p>
+ <a href="../ff/lily-cbc816b4.ly">
+  <img align="middle"
+       border="0"
+       src="../ff/lily-cbc816b4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Advertiments-i-problemes-coneguts-18"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Les lligadures d&rsquo;unió manuals dins de <code>\retrograde</code> es
+trencaran i generaran advertiments.  Es poden generar algunes
+lligadures automàticament activant
+<a name="index-Divisio-automatica-de-les-notes"></a>
+<a href="../notation/automatic-note-splitting.ca.html">Divisió automàtica de les notes</a>.
+</p>
+<a name="Vegeu-tambe-274"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="#inversion">Inversió</a>,
+<a href="#modal-transformations">Transformacions modals</a>,
+<a href="#transpose">Transposició</a>.
+</p>
+
+<hr size="6">
+<a name="Transformacions-modals"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#retrograde" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Retrogradació&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="displaying-pitches.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Impressió de les altures &gt; </a>]</td></tr></table>
+<a name="modal-transformations"></a>
+<h4 class="unnumberedsubsubsec">Transformacions modals</h4>
+
+<a name="index-transformacions-modals"></a>
+<a name="index-modals_002c-transformacions"></a>
+<a name="index-operacions-modals"></a>
+
+<p>En una composició musical que està basada en una escala amb
+freqüència es transformen els motius de diverses formes.  Un motiu
+es pot <var>transportar</var> perquè comenci en diferents llocs de
+l&rsquo;escala o pot <var>invertir-se</var> al voltant d&rsquo;una nota pivot
+de l&rsquo;escala.  També es pot revertir per produir una
+<var>retrogradació</var>, vegeu <a href="#retrograde">Retrogradació</a>.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Qualsevol nota que no entri a la escala donada, es
+deixarà sense transformar.
+</p>
+</div>
+<a name="-Transposicio-modal"></a>
+<h4 class="subsubheading"><i> Transposició modal</i></h4>
+
+<a name="index-transport-1"></a>
+<a name="index-transport-modal"></a>
+<a name="index-modal_002c-transposicio"></a>
+<a name="index-transposicio-modal"></a>
+<a name="index-operacio-de-transposicio"></a>
+<a name="index-_005cmodalTranspose"></a>
+<a name="index-_005cmodalTranspose-1"></a>
+
+<p>Es pot transportar un motiu dins d&rsquo;una escala donada amb:
+</p>
+<blockquote><pre class="example">\modalTranspose <var>nota_origen</var> <var>nota_destí</var> <var>escala</var> <var>motiu</var>
+</pre></blockquote>
+
+<p>Les notes del <var>motiu</var> es desplacen dins de la <var>escala</var> el
+nombre de graus de l&rsquo;escala donats per l&rsquo;interval entre
+<var>nota_destí</var> y <var>nota_origen</var>:
+</p>
+<blockquote><pre class="verbatim">diatonicScale = \relative { c' d e f g a b }
+motif = \relative { c'8 d e f g a b c }
+
+\new Staff {
+  \motif
+  \modalTranspose c f \diatonicScale \motif
+  \modalTranspose c b, \diatonicScale \motif
+}
+</pre><p>
+ <a href="../8f/lily-c1504a88.ly">
+  <img align="middle"
+       border="0"
+       src="../8f/lily-c1504a88.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Es poden especificar escales ascendents de qualsevol longitud i
+amb qualssevol intervals:
+</p>
+<blockquote><pre class="verbatim">pentatonicScale = \relative { ges aes bes des ees }
+motif = \relative { ees'8 des ges,4 &lt;ges' bes,&gt; &lt;ges bes,&gt; }
+
+\new Staff {
+  \motif
+  \modalTranspose ges ees' \pentatonicScale \motif
+}
+</pre><p>
+ <a href="../e0/lily-4ed4d821.ly">
+  <img align="middle"
+       border="0"
+       src="../e0/lily-4ed4d821.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Quan es fa servir amb una escola cromàtica, <code>\modalTranspose</code>
+té un efecte semblant a <code>\transpose</code>, però amb la
+possibilitat d&rsquo;especificar els noms de les notes que es vulguin usar:
+</p>
+<blockquote><pre class="verbatim">chromaticScale = \relative { c' cis d dis e f fis g gis a ais b }
+motif = \relative { c'8 d e f g a b c }
+
+\new Staff {
+  \motif
+  \transpose c f \motif
+  \modalTranspose c f \chromaticScale \motif
+}
+</pre><p>
+ <a href="../60/lily-f5badaeb.ly">
+  <img align="middle"
+       border="0"
+       src="../60/lily-f5badaeb.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="-Inversio-modal"></a>
+<h4 class="subsubheading"><i> Inversió modal</i></h4>
+
+<a name="index-modal_002c-inversio"></a>
+<a name="index-inversio-modal"></a>
+<a name="index-operacio-d_0027inversio-nmodal"></a>
+<a name="index-_005cmodalInversion"></a>
+<a name="index-_005cmodalInversion-1"></a>
+
+<p>Es pot invertir un motiu dins d&rsquo;una escala donada al voltant d&rsquo;una
+nota pivot donada i transportada al mateix temps en una única
+operaćió, amb:
+</p>
+<blockquote><pre class="example">\modalInversion <var>nota-pivote</var> <var>nota-destino</var> <var>escala</var> <var>motivo</var>
+</pre></blockquote>
+
+<p>Les notes del <var>motiu</var> col·loquen al mateix nombre de graus de
+distància de l&rsquo;escala a partir de la <var>nota_pivot</var> dins de
+l&rsquo;<var>escala</var>, però en la direcció oposada, i el resultat es
+desplaça després dins de l&rsquo;<var>escala</var> el nombre de grados de
+l&rsquo;escala donats per l&rsquo;interval entre la <var>nota_destí</var> i la
+<var>nota_pivot</var>.
+</p>
+<p>Així doncs, per invertir senzillament al voltant d&rsquo;una nota de
+l&rsquo;escala, utilitzeu el mateix valor per a <var>nota_pivot</var> i
+<var>nota_destí</var>:
+</p>
+<blockquote><pre class="verbatim">octatonicScale = \relative { ees' f fis gis a b c d }
+motif = \relative { c'8. ees16 fis8. a16 b8. gis16 f8. d16 }
+
+\new Staff {
+  \motif
+  \modalInversion fis' fis' \octatonicScale \motif
+}
+</pre><p>
+ <a href="../3e/lily-de5e5edc.ly">
+  <img align="middle"
+       border="0"
+       src="../3e/lily-de5e5edc.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per invertir al voltant d&rsquo;una nota pivot entre dues notes de
+l&rsquo;escala, invertiu al voltant d&rsquo;una de les notes i després
+transporteu en un grau de l&rsquo;escala.  les dues notes especificades
+es poden interpretar com que fan una forquilla entre elles a la
+nota pivot:
+</p>
+<blockquote><pre class="verbatim">scale = \relative { c' g' }
+motive = \relative { c' c g' c, }
+
+\new Staff {
+  \motive
+  \modalInversion c' g' \scale \motive
+}
+</pre><p>
+ <a href="../bc/lily-56dda385.ly">
+  <img align="middle"
+       border="0"
+       src="../bc/lily-56dda385.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;operació combinada d&rsquo;inversió i retrogradació produeix la
+inversió retrògrada:
+</p>
+<blockquote><pre class="verbatim">octatonicScale = \relative { ees' f fis gis a b c d }
+motif = \relative { c'8. ees16 fis8. a16 b8. gis16 f8. d16 }
+
+\new Staff {
+  \motif
+  \retrograde \modalInversion c' c' \octatonicScale \motif
+}
+</pre><p>
+ <a href="../19/lily-aed6137a.ly">
+  <img align="middle"
+       border="0"
+       src="../19/lily-aed6137a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-140"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a href="#inversion">Inversió</a>,
+<a href="#retrograde">Retrogradació</a>,
+<a href="#transpose">Transposició</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#retrograde" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Retrogradació&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#changing-multiple-pitches" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Modificació de diverses notes a l'hora&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="displaying-pitches.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Impressió de les altures &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="changing-multiple-pitches.html">English</a>, <a href="changing-multiple-pitches.de.html">deutsch</a>, <a href="changing-multiple-pitches.es.html">español</a>, <a href="changing-multiple-pitches.fr.html">français</a>, <a href="changing-multiple-pitches.it.html">italiano</a>, <a href="changing-multiple-pitches.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Escriptura-de-notes-1" href="writing-pitches.ca.html">1.1.1 Escriptura de notes</a>      </li>
+      <li class=" toc_current"><a name="toc-Modificacio-de-diverses-notes-a-l_0027hora" href="changing-multiple-pitches.ca.html">1.1.2 Modificació de diverses notes a l&rsquo;hora</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Comprovacio-d_0027octava" href="changing-multiple-pitches.ca.html#octave-checks">Comprovació d&rsquo;octava</a>        </li>
+        <li class=""><a name="toc-Transposicio" href="changing-multiple-pitches.ca.html#transpose">Transposició</a>        </li>
+        <li class=""><a name="toc-Inversio" href="changing-multiple-pitches.ca.html#inversion">Inversió</a>        </li>
+        <li class=""><a name="toc-Retrogradacio" href="changing-multiple-pitches.ca.html#retrograde">Retrogradació</a>        </li>
+        <li class=""><a name="toc-Transformacions-modals-1" href="changing-multiple-pitches.ca.html#modal-transformations">Transformacions modals</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Impressio-de-les-altures" href="displaying-pitches.ca.html">1.1.3 Impressió de les altures</a>      </li>
+      <li class=""><a name="toc-Cap-de-les-notes-1" href="note-heads.ca.html">1.1.4 Cap de les notes</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

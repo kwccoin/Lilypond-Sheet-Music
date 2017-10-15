@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 5.1.1 Tutto sui contesti</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 5.1.1 Tutto sui contesti">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 5.1.1 Tutto sui contesti">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="interpretation-contexts.it.html#interpretation-contexts" rel="up" title="5.1 Contesti di interpretazione">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="interpretation-contexts.it.html#interpretation-contexts" rel="previous" title="5.1 Contesti di interpretazione">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Tutto-sui-contesti"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="interpretation-contexts.it.html" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti di interpretazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="interpretation-contexts.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Contesti di interpretazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#output-definitions-_002d-blueprints-for-contexts" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Definizioni di output - gerarchia dei contesti &gt; </a>]</td></tr></table>
+<a name="contexts-explained"></a>
+<h3 class="subsection">5.1.1 Tutto sui contesti</h3>
+
+
+
+
+
+<p>I contesti sono organizzati in modo gerarchico:
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#output-definitions-_002d-blueprints-for-contexts" accesskey="1">Definizioni di output - gerarchia dei contesti</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#score-_002d-the-master-of-all-contexts" accesskey="2">Score - il padre di tutti i contesti</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#top_002dlevel-contexts-_002d-staff-containers" accesskey="3">Contesti del livello superiore - contenitori di righi</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#intermediate_002dlevel-contexts-_002d-staves" accesskey="4">Contesti del livello intermedio - righi</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#bottom_002dlevel-contexts-_002d-voices" accesskey="5">Contesti del livello inferiore - voci</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Definizioni-di-output-_002d-gerarchia-dei-contesti"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#contexts-explained" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#score-_002d-the-master-of-all-contexts" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Score - il padre di tutti i contesti &gt; </a>]</td></tr></table>
+<a name="output-definitions-_002d-blueprints-for-contexts"></a>
+<h4 class="unnumberedsubsubsec">Definizioni di output - gerarchia dei contesti</h4>
+
+<p>Questa sezione spiega la rilevanza delle definizioni di output quando
+si lavora coi contesti.  Esempi di vere definizioni di output sono
+illustrati dopo (vedi <a href="changing-context-default-settings.it.html#changing-all-contexts-of-the-same-type">Modifica di tutti i contesti dello stesso tipo</a>).
+</p>
+<a name="index-output_002c-definizioni"></a>
+<a name="index-definizioni-di-output"></a>
+<a name="index-_005clayout-4"></a>
+<a name="index-_005clayout-5"></a>
+<p>Sebbene la musica scritta in un file possa riferirsi a un certo tipo o
+nome di un contesto, i contesti vengono creati soltanto quando la musica
+viene interpretata.  LilyPond interpreta la musica in base a una
+&ldquo;definizione di output&rdquo; e lo fa per le varie definizioni di output,
+producendo un output diverso per ciascuna.  La definizione di output che
+crea l&rsquo;output grafico si specifica con <code>\layout</code>.
+</p>
+<a name="index-_005cmidi-2"></a>
+<a name="index-_005cmidi-3"></a>
+<p>Una definizione di output molto più semplice, usata per produrre l&rsquo;output
+Midi, si specifica con <code>\midi</code>.  Molte altre definizioni di output
+sono usate da LilyPond internamente, come quando si usa la combinazione
+automatica delle parti (<a href="multiple-voices.it.html#automatic-part-combining">Combinazione automatica delle parti</a>) o si creano citazioni
+musicali (<a href="writing-parts.it.html#quoting-other-voices">Citare altre voci</a>).
+</p>
+<p>Le definizioni di output definiscono la relazione tra i contesti e le loro
+rispettive impostazioni predefinite.  Sebbene la maggior parte dei cambiamenti
+venga fatta solitamente in un blocco <code>\layout</code>, le impostazioni relative
+al Midi avranno effetto solo se inserite in un blocco <code>\midi</code>.
+</p>
+<a name="index-autoBeaming-2"></a>
+<a name="index-autoBeaming-3"></a>
+<p>Alcune impostazioni interessano vari tipi di output: per esempio, se
+<code>autoBeaming</code> è disattivato in qualche contesto, le travature contano
+come melismi al fine di abbinare musica e testo vocale, come descritto
+in <a href="common-notation-for-vocal-music.it.html#automatic-syllable-durations">Durate automatiche delle sillabe</a>.  Questo abbinamento viene fatto
+sia per l&rsquo;output grafico che per il Midi.  Se le modifiche fatte a
+<code>autoBeaming</code> in una definizione di contesto di un blocco <code>\layout</code>
+non sono ripetute nel corrispondente blocco <code>\midi</code>, il testo e la
+musica andranno fuori sincrono nel Midi.
+</p>
+<a name="Vedi-anche-125"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>File installati:
+&lsquo;<tt>ly/engraver-init.ly</tt>&rsquo;.
+&lsquo;<tt>ly/performer-init.ly</tt>&rsquo;.
+</p>
+<hr size="6">
+<a name="Score-_002d-il-padre-di-tutti-i-contesti"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#output-definitions-_002d-blueprints-for-contexts" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Definizioni di output - gerarchia dei contesti&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#top_002dlevel-contexts-_002d-staff-containers" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Contesti del livello superiore - contenitori di righi &gt; </a>]</td></tr></table>
+<a name="score-_002d-the-master-of-all-contexts"></a>
+<h4 class="unnumberedsubsubsec">Score - il padre di tutti i contesti</h4>
+
+<p>Questo è il contesto del livello superiore.  Nessun altro contesto può
+contenere un contesto Score.  Per impostazione predefinita, il contesto
+Score gestisce l&rsquo;amministrazione delle indicazioni di tempo e garantisce
+che elementi come le chiavi, le indicazioni di tempo e le armature di chiave
+siano allineate da rigo a rigo.
+</p>
+<p>Un contesto Score viene istanziato implicitamente quando viene elaborato
+un blocco <code>\score {&hellip;}</code>.
+</p>
+<hr size="6">
+<a name="Contesti-del-livello-superiore-_002d-contenitori-di-righi"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#score-_002d-the-master-of-all-contexts" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Score - il padre di tutti i contesti&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#intermediate_002dlevel-contexts-_002d-staves" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Contesti del livello intermedio - righi &gt; </a>]</td></tr></table>
+<a name="top_002dlevel-contexts-_002d-staff-containers"></a>
+<h4 class="unnumberedsubsubsec">Contesti del livello superiore - contenitori di righi</h4>
+
+<p><strong><em>StaffGroup</em></strong>
+</p>
+<p>Raggruppa i righi e aggiunge una parentesi quadra sul lato sinistro, che
+raggruppa insieme i righi.  Le stanghette dei righi in esso contenuti sono
+connessi verticalmente.  <code>StaffGroup</code> è semplicemente un insieme di righi,
+con una parentesi quadra all&rsquo;inizio e le stanghette che li attraversano.
+</p>
+<p><strong><em>ChoirStaff</em></strong>
+</p>
+<p>Identico a <code>StaffGroup</code> eccetto che le stanghette dei righi in esso
+contenuti non sono connesse verticalmente.
+</p>
+<p><strong><em>GrandStaff</em></strong>
+</p>
+<p>Un gruppo di righi, con una parentesi graffa sul lato sinistro, che raggruppa
+insieme i righi.  Le stanghette dei righi in esso contenuti sono
+connessi verticalmente.
+</p>
+<p><strong><em>PianoStaff</em></strong>
+</p>
+<p>Identico a <code>GrandStaff</code>, ma con il supporto ai nomi degli strumenti a
+sinistra di ogni sistema.
+</p>
+<hr size="6">
+<a name="Contesti-del-livello-intermedio-_002d-righi"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#top_002dlevel-contexts-_002d-staff-containers" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti del livello superiore - contenitori di righi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#bottom_002dlevel-contexts-_002d-voices" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Contesti del livello inferiore - voci &gt; </a>]</td></tr></table>
+<a name="intermediate_002dlevel-contexts-_002d-staves"></a>
+<h4 class="unnumberedsubsubsec">Contesti del livello intermedio - righi</h4>
+
+<p><strong><em>Staff</em></strong>
+</p>
+<p>Gestisce chiavi, stanghette, armature di chiave, alterazioni.  Può contenere
+contesti <code>Voice</code>.
+</p>
+<p><strong><em>RhythmicStaff</em></strong>
+</p>
+<p>Come <code>Staff</code> ma per le ritmiche.  Le altezze vengono ignorate e le
+note appaiono su una linea.  L&rsquo;output MIDI conserva le altezze inalterate.
+</p>
+<p><strong><em>TabStaff</em></strong>
+</p>
+<p>Contesto per generare l&rsquo;intavolatura (o tablatura).  La forma predefinita è
+quella dell&rsquo;intavolatura per chitarra, con sei linee.
+</p>
+<p><strong><em>DrumStaff</em></strong>
+</p>
+<p>Contesto per gli strumenti percussivi.  Può contenere <code>DrumVoice</code>.
+</p>
+<p><strong><em>VaticanaStaff</em></strong>
+</p>
+<p>Identico a <code>Staff</code>, a parte il fatto che è progettato per rappresentare
+un brano in stile gregoriano.
+</p>
+<p><strong><em>MensuralStaff</em></strong>
+</p>
+<p>Identico a <code>Staff</code>, a parte il fatto che è progettato per rappresentare
+un brano in stile mensurale.
+</p>
+<hr size="6">
+<a name="Contesti-del-livello-inferiore-_002d-voci"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#intermediate_002dlevel-contexts-_002d-staves" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti del livello intermedio - righi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="creating-and-referencing-contexts.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Creazione e citazione di un contesto &gt; </a>]</td></tr></table>
+<a name="bottom_002dlevel-contexts-_002d-voices"></a>
+<h4 class="unnumberedsubsubsec">Contesti del livello inferiore - voci</h4>
+
+<p>I contesti al livello della voce inizializzano alcune proprietà e avviano
+gli incisori adatti.  Un contesto del livello inferiore è privo di
+<code>defaultchild</code>.  Sebbene sia possibile far sì che accetti/contenga
+sottocontesti, questi possono essere creati e inseriti solo esplicitamente.
+</p>
+<p><strong><em>Voice</em></strong>
+</p>
+<p>Corrisponde a una voce di un rigo.  Questo contesto gestisce la
+conversione di segni di dinamica, gambi, travature, apici e pedici,
+legature di portamento e di valore e pause.  Deve essere istanziata
+esplicitamente se si hanno molteplici voci nello stesso rigo.
+</p>
+<p><strong><em>VaticanaVoice</em></strong>
+</p>
+<p>Identico a <code>Voice</code>, a parte il fatto che è progettato per rappresentare
+un brano in stile gregoriano.
+</p>
+<p><strong><em>MensuralVoice</em></strong>
+</p>
+<p>Identico a <code>Voice</code>, con delle modifiche per rappresentare un brano in
+stile mensurale.
+</p>
+<p><strong><em>Lyrics</em></strong>
+</p>
+<p>Corrisponde a una voce con testo vocale.  Gestisce la stampa di una singola
+linea di testo vocale.
+</p>
+<p><strong><em>DrumVoice</em></strong>
+</p>
+<p>Il contesto della voce usato in un rigo per percussioni.
+</p>
+<p><strong><em>FiguredBass</em></strong>
+</p>
+<p>Il contesto in cui sono creati gli oggetti <code>BassFigure</code> a partire
+dall&rsquo;input inserito in modalità <code>\figuremode</code>.
+</p>
+<p><strong><em>TabVoice</em></strong>
+</p>
+<p>Il contesto della voce usato all&rsquo;interno di un contesto <code>TabStaff</code>.
+Solitamente omesso così che sia creato implicitamente.
+</p>
+<p><strong><em>CueVoice</em></strong>
+</p>
+<p>Un contesto della voce usato per rappresentare note a dimensione ridotta, inteso
+soprattutto per aggiungere citazioni in corpo più piccolo a un rigo, vedi
+<a href="writing-parts.it.html#formatting-cue-notes">Formattazione delle notine</a>.  Solitamente omesso così che sia creato implicitamente.
+</p>
+<p><strong><em>ChordNames</em></strong>
+</p>
+<p>Crea e dispone i nomi degli accordi.
+</p>
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#intermediate_002dlevel-contexts-_002d-staves" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti del livello intermedio - righi&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#contexts-explained" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tutto sui contesti&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="creating-and-referencing-contexts.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Creazione e citazione di un contesto &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="contexts-explained.html">English</a>, <a href="contexts-explained.ca.html">català</a>, <a href="contexts-explained.de.html">deutsch</a>, <a href="contexts-explained.es.html">español</a>, <a href="contexts-explained.fr.html">français</a>, <a href="contexts-explained.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>
+    <ul class="toc">
+      <li class=" toc_current"><a name="toc-Tutto-sui-contesti-1" href="contexts-explained.it.html">5.1.1 Tutto sui contesti</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Definizioni-di-output-_002d-gerarchia-dei-contesti-1" href="contexts-explained.it.html#output-definitions-_002d-blueprints-for-contexts">Definizioni di output - gerarchia dei contesti</a>        </li>
+        <li class=""><a name="toc-Score-_002d-il-padre-di-tutti-i-contesti-1" href="contexts-explained.it.html#score-_002d-the-master-of-all-contexts">Score - il padre di tutti i contesti</a>        </li>
+        <li class=""><a name="toc-Contesti-del-livello-superiore-_002d-contenitori-di-righi-1" href="contexts-explained.it.html#top_002dlevel-contexts-_002d-staff-containers">Contesti del livello superiore - contenitori di righi</a>        </li>
+        <li class=""><a name="toc-Contesti-del-livello-intermedio-_002d-righi-1" href="contexts-explained.it.html#intermediate_002dlevel-contexts-_002d-staves">Contesti del livello intermedio - righi</a>        </li>
+        <li class=""><a name="toc-Contesti-del-livello-inferiore-_002d-voci-1" href="contexts-explained.it.html#bottom_002dlevel-contexts-_002d-voices">Contesti del livello inferiore - voci</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Creazione-e-citazione-di-un-contesto-1" href="creating-and-referencing-contexts.it.html">5.1.2 Creazione e citazione di un contesto</a>      </li>
+      <li class=""><a name="toc-Conservazione-di-un-contesto-1" href="keeping-contexts-alive.it.html">5.1.3 Conservazione di un contesto</a>      </li>
+      <li class=""><a name="toc-Modifica-dei-componenti-aggiuntivi-di-un-contesto-1" href="modifying-context-plug_002dins.it.html">5.1.4 Modifica dei componenti aggiuntivi di un contesto</a>      </li>
+      <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-di-un-contesto-1" href="changing-context-default-settings.it.html">5.1.5 Modifica delle impostazioni predefinite di un contesto</a>      </li>
+      <li class=""><a name="toc-Definizione-di-nuovi-contesti-1" href="defining-new-contexts.it.html">5.1.6 Definizione di nuovi contesti</a>      </li>
+      <li class=""><a name="toc-Ordine-di-disposizione-dei-contesti-1" href="context-layout-order.it.html">5.1.7 Ordine di disposizione dei contesti</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

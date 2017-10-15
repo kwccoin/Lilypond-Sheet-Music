@@ -1,0 +1,45 @@
+This is lilypond-snippets.info, produced by makeinfo version 6.1 from
+snippets.texi.
+
+This document has been placed in the public domain.
+
+
+Indirect:
+lilypond-snippets.info-1: 139
+lilypond-snippets.info-2: 309883
+lilypond-snippets.info-3: 655037
+
+Tag Table:
+(Indirect)
+Node: Top139
+Node: Pitches1904
+Node: Rhythms37889
+Node: Expressive marks99966
+Node: Repeats151148
+Node: Simultaneous notes165852
+Node: Staff notation176897
+Node: Editorial annotations242786
+Node: Text276501
+Node: Vocal music309883
+Node: Chords356803
+Node: Keyboards372968
+Node: Percussion395018
+Node: Fretted strings412649
+Node: Unfretted strings465819
+Node: Winds471750
+Node: Ancient notation479271
+Node: World music497171
+Node: Contexts and engravers498877
+Node: Tweaks and overrides541451
+Node: Paper and layout655037
+Node: Titles670840
+Node: Spacing674478
+Node: MIDI679530
+Node: Templates696229
+
+End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

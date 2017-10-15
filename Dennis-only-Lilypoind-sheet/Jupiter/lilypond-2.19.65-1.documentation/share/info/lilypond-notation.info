@@ -1,0 +1,605 @@
+This is lilypond-notation.info, produced by makeinfo version 6.1 from
+notation.texi.
+
+Copyright © 1998–2015 by the authors.
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.1 or any later version published by the Free Software
+     Foundation; with no Invariant Sections.  A copy of the license is
+     included in the section entitled “GNU Free Documentation License”.
+
+
+Indirect:
+lilypond-notation.info-1: 480
+lilypond-notation.info-2: 305618
+lilypond-notation.info-3: 604568
+lilypond-notation.info-4: 901305
+lilypond-notation.info-5: 1202424
+lilypond-notation.info-6: 1502782
+
+Tag Table:
+(Indirect)
+Node: Top480
+Node: Musical notation1713
+Node: Pitches2353
+Node: Writing pitches2797
+Node: Absolute octave entry3244
+Node: Relative octave entry4932
+Node: Accidentals10699
+Node: Note names in other languages14974
+Node: Changing multiple pitches20022
+Node: Octave checks20362
+Node: Transpose22243
+Node: Inversion28356
+Node: Retrograde29317
+Node: Modal transformations30417
+Node: Displaying pitches34384
+Node: Clef34746
+Node: Key signature42327
+Node: Ottava brackets47501
+Node: Instrument transpositions50953
+Node: Automatic accidentals53949
+Node: Ambitus66787
+Node: Note heads70217
+Node: Special note heads70497
+Node: Easy notation note heads72980
+Node: Shape note heads75576
+Node: Improvisation79301
+Node: Rhythms80252
+Node: Writing rhythms80680
+Node: Durations80884
+Node: Tuplets85657
+Node: Scaling durations93306
+Node: Ties96085
+Node: Writing rests102619
+Node: Rests102904
+Node: Invisible rests105959
+Node: Full measure rests108127
+Node: Displaying rhythms115478
+Node: Time signature115799
+Node: Metronome marks123344
+Node: Upbeats127924
+Node: Unmetered music130061
+Node: Polymetric notation133141
+Node: Automatic note splitting137763
+Node: Showing melody rhythms140870
+Node: Beams144046
+Node: Automatic beams144274
+Node: Setting automatic beam behavior148980
+Node: Manual beams167298
+Node: Feathered beams171980
+Node: Bars174272
+Node: Bar lines174492
+Node: Bar numbers184419
+Node: Bar and bar number checks191797
+Node: Rehearsal marks194258
+Node: Special rhythmic concerns198686
+Node: Grace notes198919
+Node: Aligning to cadenzas208021
+Node: Time administration209272
+Node: Expressive marks211870
+Node: Expressive marks attached to notes212314
+Node: Articulations and ornamentations212799
+Node: Dynamics218374
+Node: New dynamic marks229254
+Node: Expressive marks as curves233054
+Node: Slurs233505
+Node: Phrasing slurs238386
+Node: Breath marks241230
+Node: Falls and doits244338
+Node: Expressive marks as lines245652
+Node: Glissando246013
+Node: Arpeggio252081
+Node: Trills256549
+Node: Repeats259605
+Node: Long repeats260723
+Node: Normal repeats261178
+Node: Manual repeat marks272487
+Node: Written-out repeats275706
+Node: Short repeats278700
+Node: Percent repeats279089
+Node: Tremolo repeats283537
+Node: Simultaneous notes286487
+Node: Single voice286971
+Node: Chorded notes287269
+Node: Chord repetition290867
+Node: Simultaneous expressions294144
+Node: Clusters296732
+Node: Multiple voices298133
+Node: Single-staff polyphony298518
+Node: Voice styles305618
+Node: Collision resolution306645
+Node: Merging rests314484
+Node: Automatic part combining315566
+Node: Writing music in parallel325333
+Node: Staff notation328768
+Node: Displaying staves329292
+Node: Instantiating new staves329637
+Node: Grouping staves332581
+Node: Nested staff groups338147
+Node: Separating systems340661
+Node: Modifying single staves341892
+Node: Staff symbol342363
+Node: Ossia staves348100
+Node: Hiding staves352888
+Node: Writing parts355822
+Node: Instrument names356213
+Node: Quoting other voices360495
+Node: Formatting cue notes366048
+Node: Editorial annotations374241
+Node: Inside the staff374687
+Node: Selecting notation font size375062
+Node: Fingering instructions383643
+Node: Hidden notes387486
+Node: Coloring objects388835
+Node: Parentheses391880
+Node: Stems393186
+Node: Outside the staff395060
+Node: Balloon help395380
+Node: Grid lines397160
+Node: Analysis brackets400220
+Node: Text403214
+Node: Writing text403716
+Node: Text scripts404259
+Node: Text spanners406541
+Node: Text marks410120
+Node: Separate text413647
+Node: Formatting text416088
+Node: Text markup introduction416521
+Node: Selecting font and font size419521
+Node: Text alignment424455
+Node: Graphic notation inside markup429986
+Node: Music notation inside markup433311
+Node: Multi-page markup436655
+Node: Fonts437927
+Node: Fonts explained438201
+Node: Single entry fonts442938
+Node: Entire document fonts444187
+Node: Specialist notation445436
+Node: Vocal music445971
+Node: Common notation for vocal music446558
+Node: References for vocal music447083
+Node: Entering lyrics448387
+Node: Aligning lyrics to a melody452614
+Node: Automatic syllable durations456893
+Node: Manual syllable durations461348
+Node: Multiple syllables to one note463459
+Node: Multiple notes to one syllable464561
+Node: Extenders and hyphens470592
+Node: Techniques specific to lyrics472088
+Node: Working with lyrics and variables472492
+Node: Placing lyrics vertically474808
+Node: Placing syllables horizontally480893
+Node: Lyrics and repeats483336
+Node: Divisi lyrics494330
+Node: Polyphony with shared lyrics496813
+Node: Stanzas499852
+Node: Adding stanza numbers500228
+Node: Adding dynamics marks to stanzas500843
+Node: Adding singers' names to stanzas501718
+Node: Stanzas with different rhythms502502
+Node: Printing stanzas at the end507591
+Node: Printing stanzas at the end in multiple columns508870
+Node: Songs511041
+Node: References for songs511212
+Node: Lead sheets513020
+Node: Choral513741
+Node: References for choral514098
+Node: Score layouts for choral516623
+Node: Divided voices519449
+Node: Opera and stage musicals520588
+Node: References for opera and stage musicals522314
+Node: Character names524230
+Node: Musical cues526775
+Node: Spoken music532845
+Node: Dialogue over music533209
+Node: Chants psalms and hymns535670
+Node: References for chants and psalms536261
+Node: Setting a chant536688
+Node: Pointing a psalm546103
+Node: Partial measures in hymn tunes551188
+Node: Ancient vocal music554400
+Node: Keyboard and other multi-staff instruments554710
+Node: Common notation for keyboards555490
+Node: References for keyboards555927
+Node: Changing staff manually558482
+Node: Changing staff automatically561628
+Node: Staff-change lines564514
+Node: Cross-staff stems565421
+Node: Piano567814
+Node: Piano pedals568097
+Node: Accordion570227
+Node: Discant symbols570482
+Node: Harp572155
+Node: References for harps572410
+Node: Harp pedals573035
+Node: Unfretted string instruments574514
+Node: Common notation for unfretted strings575063
+Node: References for unfretted strings575607
+Node: Bowing indications576753
+Node: Harmonics578022
+Node: Snap (Bartok) pizzicato579780
+Node: Fretted string instruments580381
+Node: Common notation for fretted strings580880
+Node: References for fretted strings581403
+Node: String number indications582860
+Node: Default tablatures585842
+Node: Custom tablatures604568
+Node: Fret diagram markups610336
+Node: Predefined fret diagrams624907
+Node: Automatic fret diagrams641438
+Node: Right-hand fingerings645603
+Node: Guitar647847
+Node: Indicating position and barring648638
+Node: Indicating harmonics and dampened notes649419
+Node: Indicating power chords651744
+Node: Banjo653410
+Node: Banjo tablatures653573
+Node: Lute654846
+Node: Lute tablatures654991
+Node: Percussion656266
+Node: Common notation for percussion656479
+Node: References for percussion656942
+Node: Basic percussion notation657581
+Node: Drum rolls659373
+Node: Pitched percussion660779
+Node: Percussion staves661248
+Node: Custom percussion staves664143
+Node: Ghost notes670142
+Node: Wind instruments670954
+Node: Common notation for wind instruments671411
+Node: References for wind instruments671742
+Node: Fingerings674780
+Node: Bagpipes678020
+Node: Bagpipe definitions678290
+Node: Bagpipe example679801
+Node: Woodwinds680949
+Node: Woodwind diagrams681176
+Node: Chord notation690485
+Node: Chord mode691028
+Node: Chord mode overview691355
+Node: Common chords693043
+Node: Extended and altered chords696055
+Node: Displaying chords700613
+Node: Printing chord names700935
+Node: Customizing chord names704150
+Node: Figured bass713469
+Node: Introduction to figured bass713848
+Node: Entering figured bass715226
+Node: Displaying figured bass719888
+Node: Contemporary music723136
+Node: Pitch and harmony in contemporary music724006
+Node: References for pitch and harmony in contemporary music724486
+Node: Microtonal notation725051
+Node: Contemporary key signatures and harmony725309
+Node: Contemporary approaches to rhythm725544
+Node: References for contemporary approaches to rhythm726129
+Node: Tuplets in contemporary music726730
+Node: Contemporary time signatures726995
+Node: Extended polymetric notation727238
+Node: Beams in contemporary music727479
+Node: Bar lines in contemporary music727721
+Node: Graphical notation727934
+Node: Contemporary scoring techniques728151
+Node: New instrumental techniques728388
+Node: Further reading and scores of interest728637
+Node: Books and articles on contemporary musical notation729083
+Node: Scores and musical examples729660
+Node: Ancient notation729890
+Node: Overview of the supported styles731763
+Node: Ancient notation---common features734616
+Node: Pre-defined contexts734933
+Node: Ligatures735807
+Node: Custodes737920
+Node: Typesetting mensural music739449
+Node: Mensural contexts739944
+Node: Mensural clefs741072
+Node: Mensural time signatures744446
+Node: Mensural note heads746243
+Node: Mensural flags748365
+Node: Mensural rests749728
+Node: Mensural accidentals and key signatures751031
+Node: Annotational accidentals (musica ficta)752409
+Node: White mensural ligatures753945
+Node: Typesetting Gregorian chant756678
+Node: Gregorian chant contexts757670
+Node: Gregorian clefs758815
+Node: Gregorian accidentals and key signatures761363
+Node: Divisiones762499
+Node: Gregorian articulation signs764143
+Node: Augmentum dots (morae)765738
+Node: Gregorian square neume ligatures766903
+Node: Typesetting Kievan square notation785473
+Node: Kievan contexts785879
+Node: Kievan clefs787362
+Node: Kievan notes787947
+Node: Kievan accidentals789597
+Node: Kievan bar line790631
+Node: Kievan melismata791226
+Node: Working with ancient music---scenarios and solutions793187
+Node: Incipits794292
+Node: Mensurstriche layout795693
+Node: Transcribing Gregorian chant796906
+Node: Ancient and modern from one source802406
+Node: Editorial markings805328
+Node: World music805528
+Node: Common notation for non-Western music805895
+Node: Extending notation and tuning systems806314
+Node: Arabic music808995
+Node: References for Arabic music809440
+Node: Arabic note names811323
+Node: Arabic key signatures813109
+Node: Arabic time signatures817604
+Node: Arabic music example819401
+Node: Further reading for Arabic music820582
+Node: Turkish classical music821838
+Node: References for Turkish classical music822167
+Node: Turkish note names823032
+Node: General input and output824915
+Node: Input structure825359
+Node: Structure of a score825769
+Node: Multiple scores in a book828094
+Node: Multiple output files from one input file830221
+Node: Output file names831659
+Node: File structure833288
+Node: Titles and headers838493
+Node: Creating titles headers and footers838998
+Node: Titles explained839347
+Node: Default layout of bookpart and score titles845438
+Node: Default layout of headers and footers849087
+Node: Custom titles headers and footers850731
+Node: Custom text formatting for titles851112
+Node: Custom layout for titles851790
+Node: Custom layout for headers and footers856239
+Node: Creating output file metadata859892
+Node: Creating footnotes862068
+Node: Footnotes in music expressions862699
+Node: Footnotes in stand-alone text872323
+Node: Reference to page numbers876470
+Node: Table of contents878140
+Node: Working with input files881696
+Node: Including LilyPond files882006
+Node: Different editions from one source887395
+Node: Using variables888260
+Node: Using tags890172
+Node: Using global settings897876
+Node: Special characters898733
+Node: Text encoding898975
+Node: Unicode901305
+Node: ASCII aliases903359
+Node: Controlling output904774
+Node: Extracting fragments of music905109
+Node: Skipping corrected music906622
+Node: Alternative output formats908292
+Node: Replacing the notation font908846
+Node: Creating MIDI output910463
+Node: Supported notation for MIDI911442
+Node: Unsupported notation for MIDI913168
+Node: The MIDI block913903
+Node: Controlling MIDI dynamics915570
+Node: Dynamic marks in MIDI916325
+Node: Setting MIDI volume918000
+Node: Setting MIDI block properties922403
+Node: Using MIDI instruments924308
+Node: Using repeats with MIDI925877
+Node: MIDI channel mapping927080
+Node: Context properties for MIDI effects932583
+Node: Enhancing MIDI output936910
+Node: The articulate script937290
+Node: Extracting musical information938790
+Node: Displaying LilyPond notation939211
+Node: Displaying scheme music expressions940524
+Node: Saving music events to a file940860
+Node: Spacing issues942432
+Node: Page layout943963
+Node: The paper block944383
+Node: Paper size and automatic scaling947466
+Node: Setting the paper size947780
+Node: Automatic scaling to paper size950604
+Node: Fixed vertical spacing paper variables952629
+Node: Flexible vertical spacing paper variables954680
+Node: Structure of flexible vertical spacing alists955796
+Node: List of flexible vertical spacing paper variables959295
+Node: Horizontal spacing paper variables961632
+Node: paper variables for widths and margins962228
+Node: paper variables for two-sided mode966877
+Node: paper variables for shifts and indents968408
+Node: Other paper variables969926
+Node: paper variables for line breaking970275
+Node: paper variables for page breaking971374
+Node: paper variables for page numbering974928
+Node: Miscellaneous paper variables976361
+Node: Score layout977968
+Node: The layout block978244
+Node: Setting the staff size983565
+Node: Breaks986634
+Node: Line breaking986817
+Node: Page breaking992324
+Node: Manual page breaking992744
+Node: Optimal page breaking996020
+Node: Minimal page breaking996555
+Node: One-page page breaking997236
+Node: One-line page breaking998115
+Node: One-line-auto-height page breaking998834
+Node: Optimal page turning999616
+Node: Vertical spacing1003185
+Node: Flexible vertical spacing within systems1003682
+Node: Within-system spacing properties1004984
+Node: Spacing of ungrouped staves1013591
+Node: Spacing of grouped staves1016166
+Node: Spacing of non-staff lines1018050
+Node: Explicit staff and system positioning1020241
+Node: Vertical collision avoidance1030090
+Node: Horizontal spacing1033576
+Node: Horizontal spacing overview1033906
+Node: New spacing section1038252
+Node: Changing horizontal spacing1040023
+Node: Line width1042505
+Node: Proportional notation1043716
+Node: Fitting music onto fewer pages1055922
+Node: Displaying spacing1056600
+Node: Changing spacing1058043
+Node: Changing defaults1061788
+Ref: Changing defaults-Footnote-11063411
+Node: Interpretation contexts1063550
+Node: Contexts explained1064373
+Node: Output definitions - blueprints for contexts1064810
+Node: Score - the master of all contexts1066785
+Node: Top-level contexts - staff containers1067416
+Node: Intermediate-level contexts - staves1068379
+Node: Bottom-level contexts - voices1069392
+Node: Creating and referencing contexts1071003
+Node: Keeping contexts alive1077061
+Node: Modifying context plug-ins1082272
+Node: Changing context default settings1086101
+Node: Changing all contexts of the same type1087052
+Node: Changing just one specific context1091031
+Node: Order of precedence1094392
+Node: Defining new contexts1095397
+Node: Context layout order1100220
+Node: Explaining the Internals Reference1104550
+Node: Navigating the program reference1104915
+Node: Layout interfaces1107165
+Node: Determining the grob property1110851
+Node: Naming conventions1112677
+Node: Modifying properties1113661
+Node: Overview of modifying properties1114061
+Node: The set command1115475
+Node: The override command1119272
+Node: The tweak command1122385
+Node: set versus override1126787
+Node: The offset command1129534
+Node: Modifying alists1140291
+Node: Useful concepts and properties1144541
+Node: Input modes1144964
+Node: Direction and placement1149700
+Node: Articulation direction indicators1150435
+Node: The direction property1151690
+Node: Distances and measurements1153510
+Node: Dimensions1155802
+Node: Staff symbol properties1156838
+Node: Spanners1158059
+Node: Using the spanner-interface1158917
+Node: Using the line-spanner-interface1162793
+Node: Visibility of objects1168690
+Node: Removing the stencil1169618
+Node: Making objects transparent1170519
+Node: Painting objects white1171268
+Node: Using break-visibility1173101
+Node: Special considerations1178322
+Node: Line styles1183570
+Node: Rotating objects1185594
+Node: Rotating layout objects1185943
+Node: Rotating markup1186951
+Node: Advanced tweaks1187946
+Node: Aligning objects1188899
+Node: Setting X-offset and Y-offset directly1191438
+Node: Using the side-position-interface1192163
+Node: Using the self-alignment-interface1194106
+Node: Using the break-alignable-interface1197439
+Node: Vertical grouping of grobs1202424
+Node: Modifying stencils1202991
+Node: Modifying shapes1205253
+Node: Modifying ties and slurs1205479
+Node: Modifying broken spanners1213737
+Node: Using alterBroken1213978
+Node: Unpure-pure containers1217688
+Node: Using music functions1222122
+Node: Substitution function syntax1222732
+Node: Substitution function examples1224470
+Node: Notation manual tables1227477
+Node: Chord name chart1228239
+Node: Common chord modifiers1228611
+Node: Predefined string tunings1234426
+Node: Predefined fretboard diagrams1234798
+Node: Diagrams for Guitar1235116
+Node: Diagrams for Ukulele1235375
+Node: Diagrams for Mandolin1235666
+Node: Predefined paper sizes1235931
+Node: MIDI instruments1239875
+Node: List of colors1243045
+Node: The Emmentaler font1246458
+Node: Clef glyphs1247629
+Node: Time Signature glyphs1247861
+Node: Number glyphs1248135
+Node: Accidental glyphs1248399
+Node: Default Notehead glyphs1248673
+Node: Special Notehead glyphs1248969
+Node: Shape-note Notehead glyphs1249274
+Node: Rest glyphs1249573
+Node: Flag glyphs1249830
+Node: Dot glyphs1250071
+Node: Dynamic glyphs1250313
+Node: Script glyphs1250565
+Node: Arrowhead glyphs1250821
+Node: Bracket-tip glyphs1251087
+Node: Pedal glyphs1251356
+Node: Accordion glyphs1251613
+Node: Tie glyphs1251870
+Node: Vaticana glyphs1252118
+Node: Medicaea glyphs1252375
+Node: Hufnagel glyphs1252637
+Node: Mensural glyphs1252899
+Node: Neomensural glyphs1253164
+Node: Petrucci glyphs1253435
+Node: Solesmes glyphs1253700
+Node: Kievan Notation glyphs1253969
+Node: Note head styles1254228
+Node: Clef styles1254548
+Node: Text markup commands1258036
+Node: Font1258547
+Node: Align1273899
+Node: Graphic1294597
+Node: Music1309348
+Node: Instrument Specific Markup1318603
+Node: Accordion Registers1328650
+Node: Other1335279
+Node: Text markup list commands1346726
+Node: List of special characters1350745
+Node: List of articulations1351440
+Node: Articulation scripts1352012
+Node: Ornament scripts1353082
+Node: Fermata scripts1354961
+Node: Instrument-specific scripts1355587
+Node: Repeat sign scripts1357144
+Node: Ancient scripts1357688
+Node: Percussion notes1358425
+Node: Technical glossary1369147
+Node: alist1369687
+Node: callback1370188
+Node: closure1370702
+Node: glyph1371461
+Node: grob1371936
+Node: immutable1372679
+Node: interface1373251
+Node: lexer1373898
+Node: mutable1374536
+Node: output-def1375055
+Node: parser1375360
+Node: parser variable1376319
+Node: prob1377313
+Node: smob1377837
+Node: stencil1378389
+Node: All context properties1379141
+Node: Layout properties1411002
+Node: Available music functions1469850
+Node: Context modification identifiers1502782
+Node: Predefined type predicates1503877
+Node: R5RS primary predicates1504257
+Node: R5RS secondary predicates1504877
+Node: Guile predicates1506176
+Node: LilyPond scheme predicates1506523
+Node: LilyPond exported predicates1508340
+Node: Scheme functions1510525
+Node: Cheat sheet1570051
+Node: GNU Free Documentation License1574608
+Node: LilyPond command index1599985
+Node: LilyPond index1723173
+
+End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

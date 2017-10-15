@@ -1,0 +1,806 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 1.1.4 Teste di nota</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 1.1.4 Teste di nota">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 1.1.4 Teste di nota">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="pitches.it.html#pitches" rel="up" title="1.1 Altezze">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="displaying-pitches.it.html#displaying-pitches" rel="previous" title="1.1.3 Aspetto delle altezze">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Teste-di-nota"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="displaying-pitches.it.html#ambitus" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Ambitus&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="pitches.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Altezze&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#special-note-heads" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Teste di nota speciali &gt; </a>]</td></tr></table>
+<a name="note-heads"></a>
+<h3 class="subsection">1.1.4 Teste di nota</h3>
+
+<p>Questa sezione suggerisce i modi in cui modificare la testa di una nota.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#special-note-heads" accesskey="1">Teste di nota speciali</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#easy-notation-note-heads" accesskey="2">Testa di nota con nome della nota</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#shape-note-heads" accesskey="3">Teste di nota a forma variabile</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#improvisation" accesskey="4">Improvvisazione</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr size="6">
+<a name="Teste-di-nota-speciali"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#note-heads" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Teste di nota&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Teste di nota&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#easy-notation-note-heads" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Testa di nota con nome della nota &gt; </a>]</td></tr></table>
+<a name="special-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Teste di nota speciali</h4>
+
+<a name="index-teste-di-nota-speciali"></a>
+<a name="index-teste-di-nota-barrate"></a>
+<a name="index-teste-di-nota-a-rombo"></a>
+<a name="index-teste-di-nota_002c-parlato"></a>
+<a name="index-teste-di-nota_002c-armonico"></a>
+<a name="index-teste-di-nota_002c-chitarra"></a>
+<a name="index-barrata_002c-testa-di-nota"></a>
+<a name="index-diamante_002c-testa-di-nota"></a>
+<a name="index-parlato_002c-testa-di-nota"></a>
+<a name="index-armonico_002c-testa-di-nota"></a>
+<a name="index-chitarra_002c-teste-di-nota"></a>
+<a name="index-teste-di-nota_002c-stili"></a>
+<a name="index-stili-delle-teste-di-nota"></a>
+
+<a name="index-cross"></a>
+<a name="index-cross-1"></a>
+
+<p>L&rsquo;aspetto delle teste delle note può essere modificato:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c4 b
+  \override NoteHead.style = #'cross
+  c4 b
+  \revert NoteHead.style
+  a b
+  \override NoteHead.style = #'harmonic
+  a b
+  \revert NoteHead.style
+  c4 d e f
+}
+</pre><p>
+ <a href="../06/lily-c7886195.ly">
+  <img align="middle"
+       border="0"
+       src="../06/lily-c7886195.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>L&rsquo;elenco di tutti gli stili per le teste di nota è in <a href="note-head-styles.it.html">Stili delle teste di nota</a>.
+</p>
+<p>Lo stile barrato (<code>cross</code>) viene usato per rappresentare varie
+intenzioni musicali.  I seguenti comandi generici predefiniti modificano
+la testa della nota nei contesti del rigo e dell&rsquo;intavolatura e possono
+essere usati per rappresentare qualsiasi significato musicale:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 b
+  \xNotesOn
+   a b c4 b
+  \xNotesOff
+  c4 d
+}
+</pre><p>
+ <a href="../ef/lily-3f541fd3.ly">
+  <img align="middle"
+       border="0"
+       src="../ef/lily-3f541fd3.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Questo comando può essere usato all&rsquo;interno e all&rsquo;esterno degli accordi per
+generare teste barrate sia nel contesto del rigo che in
+quello dell&rsquo;intavolatura:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  c''4 b
+  \xNote { e f }
+  c b &lt; g \xNote c f &gt; b
+}
+</pre><p>
+ <a href="../e6/lily-5679a976.ly">
+  <img align="middle"
+       border="0"
+       src="../e6/lily-5679a976.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Potete utilizzare, al posto di <code>\xNote</code>, <code>\xNotesOn</code> e
+<code>\xNotesOff</code>, i comandi <code>\deadNote</code>, <code>\deadNotesOn</code> e
+<code>\deadNotesOff</code>.  Il termine <var>dead note</var> è di uso comune
+tra i chitarristi.
+</p>
+<p>Esiste anche una scorciatoia simile per le forme a diamante:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  &lt;c f\harmonic&gt;2 &lt;d a'\harmonic&gt;4 &lt;c g'\harmonic&gt; f\harmonic
+}
+</pre><p>
+ <a href="../99/lily-21488db9.ly">
+  <img align="middle"
+       border="0"
+       src="../99/lily-21488db9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Comandi-predefiniti-46"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\harmonic</code>,
+<code>\xNotesOn</code>,
+<code>\xNotesOff</code>,
+<code>\xNote</code>.
+</p>
+<a name="Vedi-anche-11"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Frammenti di codice:
+<a href="../snippets/altezze.it.html">Altezze</a>.
+</p>
+<p>Guida alla notazione:
+<a href="note-head-styles.it.html">Stili delle teste di nota</a>,
+<a href="single-voice.it.html#chorded-notes">Note in un accordo</a>,
+<a href="guitar.it.html#indicating-harmonics-and-dampened-notes">Indicating harmonics and dampened notes</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-note_002devent"></a>
+<a href="../internals/note_002devent.it.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver"></a>
+<a href="../internals/note_005fheads_005fengraver.it.html">Note_heads_engraver</a>,
+<a name="index-Ledger_005fline_005fengraver"></a>
+<a href="../internals/ledger_005fline_005fengraver.it.html">Ledger_line_engraver</a>,
+<a name="index-NoteHead"></a>
+<a href="../internals/notehead.it.html">NoteHead</a>,
+<a name="index-LedgerLineSpanner"></a>
+<a href="../internals/ledgerlinespanner.it.html">LedgerLineSpanner</a>,
+<a name="index-note_002dhead_002dinterface"></a>
+<a href="../internals/note_002dhead_002dinterface.it.html">note-head-interface</a>,
+<a name="index-ledger_002dline_002dspanner_002dinterface"></a>
+<a href="../internals/ledger_002dline_002dspanner_002dinterface.it.html">ledger-line-spanner-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Testa-di-nota-con-nome-della-nota"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#special-note-heads" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Teste di nota speciali&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Teste di nota&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#shape-note-heads" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Teste di nota a forma variabile &gt; </a>]</td></tr></table>
+<a name="easy-notation-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Testa di nota con nome della nota</h4>
+
+<a name="index-teste-di-nota_002c-esercizio"></a>
+<a name="index-teste-di-nota_002c-notazione-semplificata"></a>
+<a name="index-notazione-semplificata"></a>
+<a name="index-musica-per-principianti"></a>
+<a name="index-principianti_002c-musica"></a>
+<a name="index-teste-di-nota-facili-da-suonare"></a>
+
+<a name="index-_005ceasyHeadsOn"></a>
+<a name="index-_005ceasyHeadsOn-1"></a>
+<a name="index-_005ceasyHeadsOff"></a>
+<a name="index-_005ceasyHeadsOff-1"></a>
+
+<p>La nota &lsquo;easy play&rsquo; inserisce il nome della nota dentro la testa.
+Viene usata nella musica per principianti.  Per rendere le lettere
+leggibili, occorrerebbe usare un carattere più grande.  A questo
+proposito si veda <a href="setting-the-staff-size.it.html">Impostare la dimensione del rigo</a>.
+</p>
+<blockquote><pre class="verbatim">#(set-global-staff-size 26)
+\relative c' {
+  \easyHeadsOn
+  c2 e4 f
+  g1
+  \easyHeadsOff
+  c,1
+}
+</pre><p>
+ <a href="../70/lily-9ae29520.ly">
+  <img align="middle"
+       border="0"
+       src="../70/lily-9ae29520.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Comandi-predefiniti"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\easyHeadsOn</code>,
+<code>\easyHeadsOff</code>.
+</p>
+
+<a name="Frammenti-di-codice-selezionati-34"></a>
+<h4 class="subsubheading">Frammenti di codice selezionati</h4>
+
+
+<p><em> Numeri dentro le teste di nota</em>
+</p>
+
+<p>Le teste di nota con nome della nota usano la proprietà <code>note-names</code>
+dell&rsquo;oggetto <code>NoteHead</code> per determinare cosa appaia
+all&rsquo;interno della testa.  È possibile sovrascrivere questa proprietà
+e mostrare numeri corrispondenti ai gradi della scala.
+</p>
+<p>Si può creare un semplice incisore che faccia questo per ogni
+oggetto testa di nota che incontra.
+</p>
+<blockquote><pre class="verbatim">#(define Ez_numbers_engraver
+   (make-engraver
+    (acknowledgers
+     ((note-head-interface engraver grob source-engraver)
+      (let* ((context (ly:translator-context engraver))
+	     (tonic-pitch (ly:context-property context 'tonic))
+	     (tonic-name (ly:pitch-notename tonic-pitch))
+	     (grob-pitch
+	      (ly:event-property (event-cause grob) 'pitch))
+	     (grob-name (ly:pitch-notename grob-pitch))
+	     (delta (modulo (- grob-name tonic-name) 7))
+	     (note-names
+	      (make-vector 7 (number-&gt;string (1+ delta)))))
+	(ly:grob-set-property! grob 'note-names note-names))))))
+
+#(set-global-staff-size 26)
+
+\layout {
+  ragged-right = ##t
+  \context {
+    \Voice
+    \consists \Ez_numbers_engraver
+  }
+}
+
+\relative c' {
+  \easyHeadsOn
+  c4 d e f
+  g4 a b c \break
+
+  \key a \major
+  a,4 b cis d
+  e4 fis gis a \break
+
+  \key d \dorian
+  d,4 e f g
+  a4 b c d
+}
+</pre><p>
+ <a href="../68/lily-f0be8920.ly">
+  <img align="middle"
+       border="0"
+       src="../68/lily-f0be8920.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche-138"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Guida alla notazione:
+<a href="setting-the-staff-size.it.html">Impostare la dimensione del rigo</a>.
+</p>
+<p>Frammenti di codice:
+<a href="../snippets/altezze.it.html">Altezze</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-note_002devent-1"></a>
+<a href="../internals/note_002devent.it.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver-1"></a>
+<a href="../internals/note_005fheads_005fengraver.it.html">Note_heads_engraver</a>,
+<a name="index-NoteHead-1"></a>
+<a href="../internals/notehead.it.html">NoteHead</a>,
+<a name="index-note_002dhead_002dinterface-1"></a>
+<a href="../internals/note_002dhead_002dinterface.it.html">note-head-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Teste-di-nota-a-forma-variabile"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#easy-notation-note-heads" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Testa di nota con nome della nota&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Teste di nota&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#improvisation" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Improvvisazione &gt; </a>]</td></tr></table>
+<a name="shape-note-heads"></a>
+<h4 class="unnumberedsubsubsec">Teste di nota a forma variabile</h4>
+
+<a name="index-note-a-forma-variabile"></a>
+<a name="index-testa-di-nota_002c-forma"></a>
+<a name="index-testa-di-nota_002c-Aiken"></a>
+<a name="index-Aiken_002c-testa-di-nota"></a>
+<a name="index-testa-di-nota_002c-Sacred-Harp"></a>
+<a name="index-Sacred-Harp_002c-testa-di-nota"></a>
+<a name="index-testa-di-nota_002c-Southern-Harmony"></a>
+<a name="index-Southern-Harmony_002c-testa-di-nota"></a>
+<a name="index-Funk_002c-testa-di-nota"></a>
+<a name="index-testa-di-nota_002c-Funk"></a>
+<a name="index-testa-di-nota_002c-Harmonica-Sacra"></a>
+<a name="index-Harmonica-Sacra_002c-testa-di-nota"></a>
+<a name="index-Christian-Harmony_002c-testa-di-nota"></a>
+<a name="index-testa-di-nota_002c-Christian-Harmony"></a>
+<a name="index-Walker_002c-testa-di-nota"></a>
+<a name="index-testa-di-nota_002c-Walker"></a>
+
+<a name="index-_005caikenHeads"></a>
+<a name="index-_005caikenHeads-1"></a>
+<a name="index-_005csacredHarpHeads"></a>
+<a name="index-_005csacredHarpHeads-1"></a>
+<a name="index-_005csouthernHarmonyHeads"></a>
+<a name="index-_005csouthernHarmonyHeads-1"></a>
+<a name="index-_005cfunkHeads"></a>
+<a name="index-_005cfunkHeads-1"></a>
+<a name="index-_005cwalkerHeads"></a>
+<a name="index-_005cwalkerHeads-1"></a>
+
+<p>In alcune notazioni, la forma della testa della nota corrisponde
+alla funzione armonica di una nota nella scala.  Questa notazione
+era comune nei canzonieri americani del diciannovesimo secolo.
+Gli stili possibili sono Sacred Harp, Southern Harmony,
+Funk (Harmonica Sacra), Walker e Aiken (Christian Harmony):
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  \aikenHeads
+  c, d e f g2 a b1 c \break
+  \sacredHarpHeads
+  c,4 d e f g2 a b1 c \break
+  \southernHarmonyHeads
+  c,4 d e f g2 a b1 c \break
+  \funkHeads
+  c,4 d e f g2 a b1 c \break
+  \walkerHeads
+  c,4 d e f g2 a b1 c \break
+}
+</pre><p>
+ <a href="../0c/lily-e94a7177.ly">
+  <img align="middle"
+       border="0"
+       src="../0c/lily-e94a7177.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005ckey-2"></a>
+<a name="index-_005ckey-3"></a>
+<a name="index-_005caikenHeadsMinor"></a>
+<a name="index-_005caikenHeadsMinor-1"></a>
+<a name="index-_005csacredHarpHeadsMinor"></a>
+<a name="index-_005csacredHarpHeadsMinor-1"></a>
+<a name="index-_005csouthernHarmonyHeadsMinor"></a>
+<a name="index-_005csouthernHarmonyHeadsMinor-1"></a>
+<a name="index-_005cfunkHeadsMinor"></a>
+<a name="index-_005cfunkHeadsMinor-1"></a>
+<a name="index-_005cwalkerHeadsMinor"></a>
+<a name="index-_005cwalkerHeadsMinor-1"></a>
+
+<p>Le forme variano in base al grado della scala; la
+scala è determinata dal comando <code>\key</code>.  Se si scrive in
+tonalità minore, il grado della scala può essere determinato
+in base alla relativa maggiore:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  \key a \minor
+  \aikenHeads
+  a b c d e2 f g1 a \break
+  \aikenHeadsMinor
+  a,4 b c d e2 f g1 a \break
+  \sacredHarpHeadsMinor
+  a,2 b c d \break
+  \southernHarmonyHeadsMinor
+  a2 b c d \break
+  \funkHeadsMinor
+  a2 b c d \break
+  \walkerHeadsMinor
+  a2 b c d \break
+}
+</pre><p>
+ <a href="../13/lily-3ac4afc8.ly">
+  <img align="middle"
+       border="0"
+       src="../13/lily-3ac4afc8.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<a name="Comandi-predefiniti-29"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\aikenHeads</code>,
+<code>\aikenHeadsMinor</code>,
+<code>\funkHeads</code>,
+<code>\funkHeadsMinor</code>,
+<code>\sacredHarpHeads</code>,
+<code>\sacredHarpHeadsMinor</code>,
+<code>\southernHarmonyHeads</code>,
+<code>\southernHarmonyHeadsMinor</code>,
+<code>\walkerHeads</code>,
+<code>\walkerHeadsMinor</code>.
+</p>
+
+<a name="Frammenti-di-codice-selezionati-54"></a>
+<h4 class="subsubheading">Frammenti di codice selezionati</h4>
+
+
+<p><em> Applicazione degli stili delle teste di nota in base al grado della scala</em>
+</p>
+
+<p>La proprietà <code>shapeNoteStyles</code> può essere usata per definire vari
+stili di teste di nota per ogni grado della scala (definita dall&rsquo;armatura
+di chiave o dalla proprietà <code>tonic</code>). Questa proprietà richiede un
+insieme di simboli, che può essere puramente arbitrario (sono permesse
+espressioni geometriche come <code>triangle</code>, <code>cross</code> e <code>xcircle</code>)
+o basato sull&rsquo;antica tradizione tipografica americana (sono consentiti
+anche alcuni nomi di nota latini).
+</p>
+<p>Detto questo, per imitare gli antichi canzionieri americani, ci sono vari
+stili predefiniti disponibili attraverso dei comodi comandi come
+<code>\aikenHeads</code> o <code>\sacredHarpHeads</code>.
+</p>
+<p>Questo esempio mostra modi diversi di ottenere teste di nota di varie
+forme e illustra la possibilità di trasporre una melodia senza
+perdere la corrispondenza tra le funzioni armoniche e gli stili delle
+teste.
+</p>
+
+<blockquote><pre class="verbatim">fragment = {
+  \key c \major
+  c2 d
+  e2 f
+  g2 a
+  b2 c
+}
+
+\new Staff {
+  \transpose c d
+  \relative c' {
+    \set shapeNoteStyles = ##(do re mi fa
+                               #f la ti)
+    \fragment
+  }
+
+  \break
+
+  \relative c' {
+    \set shapeNoteStyles = ##(cross triangle fa #f
+                               mensural xcircle diamond)
+    \fragment
+  }
+}
+</pre><p>
+ <a href="../0d/lily-374eb465.ly">
+  <img align="middle"
+       border="0"
+       src="../0d/lily-374eb465.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La lista completa di tutti gli stili delle teste si trova in <a href="note-head-styles.it.html">Stili delle teste di nota</a>.
+</p>
+<a name="Vedi-anche-175"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Frammenti di codice:
+<a href="../snippets/altezze.it.html">Altezze</a>.
+</p>
+<p>Guida alla notazione:
+<a href="note-head-styles.it.html">Stili delle teste di nota</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-note_002devent-2"></a>
+<a href="../internals/note_002devent.it.html">note-event</a>,
+<a name="index-Note_005fheads_005fengraver-2"></a>
+<a href="../internals/note_005fheads_005fengraver.it.html">Note_heads_engraver</a>,
+<a name="index-NoteHead-2"></a>
+<a href="../internals/notehead.it.html">NoteHead</a>,
+<a name="index-note_002dhead_002dinterface-2"></a>
+<a href="../internals/note_002dhead_002dinterface.it.html">note-head-interface</a>.
+</p>
+
+<hr size="6">
+<a name="Improvvisazione"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#shape-note-heads" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Teste di nota a forma variabile&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Teste di nota&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="rhythms.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Ritmi &gt; </a>]</td></tr></table>
+<a name="improvisation"></a>
+<h4 class="unnumberedsubsubsec">Improvvisazione</h4>
+
+<a name="index-improvvisazione"></a>
+<a name="index-testa-di-nota-tagliata"></a>
+<a name="index-testa-di-nota_002c-improvvisazione"></a>
+<a name="index-tagliata_002c-testa-di-nota"></a>
+
+<a name="index-_005cimprovisationOn"></a>
+<a name="index-_005cimprovisationOn-1"></a>
+<a name="index-_005cimprovisationOff"></a>
+<a name="index-_005cimprovisationOff-1"></a>
+
+<p>L&rsquo;improvvisazione viene talvolta indicata con teste tagliate:
+l&rsquo;esecutore può scegliere qualsiasi nota ma deve seguire il ritmo
+indicato.  Si possono creare queste teste:
+</p>
+<blockquote><pre class="verbatim">\new Voice \with {
+  \consists &quot;Pitch_squash_engraver&quot;
+} \relative {
+  e''8 e g a a16( bes) a8 g
+  \improvisationOn
+  e8 ~
+  2 ~ 8 f4 f8 ~
+  2
+  \improvisationOff
+  a16( bes) a8 g e
+}
+</pre><p>
+ <a href="../3b/lily-25cb0b78.ly">
+  <img align="middle"
+       border="0"
+       src="../3b/lily-25cb0b78.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Comandi-predefiniti-50"></a>
+<h4 class="subsubheading">Comandi predefiniti</h4>
+<p><code>\improvisationOn</code>,
+<code>\improvisationOff</code>.
+</p>
+<a name="Vedi-anche-51"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Frammenti di codice:
+<a href="../snippets/altezze.it.html">Altezze</a>.
+</p>
+<p>Guida al funzionamento interno:
+<a name="index-Pitch_005fsquash_005fengraver"></a>
+<a href="../internals/pitch_005fsquash_005fengraver.it.html">Pitch_squash_engraver</a>,
+<a name="index-Voice-1"></a>
+<a href="../internals/voice.it.html">Voice</a>,
+<a name="index-RhythmicStaff"></a>
+<a href="../internals/rhythmicstaff.it.html">RhythmicStaff</a>.
+</p>
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Notazione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.it.html" title="Capitolo successivo">&nbsp;Notazione specialistica &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#shape-note-heads" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Teste di nota a forma variabile&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#note-heads" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Teste di nota&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="rhythms.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Ritmi &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="note-heads.html">English</a>, <a href="note-heads.ca.html">català</a>, <a href="note-heads.de.html">deutsch</a>, <a href="note-heads.es.html">español</a>, <a href="note-heads.fr.html">français</a>, <a href="note-heads.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Inserimento-delle-altezze-1" href="writing-pitches.it.html">1.1.1 Inserimento delle altezze</a>      </li>
+      <li class=""><a name="toc-Modifica-di-piu-altezze" href="changing-multiple-pitches.it.html">1.1.2 Modifica di più altezze</a>      </li>
+      <li class=""><a name="toc-Aspetto-delle-altezze-1" href="displaying-pitches.it.html">1.1.3 Aspetto delle altezze</a>      </li>
+      <li class=" toc_current"><a name="toc-Teste-di-nota-1" href="note-heads.it.html">1.1.4 Teste di nota</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Teste-di-nota-speciali-1" href="note-heads.it.html#special-note-heads">Teste di nota speciali</a>        </li>
+        <li class=""><a name="toc-Testa-di-nota-con-nome-della-nota-1" href="note-heads.it.html#easy-notation-note-heads">Testa di nota con nome della nota</a>        </li>
+        <li class=""><a name="toc-Teste-di-nota-a-forma-variabile-1" href="note-heads.it.html#shape-note-heads">Teste di nota a forma variabile</a>        </li>
+        <li class=""><a name="toc-Improvvisazione-1" href="note-heads.it.html#improvisation">Improvvisazione</a>        </li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage{graphics}
+\begin{document}
+Including a MusicXML file with options:
+{%
+\parindent 0pt
+\noindent
+\ifx\preLilyPondExample \undefined
+\else
+  \expandafter\preLilyPondExample
+\fi
+\def\lilypondbook{}%
+\input{45/lily-3dc95360-systems.tex}
+\ifx\postLilyPondExample \undefined
+\else
+  \expandafter\postLilyPondExample
+\fi
+}
+\end{document}

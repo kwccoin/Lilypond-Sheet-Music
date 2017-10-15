@@ -1,0 +1,1456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 pels autors.
+
+La traducció de la següent nota de copyright s'ofereix com a
+cortesia per a les persones de parla no anglesa, però únicament la
+nota en anglès té validesa legal.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+S'atorga permís per copiar, distribuir i/o modificar aquest
+document sota els termes de la Llicència de Documentació Lliure de
+GNU, versió 1.1 o qualsevol posterior publicada per la Free
+Software Foundation; sense cap de les seccions invariants.
+S'inclou una còpia d'aquesta llicència dins de la secció titulada
+"Llicència de Documentació Lliure de GNU".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agost 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Referència de la notació del GNU LilyPond: 1.2.5 Compassos</title>
+
+<meta name="description" content="Referència de la notació del GNU LilyPond: 1.2.5 Compassos">
+<meta name="keywords" content="Referència de la notació del GNU LilyPond: 1.2.5 Compassos">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.ca.html#index" rel="start" title="LilyPond &mdash; Referència de la notació">
+<link href="lilypond-command-index.ca.html#lilypond-command-index" rel="index" title="D. Índex d'ordres del LilyPond">
+<link href="index_toc.ca.html#SEC_Contents" rel="contents" title="Taula de contingus">
+<link href="index_abt.ca.html#SEC_About" rel="help" title="Quant a aquest document">
+<link href="rhythms.ca.html#rhythms" rel="up" title="1.2 Duracions">
+<link href="lilypond-index.ca.html#lilypond-index" rel="next" title="E. Índex del LilyPond">
+<link href="beams.ca.html#beams" rel="previous" title="1.2.4 Barres">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="ca" class="notation devStatus">
+
+
+<div id="main">
+<a name="Compassos"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="beams.ca.html#feathered-beams" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Barres progressives&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="rhythms.ca.html" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Duracions&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#bar-lines" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Barres de compàs &gt; </a>]</td></tr></table>
+<a name="bars"></a>
+<h3 class="subsection">1.2.5 Compassos</h3>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#bar-lines" accesskey="1">Barres de compàs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#bar-numbers" accesskey="2">Numeració de compassos</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#bar-and-bar-number-checks" accesskey="3">Comprovació de compàs i de número de compàs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#rehearsal-marks" accesskey="4">Marques d&rsquo;assaig</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Barres-de-comp_00e0s"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#bars" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Compassos&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#bars" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Compassos&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#bar-numbers" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Numeració de compassos &gt; </a>]</td></tr></table>
+<a name="bar-lines"></a>
+<h4 class="unnumberedsubsubsec">Barres de compàs</h4>
+
+<a name="index-barres-de-compas"></a>
+<a name="index-linies-divisories"></a>
+<a name="index-final_002c-barra"></a>
+<a name="index-barra-final"></a>
+<a name="index-doble-barra"></a>
+<a name="index-barra-doble"></a>
+<a name="index-repeticio_002c-barres-de"></a>
+
+<a name="index-_005cbar"></a>
+<a name="index-_005cbar-1"></a>
+
+<p>Les línies divisòries delimiten als compassos però també es poden
+usar per indicar les repeticions.  Normalment, les línies
+divisòries normals s&rsquo;insereixen de manera automàtica a la sortida
+impresa a llocs que estan basats en el compàs actual.
+</p>
+<p>Les barres de compàs senzilles inserides automàticament es poden
+canviar per altres tipus d&rsquo;ordre <code>\bar</code>.  Per exemple, se sol
+posar una doble barra de tancament al final de la peça:
+</p>
+<blockquote><pre class="verbatim">\relative { e'4 d c2 \bar &quot;|.&quot; }
+</pre><p>
+ <a href="../33/lily-78aa98d7.ly">
+  <img align="middle"
+       border="0"
+       src="../33/lily-78aa98d7.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>No deixa de ser vàlida l&rsquo;última nota d&rsquo;un compàs si no acaba sobre
+la línia divisòria automàtica: se suposa que la nota es perllonga
+sobre el compàs següent.  Però una seqüència llarga de aquests
+compassos perllongats pot fer que la música aparegui comprimida o
+fins i tot que se surti de la pàgina.  Això és a causa de què els
+salts de línia automàtics solament es produeixen al final de
+compassos complets, és a dir, quan totes les notes han finalitzat
+abans que el compàs acabi.
+</p>
+<div class="warning"><p><strong>Nota:</strong> Una duració incorrecta pot fer que s&rsquo;intenti evitar la
+producció de salts de línia, donant com a resultat una línia de
+música amb una compressió exagerada o música que se surt de la
+pàgina.
+</p>
+</div>
+<a name="index-linia_002c-salts"></a>
+<a name="index-linies-divisories-invisibles"></a>
+<a name="index-compas_002c-barres-invisibles-de"></a>
+
+<p>També es permeten salts de línia en les barres inserides
+manualment fins i tot dins de compassos incomplets.  Per permetre
+un salt de línia on no hi ha cap línia divisòria visible.
+Utilitzeu el següent:
+</p>
+<blockquote><pre class="example">\bar &quot;&quot;
+</pre></blockquote>
+
+<p>D&rsquo;aquesta manera s&rsquo;inserira una barra invisible de compàs i es
+farà possible el salt de línia a aquest punt, sense forçar-lo. No
+s&rsquo;incrementa el comptador dels números de compàs.  Per forçar un
+salt de línia, consulteu <a name="index-Line-breaking"></a>
+<a href="../notation/line-breaking.ca.html">Salts de línia</a>.
+</p>
+<a name="index-manuals_002c-linies-divisories"></a>
+<a name="index-manuals_002c-barres-de-compas"></a>
+<a name="index-barres-de-compas-manuals"></a>
+<a name="index-linies-divisories-manuals"></a>
+
+<p>Aquesta i altres línies divisòries especials es poden inserir
+manualment en qualsevol punt.  Quan coincideixen amb el final d&rsquo;un
+compàs, substitueixen a la línia divisòria simple que s&rsquo;hauria
+inserit automàticament en aquest lloc.  Quan no coincideixen amb
+el final d&rsquo;un compàs, s&rsquo;insereix la línia especificada en aquest
+punt de la sortida impresa.
+</p>
+<p>Observeu que les línies divisòries manuals són purament visuals.
+No afecten a cap de les propietats que una barra normal afectaria,
+com als números de compàs, alteracions, salts de línia, etc.  No
+afecten tampoc el càlcul i col·locació de les línies divisòries
+subsegüents.  Quan una divisòria es col·loca manualment on ja hi
+ha una divisòria normal, els efectes de la línia original no
+s&rsquo;alteren.
+</p>
+<p>Estan disponibles per a la seva inserció manual dos tipus de
+línies divisòries simples i cinc tipus de doble barra:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f'1 \bar &quot;|&quot;
+  f1 \bar &quot;.&quot;
+  g1 \bar &quot;||&quot;
+  a1 \bar &quot;.|&quot;
+  b1 \bar &quot;..&quot;
+  c1 \bar &quot;|.|&quot;
+  d1 \bar &quot;|.&quot;
+  e1
+}
+</pre><p>
+ <a href="../9f/lily-84412ea9.ly">
+  <img align="middle"
+       border="0"
+       src="../9f/lily-84412ea9.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>així com la barra de punts i la discontínua:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f'1 \bar &quot;;&quot;
+  g1 \bar &quot;!&quot;
+  a1
+}
+</pre><p>
+ <a href="../6a/lily-9b54cd8e.ly">
+  <img align="middle"
+       border="0"
+       src="../6a/lily-9b54cd8e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>i nou tipus de barres de repetició:
+</p>
+<blockquote><pre class="verbatim">\relative {
+  f'1 \bar &quot;.|:&quot;
+  g1 \bar &quot;:..:&quot;
+  a1 \bar &quot;:|.|:&quot;
+  b1 \bar &quot;:|.:&quot;
+  c1 \bar &quot;:.|.:&quot;
+  d1 \bar &quot;[|:&quot;
+  e1 \bar &quot;:|][|:&quot;
+  f1 \bar &quot;:|]&quot;
+  g1 \bar &quot;:|.&quot;
+  a1
+}
+</pre><p>
+ <a href="../fc/lily-a69ef665.ly">
+  <img align="middle"
+       border="0"
+       src="../fc/lily-a69ef665.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A més es pot imprimir una línia divisòria com una marca curta:
+</p>
+<blockquote><pre class="verbatim">f'1 \bar &quot;'&quot; g'1
+</pre><p>
+ <a href="../9e/lily-7aaecdb0.ly">
+  <img align="middle"
+       border="0"
+       src="../9e/lily-7aaecdb0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Malgrat això, donat que les mencionades marques s&rsquo;utilitzen
+usualment al cant gregorià, és preferible en aquest cas utilitzar
+<code>\divisioMinima</code>, que es descriu en la secció
+<a name="index-Divisiones"></a>
+<a href="../notation/typesetting-gregorian-chant.ca.html#divisiones">Divisiones</a> dins de cant gregorià:
+</p>
+<p>El LilyPond contempla la notació del cant kievà i ofereix una
+línia divisòria especial kievana:
+</p>
+<blockquote><pre class="verbatim">f'1 \bar &quot;k&quot;
+</pre><p>
+ <a href="../ea/lily-e101a44b.ly">
+  <img align="middle"
+       border="0"
+       src="../ea/lily-e101a44b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Poden veure&rsquo;s detalls d&rsquo;aquest notació explicats a
+<a name="index-Typesetting-Kievan-square-notation"></a>
+<a href="../notation/typesetting-kievan-square-notation.ca.html">Gravat del cant kievà en notació quadrada</a>.
+</p>
+<a name="index-segno"></a>
+
+<p>Per als símbols de segno en línia, hi ha tres tipus de barres de
+compàs que es diferencien en el seu comportament respecte als
+salts de línia:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c4 c c c
+  \bar &quot;S&quot;
+  c4 c c c \break
+  \bar &quot;S&quot;
+  c4 c c c
+  \bar &quot;S-|&quot;
+  c4 c c c \break
+  \bar &quot;S-|&quot;
+  c4 c c c
+  \bar &quot;S-S&quot;
+  c4 c c c \break
+  \bar &quot;S-S&quot;
+  c1
+}
+</pre><p>
+ <a href="../f4/lily-9f26cf08.ly">
+  <img align="middle"
+       border="0"
+       src="../f4/lily-9f26cf08.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-repeticions"></a>
+
+<p>Tot i que es poden inserir manualment barres de compàs amb
+significat de repeticions, no es reconeixen com repeticions per
+part del LilyPond.  Les seccions repetides s&rsquo;introdueixen millor
+utilitzant les diverses ordres de repetició (vegeu
+<a href="repeats.ca.html">Repeticions</a>), que imprimeixen automàticament
+les barres corresponents.
+</p>
+<p>A més es pot especificar <code>&quot;.|:-||&quot;</code>, que equival a
+<code>&quot;.|:&quot;</code> excepte al salts de línia, en el qual es produeix una
+doble barra al final de la línia i una repetició esquerra (de
+començament) al principio de la línia següent.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c4 c c c
+  \bar &quot;.|:-||&quot;
+  c4 c c c \break
+  \bar &quot;.|:-||&quot;
+  c4 c c c
+}
+</pre><p>
+ <a href="../6b/lily-fcce872f.ly">
+  <img align="middle"
+       border="0"
+       src="../6b/lily-fcce872f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Per a combinacions de repeticions amb el símbol de segno, hi ha
+sis variants diferents:
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c4 c c c
+  \bar &quot;:|.S&quot;
+  c4 c c c \break
+  \bar &quot;:|.S&quot;
+  c4 c c c
+  \bar &quot;:|.S-S&quot;
+  c4 c c c \break
+  \bar &quot;:|.S-S&quot;
+  c4 c c c
+  \bar &quot;S.|:-S&quot;
+  c4 c c c \break
+  \bar &quot;S.|:-S&quot;
+  c4 c c c
+  \bar &quot;S.|:&quot;
+  c4 c c c \break
+  \bar &quot;S.|:&quot;
+  c4 c c c
+  \bar &quot;:|.S.|:&quot;
+  c4 c c c \break
+  \bar &quot;:|.S.|:&quot;
+  c4 c c c
+  \bar &quot;:|.S.|:-S&quot;
+  c4 c c c \break
+  \bar &quot;:|.S.|:-S&quot;
+  c1
+}
+</pre><p>
+ <a href="../59/lily-afeb0b34.ly">
+  <img align="middle"
+       border="0"
+       src="../59/lily-afeb0b34.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A més, hi ha una ordre <code>\inStaffSegno</code> que crea una barra de
+compàs amb símbol de segno, situada en conjunció amb una línia de
+repetició adequada si s&rsquo;utilitza amb una ordre <code>\repeat
+volta</code>, vegeu <a href="long-repeats.ca.html#normal-repeats">Repeticions normals</a>.
+</p>
+<a name="index-_005cdefineBarLine"></a>
+<a name="index-_005cdefineBarLine-1"></a>
+<a name="index-compas_002c-definir-linies-de"></a>
+<a name="index-definir-linies-de-compas"></a>
+
+<p>Es poden definir tipus nous de línies divisòries amb
+<code>\defineBarLine</code>:
+</p>
+<blockquote><pre class="example">\defineBarLine <var>tipus_de_barra</var> #'(<var>final</var> <var>començament</var> <var>extensió</var>)
+</pre></blockquote>
+
+<p>Les variables de <code>\defineBarline</code> poden incloure la cadena de
+caràcters &lsquo;buida&rsquo; <code>&quot;&quot;</code>, que equival a imprimir una línia
+divisòria invisible.  També es pot establir al valor fals<code>#f</code>
+que no imprimeix cap línia divisòria.
+</p>
+<p>Després de la definició, la nova línia divisòria es pot utilitzar
+mitjançant <code>\bar</code> <var>tipus_de_barra</var>.
+</p>
+<p>Actualment hi ha disponibles deu elements de barra de compàs:
+</p>
+<blockquote><pre class="verbatim">\defineBarLine &quot;:&quot; #'(&quot;&quot; &quot;:&quot; &quot;&quot;)
+\defineBarLine &quot;=&quot; #'(&quot;=&quot; &quot;&quot; &quot;&quot;)
+\defineBarLine &quot;[&quot; #'(&quot;&quot; &quot;[&quot; &quot;&quot;)
+\defineBarLine &quot;]&quot; #'(&quot;]&quot; &quot;&quot; &quot;&quot;)
+
+\new Staff {
+  s1 \bar &quot;|&quot;
+  s1 \bar &quot;.&quot;
+  s1 \bar &quot;!&quot;
+  s1 \bar &quot;;&quot;
+  s1 \bar &quot;:&quot;
+  s1 \bar &quot;k&quot;
+  s1 \bar &quot;S&quot;
+  s1 \bar &quot;=&quot;
+  s1 \bar &quot;[&quot;
+  s1 \bar &quot;]&quot;
+  s1 \bar &quot;&quot;
+}
+</pre><p>
+ <a href="../d8/lily-6aff6372.ly">
+  <img align="middle"
+       border="0"
+       src="../d8/lily-6aff6372.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La línia divisòria <code>&quot;=&quot;</code> proporciona la barra de doble
+extensió, usada en combinació amb el símbol de segno.  No l&rsquo;heu
+d&rsquo;usar com una doble línia divisòria fina aïllada; per això es
+preferible <code>\bar</code> <var>&quot;||&quot;</var>.
+</p>
+<p>El signe <code>&quot;-&quot;</code> inicia anotacions a les barres de compàs, que
+són útils per distingir entre aquelles que tenen idèntica aparença
+però diferent comportament als salts de línia i/o diferents barres
+d&rsquo;extensió.  La part que segueix al signe <code>&quot;-&quot;</code> no s&rsquo;usa per
+construir la barra de compàs.
+</p>
+<blockquote><pre class="verbatim">\defineBarLine &quot;||-dashedSpan&quot; #'(&quot;||&quot; &quot;&quot; &quot;!!&quot;)
+
+\new StaffGroup &lt;&lt;
+  \new Staff \relative c'' {
+    c1 \bar &quot;||&quot;
+    c1 \bar &quot;||-dashedSpan&quot;
+    c1
+  }
+  \new Staff \relative c'' {
+    c1
+    c1
+    c1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../ea/lily-d69d6cae.ly">
+  <img align="middle"
+       border="0"
+       src="../ea/lily-d69d6cae.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A més, el caràcter de l&rsquo;espai en blanc <code>&quot; &quot;</code> serveix com a
+contenidor per definir barres d&rsquo;extensió correctament alineats a
+les barres principals:
+</p>
+<blockquote><pre class="verbatim">\defineBarLine &quot;:|.-wrong&quot; #'(&quot;:|.&quot; &quot;&quot; &quot;|.&quot;)
+\defineBarLine &quot;:|.-right&quot; #'(&quot;:|.&quot; &quot;&quot; &quot; |.&quot;)
+
+\new StaffGroup &lt;&lt;
+  \new Staff \relative c'' {
+    c1 \bar &quot;:|.-wrong&quot;
+    c1 \bar &quot;:|.-right&quot;
+    c1
+  }
+  \new Staff \relative c'' {
+    c1
+    c1
+    c1
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../76/lily-eb2e1f96.ly">
+  <img align="middle"
+       border="0"
+       src="../76/lily-eb2e1f96.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Si calen elements addicionals, el LilyPond proveeix una forma
+senzilla de definir-los.  Per veure més informació sobre com
+modificar o afegir barres de compàs, consulteu el fitxer
+&lsquo;<tt>scm/bar-line.scm</tt>&rsquo;.
+</p>
+<p>En les partitures amb molts pentagrames, una ordre<code>\bar</code> a un
+d&rsquo;ells s&rsquo;aplica automàticament a tots els altres.  Les línies
+resultants es connecten entre els diferents pentagrames d&rsquo;un
+<code>StaffGroup</code>, <code>PianoStaff</code> o <code>GrandStaff</code>.
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new StaffGroup &lt;&lt;
+    \new Staff \relative {
+      e'4 d
+      \bar &quot;||&quot;
+      f4 e
+    }
+    \new Staff \relative { \clef bass c'4 g e g }
+  &gt;&gt;
+  \new Staff \relative { \clef bass c'2 c2 }
+&gt;&gt;
+</pre><p>
+ <a href="../a4/lily-ace15942.ly">
+  <img align="middle"
+       border="0"
+       src="../a4/lily-ace15942.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-predeterminada_002c-linia-divisoria_002c-canviar"></a>
+<a name="index-linia-divisoria-predeterminada_002c-canviar"></a>
+
+<a name="index-whichBar"></a>
+<a name="index-whichBar-1"></a>
+<a name="index-defaultBarType"></a>
+<a name="index-defaultBarType-1"></a>
+<a name="index-_005cbar-2"></a>
+<a name="index-_005cbar-3"></a>
+<a name="index-bartype"></a>
+<a name="index-bartype-1"></a>
+
+<p>L&rsquo;ordre &lsquo;<samp>\bar <var>tipus de barra</var></samp>&rsquo; és forma curta de fer
+&lsquo;<samp>\set Timing.whichBar = <var>tipo de barra</var></samp>&rsquo;.  Quan
+s&rsquo;estableix  <code>whichBar</code> amb el valor d&rsquo;una cadena de
+caràcters, es crea una línia divisòria d&rsquo;aquest tipus.
+</p>
+<p>El tipus de barra predeterminat que s&rsquo;usa per a les línies
+divisòries inserides automàticament és <code>&quot;|&quot;</code>.  Es pot canviar
+en qualsevol moment amb &lsquo;<samp>\set Timing.defaultBarType
+= <var>tipus de barra</var></samp>&rsquo;.
+</p>
+<a name="Vegeu-tambe-28"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-Line-breaking-1"></a>
+<a href="../notation/line-breaking.ca.html">Salts de línia</a>,
+<a href="repeats.ca.html">Repeticions</a>,
+<a href="displaying-staves.ca.html#grouping-staves">Agrupament de pentagrames</a>.
+</p>
+<p>Fitxers instal·lats:
+&lsquo;<tt>scm/bar-line.scm</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<p>Referència de funcionament interno:
+<a name="index-BarLine"></a>
+<a href="../internals/barline.ca.html">BarLine</a> (creada al nivell de <code>Staff</code> (pentagrama)),
+<a name="index-SpanBar"></a>
+<a href="../internals/spanbar.ca.html">SpanBar</a> (a través dels pentagrames),
+<a name="index-Timing_005ftranslator-3"></a>
+<a href="../internals/timing_005ftranslator.ca.html">Timing_translator</a> (per a les propietats del comptador de temps Timing).
+</p>
+
+<hr size="6">
+<a name="Numeraci_00f3-de-compassos"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#bar-lines" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Barres de compàs&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#bars" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Compassos&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#bar-and-bar-number-checks" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Comprovació de compàs i de número de compàs &gt; </a>]</td></tr></table>
+<a name="bar-numbers"></a>
+<h4 class="unnumberedsubsubsec">Numeració de compassos</h4>
+
+<a name="index-compas_002c-numeros-de"></a>
+<a name="index-numeros-de-compas"></a>
+
+<a name="index-currentBarNumber"></a>
+<a name="index-currentBarNumber-1"></a>
+
+<p>Per defecte, els números de compàs s&rsquo;imprimeixen al principi de la
+línia, excepte la primera.  El número pròpiament dit s&rsquo;emmagatzema
+a la propietat <code>currentBarNumber</code>, que normalment
+s&rsquo;actualitza automàticament per a cada compàs.  També es pot
+establir manualment:
+</p>
+<blockquote><pre class="verbatim">\relative c' {
+  c1 c c c
+  \break
+  \set Score.currentBarNumber = #50
+  c1 c c c
+}
+</pre><p>
+ <a href="../08/lily-afaa022a.ly">
+  <img align="middle"
+       border="0"
+       src="../08/lily-afaa022a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-numeros-de-compas_002c-espaiat-regular"></a>
+
+<a name="index-barNumberVisibility"></a>
+<a name="index-barNumberVisibility-1"></a>
+<a name="index-BarNumber"></a>
+<a name="index-BarNumber-1"></a>
+
+<p>Els números de compàs es poden gravar a intervals regulars en
+comptes de al principi de cada línia.  Per fer-lo, s&rsquo;ha de
+sobreescriure el comportament predeterminat de forma que es puguin
+imprimir en altres llocs.  Això ve controlat per la propietat
+<code>break-visibility</code> de <code>BarNumber</code>.  Agafa tres valors
+que es poden establir al valor <code>#t</code> o <code>#f</code> per
+especificar si el número de compàs corresponent és visible o no.
+L&rsquo;ordre dels tres valors és <code>visible al final de la línia</code>,
+<code>visible a la meitat de la línia</code>, o <code>visible al
+principi de la línia</code>. A l&rsquo;exemple següent s&rsquo;imprimeixen els
+números de compàs en tots els llocs possibles:
+</p>
+<blockquote><pre class="verbatim">\relative c' {
+  \override Score.BarNumber.break-visibility = ##(#t #t #t)
+  \set Score.currentBarNumber = #11
+  % Permet que s'imprimeixi el número del primer compàs
+  \bar &quot;&quot;
+  c1 | c | c | c |
+  \break
+  c1 | c | c | c |
+}
+</pre><p>
+ <a href="../d2/lily-31decc26.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-31decc26.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Fragments-de-codi-seleccionats-50"></a>
+<h4 class="subsubheading">Fragments de codi seleccionats</h4>
+
+<p><em> Printing the bar number for the first measure</em>
+</p>
+
+<p>By default, the first bar number in a score is suppressed if it is less
+than or equal to &lsquo;1&rsquo;.  By setting <code>barNumberVisibility</code> to
+<code>all-bar-numbers-visible</code>, any bar number can be printed for the
+first measure and all subsequent measures.  Note that an empty bar line
+must be inserted before the first note for this to work.
+</p>
+
+<blockquote><pre class="verbatim">\layout {
+  indent = 0
+  ragged-right = ##t
+}
+
+\relative c' {
+  \set Score.barNumberVisibility = #all-bar-numbers-visible
+  \bar &quot;&quot;
+  c1 | d | e | f \break
+  g1 | e | d | c
+}
+</pre><p>
+ <a href="../ad/lily-527f7481.ly">
+  <img align="middle"
+       border="0"
+       src="../ad/lily-527f7481.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Printing bar numbers at regular intervals</em>
+</p>
+
+<p>Bar numbers can be printed at regular intervals by setting the property
+<code>barNumberVisibility</code>. Here the bar numbers are printed every two
+measures except at the end of the line.
+</p>
+
+<blockquote><pre class="verbatim">\relative c' {
+  \override Score.BarNumber.break-visibility = #end-of-line-invisible
+  \set Score.currentBarNumber = #11
+  % Permit first bar number to be printed
+  \bar &quot;&quot;
+  % Print a bar number every second measure
+  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 2)
+  c1 | c | c | c | c
+  \break
+  c1 | c | c | c | c
+}
+</pre><p>
+ <a href="../25/lily-572e320e.ly">
+  <img align="middle"
+       border="0"
+       src="../25/lily-572e320e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Printing bar numbers with changing regular intervals</em>
+</p>
+
+<p>The bar number interval can be changed by changing the context function
+<code>{set-bar-number-visibility}</code>.
+</p>
+
+<blockquote><pre class="verbatim">\relative c' {
+  \override Score.BarNumber.break-visibility = #end-of-line-invisible
+  \context Score \applyContext #(set-bar-number-visibility 4)
+  \repeat unfold 10 c'1
+  \context Score \applyContext #(set-bar-number-visibility 2)
+  \repeat unfold 10 c
+}
+</pre><p>
+ <a href="../96/lily-4ba74002.ly">
+  <img align="middle"
+       border="0"
+       src="../96/lily-4ba74002.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-compas_002c-numero-de_002c-format"></a>
+<a name="index-numero-de-compassos_002c-format-de"></a>
+
+
+<p><em> Printing bar numbers inside boxes or circles</em>
+</p>
+
+<p>Bar numbers can also be printed inside boxes or circles.
+</p>
+
+<blockquote><pre class="verbatim">\relative c' {
+  % Prevent bar numbers at the end of a line and permit them elsewhere
+  \override Score.BarNumber.break-visibility = #end-of-line-invisible
+  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 4)
+
+  % Increase the size of the bar number by 2
+  \override Score.BarNumber.font-size = #2
+
+  % Draw a box round the following bar number(s)
+  \override Score.BarNumber.stencil
+    = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
+  \repeat unfold 5 { c1 }
+
+  % Draw a circle round the following bar number(s)
+  \override Score.BarNumber.stencil
+    = #(make-stencil-circler 0.1 0.25 ly:text-interface::print)
+  \repeat unfold 4 { c1 } \bar &quot;|.&quot;
+}
+</pre><p>
+ <a href="../14/lily-9aa226a0.ly">
+  <img align="middle"
+       border="0"
+       src="../14/lily-9aa226a0.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-compas_002c-numero_002c-amb-lletres"></a>
+<a name="index-compas_002c-numero_002c-amb-repeticions"></a>
+
+
+<p><em> Alternative bar numbering</em>
+</p>
+
+<p>Two alternative methods for bar numbering can be set, especially for
+when using repeated music.
+</p>
+
+<blockquote><pre class="verbatim">\relative c'{
+  \set Score.alternativeNumberingStyle = #'numbers
+  \repeat volta 3 { c4 d e f | }
+    \alternative {
+      { c4 d e f | c2 d \break }
+      { f4 g a b | f4 g a b | f2 a | \break }
+      { c4 d e f | c2 d }
+    }
+  c1 \break
+  \set Score.alternativeNumberingStyle = #'numbers-with-letters
+  \repeat volta 3 { c,4 d e f | }
+    \alternative {
+      { c4 d e f | c2 d \break }
+      { f4 g a b | f4 g a b | f2 a | \break }
+      { c4 d e f | c2 d }
+    }
+  c1
+}
+</pre><p>
+ <a href="../22/lily-6e4a2455.ly">
+  <img align="middle"
+       border="0"
+       src="../22/lily-6e4a2455.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-compas_002c-numero_002c-alineacio"></a>
+
+
+<p><em> Aligning bar numbers</em>
+</p>
+
+<p>Bar numbers by default are right-aligned to their parent object. This
+is usually the left edge of a line or, if numbers are printed within a
+line, the left hand side of a bar line.  The numbers may also be
+positioned directly over the bar line or left-aligned to the bar line.
+</p>
+
+<blockquote><pre class="verbatim">\relative c' {
+  \set Score.currentBarNumber = #111
+  \override Score.BarNumber.break-visibility = #all-visible
+  % Increase the size of the bar number by 2
+  \override Score.BarNumber.font-size = #2
+  % Print a bar number every second measure
+  \set Score.barNumberVisibility = #(every-nth-bar-number-visible 2)
+  c1 | c1
+  % Center-align bar numbers
+  \override Score.BarNumber.self-alignment-X = #CENTER
+  c1 | c1
+  % Left-align bar numbers
+  \override Score.BarNumber.self-alignment-X = #LEFT
+  c1 | c1
+}
+</pre><p>
+ <a href="../dd/lily-ecac9c1d.ly">
+  <img align="middle"
+       border="0"
+       src="../dd/lily-ecac9c1d.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+
+<p><em> Removing bar numbers from a score</em>
+</p>
+
+<p>Bar numbers can be removed entirely by removing the
+<code>Bar_number_engraver</code> from the <code>Score</code> context.
+</p>
+
+<blockquote><pre class="verbatim">\layout {
+  \context {
+    \Score
+    \omit BarNumber
+    % or:
+    %\remove &quot;Bar_number_engraver&quot;
+  }
+}
+
+\relative c'' {
+  c4 c c c \break
+  c4 c c c
+}
+</pre><p>
+ <a href="../de/lily-075845ca.ly">
+  <img align="middle"
+       border="0"
+       src="../de/lily-075845ca.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vegeu-tambe-32"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-BarNumber-2"></a>
+<a href="../internals/barnumber.ca.html">BarNumber</a>,
+<a name="index-Bar_005fnumber_005fengraver"></a>
+<a href="../internals/bar_005fnumber_005fengraver.ca.html">Bar_number_engraver</a>.
+</p>
+<a name="index-numero-de-compas_002c-col_00b7lisio"></a>
+<a name="index-col_00b7lisio-del-numero-de-compas"></a>
+
+<a name="Advertiments-i-problemes-coneguts-35"></a>
+<h4 class="subsubheading">Advertiments i problemes coneguts</h4>
+<p>Els números de compàs poden col·lisionar amb la clau
+<code>StaffGroup</code>, si hi ha un a la part de dalt.  Per
+solucionar-lo es pot usar la propietat de farciment <code>padding</code>
+de <code>BarNumber</code> per col·locar el número correctament.
+Consulteu <a name="index-StaffGroup"></a>
+<a href="../internals/staffgroup.ca.html">StaffGroup</a> i <a name="index-BarNumber-3"></a>
+<a href="../internals/barnumber.ca.html">BarNumber</a> para
+veure més informació.
+</p>
+
+<hr size="6">
+<a name="Comprovaci_00f3-de-comp_00e0s-i-de-n_00famero-de-comp_00e0s"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#bar-numbers" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Numeració de compassos&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#bars" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Compassos&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#rehearsal-marks" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Marques d'assaig &gt; </a>]</td></tr></table>
+<a name="bar-and-bar-number-checks"></a>
+<h4 class="unnumberedsubsubsec">Comprovació de compàs i de número de compàs</h4>
+
+<a name="index-compas_002c-comprovacio-de"></a>
+<a name="index-numero-de-compas_002c-comprovacio-de"></a>
+<a name="index-compas_002c-comprovacio"></a>
+<a name="index-compas_002c-numero_002c-comprovacio"></a>
+
+<a name="index-barCheckSynchronize"></a>
+<a name="index-barCheckSynchronize-1"></a>
+<a name="index-_007c"></a>
+<a name="index-_007c-1"></a>
+
+<p>Les comprovacions de compàs ajuden a detectar errors a les
+duracions.  Una comprovació de compàs s&rsquo;escriu usant el símbol de
+la barra vertical, <code>|</code>, a qualsevol lloc on s&rsquo;espera que
+caigui una línia divisòria.  Si es troben línies de comprovació de
+compàs a altres llocs, s&rsquo;imprimeix una llista d&rsquo;advertiments al
+fitxer log de registre, mostrant els números de línia i columna en
+el qual han fallat les comprovacions de compàs.  Al següent
+exemple, la segona comprovació de compàs avisarà d&rsquo;un error.
+</p>
+<blockquote><pre class="example">\time 3/4 c2 e4 | g2 |
+</pre></blockquote>
+
+<p>Una duració incorrecte produeix una partitura completament
+desbaratada, especialment si la partitura es polifònica, de
+manera que la millor manera de començar a corregir l&rsquo;entrada és
+buscar sistemàticament l&rsquo;existència de comprovacions de compàs
+fallides i duracions incorrectes.
+</p>
+<p>Si es produeixen diverses comprovacions de compàs seguides per
+valor de la mateixa duració musical, sols apareix el primer
+missatge d&rsquo;advertiment.  Així s&rsquo;aconsegueix que el missatge
+estigui concentrat a la font d&rsquo;error de la pulsació.
+</p>
+<p>Les comprovacions de compàs també es poden inserir dins de la
+lletra de les cançons:
+</p>
+<blockquote><pre class="example">\lyricmode {
+  \time 2/4
+  Twin -- kle | Twin -- kle |
+}
+</pre></blockquote>
+
+<p>Observeu que les comprovacions de compàs dins de la lletra de les
+cançons s&rsquo;avaluen al moment musical de la síl·laba
+<em>següent</em> a la comprovació de compàs que es processa.  Si la
+lletra està associada amb les notes d&rsquo;una veu que té un silenci al
+principi del compàs, no es pot posar cap síl·laba al comen
+ament d&rsquo;aquest compàs i s&rsquo;imprimeix un missatge d&rsquo;advertiment si
+s&rsquo;escriu una comprovació de compàs dins de la lletra, en aquesta posició.
+</p>
+<a name="index-_007c-2"></a>
+<a name="index-_007c-3"></a>
+<a name="index-_0022_007c_0022"></a>
+<a name="index-_0022_007c_0022-1"></a>
+
+<p>També és possible redefinir l&rsquo;acció que es fa quan es troba una
+barra vertical o símbol de comprovació de compàs, <code>|</code>, al
+codi d&rsquo;entrada, de forma que faci quelcom diferent a una
+comprovació de compàs.  Es fa assignant una expressió musical a
+<code>&quot;|&quot;</code>, el símbol de barra vertical.  A l&rsquo;exemple següent
+s&rsquo;estableix <code>|</code> de forma que insereixi una doble línia
+divisòria quan apareix al codi d&rsquo;entrada, en comptes de comprovar
+el final d&rsquo;un compàs.
+</p>
+<blockquote><pre class="verbatim">&quot;|&quot; = \bar &quot;||&quot;
+{
+  c'2 c' |
+  c'2 c'
+  c'2 | c'
+  c'2 c'
+}
+</pre><p>
+ <a href="../6b/lily-210b97a6.ly">
+  <img align="middle"
+       border="0"
+       src="../6b/lily-210b97a6.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-_005cbarNumberCheck"></a>
+<a name="index-_005cbarNumberCheck-1"></a>
+
+<p>En copiar peces musicals grans pot servir d&rsquo;ajuda comprovar que el
+número de compàs del LilyPond correspongui a l&rsquo;original des del
+qual s&rsquo;està copiant.  Això es pot comprovar amb
+<code>\barNumberCheck</code>, por exemple:
+</p>
+<pre class="verbatim">\barNumberCheck #123
+</pre>
+<p>imprimeix un advertiment si el <code>currentBarNumber</code> (número del
+compàs actual) no és el 123 en el moment de la compilació.
+</p>
+<a name="Vegeu-tambe-61"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<hr size="6">
+<a name="Marques-d_0027assaig"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#bar-and-bar-number-checks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Comprovació de compàs i de número de compàs&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#bars" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Compassos&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="special-rhythmic-concerns.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Temes especials de ritme &gt; </a>]</td></tr></table>
+<a name="rehearsal-marks"></a>
+<h4 class="unnumberedsubsubsec">Marques d&rsquo;assaig</h4>
+
+<a name="index-assaig_002c-lletres-de"></a>
+<a name="index-lletres-d_0027assaig"></a>
+
+<a name="index-_005cmark"></a>
+<a name="index-_005cmark-1"></a>
+
+<p>Per imprimir una lletra d&rsquo;assaig, utilitzeu l&rsquo;ordre <code>\mark</code>.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c1 \mark \default
+  c1 \mark \default
+  c1 \mark \default
+  c1 \mark \default
+}
+</pre><p>
+ <a href="../15/lily-d6087996.ly">
+  <img align="middle"
+       border="0"
+       src="../15/lily-d6087996.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La lletra d&rsquo;assaig s&rsquo;incrementa automàticament si useu
+<code>\mark \default</code>, però també podeu utilitzar un número enter
+com argument per establir la indicació manualment.  El valor que
+s&rsquo;utilitzarà s&rsquo;emmagatzema dins de la propietat
+<code>rehearsalMark</code>.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  c1 \mark \default
+  c1 \mark \default
+  c1 \mark #8
+  c1 \mark \default
+  c1 \mark \default
+}
+</pre><p>
+ <a href="../d3/lily-b105eb63.ly">
+  <img align="middle"
+       border="0"
+       src="../d3/lily-b105eb63.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>La lletra&nbsp;&lsquo;I&rsquo; se salta d&rsquo;acord amb les tradicions de
+gravat.  Si voleu incloure la la lletra &lsquo;I&rsquo;, useu una de les
+ordres següents, segons l&rsquo;estil de marques d&rsquo;assaig que desitgeu
+(sols lletres, lletres dins d&rsquo;un rectangle o lletres dins d&rsquo;un
+cercle).
+</p>
+<blockquote><pre class="example">\set Score.markFormatter = #format-mark-alphabet
+\set Score.markFormatter = #format-mark-box-alphabet
+\set Score.markFormatter = #format-mark-circle-alphabet
+</pre></blockquote>
+
+<blockquote><pre class="verbatim">\relative c'' {
+  \set Score.markFormatter = #format-mark-box-alphabet
+  c1 \mark \default
+  c1 \mark \default
+  c1 \mark #8
+  c1 \mark \default
+  c1 \mark \default
+}
+</pre><p>
+ <a href="../2e/lily-8d3759fd.ly">
+  <img align="middle"
+       border="0"
+       src="../2e/lily-8d3759fd.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-assaig_002c-lletra-de_002c-format"></a>
+<a name="index-assaig_002c-lletra-de_002c-estil"></a>
+<a name="index-estil-de-la-lletra-de-assaig"></a>
+<a name="index-format-de-la-lletra-d_0027assaig"></a>
+<a name="index-lletra-d_0027assaig_002c-estil"></a>
+<a name="index-lletra-d_0027assaig_002c-format"></a>
+<a name="index-marca-d_0027assaig_002c-estil"></a>
+<a name="index-marca-d_0027assaig_002c-format"></a>
+<a name="index-assaig_002c-lletra-de_002c-manual"></a>
+<a name="index-marca-de-assaig-manual"></a>
+<a name="index-personalitzada_002c-marca-d_0027assaig"></a>
+<a name="index-manual_002c-marca-d_0027assaig"></a>
+
+<p>L&rsquo;estil es defineix per mitjà de la propietat
+<code>markFormatter</code>.  És una funció que agafa com arguments la
+marca en curs (un nombre enter) i el context actual.  Ha de tornar
+un objecte de marcatge.  A l&rsquo;exemple següent, s&rsquo;estableix
+<code>markFormatter</code> amb el valor d&rsquo;un procediment predefinit.
+Després d&rsquo;alguns compassos s&rsquo;estableix amb un valor d&rsquo;una funció
+que produeix un número tancat a una capsa.
+</p>
+<blockquote><pre class="verbatim">\relative c'' {
+  \set Score.markFormatter = #format-mark-numbers
+  c1 \mark \default
+  c1 \mark \default
+  \set Score.markFormatter = #format-mark-box-numbers
+  c1 \mark \default
+  \set Score.markFormatter = #format-mark-circle-numbers
+  c1 \mark \default
+  \set Score.markFormatter = #format-mark-circle-letters
+  c1
+}
+</pre><p>
+ <a href="../c0/lily-3c60262f.ly">
+  <img align="middle"
+       border="0"
+       src="../c0/lily-3c60262f.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>El fitxer &lsquo;<tt>scm/translation-functions.scm</tt>&rsquo; conté les
+definicions de <code>format-mark-numbers</code> (el format per omissió),
+<code>format-mark-box-numbers</code>, <code>format-mark-letters</code> i
+<code>format-mark-box-letters</code>.  Es poden usar aquestes
+definicions com a inspiració per a d&rsquo;altres funcions de format.
+</p>
+<p>Podem fer servir <code>format-mark-barnumbers</code>,
+<code>format-mark-box-barnumbers</code> i
+<code>format-mark-circle-barnumbers</code> per obtenir números de compas
+en lloc de números de lletres seqüencials.
+</p>
+<p>Es poden especificar altres estils de lletra d&rsquo;assaig de forma manual:
+</p>
+<blockquote><pre class="example">\mark &quot;A1&quot;
+</pre></blockquote>
+
+<p>Observeu que <code>Score.markFormatter</code> no afecta a las marque que
+s&rsquo;especifiquen de aquest forma.  Malgrat això, és possible aplicar
+un element <code>\markup</code> a la cadena.
+</p>
+<blockquote><pre class="example">\mark \markup{ \box A1 }
+</pre></blockquote>
+
+<a name="index-segno-1"></a>
+<a name="index-coda"></a>
+<a name="index-D_002eS_002e-al-Fine"></a>
+<a name="index-caldero"></a>
+<a name="index-musicals_002c-glifs"></a>
+<a name="index-glifs-musicals"></a>
+
+<a name="index-_005cmusicglyph"></a>
+<a name="index-_005cmusicglyph-1"></a>
+
+<p>Els glifs musicals (como ara el segno) es poden imprimir dins d&rsquo;un
+element <code>\mark</code>
+</p>
+<blockquote><pre class="verbatim">\relative c' {
+  c1 \mark \markup { \musicglyph #&quot;scripts.segno&quot; }
+  c1 \mark \markup { \musicglyph #&quot;scripts.coda&quot; }
+  c1 \mark \markup { \musicglyph #&quot;scripts.ufermata&quot; }
+  c1
+}
+</pre><p>
+ <a href="../c9/lily-fb774258.ly">
+  <img align="middle"
+       border="0"
+       src="../c9/lily-fb774258.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Consulteu <a name="index-The-Emmentaler-font"></a>
+<a href="../notation/the-emmentaler-font.ca.html">El tipus de lletra Emmentaler</a>
+per veure una llista dels símbols que es poden imprimir amb
+<code>\musicglyph</code>.
+</p>
+<p>Per veure formes comuns d&rsquo;ajustar la col·locació de les lletres
+d&rsquo;assaig, consulteu <a name="index-Formatting-text-3"></a>
+<a href="../notation/formatting-text.ca.html">Donar format al text</a>.  Per a un control més precís, consulteu
+<code>break-alignable-interface</code> a la secció
+<a name="index-Aligning-objects"></a>
+<a href="../notation/aligning-objects.ca.html">Alineació d&rsquo;objectes</a>.
+</p>
+<p>El fitxer &lsquo;<tt>scm/translation-functions.scm</tt>&rsquo; conté les
+definicions de <code>format-mark-numbers</code> i de
+<code>format-mark-letters</code>.  Es poden utilitzar com a inspiració
+per escriure altres funcions per donar format.
+</p>
+<a name="Vegeu-tambe-17"></a>
+<h4 class="subsubheading">Vegeu també</h4>
+<p>Referència de la notació:
+<a name="index-The-Emmentaler-font-1"></a>
+<a href="../notation/the-emmentaler-font.ca.html">El tipus de lletra Emmentaler</a>,
+<a name="index-Formatting-text-4"></a>
+<a href="../notation/formatting-text.ca.html">Donar format al text</a>,
+<a name="index-Aligning-objects-1"></a>
+<a href="../notation/aligning-objects.ca.html">Alineació d&rsquo;objectes</a>.
+</p>
+<p>Fitxers d&rsquo;inici:
+&lsquo;<tt>scm/translation-functions.scm</tt>&rsquo;.
+</p>
+<p>Fragments de codi:
+<a href="../snippets/duracions.ca.html">Rhythms</a>.
+</p>
+<p>Referència de funcionament intern:
+<a name="index-MarkEvent"></a>
+<a href="../internals/markevent.ca.html">MarkEvent</a>,
+<a name="index-Mark_005fengraver"></a>
+<a href="../internals/mark_005fengraver.ca.html">Mark_engraver</a>,
+<a name="index-RehearsalMark"></a>
+<a href="../internals/rehearsalmark.ca.html">RehearsalMark</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="musical-notation.ca.html" title="Inici d&rsquo;aquest capítol o capítol previ"> &lt;&lt; Notació musical&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.ca.html" title="Portada (inici) del document" rel="start">Part superior</a>][<a href="index_toc.ca.html#SEC_Contents" title="Taula de continguts" rel="contents">Continguts</a>][<a href="lilypond-command-index.ca.html" title="Índex" rel="index">Índex</a>][<a href="index_abt.ca.html#SEC_About" title="Quant a (ajuda)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="specialist-notation.ca.html" title="Capítol següent">&nbsp;Specialist notation &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#bar-and-bar-number-checks" title="Secció prèvia en ordre de lectura" accesskey="p" rel="previous"> &lt; Comprovació de compàs i de número de compàs&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#bars" title="Amunt secció" accesskey="u" rel="up">&nbsp; Amunt :&nbsp;Compassos&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="special-rhythmic-concerns.ca.html" title="Secció següent en ordre de lectura" accesskey="n" rel="next">&nbsp;Temes especials de ritme &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Aquesta pàgina correspon a LilyPond-2.19.65 (branca de desenvolupament).
+</p>
+<p class="footer_report">
+Agraïm la vostra ajuda: sisplau <a href="http://lilypond.org/help-us.html">ajudeu-nos</a> informant d'errors a la nostra <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">llista de correu d'errors</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altres idiomes: <a href="bars.html">English</a>, <a href="bars.de.html">deutsch</a>, <a href="bars.es.html">español</a>, <a href="bars.fr.html">français</a>, <a href="bars.it.html">italiano</a>, <a href="bars.ja.html">日本語</a>.
+ <br>
+ Quant a la <a href="http://www.lilypond.org/website/misc/browser-language">selecció automàtica de la llengua</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.ca.html"
+         title="Documentation Index">&lt;&lt; Torna a l'índex de la documentació</a></p>
+<h4 class="toc_header"> <a href="index.ca.html" title="Start of the manual">LilyPond &mdash; Referència de la notació  v2.19.65 (branca de desenvolupament). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Notacio-musical" href="musical-notation.ca.html">1. Notació musical</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altures-1" href="pitches.ca.html">1.1 Altures</a>    </li>
+    <li class=" toc_current"><a name="toc-Duracions-1" href="rhythms.ca.html">1.2 Duracions</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Escriptura-de-les-duracions-_0028valors-ritmics_0029" href="writing-rhythms.ca.html">1.2.1 Escriptura de les duracions (valors rítmics)</a>      </li>
+      <li class=""><a name="toc-Escriptura-dels-silencis-1" href="writing-rests.ca.html">1.2.2 Escriptura dels silencis</a>      </li>
+      <li class=""><a name="toc-Impressio-de-les-duracions" href="displaying-rhythms.ca.html">1.2.3 Impressió de les duracions</a>      </li>
+      <li class=""><a name="toc-Barres-1" href="beams.ca.html">1.2.4 Barres</a>      </li>
+      <li class=" toc_current"><a name="toc-Compassos-1" href="bars.ca.html">1.2.5 Compassos</a>
+      <ul class="toc">
+        <li class=""><a name="toc-Barres-de-compas" href="bars.ca.html#bar-lines">Barres de compàs</a>        </li>
+        <li class=""><a name="toc-Numeracio-de-compassos" href="bars.ca.html#bar-numbers">Numeració de compassos</a>        </li>
+        <li class=""><a name="toc-Comprovacio-de-compas-i-de-numero-de-compas" href="bars.ca.html#bar-and-bar-number-checks">Comprovació de compàs i de número de compàs</a>        </li>
+        <li class=""><a name="toc-Marques-d_0027assaig-1" href="bars.ca.html#rehearsal-marks">Marques d&rsquo;assaig</a>        </li>
+      </ul>
+      </li>
+      <li class=""><a name="toc-Temes-especials-de-ritme-1" href="special-rhythmic-concerns.ca.html">1.2.6 Temes especials de ritme</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Expressions-1" href="expressive-marks.ca.html">1.3 Expressions</a>    </li>
+    <li class=""><a name="toc-Repeticions-1" href="repeats.ca.html">1.4 Repeticions</a>    </li>
+    <li class=""><a name="toc-Notes-simultanies" href="simultaneous-notes.ca.html">1.5 Notes simultànies</a>    </li>
+    <li class=""><a name="toc-Notacio-dels-pentagrames" href="staff-notation.ca.html">1.6 Notació dels pentagrames</a>    </li>
+    <li class=""><a name="toc-Editorial-annotations-1" href="editorial-annotations.ca.html">1.7 Editorial annotations</a>    </li>
+    <li class=""><a name="toc-Text-1" href="text.ca.html">1.8 Text</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Specialist-notation-1" href="specialist-notation.ca.html">2. Specialist notation</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Vocal-music-1" href="vocal-music.ca.html">2.1 Vocal music</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.ca.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.ca.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.ca.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.ca.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.ca.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.ca.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.ca.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.ca.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.ca.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-General-input-and-output-1" href="general-input-and-output.ca.html">3. General input and output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Input-structure-1" href="input-structure.ca.html">3.1 Input structure</a>    </li>
+    <li class=""><a name="toc-Titles-and-headers-1" href="titles-and-headers.ca.html">3.2 Titles and headers</a>    </li>
+    <li class=""><a name="toc-Working-with-input-files-1" href="working-with-input-files.ca.html">3.3 Working with input files</a>    </li>
+    <li class=""><a name="toc-Controlling-output-1" href="controlling-output.ca.html">3.4 Controlling output</a>    </li>
+    <li class=""><a name="toc-Creating-MIDI-output-1" href="creating-midi-output.ca.html">3.5 Creating MIDI output</a>    </li>
+    <li class=""><a name="toc-Extracting-musical-information-1" href="extracting-musical-information.ca.html">3.6 Extracting musical information</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Spacing-issues-1" href="spacing-issues.ca.html">4. Spacing issues</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Page-layout-1" href="page-layout.ca.html">4.1 Page layout</a>    </li>
+    <li class=""><a name="toc-Score-layout-1" href="score-layout.ca.html">4.2 Score layout</a>    </li>
+    <li class=""><a name="toc-Breaks-1" href="breaks.ca.html">4.3 Breaks</a>    </li>
+    <li class=""><a name="toc-Vertical-spacing-1" href="vertical-spacing.ca.html">4.4 Vertical spacing</a>    </li>
+    <li class=""><a name="toc-Horizontal-spacing-1" href="horizontal-spacing.ca.html">4.5 Horizontal spacing</a>    </li>
+    <li class=""><a name="toc-Fitting-music-onto-fewer-pages-1" href="fitting-music-onto-fewer-pages.ca.html">4.6 Fitting music onto fewer pages</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Changing-defaults-1" href="changing-defaults.ca.html">5. Changing defaults</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Interpretation-contexts-1" href="interpretation-contexts.ca.html">5.1 Interpretation contexts</a>    </li>
+    <li class=""><a name="toc-Explaining-the-Internals-Reference-1" href="explaining-the-internals-reference.ca.html">5.2 Explaining the Internals Reference</a>    </li>
+    <li class=""><a name="toc-Modifying-properties-1" href="modifying-properties.ca.html">5.3 Modifying properties</a>    </li>
+    <li class=""><a name="toc-Useful-concepts-and-properties-1" href="useful-concepts-and-properties.ca.html">5.4 Useful concepts and properties</a>    </li>
+    <li class=""><a name="toc-Advanced-tweaks-1" href="advanced-tweaks.ca.html">5.5 Advanced tweaks</a>    </li>
+    <li class=""><a name="toc-Using-music-functions-1" href="using-music-functions.ca.html">5.6 Using music functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notation-manual-tables-1" href="notation-manual-tables.ca.html">A. Notation manual tables</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Chord-name-chart-1" href="chord-name-chart.ca.html">A.1 Chord name chart</a>    </li>
+    <li class=""><a name="toc-Common-chord-modifiers-1" href="common-chord-modifiers.ca.html">A.2 Common chord modifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-string-tunings-1" href="predefined-string-tunings.ca.html">A.3 Predefined string tunings</a>    </li>
+    <li class=""><a name="toc-Predefined-fretboard-diagrams-1" href="predefined-fretboard-diagrams.ca.html">A.4 Predefined fretboard diagrams</a>    </li>
+    <li class=""><a name="toc-Predefined-paper-sizes-1" href="predefined-paper-sizes.ca.html">A.5 Predefined paper sizes</a>    </li>
+    <li class=""><a name="toc-MIDI-instruments-1" href="midi-instruments.ca.html">A.6 MIDI instruments</a>    </li>
+    <li class=""><a name="toc-List-of-colors-1" href="list-of-colors.ca.html">A.7 List of colors</a>    </li>
+    <li class=""><a name="toc-The-Emmentaler-font-1" href="the-emmentaler-font.ca.html">A.8 The Emmentaler font</a>    </li>
+    <li class=""><a name="toc-Note-head-styles-1" href="note-head-styles.ca.html">A.9 Note head styles</a>    </li>
+    <li class=""><a name="toc-Clef-styles-1" href="clef-styles.ca.html">A.10 Clef styles</a>    </li>
+    <li class=""><a name="toc-Text-markup-commands-1" href="text-markup-commands.ca.html">A.11 Text markup commands</a>    </li>
+    <li class=""><a name="toc-Text-markup-list-commands-1" href="text-markup-list-commands.ca.html">A.12 Text markup list commands</a>    </li>
+    <li class=""><a name="toc-List-of-special-characters-1" href="list-of-special-characters.ca.html">A.13 List of special characters</a>    </li>
+    <li class=""><a name="toc-List-of-articulations-1" href="list-of-articulations.ca.html">A.14 List of articulations</a>    </li>
+    <li class=""><a name="toc-Percussion-notes-1" href="percussion-notes.ca.html">A.15 Percussion notes</a>    </li>
+    <li class=""><a name="toc-Technical-glossary-1" href="technical-glossary.ca.html">A.16 Technical glossary</a>    </li>
+    <li class=""><a name="toc-All-context-properties-1" href="all-context-properties.ca.html">A.17 All context properties</a>    </li>
+    <li class=""><a name="toc-Layout-properties-1" href="layout-properties.ca.html">A.18 Layout properties</a>    </li>
+    <li class=""><a name="toc-Available-music-functions-1" href="available-music-functions.ca.html">A.19 Available music functions</a>    </li>
+    <li class=""><a name="toc-Context-modification-identifiers-1" href="context-modification-identifiers.ca.html">A.20 Context modification identifiers</a>    </li>
+    <li class=""><a name="toc-Predefined-type-predicates-1" href="predefined-type-predicates.ca.html">A.21 Predefined type predicates</a>    </li>
+    <li class=""><a name="toc-Scheme-functions-1" href="scheme-functions.ca.html">A.22 Scheme functions</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Cheat-sheet-1" href="cheat-sheet.ca.html">B. Cheat sheet</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.ca.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Index-d_0027ordres-del-LilyPond" href="lilypond-command-index.ca.html">D. Índex d&rsquo;ordres del LilyPond</a>  </li>
+  <li class=""><a name="toc-Index-del-LilyPond" href="lilypond-index.ca.html">E. Índex del LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 9d074d78d7c25852afa87005e21c118630f4f83b
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+
+we depend on an external entity here, which we cannot control.  Suppose
+we go from 2.15.x to 2.17.x and put the documentation under "v2.17".
+For some time, Google won't have the new location in its index, so the
+search would get nothing.  It would be better to keep "v2.15" in the
+search for a while and have a redirection from "v2.15" to "v2.17".
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca a Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Buscar">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

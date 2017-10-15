@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: A.5 Formati carta predefiniti</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: A.5 Formati carta predefiniti">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: A.5 Formati carta predefiniti">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="notation-manual-tables.it.html#notation-manual-tables" rel="up" title="A. Tabelle del manuale della notazione">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="predefined-fretboard-diagrams.it.html#predefined-fretboard-diagrams" rel="previous" title="A.4 Diagrammi degli accordi predefiniti">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Formati-carta-predefiniti"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="predefined-fretboard-diagrams.it.html#diagrams-for-mandolin" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Diagrammi per mandolino&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="notation-manual-tables.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="midi-instruments.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Strumenti MIDI &gt; </a>]</td></tr></table>
+<a name="predefined-paper-sizes"></a>
+<h2 class="appendixsec">A.5 Formati carta predefiniti</h2>
+
+<p>I formati carta sono definiti in &lsquo;<tt>scm/paper.scm</tt>&rsquo;
+</p>
+<p><strong>La serie A dell&rsquo;&ldquo;ISO 216&rdquo;</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;a10&quot;</code></dt>
+<dd><p>(26 x 37 mm)
+</p></dd>
+<dt> <code>&quot;a9&quot;</code></dt>
+<dd><p>(37 x 52 mm)
+</p></dd>
+<dt> <code>&quot;a8&quot;</code></dt>
+<dd><p>(52 x 74 mm)
+</p></dd>
+<dt> <code>&quot;a7&quot;</code></dt>
+<dd><p>(74 x 105 mm)
+</p></dd>
+<dt> <code>&quot;a6&quot;</code></dt>
+<dd><p>(105 x 148 mm)
+</p></dd>
+<dt> <code>&quot;a5&quot;</code></dt>
+<dd><p>(148 x 210 mm)
+</p></dd>
+<dt> <code>&quot;a4&quot;</code></dt>
+<dd><p>(210 x 297 mm)
+</p></dd>
+<dt> <code>&quot;a3&quot;</code></dt>
+<dd><p>(297 x 420 mm)
+</p></dd>
+<dt> <code>&quot;a2&quot;</code></dt>
+<dd><p>(420 x 594 mm)
+</p></dd>
+<dt> <code>&quot;a1&quot;</code></dt>
+<dd><p>(594 x 841 mm)
+</p></dd>
+<dt> <code>&quot;a0&quot;</code></dt>
+<dd><p>(841 x 1189 mm)
+</p></dd>
+</dl>
+
+<p><strong>La serie B dell&rsquo;&ldquo;ISO 216&rdquo;</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;b10&quot;</code></dt>
+<dd><p>(31 x 44 mm)
+</p></dd>
+<dt> <code>&quot;b9&quot;</code></dt>
+<dd><p>(44 x 62 mm)
+</p></dd>
+<dt> <code>&quot;b8&quot;</code></dt>
+<dd><p>(62 x 88 mm)
+</p></dd>
+<dt> <code>&quot;b7&quot;</code></dt>
+<dd><p>(88 x 125 mm)
+</p></dd>
+<dt> <code>&quot;b6&quot;</code></dt>
+<dd><p>(125 x 176 mm)
+</p></dd>
+<dt> <code>&quot;b5&quot;</code></dt>
+<dd><p>(176 x 250 mm)
+</p></dd>
+<dt> <code>&quot;b4&quot;</code></dt>
+<dd><p>(250 x 353 mm)
+</p></dd>
+<dt> <code>&quot;b3&quot;</code></dt>
+<dd><p>(353 x 500 mm)
+</p></dd>
+<dt> <code>&quot;b2&quot;</code></dt>
+<dd><p>(500 x 707 mm)
+</p></dd>
+<dt> <code>&quot;b1&quot;</code></dt>
+<dd><p>(707 x 1000 mm)
+</p></dd>
+<dt> <code>&quot;b0&quot;</code></dt>
+<dd><p>(1000 x 1414 mm)
+</p></dd>
+</dl>
+
+<p><strong>Due formati estesi, definiti nel &ldquo;DIN 476&rdquo;</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;4a0&quot;</code></dt>
+<dd><p>(1682 x 2378 mm)
+</p></dd>
+<dt> <code>&quot;2a0&quot;</code></dt>
+<dd><p>(1189 x 1682 mm)
+</p></dd>
+</dl>
+
+<p><strong>La serie C standard dell&rsquo;&ldquo;ISO 269&rdquo;</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;c10&quot;</code></dt>
+<dd><p>(28 x 40 mm)
+</p></dd>
+<dt> <code>&quot;c9&quot;</code></dt>
+<dd><p>(40 x 57 mm)
+</p></dd>
+<dt> <code>&quot;c8&quot;</code></dt>
+<dd><p>(57 x 81 mm)
+</p></dd>
+<dt> <code>&quot;c7&quot;</code></dt>
+<dd><p>(81 x 114 mm)
+</p></dd>
+<dt> <code>&quot;c6&quot;</code></dt>
+<dd><p>(114 x 162 mm)
+</p></dd>
+<dt> <code>&quot;c5&quot;</code></dt>
+<dd><p>(162 x 229 mm)
+</p></dd>
+<dt> <code>&quot;c4&quot;</code></dt>
+<dd><p>(229 x 324 mm)
+</p></dd>
+<dt> <code>&quot;c3&quot;</code></dt>
+<dd><p>(324 x 458 mm)
+</p></dd>
+<dt> <code>&quot;c2&quot;</code></dt>
+<dd><p>(458 x 648 mm)
+</p></dd>
+<dt> <code>&quot;c1&quot;</code></dt>
+<dd><p>(648 x 917 mm)
+</p></dd>
+<dt> <code>&quot;c0&quot;</code></dt>
+<dd><p>(917 x 1297 mm)
+</p></dd>
+</dl>
+
+<p><strong>Formati carta nordamericani</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;junior-legal&quot;</code></dt>
+<dd><p>(8.0 x 5.0 in)
+</p></dd>
+<dt> <code>&quot;legal&quot;</code></dt>
+<dd><p>(8.5 x 14.0 in)
+</p></dd>
+<dt> <code>&quot;ledger&quot;</code></dt>
+<dd><p>(17.0 x 11.0 in)
+</p></dd>
+<dt> <code>&quot;letter&quot;</code></dt>
+<dd><p>(8.5 x 11.0 in)
+</p></dd>
+<dt> <code>&quot;tabloid&quot;</code></dt>
+<dd><p>(11.0 x 17.0 in)
+</p></dd>
+<dt> <code>&quot;11x17&quot;</code></dt>
+<dd><p>(11.0 x 17.0 in)
+</p></dd>
+<dt> <code>&quot;17x11&quot;</code></dt>
+<dd><p>(17.0 x 11.0 in)
+</p></dd>
+</dl>
+
+<p><strong>Government-letter dell&rsquo;IEEE Printer Working Group, per la scrittura
+dei bambini</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;government-letter&quot;</code></dt>
+<dd><p>(8 x 10.5 in)
+</p></dd>
+<dt> <code>&quot;government-legal&quot;</code></dt>
+<dd><p>(8.5 x 13.0 in)
+</p></dd>
+<dt> <code>&quot;philippine-legal&quot;</code></dt>
+<dd><p>(8.5 x 13.0 in)
+</p></dd>
+</dl>
+
+<p><strong>Formati ANSI</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;ansi a&quot;</code></dt>
+<dd><p>(8.5 x 11.0 in)
+</p></dd>
+<dt> <code>&quot;ansi b&quot;</code></dt>
+<dd><p>(17.0 x 11.0 in)
+</p></dd>
+<dt> <code>&quot;ansi c&quot;</code></dt>
+<dd><p>(17.0 x 22.0 in)
+</p></dd>
+<dt> <code>&quot;ansi d&quot;</code></dt>
+<dd><p>(22.0 x 34.0 in)
+</p></dd>
+<dt> <code>&quot;ansi e&quot;</code></dt>
+<dd><p>(34.0 x 44.0 in)
+</p></dd>
+<dt> <code>&quot;engineering f&quot;</code></dt>
+<dd><p>(28.0 x 40.0 in)
+</p></dd>
+</dl>
+
+<p><strong>Formati nordamericani per l&rsquo;architettura</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;arch a&quot;</code></dt>
+<dd><p>(9.0 x 12.0 in)
+</p></dd>
+<dt> <code>&quot;arch b&quot;</code></dt>
+<dd><p>(12.0 x 18.0 in)
+</p></dd>
+<dt> <code>&quot;arch c&quot;</code></dt>
+<dd><p>(18.0 x 24.0 in)
+</p></dd>
+<dt> <code>&quot;arch d&quot;</code></dt>
+<dd><p>(24.0 x 36.0 in)
+</p></dd>
+<dt> <code>&quot;arch e&quot;</code></dt>
+<dd><p>(36.0 x 48.0 in)
+</p></dd>
+<dt> <code>&quot;arch e1&quot;</code></dt>
+<dd><p>(30.0 x 42.0 in)
+</p></dd>
+</dl>
+
+<p><strong>Formati antichi ancora in uso nel Regno Unito</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;statement&quot;</code></dt>
+<dd><p>(5.5 x 8.5 in)
+</p></dd>
+<dt> <code>&quot;half letter&quot;</code></dt>
+<dd><p>(5.5 x 8.5 in)
+</p></dd>
+<dt> <code>&quot;quarto&quot;</code></dt>
+<dd><p>(8.0 x 10.0 in)
+</p></dd>
+<dt> <code>&quot;octavo&quot;</code></dt>
+<dd><p>(6.75 x 10.5 in)
+</p></dd>
+<dt> <code>&quot;executive&quot;</code></dt>
+<dd><p>(7.25 x 10.5 in)
+</p></dd>
+<dt> <code>&quot;monarch&quot;</code></dt>
+<dd><p>(7.25 x 10.5 in)
+</p></dd>
+<dt> <code>&quot;foolscap&quot;</code></dt>
+<dd><p>(8.27 x 13.0 in)
+</p></dd>
+<dt> <code>&quot;folio&quot;</code></dt>
+<dd><p>(8.27 x 13.0 in)
+</p></dd>
+<dt> <code>&quot;super-b&quot;</code></dt>
+<dd><p>(13.0 x 19.0 in)
+</p></dd>
+<dt> <code>&quot;post&quot;</code></dt>
+<dd><p>(15.5 x 19.5 in)
+</p></dd>
+<dt> <code>&quot;crown&quot;</code></dt>
+<dd><p>(15.0 x 20.0 in)
+</p></dd>
+<dt> <code>&quot;large post&quot;</code></dt>
+<dd><p>(16.5 x 21.0 in)
+</p></dd>
+<dt> <code>&quot;demy&quot;</code></dt>
+<dd><p>(17.5 x 22.5 in)
+</p></dd>
+<dt> <code>&quot;medium&quot;</code></dt>
+<dd><p>(18.0 x 23.0 in)
+</p></dd>
+<dt> <code>&quot;broadsheet&quot;</code></dt>
+<dd><p>(18.0 x 24.0 in)
+</p></dd>
+<dt> <code>&quot;royal&quot;</code></dt>
+<dd><p>(20.0 x 25.0 in)
+</p></dd>
+<dt> <code>&quot;elephant&quot;</code></dt>
+<dd><p>(23.0 x 28.0 in)
+</p></dd>
+<dt> <code>&quot;double demy&quot;</code></dt>
+<dd><p>(22.5 x 35.0 in)
+</p></dd>
+<dt> <code>&quot;quad demy&quot;</code></dt>
+<dd><p>(35.0 x 45.0 in)
+</p></dd>
+<dt> <code>&quot;atlas&quot;</code></dt>
+<dd><p>(26.0 x 34.0 in)
+</p></dd>
+<dt> <code>&quot;imperial&quot;</code></dt>
+<dd><p>(22.0 x 30.0 in)
+</p></dd>
+<dt> <code>&quot;antiquarian&quot;</code></dt>
+<dd><p>(31.0 x 53.0 in)
+</p></dd>
+</dl>
+
+<p><strong>Formati basati su PA4</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;pa0&quot;</code></dt>
+<dd><p>(840 x 1120 mm)
+</p></dd>
+<dt> <code>&quot;pa1&quot;</code></dt>
+<dd><p>(560 x 840 mm)
+</p></dd>
+<dt> <code>&quot;pa2&quot;</code></dt>
+<dd><p>(420 x 560 mm)
+</p></dd>
+<dt> <code>&quot;pa3&quot;</code></dt>
+<dd><p>(280 x 420 mm)
+</p></dd>
+<dt> <code>&quot;pa4&quot;</code></dt>
+<dd><p>(210 x 280 mm)
+</p></dd>
+<dt> <code>&quot;pa5&quot;</code></dt>
+<dd><p>(140 x 210 mm)
+</p></dd>
+<dt> <code>&quot;pa6&quot;</code></dt>
+<dd><p>(105 x 140 mm)
+</p></dd>
+<dt> <code>&quot;pa7&quot;</code></dt>
+<dd><p>(70 x 105 mm)
+</p></dd>
+<dt> <code>&quot;pa8&quot;</code></dt>
+<dd><p>(52 x 70 mm)
+</p></dd>
+<dt> <code>&quot;pa9&quot;</code></dt>
+<dd><p>(35 x 52 mm)
+</p></dd>
+<dt> <code>&quot;pa10&quot;</code></dt>
+<dd><p>(26 x 35 mm)
+</p></dd>
+</dl>
+
+<p><strong>Formato usato nel Sudest asiatico e in Australia</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;f4&quot;</code></dt>
+<dd><p>(210 x 330 mm)
+</p></dd>
+</dl>
+
+<p><strong>Formato usato in esempi <code>@lilypond</code> molto piccoli
+della documentazione, basato sul formato a8 landscape.</strong>
+</p><dl compact="compact">
+<dt> <code>&quot;a8landscape&quot;</code></dt>
+<dd><p>(74 x 52 mm)
+</p></dd>
+</dl>
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="notation-manual-tables.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="cheat-sheet.it.html" title="Capitolo successivo">&nbsp;Schema riassuntivo &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="predefined-fretboard-diagrams.it.html#diagrams-for-mandolin" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Diagrammi per mandolino&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="notation-manual-tables.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Tabelle del manuale della notazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="midi-instruments.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Strumenti MIDI &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="predefined-paper-sizes.html">English</a>, <a href="predefined-paper-sizes.ca.html">català</a>, <a href="predefined-paper-sizes.de.html">deutsch</a>, <a href="predefined-paper-sizes.es.html">español</a>, <a href="predefined-paper-sizes.fr.html">français</a>, <a href="predefined-paper-sizes.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=" toc_current"><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

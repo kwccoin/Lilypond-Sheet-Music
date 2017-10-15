@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 1999-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Guida alla Notazione di LilyPond: 5.1.2 Creazione e citazione di un contesto</title>
+
+<meta name="description" content="Guida alla Notazione di LilyPond: 5.1.2 Creazione e citazione di un contesto">
+<meta name="keywords" content="Guida alla Notazione di LilyPond: 5.1.2 Creazione e citazione di un contesto">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Guida alla Notazione">
+<link href="lilypond-command-index.it.html#lilypond-command-index" rel="index" title="D. Indice dei comandi di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="interpretation-contexts.it.html#interpretation-contexts" rel="up" title="5.1 Contesti di interpretazione">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="E. Indice di LilyPond">
+<link href="contexts-explained.it.html#contexts-explained" rel="previous" title="5.1.1 Tutto sui contesti">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="notation devStatus">
+
+
+<div id="main">
+<a name="Creazione-e-citazione-di-un-contesto"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="contexts-explained.it.html#bottom_002dlevel-contexts-_002d-voices" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti del livello inferiore - voci&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="interpretation-contexts.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Contesti di interpretazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="keeping-contexts-alive.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Conservazione di un contesto &gt; </a>]</td></tr></table>
+<a name="creating-and-referencing-contexts"></a>
+<h3 class="subsection">5.1.2 Creazione e citazione di un contesto</h3>
+
+<a name="index-_005cnew"></a>
+<a name="index-_005cnew-1"></a>
+<a name="index-_005ccontext"></a>
+<a name="index-_005ccontext-1"></a>
+<a name="index-nuovi-contesti"></a>
+<a name="index-citazione-di-un-contesto"></a>
+<a name="index-Contesti_002c-creazione-e-citazione"></a>
+
+<p>LilyPond crea i contesti del livello inferiore automaticamente se incontra
+un&rsquo;espressione musicale prima di un contesto adatto, ma questo approccio
+di solito funziona soltanto per partiture semplici o frammenti musicali
+simili a quelli della documentazione.  Per partiture più complesse si
+consiglia di specificare tutti i contesti esplicitamente coi comandi
+<code>\new</code> o <code>\context</code>.  La sintassi di questi due comandi è
+molto simile:
+</p>
+<blockquote><pre class="example">[\new | \context] <var>Contesto</var> [ = <var>nome</var>] [<var>espressione-musicale</var>]
+</pre></blockquote>
+
+<p>dove si può usare <code>\new</code> o <code>\context</code>.
+<var>Contesto</var> è il tipo di contesto che deve essere creato,
+<var>nome</var> è un nome opzionale da assegnare al contesto che si
+sta creando e <var>espressione-musicale</var> è una singola espressione
+musicale che deve essere interpretata dagli incisori e dai performer
+in questo contesto.
+</p>
+<p>Il prefisso <code>\new</code> senza un nome viene usato comunemente per creare
+partiture con molti righi:
+</p>
+<blockquote><pre class="verbatim">&lt;&lt;
+  \new Staff \relative {
+    % lascia che il contesto Voice sia creato implicitamente
+    c''4 c
+  }
+  \new Staff \relative {
+    d''4 d
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../da/lily-ce94cfa2.ly">
+  <img align="middle"
+       border="0"
+       src="../da/lily-ce94cfa2.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>e per mettere varie voci in un rigo:
+</p>
+<blockquote><pre class="verbatim">\new Staff &lt;&lt;
+  \new Voice \relative {
+    \voiceOne
+    c''8 c c4 c c
+  }
+  \new Voice \relative {
+    \voiceTwo
+    g'4 g g g
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../f6/lily-8f07bf9c.ly">
+  <img align="middle"
+       border="0"
+       src="../f6/lily-8f07bf9c.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p><code>\new</code> deve essere sempre usato per specificare contesti senza nome.
+</p>
+<p>La differenza tra <code>\new</code> e <code>\context</code> sta nell&rsquo;azione
+presa:
+</p>
+<ul>
+<li>
+<code>\new</code> con o senza un nome creerà sempre un contesto del tutto
+nuovo e distinto, anche se ne esiste già uno con lo stesso nome:
+
+<blockquote><pre class="verbatim">\new Staff &lt;&lt;
+  \new Voice = &quot;A&quot; \relative {
+    \voiceOne
+    c''8 c c4 c c
+  }
+  \new Voice = &quot;A&quot; \relative {
+    \voiceTwo
+    g'4 g g g
+  }
+&gt;&gt;
+</pre><p>
+ <a href="../0c/lily-8034ac86.ly">
+  <img align="middle"
+       border="0"
+       src="../0c/lily-8034ac86.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+</li><li>
+<code>\context</code> seguito da un nome creerà un contesto distinto solo se
+non esiste già un contesto dello stesso tipo con lo stesso nome nella
+stessa gerarchia di contesto.  Altrimenti sarà preso come riferimento
+per quel contesto precedentemente creato, e la sua espressione musicale
+verrà passata a quel contesto per la sua interpretazione.
+
+<p>Una possibile applicazione dei contesti con nome è la separazione di
+formattazione della partitura e contenuto musicale.  Le seguenti due
+forme sono entrambe valide:
+</p>
+<blockquote><pre class="verbatim">\score {
+  &lt;&lt;
+    % formattazione della partitura
+    \new Staff &lt;&lt;
+      \new Voice = &quot;one&quot; {
+        \voiceOne
+      }
+      \new Voice = &quot;two&quot; {
+        \voiceTwo
+      }
+    &gt;&gt;
+
+    % contenuto musicale
+    \context Voice = &quot;one&quot; {
+      \relative {
+        c''4 c c c
+      }
+    }
+    \context Voice = &quot;two&quot; {
+      \relative {
+        g'8 g g4 g g
+      }
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../2d/lily-53fece47.ly">
+  <img align="middle"
+       border="0"
+       src="../2d/lily-53fece47.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<blockquote><pre class="verbatim">\score {
+  &lt;&lt;
+    % formattazione della partitura
+    \new Staff &lt;&lt;
+      \context Voice = &quot;one&quot; {
+        \voiceOne
+      }
+      \context Voice = &quot;two&quot; {
+        \voiceTwo
+      }
+    &gt;&gt;
+
+    % contenuto musicale
+    \context Voice = &quot;one&quot; {
+      \relative {
+        c''4 c c c
+      }
+    }
+    \context Voice = &quot;two&quot; {
+      \relative {
+        g'8 g g4 g g
+      }
+    }
+  &gt;&gt;
+}
+</pre><p>
+ <a href="../05/lily-fb80d29b.ly">
+  <img align="middle"
+       border="0"
+       src="../05/lily-fb80d29b.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Altrimenti si possono usare le variabili per ottenere un risultato simile.  Vedi
+<a name="index-Organizzare-i-brani-con-le-variabili-5"></a>
+<a href="../learning/organizing-pieces-with-variables.it.html">Organizzare i brani con le variabili</a>.
+</p>
+</li><li>
+<code>\context</code> senza nome corrisponderà al primo di qualsiasi contesto
+precedentemente creato dello stesso tipo nella stessa gerarchia di contesto,
+anche uno a cui è stato assegnato un nome, e la sua espressione musicale sarà
+passata a quel contesto per la sua interpretazione.  Questa forma è raramente
+utile.  Tuttavia, si usa <code>\context</code> senza nome e senza espressione
+musicale per impostare il contesto in cui una procedura Scheme specificata con
+<code>\applyContext</code> viene eseguita:
+
+<blockquote><pre class="example">\new Staff \relative {
+  c'1
+  \context Timing
+  \applyContext #(lambda (ctx)
+                   (newline)
+                   (display (ly:context-current-moment ctx)))
+  c1
+}
+</pre></blockquote>
+
+</li></ul>
+
+<p>Un contesto deve essere nominato se deve essere citato successivamente, per
+esempio quando il testo vocale è associato alla musica:
+</p>
+<blockquote><pre class="example">\new Voice = &quot;tenore&quot; <var>musica</var>
+&hellip;
+\new Lyrics \lyricsto &quot;tenore&quot; <var>testo</var>
+</pre></blockquote>
+
+<p>Maggiori informazioni sull&rsquo;associazione del testo vocale alla musica in
+<a href="common-notation-for-vocal-music.it.html#automatic-syllable-durations">Durate automatiche delle sillabe</a>.
+</p>
+<p>Le proprietà di tutti i contesti di un certo tipo possono essere modificate
+in un blocco <code>\layout</code> (con una sintassi diversa), vedi
+<a href="changing-context-default-settings.it.html#changing-all-contexts-of-the-same-type">Modifica di tutti i contesti dello stesso tipo</a>.  Questo costrutto fornisce anche
+un mezzo per mantenere le istruzioni di formattazione separate dal contenuto
+musicale.  Se occorre modificare un solo contesto, bisogna usare un blocco
+<code>\with</code>, vedi <a href="changing-context-default-settings.it.html#changing-just-one-specific-context">Modifica di un solo contesto specifico</a>.
+</p>
+<a name="Vedi-anche-170"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Manuale di apprendimento:
+<a name="index-Organizzare-i-brani-con-le-variabili-6"></a>
+<a href="../learning/organizing-pieces-with-variables.it.html">Organizzare i brani con le variabili</a>.
+</p>
+<p>Guida alla notazione:
+<a href="changing-context-default-settings.it.html#changing-just-one-specific-context">Modifica di un solo contesto specifico</a>,
+<a href="common-notation-for-vocal-music.it.html#automatic-syllable-durations">Durate automatiche delle sillabe</a>.
+</p>
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="changing-defaults.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Modifica delle impostazioni predefinite&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-command-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="notation-manual-tables.it.html" title="Capitolo successivo">&nbsp;Tabelle del manuale della notazione &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="contexts-explained.it.html#bottom_002dlevel-contexts-_002d-voices" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Contesti del livello inferiore - voci&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="interpretation-contexts.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Contesti di interpretazione&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="keeping-contexts-alive.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Conservazione di un contesto &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="creating-and-referencing-contexts.html">English</a>, <a href="creating-and-referencing-contexts.ca.html">català</a>, <a href="creating-and-referencing-contexts.de.html">deutsch</a>, <a href="creating-and-referencing-contexts.es.html">español</a>, <a href="creating-and-referencing-contexts.fr.html">français</a>, <a href="creating-and-referencing-contexts.ja.html">日本語</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Guida alla Notazione  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=""><a name="toc-Notazione-musicale-1" href="musical-notation.it.html">1. Notazione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Altezze-1" href="pitches.it.html">1.1 Altezze</a>    </li>
+    <li class=""><a name="toc-Ritmi-1" href="rhythms.it.html">1.2 Ritmi</a>    </li>
+    <li class=""><a name="toc-Segni-di-espressione-1" href="expressive-marks.it.html">1.3 Segni di espressione</a>    </li>
+    <li class=""><a name="toc-Ripetizioni-1" href="repeats.it.html">1.4 Ripetizioni</a>    </li>
+    <li class=""><a name="toc-Note-simultanee-1" href="simultaneous-notes.it.html">1.5 Note simultanee</a>    </li>
+    <li class=""><a name="toc-Notazione-del-rigo-1" href="staff-notation.it.html">1.6 Notazione del rigo</a>    </li>
+    <li class=""><a name="toc-Note-editoriali-1" href="editorial-annotations.it.html">1.7 Note editoriali</a>    </li>
+    <li class=""><a name="toc-Testo-1" href="text.it.html">1.8 Testo</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Notazione-specialistica-1" href="specialist-notation.it.html">2. Notazione specialistica</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Musica-vocale-1" href="vocal-music.it.html">2.1 Musica vocale</a>    </li>
+    <li class=""><a name="toc-Keyboard-and-other-multi_002dstaff-instruments-1" href="keyboard-and-other-multi_002dstaff-instruments.it.html">2.2 Keyboard and other multi-staff instruments</a>    </li>
+    <li class=""><a name="toc-Unfretted-string-instruments-1" href="unfretted-string-instruments.it.html">2.3 Unfretted string instruments</a>    </li>
+    <li class=""><a name="toc-Fretted-string-instruments-1" href="fretted-string-instruments.it.html">2.4 Fretted string instruments</a>    </li>
+    <li class=""><a name="toc-Percussion-1" href="percussion.it.html">2.5 Percussion</a>    </li>
+    <li class=""><a name="toc-Wind-instruments-1" href="wind-instruments.it.html">2.6 Wind instruments</a>    </li>
+    <li class=""><a name="toc-Chord-notation-1" href="chord-notation.it.html">2.7 Chord notation</a>    </li>
+    <li class=""><a name="toc-Contemporary-music-1" href="contemporary-music.it.html">2.8 Contemporary music</a>    </li>
+    <li class=""><a name="toc-Ancient-notation-1" href="ancient-notation.it.html">2.9 Ancient notation</a>    </li>
+    <li class=""><a name="toc-World-music-1" href="world-music.it.html">2.10 World music</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Input-e-output-1" href="general-input-and-output.it.html">3. Input e output</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Struttura-dell_0027input-1" href="input-structure.it.html">3.1 Struttura dell&rsquo;input</a>    </li>
+    <li class=""><a name="toc-Titoli-e-intestazioni-1" href="titles-and-headers.it.html">3.2 Titoli e intestazioni</a>    </li>
+    <li class=""><a name="toc-Lavorare-coi-file-di-input-1" href="working-with-input-files.it.html">3.3 Lavorare coi file di input</a>    </li>
+    <li class=""><a name="toc-Controllo-dell_0027output-1" href="controlling-output.it.html">3.4 Controllo dell&rsquo;output</a>    </li>
+    <li class=""><a name="toc-Creazione-dell_0027output-MIDI-1" href="creating-midi-output.it.html">3.5 Creazione dell&rsquo;output MIDI</a>    </li>
+    <li class=""><a name="toc-Estrazione-dell_0027informazione-musicale-1" href="extracting-musical-information.it.html">3.6 Estrazione dell&rsquo;informazione musicale</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Gestione-dello-spazio-1" href="spacing-issues.it.html">4. Gestione dello spazio</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Formattazione-della-pagina-1" href="page-layout.it.html">4.1 Formattazione della pagina</a>    </li>
+    <li class=""><a name="toc-Formattazione-della-partitura-1" href="score-layout.it.html">4.2 Formattazione della partitura</a>    </li>
+    <li class=""><a name="toc-Interruzioni-1" href="breaks.it.html">4.3 Interruzioni</a>    </li>
+    <li class=""><a name="toc-Spaziatura-verticale-1" href="vertical-spacing.it.html">4.4 Spaziatura verticale</a>    </li>
+    <li class=""><a name="toc-Spaziatura-orizzontale-1" href="horizontal-spacing.it.html">4.5 Spaziatura orizzontale</a>    </li>
+    <li class=""><a name="toc-Riduzione-del-numero-di-pagine-di-una-partitura-1" href="fitting-music-onto-fewer-pages.it.html">4.6 Riduzione del numero di pagine di una partitura</a>    </li>
+  </ul>
+  </li>
+  <li class=" toc_current"><a name="toc-Modifica-delle-impostazioni-predefinite-1" href="changing-defaults.it.html">5. Modifica delle impostazioni predefinite</a>
+  <ul class="toc">
+    <li class=" toc_current"><a name="toc-Contesti-di-interpretazione-1" href="interpretation-contexts.it.html">5.1 Contesti di interpretazione</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Tutto-sui-contesti-1" href="contexts-explained.it.html">5.1.1 Tutto sui contesti</a>      </li>
+      <li class=" toc_current"><a name="toc-Creazione-e-citazione-di-un-contesto-1" href="creating-and-referencing-contexts.it.html">5.1.2 Creazione e citazione di un contesto</a>      </li>
+      <li class=""><a name="toc-Conservazione-di-un-contesto-1" href="keeping-contexts-alive.it.html">5.1.3 Conservazione di un contesto</a>      </li>
+      <li class=""><a name="toc-Modifica-dei-componenti-aggiuntivi-di-un-contesto-1" href="modifying-context-plug_002dins.it.html">5.1.4 Modifica dei componenti aggiuntivi di un contesto</a>      </li>
+      <li class=""><a name="toc-Modifica-delle-impostazioni-predefinite-di-un-contesto-1" href="changing-context-default-settings.it.html">5.1.5 Modifica delle impostazioni predefinite di un contesto</a>      </li>
+      <li class=""><a name="toc-Definizione-di-nuovi-contesti-1" href="defining-new-contexts.it.html">5.1.6 Definizione di nuovi contesti</a>      </li>
+      <li class=""><a name="toc-Ordine-di-disposizione-dei-contesti-1" href="context-layout-order.it.html">5.1.7 Ordine di disposizione dei contesti</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Come-funziona-la-Guida-al-funzionamento-interno-1" href="explaining-the-internals-reference.it.html">5.2 Come funziona la Guida al funzionamento interno</a>    </li>
+    <li class=""><a name="toc-Modifica-delle-proprieta" href="modifying-properties.it.html">5.3 Modifica delle proprietà</a>    </li>
+    <li class=""><a name="toc-Proprieta-e-concetti-utili" href="useful-concepts-and-properties.it.html">5.4 Proprietà e concetti utili</a>    </li>
+    <li class=""><a name="toc-Ritocchi-avanzati-1" href="advanced-tweaks.it.html">5.5 Ritocchi avanzati</a>    </li>
+    <li class=""><a name="toc-Uso-delle-funzioni-musicali-1" href="using-music-functions.it.html">5.6 Uso delle funzioni musicali</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Tabelle-del-manuale-della-notazione-1" href="notation-manual-tables.it.html">A. Tabelle del manuale della notazione</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Grafico-dei-nomi-degli-accordi-1" href="chord-name-chart.it.html">A.1 Grafico dei nomi degli accordi</a>    </li>
+    <li class=""><a name="toc-Modificatori-degli-accordi-1" href="common-chord-modifiers.it.html">A.2 Modificatori degli accordi</a>    </li>
+    <li class=""><a name="toc-Accordature-predefinite-1" href="predefined-string-tunings.it.html">A.3 Accordature predefinite</a>    </li>
+    <li class=""><a name="toc-Diagrammi-degli-accordi-predefiniti-1" href="predefined-fretboard-diagrams.it.html">A.4 Diagrammi degli accordi predefiniti</a>    </li>
+    <li class=""><a name="toc-Formati-carta-predefiniti-1" href="predefined-paper-sizes.it.html">A.5 Formati carta predefiniti</a>    </li>
+    <li class=""><a name="toc-Strumenti-MIDI-1" href="midi-instruments.it.html">A.6 Strumenti MIDI</a>    </li>
+    <li class=""><a name="toc-Elenco-dei-colori-1" href="list-of-colors.it.html">A.7 Elenco dei colori</a>    </li>
+    <li class=""><a name="toc-Il-font-Emmentaler-1" href="the-emmentaler-font.it.html">A.8 Il font Emmentaler</a>    </li>
+    <li class=""><a name="toc-Stili-delle-teste-di-nota-1" href="note-head-styles.it.html">A.9 Stili delle teste di nota</a>    </li>
+    <li class=""><a name="toc-Stili-della-chiave-1" href="clef-styles.it.html">A.10 Stili della chiave</a>    </li>
+    <li class=""><a name="toc-Comandi-per-markup-1" href="text-markup-commands.it.html">A.11 Comandi per <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Comandi-per-una-lista-di-markup-1" href="text-markup-list-commands.it.html">A.12 Comandi per una lista di <em>markup</em></a>    </li>
+    <li class=""><a name="toc-Elenco-dei-caratteri-speciali-1" href="list-of-special-characters.it.html">A.13 Elenco dei caratteri speciali</a>    </li>
+    <li class=""><a name="toc-Elenco-delle-articolazioni-1" href="list-of-articulations.it.html">A.14 Elenco delle articolazioni</a>    </li>
+    <li class=""><a name="toc-Note-percussive-1" href="percussion-notes.it.html">A.15 Note percussive</a>    </li>
+    <li class=""><a name="toc-Glossario-tecnico-1" href="technical-glossary.it.html">A.16 Glossario tecnico</a>    </li>
+    <li class=""><a name="toc-Tutte-le-proprieta-di-contesto" href="all-context-properties.it.html">A.17 Tutte le proprietà di contesto</a>    </li>
+    <li class=""><a name="toc-Proprieta-della-formattazione" href="layout-properties.it.html">A.18 Proprietà della formattazione</a>    </li>
+    <li class=""><a name="toc-Funzioni-musicali-disponibili-1" href="available-music-functions.it.html">A.19 Funzioni musicali disponibili</a>    </li>
+    <li class=""><a name="toc-Identificatori-delle-modifiche-di-contesto-1" href="context-modification-identifiers.it.html">A.20 Identificatori delle modifiche di contesto</a>    </li>
+    <li class=""><a name="toc-Tipi-di-predicati-predefiniti-1" href="predefined-type-predicates.it.html">A.21 Tipi di predicati predefiniti</a>    </li>
+    <li class=""><a name="toc-Funzioni-Scheme-1" href="scheme-functions.it.html">A.22 Funzioni Scheme</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Schema-riassuntivo-1" href="cheat-sheet.it.html">B. Schema riassuntivo</a>  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">C. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-dei-comandi-di-LilyPond-1" href="lilypond-command-index.it.html">D. Indice dei comandi di LilyPond</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">E. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>

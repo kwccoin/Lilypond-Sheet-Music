@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Copyright C 2002-2015 degli autori.
+
+La traduzione della seguente nota di copyright è gentilmente
+offerta alle persone che non parlano inglese, ma solo
+la nota in inglese ha valore legale.
+
+The translation of the following copyright notice is provided
+for courtesy to non-English speakers, but only the notice in English
+legally counts.
+
+È garantito il permesso di copiare, distribuire e/o modificare questo
+documento seguendo i termini della GNU Free Documentation License,
+versione 1.1 o ogni versione successiva pubblicata dalla
+Free Software Foundation; senza alcuna sezione non modificabile.
+Una copia della licenza si trova nella sezione intitolata
+"GNU Free Documentation License".
+
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.1
+or any later version published by the Free Software Foundation;
+with no Invariant Sections.
+A copy of the license is included in the section entitled "GNU
+Free Documentation License".
+
+ -->
+<!-- Created on Agosto 6, 2017 by texi2html 1.82
+texi2html was written by: 
+            Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+-->
+<head>
+<title>Saggio sull'incisione musicale automatizzata: 1.4 Costruzione del software</title>
+
+<meta name="description" content="Saggio sull'incisione musicale automatizzata: 1.4 Costruzione del software">
+<meta name="keywords" content="Saggio sull'incisione musicale automatizzata: 1.4 Costruzione del software">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.82">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.it.html#index" rel="start" title="LilyPond &mdash; Saggio sull'incisione musicale automatizzata">
+<link href="lilypond-index.it.html#lilypond-index" rel="index" title="B. Indice di LilyPond">
+<link href="index_toc.it.html#SEC_Contents" rel="contents" title="Indice">
+<link href="index_abt.it.html#SEC_About" rel="help" title="Informazioni su questo documento">
+<link href="music-engraving.it.html#music-engraving" rel="up" title="1. Incisione musicale">
+<link href="lilypond-index.it.html#lilypond-index" rel="next" title="B. Indice di LilyPond">
+<link href="automated-engraving.it.html#automated-engraving" rel="previous" title="1.3 Incisione automatizzata">
+<link rel="stylesheet" type="text/css" title="Default style" href="../../Documentation/css/lilypond-manuals.css">
+<!--[if lte IE 7]>
+<link href="../../Documentation/css/lilypond-manuals-ie-fixes.css" rel="stylesheet" type="text/css">
+<![endif]-->
+
+
+</head>
+
+<body lang="it" class="essay devStatus">
+
+
+<div id="main">
+<a name="Costruzione-del-software"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="automated-engraving.it.html#getting-things-right" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Mettere le cose a posto&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="music-engraving.it.html" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Incisione musicale&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#music-representation" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Rappresentazione della musica &gt; </a>]</td></tr></table>
+<a name="building-software"></a>
+<h2 class="section">1.4 Costruzione del software</h2>
+
+<p>Questa sezione descrive alcune decisioni di programmazione prese
+durante la progettazione di LilyPond.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="#music-representation" accesskey="1">Rappresentazione della musica</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#what-symbols-to-engrave_003f" accesskey="2">Quali simboli incidere?</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top"><a href="#flexible-architecture" accesskey="3">Architettura flessibile</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr size="6">
+<a name="Rappresentazione-della-musica"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#building-software" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Costruzione del software&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#building-software" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Costruzione del software&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#what-symbols-to-engrave_003f" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Quali simboli incidere? &gt; </a>]</td></tr></table>
+<a name="music-representation"></a>
+<h3 class="unnumberedsubsec">Rappresentazione della musica</h3>
+
+<a name="index-sintassi"></a>
+<a name="index-strutture-ricorsive"></a>
+
+<p>Idealmente, il formato di input per qualsiasi sistema di formattazione ad
+alto livello consiste in una descrizione astratta del contenuto da formattare,
+che nel nostro caso è la musica stessa.  La questione solleva un problema
+formidabile: in che modo possiamo definire che cos&rsquo;è davvero la musica?
+Anziché tentare di trovare una risposta, abbiamo rovesciato la domanda.
+Scriviamo un programma in grado di produrre spartiti e rendiamone il
+formato il più snello possibile: quando non potremo ridurlo
+ulteriormente, ci ritroveremo per definizione
+con il contenuto in sé.  Il nostro programma, dunque, serve a definire
+la forma di un contenuto musicale.
+</p>
+<p>Anche la sintassi è un aspetto dell&rsquo;interfaccia utente di LilyPond, quindi è semplice
+da scrivere:
+</p>
+<blockquote><pre class="example">{
+  c'4 d'8
+}
+</pre></blockquote>
+
+<p>crea un do centrale da un quarto (C1) e un re da un&rsquo;ottavo
+immediatamente sopra il do centrale (D1).
+</p>
+<blockquote><p>
+ <a href="../7f/lily-00c5b815.ly">
+  <img align="middle"
+       border="0"
+       src="../7f/lily-00c5b815.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>A scala microscopica, una sintassi simile si adopera facilmente.  A una
+scala più larga, però, anche la sintassi ha bisogno di una struttura.  In
+quale altro modo, altrimenti, sarebbe possibile scrivere brani complessi come
+sinfonie e opere liriche?  La struttura è formata dal concetto di
+espressioni musicali: combinando minuscoli frammenti di musica in
+frammenti più consistenti, possiamo esprimere musica più complessa.  Per
+esempio
+</p>
+<blockquote><pre class="verbatim">f'4
+</pre><p>
+ <a href="../5d/lily-fb3d5810.ly">
+  <img align="middle"
+       border="0"
+       src="../5d/lily-fb3d5810.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Possiamo costruire note simultanee racchiudendole tra
+<code>&lt;&lt;</code> e <code>&gt;&gt;</code>:
+</p>
+<blockquote><pre class="example">&lt;&lt;c4 d4 e4&gt;&gt;
+</pre></blockquote>
+
+<blockquote><p>
+ <a href="../75/lily-41f9d8ad.ly">
+  <img align="middle"
+       border="0"
+       src="../75/lily-41f9d8ad.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Possiamo mettere in sequenza queste due espressioni racchiudendole tra
+parentesi graffe <code>{&nbsp;&hellip;&nbsp;}</code>:
+</p>
+<blockquote><pre class="example">{ f4 &lt;&lt;c4 d4 e4&gt;&gt; }
+</pre></blockquote>
+
+<blockquote><p>
+ <a href="../c5/lily-e20e6528.ly">
+  <img align="middle"
+       border="0"
+       src="../c5/lily-e20e6528.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Anche quella qui sopra è un&rsquo;espressione, perciò può essere ulteriormente
+combinata con un&rsquo;altra espressione simultanea (una minima, in questo
+caso):
+<code>&lt;&lt;</code>, <code>\\</code>, e <code>&gt;&gt;</code>:
+</p>
+<blockquote><pre class="example">&lt;&lt; g2 \\ { f4 &lt;&lt;c4 d4 e4&gt;&gt; } &gt;&gt;
+</pre></blockquote>
+
+<blockquote><p>
+ <a href="../8a/lily-c40cca54.ly">
+  <img align="middle"
+       border="0"
+       src="../8a/lily-c40cca54.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Strutture ricorsive come quelle appena esaminate possono essere
+specificate in modo pulito e formale in una grammatica indipendente dal
+contesto, la quale genera anche il codice di analisi.  In altre parole, la
+sintassi di LilyPond è definita in modo chiaro e privo di ambiguità
+</p>
+<p>Interfacce utente e sintassi sono gli elementi immediatamente visibili
+agli utenti e quelli con cui essi hanno più a che fare.  Un po&rsquo; sono una
+questione di gusto, un po&rsquo; l&rsquo;argomento di molte discussioni: non troppo
+produttive, però, nonostante qualche pregio ce l&rsquo;abbiano.  Nel quadro più
+ampio di LilyPond, la sintassi di input non è molto importante:
+inventare una sintassi pulita è facile; molto più difficile, invece, è
+scrivere un codice di formattazione decente.  Contiamo le righe di
+codice destinate ai due componenti e troveremo la conferma di quanto abbiamo
+appena affermato: analisi e rappresentazione occupano meno del 10% del
+codice sorgente.
+</p>
+<p>Nel progettare le strutture usate in LilyPond, abbiamo preso decisioni
+diverse da quelle che appaiono in altri programmi.  Considerate la
+natura gerarchica della notazione musicale:
+</p>
+<blockquote><p>
+ <a href="../cd/lily-1761944a.ly">
+  <img align="middle"
+       border="0"
+       src="../cd/lily-1761944a.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>In questo caso, abbiamo altezze raggruppate in accordi che appartengono
+alle misure, le quali appartengono ai righi.  La cosa assomiglia a
+una struttura ordinata di scatole annidate:
+</p>
+<blockquote><img src="../pictures/nestedboxes.png" alt="png">
+</blockquote>
+
+<p>Purtroppo, la struttura è ordinata perché si basa su alcuni presupposti
+troppo restrittivi, il che diventa evidente considerando un esempio
+musicale più complesso:
+</p>
+<blockquote><p>
+ <a href="../9f/lily-594eb061.ly">
+  <img align="middle"
+       border="0"
+       src="../9f/lily-594eb061.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>In quest&rsquo;esempio, i righi si interrompono arbitrariamente, le voci
+saltano dall&rsquo;uno all&rsquo;altro e su ciascun pentagramma c&rsquo;è un&rsquo;indicazione
+di tempo diversa.  Molti programmi avrebbero del filo da torcere per
+riprodurlo, proprio perché costruiti con una struttura a scatole
+annidate.  Con LilyPond, d&rsquo;altronde, abbiamo cercato di mantenere
+formato di input e struttura il più possibile flessibili.
+</p>
+<hr size="6">
+<a name="Quali-simboli-incidere_003f"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#music-representation" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Rappresentazione della musica&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#building-software" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Costruzione del software&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="#flexible-architecture" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Architettura flessibile &gt; </a>]</td></tr></table>
+<a name="what-symbols-to-engrave_003f"></a>
+<h3 class="unnumberedsubsec">Quali simboli incidere?</h3>
+
+<a name="index-incisione-1"></a>
+<a name="index-tipografia"></a>
+<a name="index-incisore"></a>
+<a name="index-plug_002din"></a>
+
+<p>Il processo di formattazione decide dove mettere i simboli, tuttavia
+ciò può essere fatto solo dopo aver deciso <em>quali</em> simboli vanno
+stampati: in altre parole, dopo aver deciso quale notazione adoperare.
+</p>
+<p>La comune notazione musicale è un sistema di registrazione della musica
+evolutosi nel corso degli ultimi mille anni.  La forma normalmente
+adoperata oggi risale agli inizi del Rinascimento, e anche se nei
+princìpi di base è rimasta praticamente immutata (cioè testa delle note su
+un pentagramma di cinque linee), continua a modificarsi nei dettagli per
+permettere di esprimere le innovazioni introdotte dalla notazione
+contemporanea. Dunque, la comune notazione musicale comprende circa
+cinque secoli di musica, con applicazioni che spaziano dalle melodie
+monofoniche ai mostruosi contrappunti di una grande orchestra.
+</p>
+<p>In che modo possiamo noi imbrigliare un simile mostro a sette teste e
+costringerlo entro i limiti di un programma per computer?  La nostra
+soluzione è stata quella di spezzare il problema della notazione (al
+contrario dell&rsquo;incisione, che riguarda la tipografia) in ‘bocconi’
+digeribili e programmabili: ciascun tipo di simbolo è gestito da un modulo
+a sé, un cosiddetto plug-in, completamente modulare e
+indipendente, così da poter essere sviluppato e migliorato
+separatamente.  Tali plug-in sono chiamati <em>incisori</em> per analogia con
+l&rsquo;artigiano che traduce le idee musicali in simboli grafici.
+</p>
+<p>Nell&rsquo;esempio seguente, cominciamo con il plug-in per le teste delle
+note, il <code>Note_heads_engraver</code>.
+</p>
+<blockquote><p>
+ <a href="../1e/lily-84b06b5e.ly">
+  <img align="middle"
+       border="0"
+       src="../1e/lily-84b06b5e.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Poi il <code>Staff_symbol_engraver</code> aggiunge il rigo,
+</p>
+<blockquote><p>
+ <a href="../d2/lily-eee21123.ly">
+  <img align="middle"
+       border="0"
+       src="../d2/lily-eee21123.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>il <code>Clef_engraver</code> definisce un punto di riferimento per il rigo,
+</p>
+<blockquote><p>
+ <a href="../c4/lily-201207c4.ly">
+  <img align="middle"
+       border="0"
+       src="../c4/lily-201207c4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>e lo <code>Stem_engraver</code> aggiunge i gambi.
+</p>
+<blockquote><p>
+ <a href="../35/lily-cf2ad001.ly">
+  <img align="middle"
+       border="0"
+       src="../35/lily-cf2ad001.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Ogni volta che il programma incontra una testa di nota (o più d&rsquo;una, se
+si tratta di un accordo) leggendo il file sorgente, avvisa lo
+<code>Stem_engraver</code>, il quale crea un gambo e glielo
+unisce. Aggiungendo gli incisori per travature, legature, accenti,
+accidenti, stanghette di battuta, indicazioni di tempo e armature di
+chiave, otteniamo la notazione completa.
+</p>
+<blockquote><p>
+ <a href="../52/lily-05260365.ly">
+  <img align="middle"
+       border="0"
+       src="../52/lily-05260365.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-polifonia"></a>
+<a name="index-incisione-di-voci-multiple"></a>
+<a name="index-contesti"></a>
+
+<p>Questo sistema funziona bene per la musica monofonica, ma che succede
+con la polifonia?  Nella notazione polifonica, voci diverse possono
+condividere lo stesso rigo:
+</p>
+<blockquote><p>
+ <a href="../95/lily-a873bdd4.ly">
+  <img align="middle"
+       border="0"
+       src="../95/lily-a873bdd4.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Nell&rsquo;esempio qui sopra, armatura di chiave e rigo sono condivisi, ma gambi,
+legature, travature, eccetera, appartengono in modo esclusivo a ciascuna
+voce, perciò gli incisori devono essere raggruppati.  Quelli per teste
+delle note, gambi, legature, eccetera, vanno in un gruppo chiamato
+&lsquo;contesto Voice&rsquo;, mentre quelli per chiave, accidenti, misure,
+eccetera, in un gruppo chiamato &lsquo;contesto Staff&rsquo;.  Nel caso della
+polifonia, un singolo contesto Staff contiene più di un contesto Voice.
+Analogamente, contesti Staff multipli possono essere messi in un singolo
+contesto Score.  Il contesto Score rappresenta il contesto notazionale di
+livello massimo.
+</p>
+<blockquote><p>
+ <a href="../ba/lily-d2d5c2cf.ly">
+  <img align="middle"
+       border="0"
+       src="../ba/lily-d2d5c2cf.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="Vedi-anche"></a>
+<h4 class="subsubheading">Vedi anche</h4>
+<p>Internals Reference:
+<a name="index-Contexts"></a>
+<a href="../internals/contexts.it.html">Contesti</a>.
+</p>
+<hr size="6">
+<a name="Architettura-flessibile"></a>
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#what-symbols-to-engrave_003f" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Quali simboli incidere?&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#building-software" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Costruzione del software&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="putting-lilypond-to-work.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Mettere LilyPond al lavoro &gt; </a>]</td></tr></table>
+<a name="flexible-architecture"></a>
+<h3 class="unnumberedsubsec">Architettura flessibile</h3>
+
+<p>Quando abbiamo cominciato, abbiamo scritto LilyPond
+interamente nel linguaggio di programmazione C++, scolpendo nella pietra
+le sue funzionalità.  Per una serie di ragioni, però, la cosa si è
+rivelata insoddisfacente.
+</p>
+<ul>
+<li> Quando LilyPond commette degli errori, gli utenti devono
+sovrascrivere le decisioni di formattazione, il che significa, in altre
+parole, che devono poter accedere al motore di formattazione.  Quindi, regole
+e impostazioni non possono essere stabilite da noi durante la
+composizione, ma devono essere accessibili agli utenti durante
+l&rsquo;esecuzione del programma.
+
+</li><li> La bontà di un&rsquo;incisione viene giudicata dagli occhi, e in ultima
+analisi è questione di gusto.  Per quanto esperti noi siamo, gli utenti
+possono essere in disaccordo con le nostre decisioni personali, perciò devono
+poter accedere anche alle definizioni dello stile tipografico.
+
+</li><li> Infine, gli algoritmi di formattazione vengono rifiniti
+incessantemente da noi, il che ci richiede di dover contare su un approccio
+alle regole flessibile, e il modo con cui C++ impone di raggrupparle
+non può essere applicato facilmente alla formattazione della notazione
+musicale.
+
+</li></ul>
+
+<a name="index-linguaggio-di-programmazione-Scheme"></a>
+
+<p>Abbiamo affrontato questi problemi integrando in LilyPond un interprete del
+linguaggio di programmazione Scheme e riscrivendoci parti del programma.
+Ora l&rsquo;architettura di formattazione è costruita intorno
+alla nozione di oggetti grafici, descritti dalle variabili e dalle
+funzioni di Scheme, e comprende regole di formattazione, stile
+tipografico e decisioni di formattazione individuali.  L&rsquo;utente può
+accedere direttamente alla maggior parte di questi controlli.
+</p>
+<p>Le variabili di Scheme controllano le decisioni in merito all&rsquo;aspetto della
+pagina.  Per esempio, molti oggetti grafici possidono una variabile di
+direzione che codifica la scelta tra su e giù (o tra destra e sinistra).
+Qui sotto vedete due accordi con accenti e arpeggi.  Nel primo, tutti gli
+oggetti grafici hanno direzione giù (o sinistra), nel secondo, hanno
+direzione su (destra).
+</p>
+<blockquote><p>
+ <a href="../80/lily-ee8b9274.ly">
+  <img align="middle"
+       border="0"
+       src="../80/lily-ee8b9274.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<a name="index-formattare-uno-spartito"></a>
+<a name="index-formattazione-di-uno-spartito"></a>
+<a name="index-regole-di-formattazione"></a>
+
+<p>Il processo di formattazione di uno spartito consiste nel leggere e
+scrivere le variabili degli oggetti grafici, alcune delle quali hanno un
+valore predefinito.  Per esempio, lo spessore di molte linee &ndash; una
+caratteristica dello stile tipografico &ndash; è una di queste.  Siete liberi
+di modificare questo valore, donando al vostro spartito un&rsquo;impressione
+tipografica diversa.
+</p>
+<blockquote><p>
+ <a href="../61/lily-f9243c39.ly">
+  <img align="middle"
+       border="0"
+       src="../61/lily-f9243c39.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<p>Anche le regole di formattazione sono variabili preimpostate: ogni
+oggetto possiede variabili contenenti procedure.  Sono queste ultime a
+eseguire la formattazione vera e propria, e sostituendone di diverse,
+possiamo modificare l&rsquo;aspetto degli oggetti.  Nell&rsquo;esempio seguente, la
+regola che governa quali oggetti sono adoperati per produrre il
+simbolo della testa di nota è cambiata nel corso del frammento.
+</p>
+<blockquote><p>
+ <a href="../8b/lily-94984831.ly">
+  <img align="middle"
+       border="0"
+       src="../8b/lily-94984831.png"
+       alt="[image of music]">
+ </a>
+</p>
+</blockquote>
+
+
+
+<hr size="6">
+<table class="nav_table">
+<tr><td valign="middle" align="left" colspan="1">[<a href="music-engraving.it.html" title="Inizio di questo capitolo o capitolo precedente"> &lt;&lt; Incisione musicale&nbsp;</a>]</td><td valign="middle" align="center" colspan="3">[<a href="index.it.html" title="Copertina (inizio) del documento" rel="start">Inizio</a>][<a href="index_toc.it.html#SEC_Contents" title="Indice" rel="contents">Contenuti</a>][<a href="lilypond-index.it.html" title="Indice" rel="index">Indice</a>][<a href="index_abt.it.html#SEC_About" title="Informazioni (aiuto)" rel="help"> ? </a>]</td><td valign="middle" align="right" colspan="1">[<a href="literature-list.it.html" title="Capitolo successivo">&nbsp;Bibliografia &gt;&gt; </a>]</td></tr><tr><td valign="middle" align="left" colspan="2">[<a href="#what-symbols-to-engrave_003f" title="Sezione precedente in ordine di lettura" accesskey="p" rel="previous"> &lt; Quali simboli incidere?&nbsp;</a>]</td><td valign="middle" align="center" colspan="1">[<a href="#building-software" title="Sezione superiore" accesskey="u" rel="up">&nbsp; Su :&nbsp;Costruzione del software&nbsp;</a>]</td><td valign="middle" align="right" colspan="2">[<a href="putting-lilypond-to-work.it.html" title="Sezione successiva in ordine di lettura" accesskey="n" rel="next">&nbsp;Mettere LilyPond al lavoro &gt; </a>]</td></tr></table>
+<!-- footer_tag -->
+<div class="footer">
+<!-- This footer was autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+<p class="footer_version">
+Questa pagina documenta LilyPond-2.19.65 (ramo di sviluppo).
+</p>
+<p class="footer_report">
+We welcome your aid; please <a href="http://lilypond.org/help-us.html">help us</a> by reporting errors to our <a href="http://post.gmane.org/post.php?group=gmane.comp.gnu.lilypond.bugs">bug list</a>.
+</p>
+</div>
+
+
+<p id="languages">
+<!-- These links were autogenerated by /home/gub/NewGub/gub/target/linux-x86/build/lilypond-git.sv.gnu.org--lilypond.git-release-unstable/scripts/build/out/www_post -->
+ Altre lingue: <a href="building-software.html">English</a>, <a href="building-software.de.html">deutsch</a>, <a href="building-software.es.html">español</a>, <a href="building-software.fr.html">français</a>, <a href="building-software.hu.html">magyar</a>.
+ <br>
+ About <a href="http://www.lilypond.org/website/misc/browser-language">automatic language selection</a>.
+</p>
+
+<!-- FOOTER -->
+
+<!-- end div#main here -->
+</div>
+
+
+
+<div id="tocframe">
+<p class="toc_uplink"><a href="../../Documentation/web/manuals.it.html"
+         title="Documentation Index">&lt;&lt; Torna all'indice della documentazione</a></p>
+<h4 class="toc_header"> <a href="index.it.html" title="Start of the manual">LilyPond &mdash; Saggio sull&rsquo;incisione musicale automatizzata  v2.19.65 (ramo di sviluppo). </a></h4>
+<div class="contents">
+<ul class="toc">
+  <li class=" toc_current"><a name="toc-Incisione-musicale-1" href="music-engraving.it.html">1. Incisione musicale</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Storia-di-LilyPond-1" href="the-lilypond-story.it.html">1.1 Storia di LilyPond</a>    </li>
+    <li class=""><a name="toc-Incisione-in-dettaglio-1" href="engraving-details.it.html">1.2 Incisione in dettaglio</a>    </li>
+    <li class=""><a name="toc-Incisione-automatizzata-1" href="automated-engraving.it.html">1.3 Incisione automatizzata</a>    </li>
+    <li class=" toc_current"><a name="toc-Costruzione-del-software-1" href="building-software.it.html">1.4 Costruzione del software</a>
+    <ul class="toc">
+      <li class=""><a name="toc-Rappresentazione-della-musica-1" href="building-software.it.html#music-representation">Rappresentazione della musica</a>      </li>
+      <li class=""><a name="toc-Quali-simboli-incidere_003f-1" href="building-software.it.html#what-symbols-to-engrave_003f">Quali simboli incidere?</a>      </li>
+      <li class=""><a name="toc-Architettura-flessibile-1" href="building-software.it.html#flexible-architecture">Architettura flessibile</a>      </li>
+    </ul>
+    </li>
+    <li class=""><a name="toc-Mettere-LilyPond-al-lavoro-1" href="putting-lilypond-to-work.it.html">1.5 Mettere LilyPond al lavoro</a>    </li>
+    <li class=""><a name="toc-Esempi-di-incisione-_0028BWV-861_0029-1" href="engraved-examples-_0028bwv-861_0029.it.html">1.6 Esempi di incisione (BWV 861)</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-Bibliografia-1" href="literature-list.it.html">2. Bibliografia</a>
+  <ul class="toc">
+    <li class=""><a name="toc-Bibliografia-breve-1" href="short-literature-list.it.html">2.1 Bibliografia breve</a>    </li>
+    <li class=""><a name="toc-Bibliografia-lunga-1" href="long-literature-list.it.html">2.2 Bibliografia lunga</a>    </li>
+  </ul>
+  </li>
+  <li class=""><a name="toc-GNU-Free-Documentation-License-1" href="gnu-free-documentation-license.it.html">A. GNU Free Documentation License</a>  </li>
+  <li class=""><a name="toc-Indice-di-LilyPond-1" href="lilypond-index.it.html">B. Indice di LilyPond</a>  </li>
+<li>
+<!--
+    Translation of GIT committish: 1df9fc42197a6b2931f448cfba717527aead5e5a
+
+    When revising a translation, copy the HEAD committish of the
+    version that you are working on.  See TRANSLATION for details.
+-->
+
+<form action="http://google.com/search"
+      method="get"
+      name="search"
+      onSubmit="search.q.value='site:lilypond.org/doc/v2.19 '
+		+ search.brute_query.value"
+      onMouseMove="search.q.value='site:lilypond.org/doc/v2.19 '
+		   + search.brute_query.value"
+      onKeyUp="search.q.value='site:lilypond.org/doc/v2.19 '
+	       + search.brute_query.value">
+  <input type="hidden" name="btnG" value="Cerca con Google">
+  <input type="text" name="brute_query" onfocus="this.value=''" value="Cerca">
+  <input type="hidden" name="q" value="">
+</form>
+</li>
+</ul>
+</div>
+</div>
+
+</body>
+</html>
